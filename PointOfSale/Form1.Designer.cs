@@ -65,19 +65,27 @@
             this.profitCalcculationReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyTransactionsSummryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip_Customer = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addNewCustomersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip_Supplier = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addNewSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierListToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip_Inventory = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addNewInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.inventory_Button = new System.Windows.Forms.Button();
             this.suppliers_Button = new System.Windows.Forms.Button();
             this.customer_Button = new System.Windows.Forms.Button();
-            this.contextMenuStrip_Customer = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addNewCustomersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
+            this.contextMenuStrip_Supplier.SuspendLayout();
+            this.contextMenuStrip_Inventory.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperMenu
@@ -167,6 +175,7 @@
             this.addNewCustomersToolStripMenuItem.Name = "addNewCustomersToolStripMenuItem";
             this.addNewCustomersToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.addNewCustomersToolStripMenuItem.Text = "Add New Customers     Ctrl+N";
+            this.addNewCustomersToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomersToolStripMenuItem_Click);
             // 
             // custometListToolStripMenuItem
             // 
@@ -350,6 +359,68 @@
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 19);
             this.windowToolStripMenuItem.Text = "Window";
             // 
+            // contextMenuStrip_Customer
+            // 
+            this.contextMenuStrip_Customer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewCustomersToolStripMenuItem1,
+            this.customerListToolStripMenuItem});
+            this.contextMenuStrip_Customer.Name = "contextMenuStrip_Customer";
+            this.contextMenuStrip_Customer.Size = new System.Drawing.Size(179, 70);
+            this.contextMenuStrip_Customer.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // addNewCustomersToolStripMenuItem1
+            // 
+            this.addNewCustomersToolStripMenuItem1.Name = "addNewCustomersToolStripMenuItem1";
+            this.addNewCustomersToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
+            this.addNewCustomersToolStripMenuItem1.Text = "Add New Customer";
+            this.addNewCustomersToolStripMenuItem1.Click += new System.EventHandler(this.addNewCustomersToolStripMenuItem1_Click);
+            // 
+            // customerListToolStripMenuItem
+            // 
+            this.customerListToolStripMenuItem.Name = "customerListToolStripMenuItem";
+            this.customerListToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.customerListToolStripMenuItem.Text = "Customer List";
+            // 
+            // contextMenuStrip_Supplier
+            // 
+            this.contextMenuStrip_Supplier.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewSuppliersToolStripMenuItem,
+            this.supplierListToolStripMenuItem1});
+            this.contextMenuStrip_Supplier.Name = "contextMenuStrip_Supplier";
+            this.contextMenuStrip_Supplier.Size = new System.Drawing.Size(175, 48);
+            // 
+            // addNewSuppliersToolStripMenuItem
+            // 
+            this.addNewSuppliersToolStripMenuItem.Name = "addNewSuppliersToolStripMenuItem";
+            this.addNewSuppliersToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.addNewSuppliersToolStripMenuItem.Text = "Add New Suppliers";
+            // 
+            // supplierListToolStripMenuItem1
+            // 
+            this.supplierListToolStripMenuItem1.Name = "supplierListToolStripMenuItem1";
+            this.supplierListToolStripMenuItem1.Size = new System.Drawing.Size(174, 22);
+            this.supplierListToolStripMenuItem1.Text = "Supplier List";
+            // 
+            // contextMenuStrip_Inventory
+            // 
+            this.contextMenuStrip_Inventory.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewInventoryToolStripMenuItem,
+            this.inventoryListToolStripMenuItem});
+            this.contextMenuStrip_Inventory.Name = "contextMenuStrip_Inventory";
+            this.contextMenuStrip_Inventory.Size = new System.Drawing.Size(175, 48);
+            // 
+            // addNewInventoryToolStripMenuItem
+            // 
+            this.addNewInventoryToolStripMenuItem.Name = "addNewInventoryToolStripMenuItem";
+            this.addNewInventoryToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.addNewInventoryToolStripMenuItem.Text = "Add new Inventory";
+            // 
+            // inventoryListToolStripMenuItem
+            // 
+            this.inventoryListToolStripMenuItem.Name = "inventoryListToolStripMenuItem";
+            this.inventoryListToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.inventoryListToolStripMenuItem.Text = "Inventory List";
+            // 
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -393,8 +464,8 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 5;
-            this.button3.Image = global::PointOfSale.Properties.Resources.android_icon_72x724;
-            this.button3.Location = new System.Drawing.Point(822, 88);
+            this.button3.Image = global::PointOfSale.Properties.Resources.android_icon_72x729;
+            this.button3.Location = new System.Drawing.Point(315, 280);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 132);
             this.button3.TabIndex = 5;
@@ -402,6 +473,7 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -417,21 +489,22 @@
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // inventory_Button
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 5;
-            this.button1.Image = global::PointOfSale.Properties.Resources.android_icon_72x722;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(308, 280);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 132);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Inventory";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.inventory_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.inventory_Button.FlatAppearance.BorderSize = 5;
+            this.inventory_Button.Image = global::PointOfSale.Properties.Resources.android_icon_72x722;
+            this.inventory_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.inventory_Button.Location = new System.Drawing.Point(815, 88);
+            this.inventory_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inventory_Button.Name = "inventory_Button";
+            this.inventory_Button.Size = new System.Drawing.Size(201, 132);
+            this.inventory_Button.TabIndex = 3;
+            this.inventory_Button.Text = "Inventory";
+            this.inventory_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.inventory_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.inventory_Button.UseVisualStyleBackColor = true;
+            this.inventory_Button.Click += new System.EventHandler(this.inventory_Button_Click);
             // 
             // suppliers_Button
             // 
@@ -450,6 +523,7 @@
             this.suppliers_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.suppliers_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.suppliers_Button.UseVisualStyleBackColor = true;
+            this.suppliers_Button.Click += new System.EventHandler(this.suppliers_Button_Click);
             // 
             // customer_Button
             // 
@@ -469,27 +543,6 @@
             this.customer_Button.UseVisualStyleBackColor = true;
             this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
             // 
-            // contextMenuStrip_Customer
-            // 
-            this.contextMenuStrip_Customer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewCustomersToolStripMenuItem1,
-            this.customerListToolStripMenuItem});
-            this.contextMenuStrip_Customer.Name = "contextMenuStrip_Customer";
-            this.contextMenuStrip_Customer.Size = new System.Drawing.Size(179, 48);
-            this.contextMenuStrip_Customer.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // addNewCustomersToolStripMenuItem1
-            // 
-            this.addNewCustomersToolStripMenuItem1.Name = "addNewCustomersToolStripMenuItem1";
-            this.addNewCustomersToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
-            this.addNewCustomersToolStripMenuItem1.Text = "Add New Customer";
-            // 
-            // customerListToolStripMenuItem
-            // 
-            this.customerListToolStripMenuItem.Name = "customerListToolStripMenuItem";
-            this.customerListToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.customerListToolStripMenuItem.Text = "Customer List";
-            // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -500,7 +553,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.inventory_Button);
             this.Controls.Add(this.suppliers_Button);
             this.Controls.Add(this.customer_Button);
             this.Controls.Add(this.upperMenu);
@@ -517,6 +570,8 @@
             this.upperMenu.ResumeLayout(false);
             this.upperMenu.PerformLayout();
             this.contextMenuStrip_Customer.ResumeLayout(false);
+            this.contextMenuStrip_Supplier.ResumeLayout(false);
+            this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,7 +617,7 @@
         private System.Windows.Forms.ToolStripMenuItem windowToolStripMenuItem;
         private System.Windows.Forms.Button customer_Button;
         private System.Windows.Forms.Button suppliers_Button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button inventory_Button;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -571,6 +626,12 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_Customer;
         private System.Windows.Forms.ToolStripMenuItem addNewCustomersToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerListToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_Supplier;
+        private System.Windows.Forms.ToolStripMenuItem addNewSuppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierListToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_Inventory;
+        private System.Windows.Forms.ToolStripMenuItem addNewInventoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventoryListToolStripMenuItem;
     }
 }
 

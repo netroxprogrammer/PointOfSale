@@ -62,5 +62,31 @@ namespace PointOfSale
         {
             contextMenuStrip_Customer.Show(customer_Button, new Point(0,customer_Button.Height));
         }
+
+        private void suppliers_Button_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip_Supplier.Show(suppliers_Button,new Point(0,suppliers_Button.Height));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventory_Button_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip_Inventory.Show(inventory_Button, new Point(0,inventory_Button.Height));
+
+        }
+
+        private void addNewCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Customer_Information().Show();
+        }
+
+        private void addNewCustomersToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new Customer_Information().Show();
+        }
     }
 }

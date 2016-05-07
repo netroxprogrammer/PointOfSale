@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer_Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer_Information.Designer.cs">
+      <DependentUpon>Customer_Information.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Customer_Information.resx">
+      <DependentUpon>Customer_Information.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +121,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\android-icon-72x728.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-72x729.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x162.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

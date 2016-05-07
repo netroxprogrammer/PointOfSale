@@ -153,6 +153,16 @@ namespace PointOfSale.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap android_icon_72x729 {
+            get {
+                object obj = ResourceManager.GetObject("android-icon-72x729", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Customers {
             get {
                 object obj = ResourceManager.GetObject("Customers", resourceCulture);
@@ -166,6 +176,36 @@ namespace PointOfSale.Properties {
         internal static System.Drawing.Bitmap Customers1 {
             get {
                 object obj = ResourceManager.GetObject("Customers1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_16x161 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-16x161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_16x162 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-16x162", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
