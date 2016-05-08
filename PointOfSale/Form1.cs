@@ -86,7 +86,19 @@ namespace PointOfSale
 
         private void addNewCustomersToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
             new Customer_Information().Show();
+            
+        }
+
+        private void addNewInventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddNewProduct().Show();
         }
     }
 }

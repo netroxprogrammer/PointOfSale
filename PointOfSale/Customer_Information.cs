@@ -22,5 +22,10 @@ namespace PointOfSale
            
 
         }
+
+        private void Customer_Information_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
     }
 }

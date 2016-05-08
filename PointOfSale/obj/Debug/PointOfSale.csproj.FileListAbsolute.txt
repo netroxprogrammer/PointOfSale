@@ -8,3 +8,4 @@ c:\users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\D
 c:\users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.pdb
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.csprojResolveAssemblyReference.cache
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.Customer_Information.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.AddNewProduct.resources

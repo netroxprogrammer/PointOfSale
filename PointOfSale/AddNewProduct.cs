@@ -21,5 +21,10 @@ namespace PointOfSale
         {
 
         }
+
+        private void AddNewProduct_Load(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+        }
     }
 }

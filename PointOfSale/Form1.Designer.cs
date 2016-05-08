@@ -82,6 +82,9 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.suppliers_Button = new System.Windows.Forms.Button();
             this.customer_Button = new System.Windows.Forms.Button();
+            this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
@@ -100,6 +103,7 @@
             this.salesToolStripMenuItem,
             this.perchasesToolStripMenuItem,
             this.stockAdjustmentToolStripMenuItem,
+            this.employeeToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.windowToolStripMenuItem});
             this.upperMenu.Location = new System.Drawing.Point(0, 0);
@@ -218,6 +222,7 @@
             this.addNewProductsToolStripMenuItem.Name = "addNewProductsToolStripMenuItem";
             this.addNewProductsToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.addNewProductsToolStripMenuItem.Text = "Add New Products        Ctrl+L";
+            this.addNewProductsToolStripMenuItem.Click += new System.EventHandler(this.addNewProductsToolStripMenuItem_Click);
             // 
             // productListToolStripMenuItem
             // 
@@ -365,7 +370,7 @@
             this.addNewCustomersToolStripMenuItem1,
             this.customerListToolStripMenuItem});
             this.contextMenuStrip_Customer.Name = "contextMenuStrip_Customer";
-            this.contextMenuStrip_Customer.Size = new System.Drawing.Size(179, 70);
+            this.contextMenuStrip_Customer.Size = new System.Drawing.Size(179, 48);
             this.contextMenuStrip_Customer.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // addNewCustomersToolStripMenuItem1
@@ -414,6 +419,7 @@
             this.addNewInventoryToolStripMenuItem.Name = "addNewInventoryToolStripMenuItem";
             this.addNewInventoryToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.addNewInventoryToolStripMenuItem.Text = "Add new Inventory";
+            this.addNewInventoryToolStripMenuItem.Click += new System.EventHandler(this.addNewInventoryToolStripMenuItem_Click);
             // 
             // inventoryListToolStripMenuItem
             // 
@@ -543,10 +549,32 @@
             this.customer_Button.UseVisualStyleBackColor = true;
             this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
             // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewEmployeeToolStripMenuItem,
+            this.listOfEmployeeToolStripMenuItem});
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(71, 19);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            // 
+            // addNewEmployeeToolStripMenuItem
+            // 
+            this.addNewEmployeeToolStripMenuItem.Name = "addNewEmployeeToolStripMenuItem";
+            this.addNewEmployeeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.addNewEmployeeToolStripMenuItem.Text = "Add New Employee";
+            // 
+            // listOfEmployeeToolStripMenuItem
+            // 
+            this.listOfEmployeeToolStripMenuItem.Name = "listOfEmployeeToolStripMenuItem";
+            this.listOfEmployeeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.listOfEmployeeToolStripMenuItem.Text = "List of Employee";
+            // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1329, 728);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -561,7 +589,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.upperMenu;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
             this.Name = "WorkingForm";
             this.Text = "Point Of Sale";
             this.TopMost = true;
@@ -632,6 +659,9 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_Inventory;
         private System.Windows.Forms.ToolStripMenuItem addNewInventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfEmployeeToolStripMenuItem;
     }
 }
 
