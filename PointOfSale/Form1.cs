@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.DbConfiguration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,8 +35,22 @@ namespace PointOfSale
 
         private void WorkingForm_Load(object sender, EventArgs e)
         {
-            
 
+
+
+            DatabaseCommands dblogin = new DatabaseCommands();
+            bool check = dblogin.Login("abdullah", "123");
+
+            if (check == true)
+            {
+               // Form2 f = new Form2();
+
+                MessageBox.Show("User Found");
+            }
+            else
+            {
+                MessageBox.Show(" No user Found User Found");
+            }
         }
 
         private void stockAdjustmentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,6 +114,11 @@ namespace PointOfSale
         private void addNewProductsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AddNewProduct().Show();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //changePasswordToolStripMenuItem.Visible = false;
         }
     }
 }

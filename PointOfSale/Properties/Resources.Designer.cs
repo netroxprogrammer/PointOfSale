@@ -83,6 +83,16 @@ namespace PointOfSale.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap android_icon_72x7210 {
+            get {
+                object obj = ResourceManager.GetObject("android-icon-72x7210", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap android_icon_72x722 {
             get {
                 object obj = ResourceManager.GetObject("android-icon-72x722", resourceCulture);
@@ -206,6 +216,16 @@ namespace PointOfSale.Properties {
         internal static System.Drawing.Bitmap favicon_16x162 {
             get {
                 object obj = ResourceManager.GetObject("favicon-16x162", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_16x163 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-16x163", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
