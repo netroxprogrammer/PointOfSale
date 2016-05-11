@@ -1,8 +1,11 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.Utils;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -35,22 +38,19 @@ namespace PointOfSale
 
         private void WorkingForm_Load(object sender, EventArgs e)
         {
-
-
-
-            DatabaseCommands dblogin = new DatabaseCommands();
-            bool check = dblogin.Login("abdullah", "123");
-
-            if (check == true)
+            if (Constants.checkLogin == false)
             {
-               // Form2 f = new Form2();
-
-                MessageBox.Show("User Found");
+                this.Hide();
+                new LoginAthuntication().Show();
             }
-            else
+            if (Constants.checkLogin == true)
             {
-                MessageBox.Show(" No user Found User Found");
+                new LoginAthuntication().Hide();
             }
+
+
+
+
         }
 
         private void stockAdjustmentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,6 +119,11 @@ namespace PointOfSale
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //changePasswordToolStripMenuItem.Visible = false;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

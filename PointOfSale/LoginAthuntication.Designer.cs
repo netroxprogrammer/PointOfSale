@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.loginAthuntication_comboBox = new System.Windows.Forms.ComboBox();
+            this.loginAthuntication_password_textbox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoginAthunticatuon_Cancel_btn = new System.Windows.Forms.Button();
+            this.LoginAthunticatuon_Login_btn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,25 +63,26 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "User Name";
             // 
-            // comboBox1
+            // loginAthuntication_comboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 34);
-            this.comboBox1.TabIndex = 2;
+            this.loginAthuntication_comboBox.FormattingEnabled = true;
+            this.loginAthuntication_comboBox.Location = new System.Drawing.Point(114, 32);
+            this.loginAthuntication_comboBox.Name = "loginAthuntication_comboBox";
+            this.loginAthuntication_comboBox.Size = new System.Drawing.Size(209, 34);
+            this.loginAthuntication_comboBox.TabIndex = 2;
             // 
-            // textBox1
+            // loginAthuntication_password_textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 33);
-            this.textBox1.TabIndex = 3;
+            this.loginAthuntication_password_textbox.Location = new System.Drawing.Point(114, 70);
+            this.loginAthuntication_password_textbox.Name = "loginAthuntication_password_textbox";
+            this.loginAthuntication_password_textbox.PasswordChar = '*';
+            this.loginAthuntication_password_textbox.Size = new System.Drawing.Size(209, 33);
+            this.loginAthuntication_password_textbox.TabIndex = 3;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.loginAthuntication_comboBox);
+            this.groupBox1.Controls.Add(this.loginAthuntication_password_textbox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -90,6 +91,7 @@
             this.groupBox1.Size = new System.Drawing.Size(335, 119);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
@@ -105,25 +107,40 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.LoginAthunticatuon_Cancel_btn);
+            this.groupBox2.Controls.Add(this.LoginAthunticatuon_Login_btn);
             this.groupBox2.Location = new System.Drawing.Point(116, 172);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(257, 50);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
-            // button1
+            // LoginAthunticatuon_Cancel_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::PointOfSale.Properties.Resources.favicon_16x163;
-            this.button1.Location = new System.Drawing.Point(15, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 25);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Login";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.LoginAthunticatuon_Cancel_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginAthunticatuon_Cancel_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
+            this.LoginAthunticatuon_Cancel_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LoginAthunticatuon_Cancel_btn.Location = new System.Drawing.Point(121, 19);
+            this.LoginAthunticatuon_Cancel_btn.Name = "LoginAthunticatuon_Cancel_btn";
+            this.LoginAthunticatuon_Cancel_btn.Size = new System.Drawing.Size(80, 23);
+            this.LoginAthunticatuon_Cancel_btn.TabIndex = 8;
+            this.LoginAthunticatuon_Cancel_btn.Text = "Cancel";
+            this.LoginAthunticatuon_Cancel_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.LoginAthunticatuon_Cancel_btn.UseVisualStyleBackColor = true;
+            this.LoginAthunticatuon_Cancel_btn.Click += new System.EventHandler(this.LoginAthunticatuon_Cancel_btn_Click);
+            // 
+            // LoginAthunticatuon_Login_btn
+            // 
+            this.LoginAthunticatuon_Login_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginAthunticatuon_Login_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x163;
+            this.LoginAthunticatuon_Login_btn.Location = new System.Drawing.Point(15, 19);
+            this.LoginAthunticatuon_Login_btn.Name = "LoginAthunticatuon_Login_btn";
+            this.LoginAthunticatuon_Login_btn.Size = new System.Drawing.Size(80, 25);
+            this.LoginAthunticatuon_Login_btn.TabIndex = 7;
+            this.LoginAthunticatuon_Login_btn.Text = "Login";
+            this.LoginAthunticatuon_Login_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.LoginAthunticatuon_Login_btn.UseVisualStyleBackColor = true;
+            this.LoginAthunticatuon_Login_btn.Click += new System.EventHandler(this.LoginAthunticatuon_Login_btn_Click);
             // 
             // pictureBox1
             // 
@@ -134,19 +151,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(67, 87);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(121, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancel";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // LoginAthuntication
             // 
@@ -179,13 +183,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox loginAthuntication_comboBox;
+        private System.Windows.Forms.TextBox loginAthuntication_password_textbox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button LoginAthunticatuon_Login_btn;
+        private System.Windows.Forms.Button LoginAthunticatuon_Cancel_btn;
     }
 }

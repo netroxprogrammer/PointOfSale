@@ -25,7 +25,7 @@ namespace PointOfSale.DbConfiguration
         {
             get
             {
-                lock (padlock)
+                //lock (padlock)
                 {
                     if (instance == null)
                     {
