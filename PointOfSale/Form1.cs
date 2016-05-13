@@ -1,4 +1,5 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.TableInformationForm;
 using PointOfSale.Utils;
 using System;
 using System.Collections;
@@ -124,6 +125,21 @@ namespace PointOfSale
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void exirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewTableInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TableInformation().Show();
         }
     }
 }

@@ -10,3 +10,4 @@ C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\D
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.Customer_Information.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.AddNewProduct.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.LoginAthuntication.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.TableInformationForm.TableInformation.resources

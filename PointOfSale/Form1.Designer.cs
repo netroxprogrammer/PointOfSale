@@ -36,7 +36,6 @@
             this.changeDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reIndexBalnaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.custometListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +67,7 @@
             this.profitCalcculationReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyTransactionsSummryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Customer = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addNewCustomersToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.customerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +85,7 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.suppliers_Button = new System.Windows.Forms.Button();
             this.customer_Button = new System.Windows.Forms.Button();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTableInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
@@ -123,7 +123,7 @@
             this.changeDatabaseToolStripMenuItem,
             this.backUpDatabaseToolStripMenuItem,
             this.reIndexBalnaceToolStripMenuItem,
-            this.exirToolStripMenuItem});
+            this.viewTableInformationToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 19);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -159,12 +159,6 @@
             this.reIndexBalnaceToolStripMenuItem.Name = "reIndexBalnaceToolStripMenuItem";
             this.reIndexBalnaceToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.reIndexBalnaceToolStripMenuItem.Text = "Re-Index Balnace";
-            // 
-            // exirToolStripMenuItem
-            // 
-            this.exirToolStripMenuItem.Name = "exirToolStripMenuItem";
-            this.exirToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.exirToolStripMenuItem.Text = "Exit";
             // 
             // customersToolStripMenuItem
             // 
@@ -389,6 +383,13 @@
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 19);
             this.windowToolStripMenuItem.Text = "Window";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // contextMenuStrip_Customer
             // 
             this.contextMenuStrip_Customer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -574,12 +575,12 @@
             this.customer_Button.UseVisualStyleBackColor = true;
             this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
             // 
-            // exitToolStripMenuItem
+            // viewTableInformationToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.viewTableInformationToolStripMenuItem.Name = "viewTableInformationToolStripMenuItem";
+            this.viewTableInformationToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.viewTableInformationToolStripMenuItem.Text = "View Table Information";
+            this.viewTableInformationToolStripMenuItem.Click += new System.EventHandler(this.viewTableInformationToolStripMenuItem_Click);
             // 
             // WorkingForm
             // 
@@ -624,7 +625,6 @@
         private System.Windows.Forms.ToolStripMenuItem changeDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backUpDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reIndexBalnaceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCustomersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem custometListToolStripMenuItem;
@@ -674,6 +674,7 @@
         private System.Windows.Forms.ToolStripMenuItem addNewEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOfEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewTableInformationToolStripMenuItem;
     }
 }
 

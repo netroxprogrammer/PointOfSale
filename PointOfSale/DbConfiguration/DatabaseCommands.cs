@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PointOfSale.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -58,7 +59,7 @@ namespace PointOfSale.DbConfiguration
                 Debug.WriteLine(reader.GetString(1));
              
             }
-           // reader.Close();
+            reader.Close();
             return list;
         }
 
@@ -84,12 +85,55 @@ namespace PointOfSale.DbConfiguration
                 return check;
             }
 
-            // reader.Close();
+             reader.Close();
 
             return check;
         }
 
+        /*
+        *
+        *    View Table Lists
+        *
+        */
 
+        public ArrayList getTableLists()
+        {
+            ArrayList listTable = new ArrayList();
+            SqlCommand commands = new SqlCommand("SELECT * FROM information_schema.tables", DatabaseConnections.Instance.getConnection());
+
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                listTable.Add(reader.GetString(2));
+                Debug.WriteLine(reader.GetString(2));
+            }
+            return listTable; 
+        }
+
+        /*
+        *
+        *       Read Column Name from tables
+        *
+        */
+
+
+        public ArrayList readTableColumn(String tableName)
+        {
+            ArrayList listTable = new ArrayList();
+            TableColumns tbclm = new TableColumns();
+            SqlCommand commands = new SqlCommand("SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + tableName +"' ", DatabaseConnections.Instance.getConnection());
+
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                tbclm.TableName = reader.GetString(3);
+                tbclm.DataType = reader.GetString(7);
+                listTable.Add(tbclm);
+                Debug.WriteLine(reader.GetString(3));
+            }
+            
+            return listTable;
+        }
     }
 
 
