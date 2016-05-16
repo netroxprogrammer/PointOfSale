@@ -117,15 +117,16 @@ namespace PointOfSale.DbConfiguration
         */
 
 
-        public ArrayList readTableColumn(String tableName)
+        public List<TableColumns> readTableColumn(String tableName)
         {
-            ArrayList listTable = new ArrayList();
-            TableColumns tbclm = new TableColumns();
+            List<TableColumns> listTable = new List<TableColumns>();
+         
             SqlCommand commands = new SqlCommand("SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + tableName +"' ", DatabaseConnections.Instance.getConnection());
 
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
             {
+                TableColumns tbclm = new TableColumns();
                 tbclm.TableName = reader.GetString(3);
                 tbclm.DataType = reader.GetString(7);
                 listTable.Add(tbclm);

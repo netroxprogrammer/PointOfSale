@@ -33,8 +33,9 @@
             this.tableInformation_viewTable_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableInformation_colmnName_listView = new System.Windows.Forms.ListView();
-            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tableInformation_viewTable_listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.tableInformation_colmnName_listView);
+            this.groupBox2.Controls.Add(this.tableInformation_viewTable_listView1);
             this.groupBox2.Location = new System.Drawing.Point(9, 116);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(389, 295);
@@ -94,24 +95,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // tableInformation_colmnName_listView
+            // tableInformation_viewTable_listView1
             // 
-            this.tableInformation_colmnName_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnName});
-            this.tableInformation_colmnName_listView.FullRowSelect = true;
-            this.tableInformation_colmnName_listView.GridLines = true;
-            this.tableInformation_colmnName_listView.Location = new System.Drawing.Point(105, 13);
-            this.tableInformation_colmnName_listView.Name = "tableInformation_colmnName_listView";
-            this.tableInformation_colmnName_listView.Size = new System.Drawing.Size(118, 276);
-            this.tableInformation_colmnName_listView.TabIndex = 0;
-            this.tableInformation_colmnName_listView.UseCompatibleStateImageBehavior = false;
-            this.tableInformation_colmnName_listView.View = System.Windows.Forms.View.Details;
-            this.tableInformation_colmnName_listView.SelectedIndexChanged += new System.EventHandler(this.tableInformation_colmnName_listView_SelectedIndexChanged);
+            this.tableInformation_viewTable_listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.tableInformation_viewTable_listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableInformation_viewTable_listView1.FullRowSelect = true;
+            this.tableInformation_viewTable_listView1.GridLines = true;
+            this.tableInformation_viewTable_listView1.Location = new System.Drawing.Point(3, 16);
+            this.tableInformation_viewTable_listView1.Name = "tableInformation_viewTable_listView1";
+            this.tableInformation_viewTable_listView1.Size = new System.Drawing.Size(383, 276);
+            this.tableInformation_viewTable_listView1.TabIndex = 0;
+            this.tableInformation_viewTable_listView1.UseCompatibleStateImageBehavior = false;
+            this.tableInformation_viewTable_listView1.View = System.Windows.Forms.View.Details;
             // 
-            // columnName
+            // columnHeader1
             // 
-            this.columnName.Text = "     Column Name";
-            this.columnName.Width = 403;
+            this.columnHeader1.Text = "Column Name";
+            this.columnHeader1.Width = 172;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Data type";
+            this.columnHeader2.Width = 209;
             // 
             // TableInformation
             // 
@@ -140,7 +147,8 @@
         private System.Windows.Forms.ComboBox tableInformation_viewTable_comboBox;
         private System.Windows.Forms.Button tableInformation_View_brt;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView tableInformation_colmnName_listView;
-        private System.Windows.Forms.ColumnHeader columnName;
+        private System.Windows.Forms.ListView tableInformation_viewTable_listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
