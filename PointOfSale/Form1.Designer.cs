@@ -36,6 +36,7 @@
             this.changeDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backUpDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reIndexBalnaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTableInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.custometListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +86,7 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.suppliers_Button = new System.Windows.Forms.Button();
             this.customer_Button = new System.Windows.Forms.Button();
-            this.viewTableInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importSheetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
@@ -123,7 +124,8 @@
             this.changeDatabaseToolStripMenuItem,
             this.backUpDatabaseToolStripMenuItem,
             this.reIndexBalnaceToolStripMenuItem,
-            this.viewTableInformationToolStripMenuItem});
+            this.viewTableInformationToolStripMenuItem,
+            this.importSheetToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 19);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -159,6 +161,13 @@
             this.reIndexBalnaceToolStripMenuItem.Name = "reIndexBalnaceToolStripMenuItem";
             this.reIndexBalnaceToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.reIndexBalnaceToolStripMenuItem.Text = "Re-Index Balnace";
+            // 
+            // viewTableInformationToolStripMenuItem
+            // 
+            this.viewTableInformationToolStripMenuItem.Name = "viewTableInformationToolStripMenuItem";
+            this.viewTableInformationToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.viewTableInformationToolStripMenuItem.Text = "View Table Information";
+            this.viewTableInformationToolStripMenuItem.Click += new System.EventHandler(this.viewTableInformationToolStripMenuItem_Click);
             // 
             // customersToolStripMenuItem
             // 
@@ -575,12 +584,12 @@
             this.customer_Button.UseVisualStyleBackColor = true;
             this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
             // 
-            // viewTableInformationToolStripMenuItem
+            // importSheetToolStripMenuItem
             // 
-            this.viewTableInformationToolStripMenuItem.Name = "viewTableInformationToolStripMenuItem";
-            this.viewTableInformationToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.viewTableInformationToolStripMenuItem.Text = "View Table Information";
-            this.viewTableInformationToolStripMenuItem.Click += new System.EventHandler(this.viewTableInformationToolStripMenuItem_Click);
+            this.importSheetToolStripMenuItem.Name = "importSheetToolStripMenuItem";
+            this.importSheetToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.importSheetToolStripMenuItem.Text = "Import Sheet";
+            this.importSheetToolStripMenuItem.Click += new System.EventHandler(this.importSheetToolStripMenuItem_Click);
             // 
             // WorkingForm
             // 
@@ -675,6 +684,7 @@
         private System.Windows.Forms.ToolStripMenuItem listOfEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTableInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importSheetToolStripMenuItem;
     }
 }
 

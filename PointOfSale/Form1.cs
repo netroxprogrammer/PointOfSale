@@ -1,4 +1,5 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.TableHandlerForms;
 using PointOfSale.TableInformationForm;
 using PointOfSale.Utils;
 using System;
@@ -140,6 +141,11 @@ namespace PointOfSale
         private void viewTableInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new TableInformation().Show();
+        }
+
+        private void importSheetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ImportSheet().Show();
         }
     }
 }
