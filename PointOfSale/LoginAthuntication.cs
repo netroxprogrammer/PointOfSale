@@ -74,5 +74,10 @@ namespace PointOfSale
         {
 
         }
+
+        private void loginAthuntication_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

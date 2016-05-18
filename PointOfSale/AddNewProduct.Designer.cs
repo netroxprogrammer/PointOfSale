@@ -31,6 +31,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.adddNewProducts_Category_comboBox = new System.Windows.Forms.ComboBox();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.addProducts_colorName_label = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -61,14 +68,13 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.adddNewProducts_companyName_comboBox = new System.Windows.Forms.ComboBox();
+            this.adddNewProducts_ProductName_comboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -89,19 +95,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.addProducts_colorName_label = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +126,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.adddNewProducts_Category_comboBox);
             this.groupBox1.Controls.Add(this.comboBox8);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.textBox17);
@@ -141,14 +142,13 @@
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.comboBox6);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBox5);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.comboBox4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.adddNewProducts_companyName_comboBox);
+            this.groupBox1.Controls.Add(this.adddNewProducts_ProductName_comboBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -158,6 +158,78 @@
             this.groupBox1.Size = new System.Drawing.Size(614, 516);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // adddNewProducts_Category_comboBox
+            // 
+            this.adddNewProducts_Category_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_Category_comboBox.Location = new System.Drawing.Point(470, 78);
+            this.adddNewProducts_Category_comboBox.Name = "adddNewProducts_Category_comboBox";
+            this.adddNewProducts_Category_comboBox.Size = new System.Drawing.Size(121, 21);
+            this.adddNewProducts_Category_comboBox.TabIndex = 29;
+            this.adddNewProducts_Category_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_Category_comboBox_SelectedIndexChanged_1);
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Items.AddRange(new object[] {
+            "kilo",
+            "gram"});
+            this.comboBox8.Location = new System.Drawing.Point(470, 186);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(131, 21);
+            this.comboBox8.TabIndex = 28;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label26.Location = new System.Drawing.Point(466, 164);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(67, 19);
+            this.label26.TabIndex = 27;
+            this.label26.Text = "Category";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(245, 187);
+            this.textBox17.Multiline = true;
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(198, 21);
+            this.textBox17.TabIndex = 26;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label25.Location = new System.Drawing.Point(241, 164);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 19);
+            this.label25.TabIndex = 25;
+            this.label25.Text = "Size";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.addProducts_colorName_label);
+            this.groupBox6.Controls.Add(this.button4);
+            this.groupBox6.Location = new System.Drawing.Point(16, 164);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(200, 53);
+            this.groupBox6.TabIndex = 24;
+            this.groupBox6.TabStop = false;
+            // 
+            // addProducts_colorName_label
+            // 
+            this.addProducts_colorName_label.AutoSize = true;
+            this.addProducts_colorName_label.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addProducts_colorName_label.Location = new System.Drawing.Point(23, 21);
+            this.addProducts_colorName_label.Name = "addProducts_colorName_label";
+            this.addProducts_colorName_label.Size = new System.Drawing.Size(89, 15);
+            this.addProducts_colorName_label.TabIndex = 0;
+            this.addProducts_colorName_label.Text = "no Color select";
+            this.addProducts_colorName_label.Click += new System.EventHandler(this.addProducts_colorName_label_Click);
             // 
             // button4
             // 
@@ -466,14 +538,6 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Location";
             // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(470, 78);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(131, 21);
-            this.comboBox5.TabIndex = 13;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -523,21 +587,23 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Purpose";
             // 
-            // comboBox2
+            // adddNewProducts_companyName_comboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(382, 32);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(219, 21);
-            this.comboBox2.TabIndex = 7;
+            this.adddNewProducts_companyName_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_companyName_comboBox.Location = new System.Drawing.Point(382, 32);
+            this.adddNewProducts_companyName_comboBox.Name = "adddNewProducts_companyName_comboBox";
+            this.adddNewProducts_companyName_comboBox.Size = new System.Drawing.Size(219, 21);
+            this.adddNewProducts_companyName_comboBox.TabIndex = 7;
+            this.adddNewProducts_companyName_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_companyName_comboBox_SelectedIndexChanged);
             // 
-            // comboBox1
+            // adddNewProducts_ProductName_comboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(144, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 21);
-            this.comboBox1.TabIndex = 6;
+            this.adddNewProducts_ProductName_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_ProductName_comboBox.Location = new System.Drawing.Point(144, 32);
+            this.adddNewProducts_ProductName_comboBox.Name = "adddNewProducts_ProductName_comboBox";
+            this.adddNewProducts_ProductName_comboBox.Size = new System.Drawing.Size(219, 21);
+            this.adddNewProducts_ProductName_comboBox.TabIndex = 6;
+            this.adddNewProducts_ProductName_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_ProductName_comboBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -710,69 +776,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.addProducts_colorName_label);
-            this.groupBox6.Controls.Add(this.button4);
-            this.groupBox6.Location = new System.Drawing.Point(16, 164);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 53);
-            this.groupBox6.TabIndex = 24;
-            this.groupBox6.TabStop = false;
-            // 
-            // addProducts_colorName_label
-            // 
-            this.addProducts_colorName_label.AutoSize = true;
-            this.addProducts_colorName_label.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_colorName_label.Location = new System.Drawing.Point(23, 21);
-            this.addProducts_colorName_label.Name = "addProducts_colorName_label";
-            this.addProducts_colorName_label.Size = new System.Drawing.Size(89, 15);
-            this.addProducts_colorName_label.TabIndex = 0;
-            this.addProducts_colorName_label.Text = "no Color select";
-            this.addProducts_colorName_label.Click += new System.EventHandler(this.addProducts_colorName_label_Click);
-            // 
-            // textBox17
-            // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(245, 187);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(198, 21);
-            this.textBox17.TabIndex = 26;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label25.Location = new System.Drawing.Point(241, 164);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 19);
-            this.label25.TabIndex = 25;
-            this.label25.Text = "Size";
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
-            "kilo",
-            "gram"});
-            this.comboBox8.Location = new System.Drawing.Point(470, 186);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(131, 21);
-            this.comboBox8.TabIndex = 28;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label26.Location = new System.Drawing.Point(466, 164);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(67, 19);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "Category";
-            // 
             // AddNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,14 +792,14 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -811,13 +814,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox adddNewProducts_ProductName_comboBox;
+        private System.Windows.Forms.ComboBox adddNewProducts_companyName_comboBox;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label8;
@@ -871,5 +873,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox adddNewProducts_Category_comboBox;
     }
 }

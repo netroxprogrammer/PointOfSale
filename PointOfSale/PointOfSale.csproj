@@ -66,6 +66,8 @@
     </Compile>
     <Compile Include="DbConfiguration\DatabaseCommands.cs" />
     <Compile Include="DbConfiguration\DatabaseConnections.cs" />
+    <Compile Include="DbConfiguration\HandleCustomer.cs" />
+    <Compile Include="DbConfiguration\HandleProducts.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +95,10 @@
       <DependentUpon>TableInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\TableCategory.cs" />
     <Compile Include="Utils\TableColumns.cs" />
+    <Compile Include="Utils\TableCompany.cs" />
+    <Compile Include="Utils\TableProductName.cs" />
     <EmbeddedResource Include="AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>

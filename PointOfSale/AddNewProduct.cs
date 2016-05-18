@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PointOfSale.DbConfiguration;
+using PointOfSale.Utils;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,7 @@ namespace PointOfSale
 {
     public partial class AddNewProduct : Form
     {
+        HandleProducts handleProducts;
         public AddNewProduct()
         {
             InitializeComponent();
@@ -24,6 +28,10 @@ namespace PointOfSale
 
         private void AddNewProduct_Load(object sender, EventArgs e)
         {
+             handleProducts = new HandleProducts();
+            loadProductCategory();
+             loadCompanyNames();
+            loadProductName();
             this.TopMost = true;
         }
 
@@ -56,6 +64,61 @@ namespace PointOfSale
         {
 
         }
+
+        
+
+        private void adddNewProducts_Category_comboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void adddNewProducts_companyName_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
+        }
+        private void adddNewProducts_ProductName_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        /*
+        *  Load CompanyName
+        */
+        public void loadCompanyNames()
+        {
+            ArrayList getProd = handleProducts.getCompanyNames(); ;
+            foreach (TableCompany products in getProd)
+            {
+
+                adddNewProducts_companyName_comboBox.Items.Add(products.companyName);
+            }
+        }
+
+        /*
+        *  Load Product Category
+        */
+        public void loadProductCategory()
+        {
+            ArrayList getCatrg = handleProducts.getCategory();
+            foreach (TableCategory category in getCatrg)
+            {
+
+                adddNewProducts_Category_comboBox.Items.Add(category.cagtegoryName);
+            }
+        }
+
+        /*
+        *  Load Product Name
+        */
+        public void loadProductName()
+        {
+            ArrayList getname = handleProducts.getProductNames();
+            foreach (TableProductName name in getname)
+            {
+
+                adddNewProducts_ProductName_comboBox.Items.Add(name.productName);
+            }
+        }
+
     }
 }
 

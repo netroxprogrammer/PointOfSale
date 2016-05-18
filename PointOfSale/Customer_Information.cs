@@ -27,5 +27,19 @@ namespace PointOfSale
         {
             this.TopMost = true;
         }
+
+        private void customerInformation_Discount_numericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String cutomerName = customerInformation_customerName_extBox.Text;
+            decimal customerDiscount = customerInformation_Discount_numericUpDown.Value;
+
+
+
+        }
     }
 }

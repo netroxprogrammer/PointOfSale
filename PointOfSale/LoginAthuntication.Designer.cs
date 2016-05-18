@@ -70,6 +70,7 @@
             this.loginAthuntication_comboBox.Name = "loginAthuntication_comboBox";
             this.loginAthuntication_comboBox.Size = new System.Drawing.Size(209, 34);
             this.loginAthuntication_comboBox.TabIndex = 2;
+            this.loginAthuntication_comboBox.SelectedIndexChanged += new System.EventHandler(this.loginAthuntication_comboBox_SelectedIndexChanged);
             // 
             // loginAthuntication_password_textbox
             // 

@@ -1,5 +1,7 @@
 ﻿using PointOfSale.applications;
+using PointOfSale.DbConfiguration;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,7 @@ namespace PointOfSale.TableHandlerForms
 {
     public partial class ImportSheet : Form
     {
+        DatabaseCommands dbCommands;
         public ImportSheet()
         {
             InitializeComponent();
@@ -72,6 +75,17 @@ namespace PointOfSale.TableHandlerForms
                 {
 
                 }
+            }
+        }
+
+        private void ImportSheet_Load(object sender, EventArgs e)
+        {
+
+            dbCommands = new DatabaseCommands();
+            ArrayList tablename = dbCommands.getTableLists();
+            foreach (String table in tablename)
+            {
+                importSheet_table_lcomboBox.Items.Add(table);
             }
         }
     }

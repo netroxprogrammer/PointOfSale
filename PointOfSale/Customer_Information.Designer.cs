@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.customerInformation_customerName_extBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.customerInformation_Discount_numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Payment = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.credit = new System.Windows.Forms.RadioButton();
-            this.cash = new System.Windows.Forms.RadioButton();
+            this.customerInformation_credit_radioButton = new System.Windows.Forms.RadioButton();
+            this.customerInformation_cash_radioButton = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.contact_information_groupBox = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -70,19 +70,20 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerInformation_Discount_numericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
             this.contact_information_groupBox.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // customerInformation_customerName_extBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(19, 33);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(299, 25);
-            this.textBox1.TabIndex = 0;
+            this.customerInformation_customerName_extBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInformation_customerName_extBox.Location = new System.Drawing.Point(19, 33);
+            this.customerInformation_customerName_extBox.Multiline = true;
+            this.customerInformation_customerName_extBox.Name = "customerInformation_customerName_extBox";
+            this.customerInformation_customerName_extBox.Size = new System.Drawing.Size(299, 25);
+            this.customerInformation_customerName_extBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -107,16 +108,25 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.customerInformation_Discount_numericUpDown);
             this.panel1.Controls.Add(this.Payment);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.customerInformation_customerName_extBox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(713, 110);
             this.panel1.TabIndex = 3;
+            // 
+            // customerInformation_Discount_numericUpDown
+            // 
+            this.customerInformation_Discount_numericUpDown.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInformation_Discount_numericUpDown.Location = new System.Drawing.Point(336, 33);
+            this.customerInformation_Discount_numericUpDown.Name = "customerInformation_Discount_numericUpDown";
+            this.customerInformation_Discount_numericUpDown.Size = new System.Drawing.Size(133, 26);
+            this.customerInformation_Discount_numericUpDown.TabIndex = 0;
+            this.customerInformation_Discount_numericUpDown.ValueChanged += new System.EventHandler(this.customerInformation_Discount_numericUpDown_ValueChanged);
             // 
             // Payment
             // 
@@ -132,8 +142,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.credit);
-            this.panel2.Controls.Add(this.cash);
+            this.panel2.Controls.Add(this.customerInformation_credit_radioButton);
+            this.panel2.Controls.Add(this.customerInformation_cash_radioButton);
             this.panel2.ForeColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(501, 33);
             this.panel2.Name = "panel2";
@@ -141,31 +151,31 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // credit
+            // customerInformation_credit_radioButton
             // 
-            this.credit.AutoSize = true;
-            this.credit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.credit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.credit.Location = new System.Drawing.Point(82, 3);
-            this.credit.Name = "credit";
-            this.credit.Size = new System.Drawing.Size(59, 20);
-            this.credit.TabIndex = 1;
-            this.credit.TabStop = true;
-            this.credit.Text = "credit";
-            this.credit.UseVisualStyleBackColor = true;
+            this.customerInformation_credit_radioButton.AutoSize = true;
+            this.customerInformation_credit_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInformation_credit_radioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.customerInformation_credit_radioButton.Location = new System.Drawing.Point(82, 3);
+            this.customerInformation_credit_radioButton.Name = "customerInformation_credit_radioButton";
+            this.customerInformation_credit_radioButton.Size = new System.Drawing.Size(59, 20);
+            this.customerInformation_credit_radioButton.TabIndex = 1;
+            this.customerInformation_credit_radioButton.TabStop = true;
+            this.customerInformation_credit_radioButton.Text = "credit";
+            this.customerInformation_credit_radioButton.UseVisualStyleBackColor = true;
             // 
-            // cash
+            // customerInformation_cash_radioButton
             // 
-            this.cash.AutoSize = true;
-            this.cash.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.cash.Location = new System.Drawing.Point(3, 3);
-            this.cash.Name = "cash";
-            this.cash.Size = new System.Drawing.Size(55, 20);
-            this.cash.TabIndex = 0;
-            this.cash.TabStop = true;
-            this.cash.Text = "cash";
-            this.cash.UseVisualStyleBackColor = true;
+            this.customerInformation_cash_radioButton.AutoSize = true;
+            this.customerInformation_cash_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInformation_cash_radioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.customerInformation_cash_radioButton.Location = new System.Drawing.Point(3, 3);
+            this.customerInformation_cash_radioButton.Name = "customerInformation_cash_radioButton";
+            this.customerInformation_cash_radioButton.Size = new System.Drawing.Size(55, 20);
+            this.customerInformation_cash_radioButton.TabIndex = 0;
+            this.customerInformation_cash_radioButton.TabStop = true;
+            this.customerInformation_cash_radioButton.Text = "cash";
+            this.customerInformation_cash_radioButton.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -177,15 +187,6 @@
             this.label3.Size = new System.Drawing.Size(65, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "Discount";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(336, 33);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 25);
-            this.textBox2.TabIndex = 2;
             // 
             // contact_information_groupBox
             // 
@@ -504,6 +505,7 @@
             this.button1.Text = "Save/New";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Customer_Information
             // 
@@ -522,6 +524,7 @@
             this.Load += new System.EventHandler(this.Customer_Information_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerInformation_Discount_numericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.contact_information_groupBox.ResumeLayout(false);
@@ -534,16 +537,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox customerInformation_customerName_extBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton cash;
+        private System.Windows.Forms.RadioButton customerInformation_cash_radioButton;
         private System.Windows.Forms.GroupBox contact_information_groupBox;
-        private System.Windows.Forms.RadioButton credit;
+        private System.Windows.Forms.RadioButton customerInformation_credit_radioButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label Payment;
         private System.Windows.Forms.TextBox textBox3;
@@ -574,5 +576,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown customerInformation_Discount_numericUpDown;
     }
 }
