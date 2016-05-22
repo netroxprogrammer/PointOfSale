@@ -103,10 +103,14 @@
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\CutomerData\CustomerBasic.cs" />
     <Compile Include="Utils\CutomerData\CustomerInfomation.cs" />
+    <Compile Include="Utils\TableDescription.cs" />
     <Compile Include="Utils\TableCategory.cs" />
     <Compile Include="Utils\TableColumns.cs" />
     <Compile Include="Utils\TableCompany.cs" />
+    <Compile Include="Utils\TableLocation.cs" />
     <Compile Include="Utils\TableProductName.cs" />
+    <Compile Include="Utils\TablePurpose.cs" />
+    <Compile Include="Utils\TableUnits.cs" />
     <EmbeddedResource Include="AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>

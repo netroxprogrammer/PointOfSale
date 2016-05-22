@@ -34,32 +34,32 @@
             this.otherthings_ProductDiscount_text = new System.Windows.Forms.TextBox();
             this.otherthings_ProductName_text = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.otherthings_Category_text = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.otherthings_CompanyName_text = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.otherthings_PurposeNAme_text = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.otherthings_UnitName_text = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.otherthings_saveUnit_btn = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.otherthings_savePurpose_btn = new System.Windows.Forms.Button();
+            this.otherthings_saveDesc_btn = new System.Windows.Forms.Button();
+            this.otherthings_saveCompany_btn = new System.Windows.Forms.Button();
+            this.otherthings_saveCategory_btn = new System.Windows.Forms.Button();
             this.otherthings_saveProduct_btn = new System.Windows.Forms.Button();
+            this.otherthings_DescreptionNAme_text = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -119,8 +119,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.otherthings_saveCategory_btn);
+            this.groupBox2.Controls.Add(this.otherthings_Category_text);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(368, 75);
@@ -130,12 +130,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Category";
             // 
-            // textBox3
+            // otherthings_Category_text
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 26);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 27);
-            this.textBox3.TabIndex = 5;
+            this.otherthings_Category_text.Location = new System.Drawing.Point(126, 26);
+            this.otherthings_Category_text.Name = "otherthings_Category_text";
+            this.otherthings_Category_text.Size = new System.Drawing.Size(182, 27);
+            this.otherthings_Category_text.TabIndex = 5;
             // 
             // label3
             // 
@@ -148,8 +148,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.otherthings_saveCompany_btn);
+            this.groupBox3.Controls.Add(this.otherthings_CompanyName_text);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(27, 232);
@@ -168,17 +168,17 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Company Name";
             // 
-            // textBox4
+            // otherthings_CompanyName_text
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 32);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(182, 27);
-            this.textBox4.TabIndex = 5;
+            this.otherthings_CompanyName_text.Location = new System.Drawing.Point(117, 32);
+            this.otherthings_CompanyName_text.Name = "otherthings_CompanyName_text";
+            this.otherthings_CompanyName_text.Size = new System.Drawing.Size(182, 27);
+            this.otherthings_CompanyName_text.TabIndex = 5;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.otherthings_DescreptionNAme_text);
+            this.groupBox4.Controls.Add(this.otherthings_saveDesc_btn);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(368, 240);
@@ -187,13 +187,6 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Description";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(120, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(182, 27);
-            this.textBox5.TabIndex = 8;
             // 
             // label5
             // 
@@ -206,8 +199,8 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button5);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.otherthings_savePurpose_btn);
+            this.groupBox5.Controls.Add(this.otherthings_PurposeNAme_text);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(27, 379);
@@ -215,14 +208,14 @@
             this.groupBox5.Size = new System.Drawing.Size(299, 106);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Perpose";
+            this.groupBox5.Text = "Purpose";
             // 
-            // textBox6
+            // otherthings_PurposeNAme_text
             // 
-            this.textBox6.Location = new System.Drawing.Point(111, 26);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(182, 27);
-            this.textBox6.TabIndex = 8;
+            this.otherthings_PurposeNAme_text.Location = new System.Drawing.Point(111, 26);
+            this.otherthings_PurposeNAme_text.Name = "otherthings_PurposeNAme_text";
+            this.otherthings_PurposeNAme_text.Size = new System.Drawing.Size(182, 27);
+            this.otherthings_PurposeNAme_text.TabIndex = 8;
             // 
             // label6
             // 
@@ -230,9 +223,9 @@
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Location = new System.Drawing.Point(17, 29);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 19);
+            this.label6.Size = new System.Drawing.Size(61, 19);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Location";
+            this.label6.Text = "Purpose";
             // 
             // groupBox6
             // 
@@ -266,8 +259,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button7);
-            this.groupBox7.Controls.Add(this.textBox8);
+            this.groupBox7.Controls.Add(this.otherthings_saveUnit_btn);
+            this.groupBox7.Controls.Add(this.otherthings_UnitName_text);
             this.groupBox7.Controls.Add(this.label8);
             this.groupBox7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(368, 385);
@@ -276,13 +269,14 @@
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Units";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
-            // textBox8
+            // otherthings_UnitName_text
             // 
-            this.textBox8.Location = new System.Drawing.Point(115, 26);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(182, 27);
-            this.textBox8.TabIndex = 10;
+            this.otherthings_UnitName_text.Location = new System.Drawing.Point(115, 26);
+            this.otherthings_UnitName_text.Name = "otherthings_UnitName_text";
+            this.otherthings_UnitName_text.Size = new System.Drawing.Size(182, 27);
+            this.otherthings_UnitName_text.TabIndex = 10;
             // 
             // label8
             // 
@@ -307,23 +301,24 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.android_icon_96x961;
-            this.pictureBox1.Location = new System.Drawing.Point(853, 297);
+            this.pictureBox1.Location = new System.Drawing.Point(852, 405);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 106);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button7
+            // otherthings_saveUnit_btn
             // 
-            this.button7.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button7.Location = new System.Drawing.Point(115, 66);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(79, 28);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Save";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
+            this.otherthings_saveUnit_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveUnit_btn.Location = new System.Drawing.Point(115, 66);
+            this.otherthings_saveUnit_btn.Name = "otherthings_saveUnit_btn";
+            this.otherthings_saveUnit_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveUnit_btn.TabIndex = 10;
+            this.otherthings_saveUnit_btn.Text = "Save";
+            this.otherthings_saveUnit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveUnit_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveUnit_btn.Click += new System.EventHandler(this.otherthings_saveUnit_btn_Click);
             // 
             // button6
             // 
@@ -336,49 +331,53 @@
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // otherthings_savePurpose_btn
             // 
-            this.button5.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button5.Location = new System.Drawing.Point(89, 72);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(79, 28);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Save";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.otherthings_savePurpose_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_savePurpose_btn.Location = new System.Drawing.Point(89, 72);
+            this.otherthings_savePurpose_btn.Name = "otherthings_savePurpose_btn";
+            this.otherthings_savePurpose_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_savePurpose_btn.TabIndex = 8;
+            this.otherthings_savePurpose_btn.Text = "Save";
+            this.otherthings_savePurpose_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_savePurpose_btn.UseVisualStyleBackColor = true;
+            this.otherthings_savePurpose_btn.Click += new System.EventHandler(this.otherthings_savePurpose_btn_Click);
             // 
-            // button4
+            // otherthings_saveDesc_btn
             // 
-            this.button4.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button4.Location = new System.Drawing.Point(111, 70);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 28);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Save";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.otherthings_saveDesc_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveDesc_btn.Location = new System.Drawing.Point(111, 70);
+            this.otherthings_saveDesc_btn.Name = "otherthings_saveDesc_btn";
+            this.otherthings_saveDesc_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveDesc_btn.TabIndex = 8;
+            this.otherthings_saveDesc_btn.Text = "Save";
+            this.otherthings_saveDesc_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveDesc_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveDesc_btn.Click += new System.EventHandler(this.otherthings_saveDesc_btn_Click);
             // 
-            // button3
+            // otherthings_saveCompany_btn
             // 
-            this.button3.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button3.Location = new System.Drawing.Point(111, 78);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 28);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Save";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.otherthings_saveCompany_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveCompany_btn.Location = new System.Drawing.Point(111, 78);
+            this.otherthings_saveCompany_btn.Name = "otherthings_saveCompany_btn";
+            this.otherthings_saveCompany_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveCompany_btn.TabIndex = 7;
+            this.otherthings_saveCompany_btn.Text = "Save";
+            this.otherthings_saveCompany_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveCompany_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveCompany_btn.Click += new System.EventHandler(this.otherthings_saveCompany_btn_Click);
             // 
-            // button2
+            // otherthings_saveCategory_btn
             // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button2.Location = new System.Drawing.Point(111, 77);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 29);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Save";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveCategory_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherthings_saveCategory_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveCategory_btn.Location = new System.Drawing.Point(111, 77);
+            this.otherthings_saveCategory_btn.Name = "otherthings_saveCategory_btn";
+            this.otherthings_saveCategory_btn.Size = new System.Drawing.Size(79, 29);
+            this.otherthings_saveCategory_btn.TabIndex = 0;
+            this.otherthings_saveCategory_btn.Text = "Save";
+            this.otherthings_saveCategory_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveCategory_btn.Click += new System.EventHandler(this.otherthings_saveCategory_btn_Click);
             // 
             // otherthings_saveProduct_btn
             // 
@@ -390,8 +389,16 @@
             this.otherthings_saveProduct_btn.TabIndex = 4;
             this.otherthings_saveProduct_btn.Text = "Save";
             this.otherthings_saveProduct_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveProduct_btn.UseMnemonic = false;
             this.otherthings_saveProduct_btn.UseVisualStyleBackColor = true;
             this.otherthings_saveProduct_btn.Click += new System.EventHandler(this.otherthings_saveProduct_btn_Click);
+            // 
+            // otherthings_DescreptionNAme_text
+            // 
+            this.otherthings_DescreptionNAme_text.Location = new System.Drawing.Point(98, 26);
+            this.otherthings_DescreptionNAme_text.Name = "otherthings_DescreptionNAme_text";
+            this.otherthings_DescreptionNAme_text.Size = new System.Drawing.Size(204, 27);
+            this.otherthings_DescreptionNAme_text.TabIndex = 10;
             // 
             // AddOtherThings
             // 
@@ -442,29 +449,29 @@
         private System.Windows.Forms.Button otherthings_saveProduct_btn;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox otherthings_Category_text;
+        private System.Windows.Forms.Button otherthings_saveCategory_btn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox otherthings_CompanyName_text;
+        private System.Windows.Forms.Button otherthings_saveCompany_btn;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button otherthings_saveDesc_btn;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox otherthings_PurposeNAme_text;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button otherthings_savePurpose_btn;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button otherthings_saveUnit_btn;
+        private System.Windows.Forms.TextBox otherthings_UnitName_text;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox otherthings_DescreptionNAme_text;
     }
 }
