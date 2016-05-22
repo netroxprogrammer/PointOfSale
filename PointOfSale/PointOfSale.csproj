@@ -67,7 +67,14 @@
     <Compile Include="DbConfiguration\DatabaseCommands.cs" />
     <Compile Include="DbConfiguration\DatabaseConnections.cs" />
     <Compile Include="DbConfiguration\HandleCustomer.cs" />
+    <Compile Include="DbConfiguration\HandleEmployee.cs" />
     <Compile Include="DbConfiguration\HandleProducts.cs" />
+    <Compile Include="Employee\AddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,20 +110,25 @@
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\CutomerData\CustomerBasic.cs" />
     <Compile Include="Utils\CutomerData\CustomerInfomation.cs" />
-    <Compile Include="Utils\TableDescription.cs" />
-    <Compile Include="Utils\TableCategory.cs" />
-    <Compile Include="Utils\TableColumns.cs" />
-    <Compile Include="Utils\TableCompany.cs" />
-    <Compile Include="Utils\TableDistributors.cs" />
-    <Compile Include="Utils\TableLocation.cs" />
-    <Compile Include="Utils\TableProductName.cs" />
-    <Compile Include="Utils\TablePurpose.cs" />
-    <Compile Include="Utils\TableUnits.cs" />
+    <Compile Include="Utils\TablesClass\TableEmployeeEmergancey.cs" />
+    <Compile Include="Utils\TablesClass\TableDescription.cs" />
+    <Compile Include="Utils\TablesClass\TableCategory.cs" />
+    <Compile Include="Utils\TablesClass\TableColumns.cs" />
+    <Compile Include="Utils\TablesClass\TableCompany.cs" />
+    <Compile Include="Utils\TablesClass\TableDistributors.cs" />
+    <Compile Include="Utils\TablesClass\TableEmployee.cs" />
+    <Compile Include="Utils\TablesClass\TableLocation.cs" />
+    <Compile Include="Utils\TablesClass\TableProductName.cs" />
+    <Compile Include="Utils\TablesClass\TablePurpose.cs" />
+    <Compile Include="Utils\TablesClass\TableUnits.cs" />
     <EmbeddedResource Include="AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Information.resx">
       <DependentUpon>Customer_Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

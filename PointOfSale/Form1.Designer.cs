@@ -338,6 +338,7 @@
             this.addNewEmployeeToolStripMenuItem.Name = "addNewEmployeeToolStripMenuItem";
             this.addNewEmployeeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.addNewEmployeeToolStripMenuItem.Text = "Add New Employee";
+            this.addNewEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addNewEmployeeToolStripMenuItem_Click);
             // 
             // listOfEmployeeToolStripMenuItem
             // 

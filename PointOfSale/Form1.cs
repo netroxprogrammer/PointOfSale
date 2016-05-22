@@ -1,4 +1,5 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.Employee;
 using PointOfSale.OthersForms;
 using PointOfSale.TableHandlerForms;
 using PointOfSale.TableInformationForm;
@@ -153,6 +154,11 @@ namespace PointOfSale
         {
             new AddOtherThings().Show();
 
+        }
+
+        private void addNewEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddEmployee().Show();
         }
     }
 }
