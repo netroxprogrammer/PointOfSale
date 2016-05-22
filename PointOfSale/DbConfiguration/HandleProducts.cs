@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -91,5 +92,34 @@ namespace PointOfSale.DbConfiguration
             reader.Close();
             return list;
         }
+
+
+        /**
+        Add Product Names and  Dicounts
+        */
+        public int addProductName(TableProductName names)
+        {
+
+            Debug.WriteLine("Add Customer Data");
+
+            ArrayList list = new ArrayList();
+            String sql = "insert into addProductNames( productNames, productMaxDiscount) output INSERTED.productNameId"+
+                " values(@productNames,@productMaxDiscount)";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+            commands.Parameters.AddWithValue("@productNames", names.productName);
+            commands.Parameters.AddWithValue("@productMaxDiscount", names.productMaxDiscount);
+           
+
+            int id = (int)commands.ExecuteScalar();
+
+
+            Debug.WriteLine("addProductNames Database Entry number " + id);
+            return id;
+
+        }
+
     }
 }

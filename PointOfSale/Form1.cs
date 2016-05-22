@@ -1,4 +1,5 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.OthersForms;
 using PointOfSale.TableHandlerForms;
 using PointOfSale.TableInformationForm;
 using PointOfSale.Utils;
@@ -146,6 +147,12 @@ namespace PointOfSale
         private void importSheetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new ImportSheet().Show();
+        }
+
+        private void addProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddOtherThings().Show();
+
         }
     }
 }

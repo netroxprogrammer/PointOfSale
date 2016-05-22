@@ -12,6 +12,7 @@ namespace PointOfSale.Utils
     {
         private int _productId;
         private String _productName;
+        private int _productMaxDiscount;
 
         public int productId
         {
@@ -35,6 +36,19 @@ namespace PointOfSale.Utils
             {
 
                 this._productName = value;
+            }
+        }
+
+        public int productMaxDiscount
+        {
+
+            get
+            {
+                return this._productMaxDiscount;
+            }
+            set
+            {
+                this._productMaxDiscount = value;
             }
         }
 

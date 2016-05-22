@@ -41,34 +41,34 @@
             this.label3 = new System.Windows.Forms.Label();
             this.contact_information_groupBox = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.customerInformation_Remark_extBox = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.customerInformation_Address_extBox = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.customerInformation_Email_extBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.customerInformation_Fax3_extBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.customerInformation_Fax2_extBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.customerInformation_Fax1_extBox = new System.Windows.Forms.TextBox();
+            this.customerInformation_Phone3_extBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.customerInformation_Phone2_extBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.customerInformation_Phone1_extBox = new System.Windows.Forms.TextBox();
+            this.customerInformation_RefferedBy_extBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.customerInformation_ContactPerson_extBox = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.customerInformation_default_checkBok = new System.Windows.Forms.CheckBox();
+            this.customerInformation_inactive_checkBok = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.customerInformation_Cancel_Button = new System.Windows.Forms.Button();
+            this.customerInformation_SaveClose_Button = new System.Windows.Forms.Button();
+            this.customerInformation_SaveNew_Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerInformation_Discount_numericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
@@ -191,27 +191,27 @@
             // contact_information_groupBox
             // 
             this.contact_information_groupBox.Controls.Add(this.label14);
-            this.contact_information_groupBox.Controls.Add(this.richTextBox2);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Remark_extBox);
             this.contact_information_groupBox.Controls.Add(this.label13);
-            this.contact_information_groupBox.Controls.Add(this.richTextBox1);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Address_extBox);
             this.contact_information_groupBox.Controls.Add(this.label10);
-            this.contact_information_groupBox.Controls.Add(this.textBox11);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Email_extBox);
             this.contact_information_groupBox.Controls.Add(this.label11);
-            this.contact_information_groupBox.Controls.Add(this.textBox9);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Fax3_extBox);
             this.contact_information_groupBox.Controls.Add(this.label12);
-            this.contact_information_groupBox.Controls.Add(this.textBox10);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Fax2_extBox);
             this.contact_information_groupBox.Controls.Add(this.label9);
             this.contact_information_groupBox.Controls.Add(this.label8);
-            this.contact_information_groupBox.Controls.Add(this.textBox8);
-            this.contact_information_groupBox.Controls.Add(this.textBox7);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Fax1_extBox);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Phone3_extBox);
             this.contact_information_groupBox.Controls.Add(this.label7);
-            this.contact_information_groupBox.Controls.Add(this.textBox6);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Phone2_extBox);
             this.contact_information_groupBox.Controls.Add(this.label6);
-            this.contact_information_groupBox.Controls.Add(this.textBox5);
-            this.contact_information_groupBox.Controls.Add(this.textBox4);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_Phone1_extBox);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_RefferedBy_extBox);
             this.contact_information_groupBox.Controls.Add(this.label5);
             this.contact_information_groupBox.Controls.Add(this.label4);
-            this.contact_information_groupBox.Controls.Add(this.textBox3);
+            this.contact_information_groupBox.Controls.Add(this.customerInformation_ContactPerson_extBox);
             this.contact_information_groupBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contact_information_groupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.contact_information_groupBox.Location = new System.Drawing.Point(12, 139);
@@ -232,13 +232,13 @@
             this.label14.TabIndex = 26;
             this.label14.Text = "Remarks";
             // 
-            // richTextBox2
+            // customerInformation_Remark_extBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(361, 203);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(346, 99);
-            this.richTextBox2.TabIndex = 25;
-            this.richTextBox2.Text = "";
+            this.customerInformation_Remark_extBox.Location = new System.Drawing.Point(361, 203);
+            this.customerInformation_Remark_extBox.Name = "customerInformation_Remark_extBox";
+            this.customerInformation_Remark_extBox.Size = new System.Drawing.Size(346, 99);
+            this.customerInformation_Remark_extBox.TabIndex = 25;
+            this.customerInformation_Remark_extBox.Text = "";
             // 
             // label13
             // 
@@ -251,13 +251,13 @@
             this.label13.TabIndex = 24;
             this.label13.Text = "Address";
             // 
-            // richTextBox1
+            // customerInformation_Address_extBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(20, 203);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(328, 99);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
+            this.customerInformation_Address_extBox.Location = new System.Drawing.Point(20, 203);
+            this.customerInformation_Address_extBox.Name = "customerInformation_Address_extBox";
+            this.customerInformation_Address_extBox.Size = new System.Drawing.Size(328, 99);
+            this.customerInformation_Address_extBox.TabIndex = 23;
+            this.customerInformation_Address_extBox.Text = "";
             // 
             // label10
             // 
@@ -270,13 +270,13 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Email";
             // 
-            // textBox11
+            // customerInformation_Email_extBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(361, 153);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(346, 27);
-            this.textBox11.TabIndex = 21;
+            this.customerInformation_Email_extBox.Location = new System.Drawing.Point(361, 153);
+            this.customerInformation_Email_extBox.Multiline = true;
+            this.customerInformation_Email_extBox.Name = "customerInformation_Email_extBox";
+            this.customerInformation_Email_extBox.Size = new System.Drawing.Size(346, 27);
+            this.customerInformation_Email_extBox.TabIndex = 21;
             // 
             // label11
             // 
@@ -285,17 +285,17 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label11.Location = new System.Drawing.Point(189, 132);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 18);
+            this.label11.Size = new System.Drawing.Size(37, 18);
             this.label11.TabIndex = 20;
-            this.label11.Text = "Fax2";
+            this.label11.Text = "Fax3";
             // 
-            // textBox9
+            // customerInformation_Fax3_extBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(191, 153);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(161, 27);
-            this.textBox9.TabIndex = 19;
+            this.customerInformation_Fax3_extBox.Location = new System.Drawing.Point(191, 153);
+            this.customerInformation_Fax3_extBox.Multiline = true;
+            this.customerInformation_Fax3_extBox.Name = "customerInformation_Fax3_extBox";
+            this.customerInformation_Fax3_extBox.Size = new System.Drawing.Size(161, 27);
+            this.customerInformation_Fax3_extBox.TabIndex = 19;
             // 
             // label12
             // 
@@ -308,13 +308,13 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Fax2";
             // 
-            // textBox10
+            // customerInformation_Fax2_extBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(19, 153);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(163, 27);
-            this.textBox10.TabIndex = 17;
+            this.customerInformation_Fax2_extBox.Location = new System.Drawing.Point(19, 153);
+            this.customerInformation_Fax2_extBox.Multiline = true;
+            this.customerInformation_Fax2_extBox.Name = "customerInformation_Fax2_extBox";
+            this.customerInformation_Fax2_extBox.Size = new System.Drawing.Size(163, 27);
+            this.customerInformation_Fax2_extBox.TabIndex = 17;
             // 
             // label9
             // 
@@ -338,21 +338,21 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Phone 3";
             // 
-            // textBox8
+            // customerInformation_Fax1_extBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(543, 102);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(164, 27);
-            this.textBox8.TabIndex = 14;
+            this.customerInformation_Fax1_extBox.Location = new System.Drawing.Point(543, 102);
+            this.customerInformation_Fax1_extBox.Multiline = true;
+            this.customerInformation_Fax1_extBox.Name = "customerInformation_Fax1_extBox";
+            this.customerInformation_Fax1_extBox.Size = new System.Drawing.Size(164, 27);
+            this.customerInformation_Fax1_extBox.TabIndex = 14;
             // 
-            // textBox7
+            // customerInformation_Phone3_extBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(361, 102);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(164, 27);
-            this.textBox7.TabIndex = 13;
+            this.customerInformation_Phone3_extBox.Location = new System.Drawing.Point(361, 102);
+            this.customerInformation_Phone3_extBox.Multiline = true;
+            this.customerInformation_Phone3_extBox.Name = "customerInformation_Phone3_extBox";
+            this.customerInformation_Phone3_extBox.Size = new System.Drawing.Size(164, 27);
+            this.customerInformation_Phone3_extBox.TabIndex = 13;
             // 
             // label7
             // 
@@ -365,13 +365,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Phone 2";
             // 
-            // textBox6
+            // customerInformation_Phone2_extBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(188, 102);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(164, 27);
-            this.textBox6.TabIndex = 11;
+            this.customerInformation_Phone2_extBox.Location = new System.Drawing.Point(188, 102);
+            this.customerInformation_Phone2_extBox.Multiline = true;
+            this.customerInformation_Phone2_extBox.Name = "customerInformation_Phone2_extBox";
+            this.customerInformation_Phone2_extBox.Size = new System.Drawing.Size(164, 27);
+            this.customerInformation_Phone2_extBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -384,21 +384,21 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Phone 1";
             // 
-            // textBox5
+            // customerInformation_Phone1_extBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(18, 102);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 27);
-            this.textBox5.TabIndex = 9;
+            this.customerInformation_Phone1_extBox.Location = new System.Drawing.Point(18, 102);
+            this.customerInformation_Phone1_extBox.Multiline = true;
+            this.customerInformation_Phone1_extBox.Name = "customerInformation_Phone1_extBox";
+            this.customerInformation_Phone1_extBox.Size = new System.Drawing.Size(164, 27);
+            this.customerInformation_Phone1_extBox.TabIndex = 9;
             // 
-            // textBox4
+            // customerInformation_RefferedBy_extBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(361, 51);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(346, 27);
-            this.textBox4.TabIndex = 8;
+            this.customerInformation_RefferedBy_extBox.Location = new System.Drawing.Point(361, 51);
+            this.customerInformation_RefferedBy_extBox.Multiline = true;
+            this.customerInformation_RefferedBy_extBox.Name = "customerInformation_RefferedBy_extBox";
+            this.customerInformation_RefferedBy_extBox.Size = new System.Drawing.Size(346, 27);
+            this.customerInformation_RefferedBy_extBox.TabIndex = 8;
             // 
             // label5
             // 
@@ -422,13 +422,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Contact Person";
             // 
-            // textBox3
+            // customerInformation_ContactPerson_extBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(19, 51);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(319, 27);
-            this.textBox3.TabIndex = 0;
+            this.customerInformation_ContactPerson_extBox.Location = new System.Drawing.Point(19, 51);
+            this.customerInformation_ContactPerson_extBox.Multiline = true;
+            this.customerInformation_ContactPerson_extBox.Name = "customerInformation_ContactPerson_extBox";
+            this.customerInformation_ContactPerson_extBox.Size = new System.Drawing.Size(319, 27);
+            this.customerInformation_ContactPerson_extBox.TabIndex = 0;
             // 
             // imageList1
             // 
@@ -436,76 +436,76 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // checkBox1
+            // customerInformation_default_checkBok
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.checkBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.checkBox1.Location = new System.Drawing.Point(12, 466);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(128, 19);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Default Customers";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.customerInformation_default_checkBok.AutoSize = true;
+            this.customerInformation_default_checkBok.BackColor = System.Drawing.SystemColors.Control;
+            this.customerInformation_default_checkBok.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInformation_default_checkBok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.customerInformation_default_checkBok.Location = new System.Drawing.Point(12, 466);
+            this.customerInformation_default_checkBok.Name = "customerInformation_default_checkBok";
+            this.customerInformation_default_checkBok.Size = new System.Drawing.Size(128, 19);
+            this.customerInformation_default_checkBok.TabIndex = 4;
+            this.customerInformation_default_checkBok.Text = "Default Customers";
+            this.customerInformation_default_checkBok.UseVisualStyleBackColor = false;
             // 
-            // checkBox2
+            // customerInformation_inactive_checkBok
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.checkBox2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.checkBox2.Location = new System.Drawing.Point(12, 501);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(136, 19);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Customer is Inactive";
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.customerInformation_inactive_checkBok.AutoSize = true;
+            this.customerInformation_inactive_checkBok.BackColor = System.Drawing.SystemColors.Control;
+            this.customerInformation_inactive_checkBok.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerInformation_inactive_checkBok.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.customerInformation_inactive_checkBok.Location = new System.Drawing.Point(12, 501);
+            this.customerInformation_inactive_checkBok.Name = "customerInformation_inactive_checkBok";
+            this.customerInformation_inactive_checkBok.Size = new System.Drawing.Size(136, 19);
+            this.customerInformation_inactive_checkBok.TabIndex = 5;
+            this.customerInformation_inactive_checkBok.Text = "Customer is Inactive";
+            this.customerInformation_inactive_checkBok.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.customerInformation_Cancel_Button);
+            this.panel3.Controls.Add(this.customerInformation_SaveClose_Button);
+            this.panel3.Controls.Add(this.customerInformation_SaveNew_Button);
             this.panel3.Location = new System.Drawing.Point(374, 466);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(354, 54);
             this.panel3.TabIndex = 6;
             // 
-            // button3
+            // customerInformation_Cancel_Button
             // 
-            this.button3.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
-            this.button3.Location = new System.Drawing.Point(233, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 29);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cancel";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.customerInformation_Cancel_Button.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
+            this.customerInformation_Cancel_Button.Location = new System.Drawing.Point(233, 12);
+            this.customerInformation_Cancel_Button.Name = "customerInformation_Cancel_Button";
+            this.customerInformation_Cancel_Button.Size = new System.Drawing.Size(90, 29);
+            this.customerInformation_Cancel_Button.TabIndex = 2;
+            this.customerInformation_Cancel_Button.Text = "Cancel";
+            this.customerInformation_Cancel_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customerInformation_Cancel_Button.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // customerInformation_SaveClose_Button
             // 
-            this.button2.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
-            this.button2.Location = new System.Drawing.Point(122, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Save/Close";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.customerInformation_SaveClose_Button.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
+            this.customerInformation_SaveClose_Button.Location = new System.Drawing.Point(122, 12);
+            this.customerInformation_SaveClose_Button.Name = "customerInformation_SaveClose_Button";
+            this.customerInformation_SaveClose_Button.Size = new System.Drawing.Size(93, 29);
+            this.customerInformation_SaveClose_Button.TabIndex = 1;
+            this.customerInformation_SaveClose_Button.Text = "Save/Close";
+            this.customerInformation_SaveClose_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customerInformation_SaveClose_Button.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // customerInformation_SaveNew_Button
             // 
-            this.button1.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button1.Location = new System.Drawing.Point(5, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Save/New";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.customerInformation_SaveNew_Button.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.customerInformation_SaveNew_Button.Location = new System.Drawing.Point(5, 12);
+            this.customerInformation_SaveNew_Button.Name = "customerInformation_SaveNew_Button";
+            this.customerInformation_SaveNew_Button.Size = new System.Drawing.Size(95, 29);
+            this.customerInformation_SaveNew_Button.TabIndex = 0;
+            this.customerInformation_SaveNew_Button.Text = "Save/New";
+            this.customerInformation_SaveNew_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.customerInformation_SaveNew_Button.UseVisualStyleBackColor = true;
+            this.customerInformation_SaveNew_Button.Click += new System.EventHandler(this.button1_Click);
             // 
             // Customer_Information
             // 
@@ -513,14 +513,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 532);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.customerInformation_inactive_checkBok);
+            this.Controls.Add(this.customerInformation_default_checkBok);
             this.Controls.Add(this.contact_information_groupBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
             this.Name = "Customer_Information";
-            this.Text = "Customer Information";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.Customer_Information_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -548,34 +548,34 @@
         private System.Windows.Forms.RadioButton customerInformation_credit_radioButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label Payment;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox customerInformation_ContactPerson_extBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox customerInformation_RefferedBy_extBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox customerInformation_Phone1_extBox;
+        private System.Windows.Forms.TextBox customerInformation_Phone3_extBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox customerInformation_Phone2_extBox;
+        private System.Windows.Forms.TextBox customerInformation_Fax1_extBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox customerInformation_Fax3_extBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox customerInformation_Fax2_extBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox customerInformation_Email_extBox;
+        private System.Windows.Forms.RichTextBox customerInformation_Address_extBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.RichTextBox customerInformation_Remark_extBox;
+        private System.Windows.Forms.CheckBox customerInformation_default_checkBok;
+        private System.Windows.Forms.CheckBox customerInformation_inactive_checkBok;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button customerInformation_SaveNew_Button;
+        private System.Windows.Forms.Button customerInformation_SaveClose_Button;
+        private System.Windows.Forms.Button customerInformation_Cancel_Button;
         private System.Windows.Forms.NumericUpDown customerInformation_Discount_numericUpDown;
     }
 }

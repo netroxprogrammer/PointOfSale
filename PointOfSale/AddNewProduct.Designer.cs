@@ -41,6 +41,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -186,9 +186,9 @@
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label26.Location = new System.Drawing.Point(466, 164);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(67, 19);
+            this.label26.Size = new System.Drawing.Size(43, 19);
             this.label26.TabIndex = 27;
-            this.label26.Text = "Category";
+            this.label26.Text = "Units";
             // 
             // textBox17
             // 
@@ -255,15 +255,34 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.comboBox7);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox5.Location = new System.Drawing.Point(316, 312);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(272, 121);
+            this.groupBox5.Size = new System.Drawing.Size(272, 127);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Distributers";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(33, 94);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(123, 27);
+            this.textBox7.TabIndex = 8;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(35, 70);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(121, 19);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Item Fix Discount";
             // 
             // comboBox7
             // 
@@ -362,8 +381,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.textBox6);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.textBox5);
@@ -380,26 +397,6 @@
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock & Store";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label15.Location = new System.Drawing.Point(468, 23);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 19);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "Max Sale";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(472, 45);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(110, 21);
-            this.textBox7.TabIndex = 29;
             // 
             // textBox6
             // 
@@ -795,6 +792,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -836,8 +834,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
@@ -874,5 +870,7 @@
         private System.Windows.Forms.ComboBox comboBox8;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox adddNewProducts_Category_comboBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
