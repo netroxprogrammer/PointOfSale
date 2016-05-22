@@ -237,5 +237,55 @@ namespace PointOfSale.DbConfiguration
             return id;
 
         }
+
+        /*
+        Add Location
+         */
+
+        public int addLocationName(TableLocation names)
+        {
+
+            Debug.WriteLine("Add addLocationName Data");
+
+            String sql = "insert into Location(locationName) output INSERTED.locationId" +
+                " values(@locationName)";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+            commands.Parameters.AddWithValue("@locationName", names.locationName);
+
+            int id = (int)commands.ExecuteScalar();
+
+
+            Debug.WriteLine("addLocationName Database Entry number " + id);
+            return id;
+
+        }
+
+        /*
+        Add Location
+         */
+
+        public int addDistributorsName(TableDistributors names)
+        {
+
+            Debug.WriteLine("Add addDistributorsName Data");
+
+            String sql = "insert into Distributors(distributorsName) output INSERTED.distributorsId" +
+                " values(@distributorsName)";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+            commands.Parameters.AddWithValue("@distributorsName", names.distributorsName);
+
+            int id = (int)commands.ExecuteScalar();
+
+
+            Debug.WriteLine("addDistributorsName Database Entry number " + id);
+            return id;
+
+        }
     }
 }

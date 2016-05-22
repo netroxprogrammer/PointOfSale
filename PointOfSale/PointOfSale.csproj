@@ -107,6 +107,7 @@
     <Compile Include="Utils\TableCategory.cs" />
     <Compile Include="Utils\TableColumns.cs" />
     <Compile Include="Utils\TableCompany.cs" />
+    <Compile Include="Utils\TableDistributors.cs" />
     <Compile Include="Utils\TableLocation.cs" />
     <Compile Include="Utils\TableProductName.cs" />
     <Compile Include="Utils\TablePurpose.cs" />

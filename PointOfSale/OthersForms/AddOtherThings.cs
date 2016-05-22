@@ -194,5 +194,60 @@ namespace PointOfSale.OthersForms
 
             }
         }
+
+        private void otherthings_saveLocation_btn_Click(object sender, EventArgs e)
+        {
+            TableLocation names = new TableLocation();
+            String locationName = otherthings_Location_text.Text;
+
+            if (locationName != "")
+            {
+                names.locationName = locationName;
+                Debug.WriteLine("Description is : " + names.locationName);
+                int id = handleProduct.addLocationName(names);
+                if (id >= 0)
+                {
+                    MessageBox.Show("One Location Insert");
+
+                }
+                else
+                {
+                    MessageBox.Show("Due to Any  issue Location Name Not Save");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Give Name");
+
+            }
+        }
+
+        private void otherthings_saveDistrubutors_btn_Click(object sender, EventArgs e)
+        {
+
+            TableDistributors names = new TableDistributors();
+            String distributorName = otherthings_DistributorsName_text.Text;
+
+            if (distributorName != "")
+            {
+                names.distributorsName = distributorName;
+                Debug.WriteLine("Description is : " + names.distributorsName);
+                int id = handleProduct.addDistributorsName(names);
+                if (id >= 0)
+                {
+                    MessageBox.Show("One Distributor Name Insert");
+
+                }
+                else
+                {
+                    MessageBox.Show("Due to Any  issue Distributor Name Not Save");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Give Name");
+
+            }
+        }
     }
 }
