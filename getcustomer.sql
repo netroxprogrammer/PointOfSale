@@ -1,0 +1,7 @@
+﻿
+SELECT  customerBasic.customerId, customerBasic.customerName, customerBasic.customerDiscount, customerBasic.customerPaymentMethod,
+customerInformation.customerPersonContact,customerInformation.customerReffered,customerInformation.customerphone1,
+customerInformation.customerphone2, customerInformation.customerphone3, customerInformation.customerFax,
+customerInformation.customerFax, customerInformation.customerFax1, customerInformation.customerFax2, customerInformation.customerEmail,
+customerInformation.customerAddress,customerInformation.customerRemark, customerInformation.customerDefault,customerInformation.customerInactive from   [customerBasic] 
+INNER JOIN  [customerInformation] ON  customerBasic.customerId = customerInformation.customerId

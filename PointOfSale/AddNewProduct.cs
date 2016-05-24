@@ -32,6 +32,10 @@ namespace PointOfSale
             loadProductCategory();
              loadCompanyNames();
             loadProductName();
+            loadDescreptionName();
+            loadLocation();
+            loadPurposeName();
+            loadUnits();
             this.TopMost = true;
         }
 
@@ -119,6 +123,57 @@ namespace PointOfSale
             }
         }
 
+        /*
+       *  Load Descreption
+       */
+        public void loadDescreptionName()
+        {
+            ArrayList getname = handleProducts.getDescreptions();
+            foreach (TableDescription name in getname)
+            {
+
+                adddNewProducts_Description_comboBox.Items.Add(name.descriptionName);
+            }
+        }
+
+        /*
+             *  Load Purpose
+             */
+        public void loadPurposeName()
+        {
+            ArrayList getname = handleProducts.getPurposeNames();
+            foreach (TablePurpose name in getname)
+            {
+
+               adddNewProducts_Purpose_comboBox.Items.Add(name.purposeName);
+            }
+        }
+
+        /*
+             *  Load Location
+             */
+        public void loadLocation()
+        {
+            ArrayList getname = handleProducts.getProductLocationNames();
+            foreach (TableLocation name in getname)
+            {
+
+                adddNewProducts_Location_comboBox.Items.Add(name.locationName);
+            }
+        }
+
+        /*
+             *  Load Location
+             */
+        public void loadUnits()
+        {
+            ArrayList getname = handleProducts.getUnitsNames();
+            foreach (TableUnits name in getname)
+            {
+
+                adddNewProducts_Units_comboBox.Items.Add(name.unitsName);
+            }
+        }
     }
 }
 

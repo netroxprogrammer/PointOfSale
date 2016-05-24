@@ -30,9 +30,9 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gruop = new System.Windows.Forms.GroupBox();
             this.adddNewProducts_Category_comboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.adddNewProducts_Units_comboBox = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -66,12 +66,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.adddNewProducts_Location_comboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.adddNewProducts_Description_comboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.adddNewProducts_Purpose_comboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.adddNewProducts_companyName_comboBox = new System.Windows.Forms.ComboBox();
             this.adddNewProducts_ProductName_comboBox = new System.Windows.Forms.ComboBox();
@@ -96,7 +96,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gruop.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -124,40 +124,40 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Product Information";
             // 
-            // groupBox1
+            // gruop
             // 
-            this.groupBox1.Controls.Add(this.adddNewProducts_Category_comboBox);
-            this.groupBox1.Controls.Add(this.comboBox8);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.textBox17);
-            this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox6);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.adddNewProducts_companyName_comboBox);
-            this.groupBox1.Controls.Add(this.adddNewProducts_ProductName_comboBox);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 82);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(614, 516);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.gruop.Controls.Add(this.adddNewProducts_Category_comboBox);
+            this.gruop.Controls.Add(this.adddNewProducts_Units_comboBox);
+            this.gruop.Controls.Add(this.label26);
+            this.gruop.Controls.Add(this.textBox17);
+            this.gruop.Controls.Add(this.label25);
+            this.gruop.Controls.Add(this.groupBox6);
+            this.gruop.Controls.Add(this.checkBox1);
+            this.gruop.Controls.Add(this.groupBox5);
+            this.gruop.Controls.Add(this.groupBox4);
+            this.gruop.Controls.Add(this.groupBox2);
+            this.gruop.Controls.Add(this.textBox2);
+            this.gruop.Controls.Add(this.label10);
+            this.gruop.Controls.Add(this.label9);
+            this.gruop.Controls.Add(this.dateTimePicker1);
+            this.gruop.Controls.Add(this.adddNewProducts_Location_comboBox);
+            this.gruop.Controls.Add(this.label8);
+            this.gruop.Controls.Add(this.label7);
+            this.gruop.Controls.Add(this.adddNewProducts_Description_comboBox);
+            this.gruop.Controls.Add(this.label6);
+            this.gruop.Controls.Add(this.adddNewProducts_Purpose_comboBox);
+            this.gruop.Controls.Add(this.label5);
+            this.gruop.Controls.Add(this.adddNewProducts_companyName_comboBox);
+            this.gruop.Controls.Add(this.adddNewProducts_ProductName_comboBox);
+            this.gruop.Controls.Add(this.label4);
+            this.gruop.Controls.Add(this.label3);
+            this.gruop.Controls.Add(this.textBox1);
+            this.gruop.Controls.Add(this.label2);
+            this.gruop.Location = new System.Drawing.Point(12, 82);
+            this.gruop.Name = "gruop";
+            this.gruop.Size = new System.Drawing.Size(614, 516);
+            this.gruop.TabIndex = 1;
+            this.gruop.TabStop = false;
             // 
             // adddNewProducts_Category_comboBox
             // 
@@ -168,16 +168,16 @@
             this.adddNewProducts_Category_comboBox.TabIndex = 29;
             this.adddNewProducts_Category_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_Category_comboBox_SelectedIndexChanged_1);
             // 
-            // comboBox8
+            // adddNewProducts_Units_comboBox
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.adddNewProducts_Units_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_Units_comboBox.Items.AddRange(new object[] {
             "kilo",
             "gram"});
-            this.comboBox8.Location = new System.Drawing.Point(470, 186);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(131, 21);
-            this.comboBox8.TabIndex = 28;
+            this.adddNewProducts_Units_comboBox.Location = new System.Drawing.Point(470, 186);
+            this.adddNewProducts_Units_comboBox.Name = "adddNewProducts_Units_comboBox";
+            this.adddNewProducts_Units_comboBox.Size = new System.Drawing.Size(131, 21);
+            this.adddNewProducts_Units_comboBox.TabIndex = 28;
             // 
             // label26
             // 
@@ -516,13 +516,13 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 16;
             // 
-            // comboBox6
+            // adddNewProducts_Location_comboBox
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(10, 124);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(219, 21);
-            this.comboBox6.TabIndex = 15;
+            this.adddNewProducts_Location_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_Location_comboBox.Location = new System.Drawing.Point(10, 124);
+            this.adddNewProducts_Location_comboBox.Name = "adddNewProducts_Location_comboBox";
+            this.adddNewProducts_Location_comboBox.Size = new System.Drawing.Size(219, 21);
+            this.adddNewProducts_Location_comboBox.TabIndex = 15;
             // 
             // label8
             // 
@@ -546,13 +546,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Category";
             // 
-            // comboBox4
+            // adddNewProducts_Description_comboBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(241, 78);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(219, 21);
-            this.comboBox4.TabIndex = 11;
+            this.adddNewProducts_Description_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_Description_comboBox.Location = new System.Drawing.Point(241, 78);
+            this.adddNewProducts_Description_comboBox.Name = "adddNewProducts_Description_comboBox";
+            this.adddNewProducts_Description_comboBox.Size = new System.Drawing.Size(219, 21);
+            this.adddNewProducts_Description_comboBox.TabIndex = 11;
             // 
             // label6
             // 
@@ -565,13 +565,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Description";
             // 
-            // comboBox3
+            // adddNewProducts_Purpose_comboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(10, 78);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(219, 21);
-            this.comboBox3.TabIndex = 9;
+            this.adddNewProducts_Purpose_comboBox.FormattingEnabled = true;
+            this.adddNewProducts_Purpose_comboBox.Location = new System.Drawing.Point(10, 78);
+            this.adddNewProducts_Purpose_comboBox.Name = "adddNewProducts_Purpose_comboBox";
+            this.adddNewProducts_Purpose_comboBox.Size = new System.Drawing.Size(219, 21);
+            this.adddNewProducts_Purpose_comboBox.TabIndex = 9;
             // 
             // label5
             // 
@@ -780,15 +780,15 @@
             this.ClientSize = new System.Drawing.Size(631, 703);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gruop);
             this.Controls.Add(this.panel1);
             this.Name = "AddNewProduct";
             this.Text = "Add New Product";
             this.Load += new System.EventHandler(this.AddNewProduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gruop.ResumeLayout(false);
+            this.gruop.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -807,19 +807,19 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gruop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox adddNewProducts_ProductName_comboBox;
         private System.Windows.Forms.ComboBox adddNewProducts_companyName_comboBox;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox adddNewProducts_Purpose_comboBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox adddNewProducts_Description_comboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox adddNewProducts_Location_comboBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -867,7 +867,7 @@
         private System.Windows.Forms.Label addProducts_colorName_label;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox adddNewProducts_Units_comboBox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox adddNewProducts_Category_comboBox;
         private System.Windows.Forms.Label label15;

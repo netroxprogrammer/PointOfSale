@@ -42,6 +42,8 @@ namespace PointOfSale
 
         private void WorkingForm_Load(object sender, EventArgs e)
         {
+
+            
             if (Constants.checkLogin == false)
             {
                 this.Hide();
@@ -159,6 +161,11 @@ namespace PointOfSale
         private void addNewEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AddEmployee().Show();
+        }
+
+        private void customersListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

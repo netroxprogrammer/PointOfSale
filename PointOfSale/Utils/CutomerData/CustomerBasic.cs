@@ -10,6 +10,7 @@ namespace PointOfSale.Utils.CutomerData
     {
         int _customerId;
         String _customerName;
+        int _customerDiscount;
         String _customerPrice;
         public int customerId
         {
@@ -45,5 +46,17 @@ namespace PointOfSale.Utils.CutomerData
             }
         }
 
+        public int CustomerDiscount
+        {
+            get
+            {
+                return _customerDiscount;
+            }
+
+            set
+            {
+                _customerDiscount = value;
+            }
+        }
     }
 }

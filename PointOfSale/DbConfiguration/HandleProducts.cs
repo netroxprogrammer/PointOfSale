@@ -78,13 +78,14 @@ namespace PointOfSale.DbConfiguration
 
 
 
-            SqlCommand commands = new SqlCommand("Select  *from productName", DatabaseConnections.Instance.getConnection());
+            SqlCommand commands = new SqlCommand("Select  *from addProductNames", DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
             {
                 TableProductName productName = new TableProductName();
                 productName.productId = reader.GetInt32(0);
                 productName.productName = reader.GetString(1);
+                productName.productMaxDiscount = reader.GetInt32(2);
                 list.Add(productName);
                 Debug.WriteLine(productName);
 
@@ -94,6 +95,118 @@ namespace PointOfSale.DbConfiguration
         }
 
 
+        /*
+      *      get Descreption from Table
+      */
+        public ArrayList getDescreptions()
+        {
+
+            Debug.WriteLine("get Descreptions");
+
+            ArrayList list = new ArrayList();
+
+
+
+            SqlCommand commands = new SqlCommand("Select  *from Description", DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableDescription descriptionName = new TableDescription();
+                descriptionName.descriptionId = reader.GetInt32(0);
+                descriptionName.descriptionName = reader.GetString(1);
+                
+                list.Add(descriptionName);
+                Debug.WriteLine(descriptionName);
+
+            }
+            reader.Close();
+            return list;
+        }
+
+        /*
+  *      get Location from Table
+  */
+        public ArrayList getProductLocationNames()
+        {
+
+            Debug.WriteLine("get getProductLocationNames");
+
+            ArrayList list = new ArrayList();
+
+
+
+            SqlCommand commands = new SqlCommand("Select  *from Location", DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableLocation locationName = new TableLocation();
+                locationName.locationId = reader.GetInt32(0);
+                locationName.locationName = reader.GetString(1);
+
+                list.Add(locationName);
+                Debug.WriteLine(locationName);
+
+            }
+            reader.Close();
+            return list;
+        }
+
+
+        /*
+*      get purpose from Table
+*/
+        public ArrayList getPurposeNames()
+        {
+
+            Debug.WriteLine("get PurposeNames");
+
+            ArrayList list = new ArrayList();
+
+
+
+            SqlCommand commands = new SqlCommand("Select  *from purpose", DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TablePurpose purposeName = new TablePurpose();
+                purposeName.purposeId = reader.GetInt32(0);
+                purposeName.purposeName = reader.GetString(1);
+
+                list.Add(purposeName);
+                Debug.WriteLine(purposeName);
+
+            }
+            reader.Close();
+            return list;
+        }
+
+        /*
+*      get purpose from Table
+*/
+        public ArrayList getUnitsNames()
+        {
+
+            Debug.WriteLine("get  Units Names");
+
+            ArrayList list = new ArrayList();
+
+
+
+            SqlCommand commands = new SqlCommand("Select  *from units", DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableUnits unitNames = new TableUnits();
+                unitNames.unitsId = reader.GetInt32(0);
+                unitNames.unitsName = reader.GetString(1);
+
+                list.Add(unitNames);
+                Debug.WriteLine(unitNames);
+
+            }
+            reader.Close();
+            return list;
+        }
         /**
         Add Product Names and  Dicounts
         */

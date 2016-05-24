@@ -92,8 +92,54 @@ namespace PointOfSale.DbConfiguration
 
         }
         /*
-        *    Add Information in Customer Information Table
+        *    Get All Information About Customers 
         */
 
+        public  Tuple<ArrayList, ArrayList> getCustomers()
+        {
+
+            Debug.WriteLine("get Customers");
+
+            ArrayList listbasic = new ArrayList();
+
+            ArrayList listinformation = new ArrayList();
+
+            String sql = "SELECT customerBasic.customerId, customerBasic.customerName, customerBasic.customerDiscount, customerBasic.customerPaymentMethod,"+
+                   "customerInformation.customerPersonContact,customerInformation.customerReffered,customerInformation.customerphone1,"+
+                    "customerInformation.customerphone2, customerInformation.customerphone3, customerInformation.customerFax,"+
+                    "customerInformation.customerFax, customerInformation.customerFax1, customerInformation.customerFax2, customerInformation.customerEmail,"+
+                    "customerInformation.customerAddress, customerInformation.customerRemark,customerInformation.customerDefault,customerInformation.customerInactive from[customerBasic]" +
+                    "INNER JOIN[customerInformation] ON customerBasic.customerId = customerInformation.customerId";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                CustomerBasic customerbasic = new CustomerBasic();
+                CustomerInfomation customerInformations = new CustomerInfomation();
+                customerbasic.customerId = reader.GetInt32(0);
+                customerbasic.customerName = reader.GetString(1);
+                customerbasic.CustomerDiscount = reader.GetInt32(2);
+                customerbasic.customerPrice = reader.GetString(3);
+                listbasic.Add(customerbasic);
+                customerInformations.CustomerPersonContact = reader.GetString(4);
+                customerInformations.CustomerReffered = reader.GetString(5);
+                customerInformations.CustomerPhone1 = reader.GetString(6);
+                customerInformations.CustomerPhone2 = reader.GetString(7);
+                customerInformations.CustomerPhone3 = reader.GetString(8);
+                customerInformations.CustomerFax = reader.GetString(9);
+                customerInformations.CustomerFax1 = reader.GetString(10);
+                customerInformations.CustomerFax2 = reader.GetString(11);
+                customerInformations.CustomerEmail = reader.GetString(12);
+                customerInformations.CustomerAddress = reader.GetString(13);
+                customerInformations.CustomerRemark = reader.GetString(14);
+                customerInformations.CustomerDefault = reader.GetString(15);
+                customerInformations.CustomerInactive = reader.GetString(16);
+                listinformation.Add(customerInformations);
+                Debug.WriteLine(customerbasic);
+
+            }
+            reader.Close();
+            return Tuple.Create(listbasic, listinformation);
+        }
     }
 }

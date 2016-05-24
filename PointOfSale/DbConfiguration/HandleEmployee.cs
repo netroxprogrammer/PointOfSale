@@ -74,5 +74,7 @@ namespace PointOfSale.DbConfiguration
             return id;
 
         }
+        
+        
     }
 }

@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.otherthings_saveProduct_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.otherthings_ProductDiscount_text = new System.Windows.Forms.TextBox();
             this.otherthings_ProductName_text = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.otherthings_saveCategory_btn = new System.Windows.Forms.Button();
             this.otherthings_Category_text = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.otherthings_saveCompany_btn = new System.Windows.Forms.Button();
             this.otherthings_CompanyName_text = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.otherthings_DescreptionNAme_text = new System.Windows.Forms.TextBox();
+            this.otherthings_saveDesc_btn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.otherthings_savePurpose_btn = new System.Windows.Forms.Button();
             this.otherthings_PurposeNAme_text = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.otherthings_saveDistrubutors_btn = new System.Windows.Forms.Button();
             this.otherthings_DistributorsName_text = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.otherthings_saveUnit_btn = new System.Windows.Forms.Button();
             this.otherthings_UnitName_text = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.otherthings_saveUnit_btn = new System.Windows.Forms.Button();
-            this.otherthings_savePurpose_btn = new System.Windows.Forms.Button();
-            this.otherthings_saveDesc_btn = new System.Windows.Forms.Button();
-            this.otherthings_saveCompany_btn = new System.Windows.Forms.Button();
-            this.otherthings_saveCategory_btn = new System.Windows.Forms.Button();
-            this.otherthings_saveProduct_btn = new System.Windows.Forms.Button();
-            this.otherthings_DescreptionNAme_text = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.otherthings_saveLocation_btn = new System.Windows.Forms.Button();
             this.otherthings_Location_text = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.otherthings_saveLocation_btn = new System.Windows.Forms.Button();
-            this.otherthings_saveDistrubutors_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -89,6 +89,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Products";
+            // 
+            // otherthings_saveProduct_btn
+            // 
+            this.otherthings_saveProduct_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherthings_saveProduct_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveProduct_btn.Location = new System.Drawing.Point(117, 94);
+            this.otherthings_saveProduct_btn.Name = "otherthings_saveProduct_btn";
+            this.otherthings_saveProduct_btn.Size = new System.Drawing.Size(75, 29);
+            this.otherthings_saveProduct_btn.TabIndex = 4;
+            this.otherthings_saveProduct_btn.Text = "Save";
+            this.otherthings_saveProduct_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveProduct_btn.UseMnemonic = false;
+            this.otherthings_saveProduct_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveProduct_btn.Click += new System.EventHandler(this.otherthings_saveProduct_btn_Click);
             // 
             // label2
             // 
@@ -135,6 +149,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Category";
             // 
+            // otherthings_saveCategory_btn
+            // 
+            this.otherthings_saveCategory_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherthings_saveCategory_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveCategory_btn.Location = new System.Drawing.Point(111, 77);
+            this.otherthings_saveCategory_btn.Name = "otherthings_saveCategory_btn";
+            this.otherthings_saveCategory_btn.Size = new System.Drawing.Size(79, 29);
+            this.otherthings_saveCategory_btn.TabIndex = 0;
+            this.otherthings_saveCategory_btn.Text = "Save";
+            this.otherthings_saveCategory_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveCategory_btn.Click += new System.EventHandler(this.otherthings_saveCategory_btn_Click);
+            // 
             // otherthings_Category_text
             // 
             this.otherthings_Category_text.Location = new System.Drawing.Point(126, 26);
@@ -164,6 +190,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Company";
             // 
+            // otherthings_saveCompany_btn
+            // 
+            this.otherthings_saveCompany_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveCompany_btn.Location = new System.Drawing.Point(111, 78);
+            this.otherthings_saveCompany_btn.Name = "otherthings_saveCompany_btn";
+            this.otherthings_saveCompany_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveCompany_btn.TabIndex = 7;
+            this.otherthings_saveCompany_btn.Text = "Save";
+            this.otherthings_saveCompany_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveCompany_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveCompany_btn.Click += new System.EventHandler(this.otherthings_saveCompany_btn_Click);
+            // 
+            // otherthings_CompanyName_text
+            // 
+            this.otherthings_CompanyName_text.Location = new System.Drawing.Point(117, 32);
+            this.otherthings_CompanyName_text.Name = "otherthings_CompanyName_text";
+            this.otherthings_CompanyName_text.Size = new System.Drawing.Size(182, 27);
+            this.otherthings_CompanyName_text.TabIndex = 5;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -172,13 +217,6 @@
             this.label4.Size = new System.Drawing.Size(111, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Company Name";
-            // 
-            // otherthings_CompanyName_text
-            // 
-            this.otherthings_CompanyName_text.Location = new System.Drawing.Point(117, 32);
-            this.otherthings_CompanyName_text.Name = "otherthings_CompanyName_text";
-            this.otherthings_CompanyName_text.Size = new System.Drawing.Size(182, 27);
-            this.otherthings_CompanyName_text.TabIndex = 5;
             // 
             // groupBox4
             // 
@@ -192,6 +230,25 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Description";
+            // 
+            // otherthings_DescreptionNAme_text
+            // 
+            this.otherthings_DescreptionNAme_text.Location = new System.Drawing.Point(98, 26);
+            this.otherthings_DescreptionNAme_text.Name = "otherthings_DescreptionNAme_text";
+            this.otherthings_DescreptionNAme_text.Size = new System.Drawing.Size(204, 27);
+            this.otherthings_DescreptionNAme_text.TabIndex = 10;
+            // 
+            // otherthings_saveDesc_btn
+            // 
+            this.otherthings_saveDesc_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveDesc_btn.Location = new System.Drawing.Point(111, 70);
+            this.otherthings_saveDesc_btn.Name = "otherthings_saveDesc_btn";
+            this.otherthings_saveDesc_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveDesc_btn.TabIndex = 8;
+            this.otherthings_saveDesc_btn.Text = "Save";
+            this.otherthings_saveDesc_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveDesc_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveDesc_btn.Click += new System.EventHandler(this.otherthings_saveDesc_btn_Click);
             // 
             // label5
             // 
@@ -214,6 +271,18 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Purpose";
+            // 
+            // otherthings_savePurpose_btn
+            // 
+            this.otherthings_savePurpose_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_savePurpose_btn.Location = new System.Drawing.Point(89, 72);
+            this.otherthings_savePurpose_btn.Name = "otherthings_savePurpose_btn";
+            this.otherthings_savePurpose_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_savePurpose_btn.TabIndex = 8;
+            this.otherthings_savePurpose_btn.Text = "Save";
+            this.otherthings_savePurpose_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_savePurpose_btn.UseVisualStyleBackColor = true;
+            this.otherthings_savePurpose_btn.Click += new System.EventHandler(this.otherthings_savePurpose_btn_Click);
             // 
             // otherthings_PurposeNAme_text
             // 
@@ -245,6 +314,18 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Distributers";
             // 
+            // otherthings_saveDistrubutors_btn
+            // 
+            this.otherthings_saveDistrubutors_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otherthings_saveDistrubutors_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveDistrubutors_btn.Location = new System.Drawing.Point(102, 65);
+            this.otherthings_saveDistrubutors_btn.Name = "otherthings_saveDistrubutors_btn";
+            this.otherthings_saveDistrubutors_btn.Size = new System.Drawing.Size(79, 29);
+            this.otherthings_saveDistrubutors_btn.TabIndex = 6;
+            this.otherthings_saveDistrubutors_btn.Text = "Save";
+            this.otherthings_saveDistrubutors_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveDistrubutors_btn.Click += new System.EventHandler(this.otherthings_saveDistrubutors_btn_Click);
+            // 
             // otherthings_DistributorsName_text
             // 
             this.otherthings_DistributorsName_text.Location = new System.Drawing.Point(102, 26);
@@ -275,6 +356,18 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Units";
             this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
+            // 
+            // otherthings_saveUnit_btn
+            // 
+            this.otherthings_saveUnit_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveUnit_btn.Location = new System.Drawing.Point(115, 66);
+            this.otherthings_saveUnit_btn.Name = "otherthings_saveUnit_btn";
+            this.otherthings_saveUnit_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveUnit_btn.TabIndex = 10;
+            this.otherthings_saveUnit_btn.Text = "Save";
+            this.otherthings_saveUnit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveUnit_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveUnit_btn.Click += new System.EventHandler(this.otherthings_saveUnit_btn_Click);
             // 
             // otherthings_UnitName_text
             // 
@@ -313,87 +406,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // otherthings_saveUnit_btn
-            // 
-            this.otherthings_saveUnit_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveUnit_btn.Location = new System.Drawing.Point(115, 66);
-            this.otherthings_saveUnit_btn.Name = "otherthings_saveUnit_btn";
-            this.otherthings_saveUnit_btn.Size = new System.Drawing.Size(79, 28);
-            this.otherthings_saveUnit_btn.TabIndex = 10;
-            this.otherthings_saveUnit_btn.Text = "Save";
-            this.otherthings_saveUnit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveUnit_btn.UseVisualStyleBackColor = true;
-            this.otherthings_saveUnit_btn.Click += new System.EventHandler(this.otherthings_saveUnit_btn_Click);
-            // 
-            // otherthings_savePurpose_btn
-            // 
-            this.otherthings_savePurpose_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_savePurpose_btn.Location = new System.Drawing.Point(89, 72);
-            this.otherthings_savePurpose_btn.Name = "otherthings_savePurpose_btn";
-            this.otherthings_savePurpose_btn.Size = new System.Drawing.Size(79, 28);
-            this.otherthings_savePurpose_btn.TabIndex = 8;
-            this.otherthings_savePurpose_btn.Text = "Save";
-            this.otherthings_savePurpose_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_savePurpose_btn.UseVisualStyleBackColor = true;
-            this.otherthings_savePurpose_btn.Click += new System.EventHandler(this.otherthings_savePurpose_btn_Click);
-            // 
-            // otherthings_saveDesc_btn
-            // 
-            this.otherthings_saveDesc_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveDesc_btn.Location = new System.Drawing.Point(111, 70);
-            this.otherthings_saveDesc_btn.Name = "otherthings_saveDesc_btn";
-            this.otherthings_saveDesc_btn.Size = new System.Drawing.Size(79, 28);
-            this.otherthings_saveDesc_btn.TabIndex = 8;
-            this.otherthings_saveDesc_btn.Text = "Save";
-            this.otherthings_saveDesc_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveDesc_btn.UseVisualStyleBackColor = true;
-            this.otherthings_saveDesc_btn.Click += new System.EventHandler(this.otherthings_saveDesc_btn_Click);
-            // 
-            // otherthings_saveCompany_btn
-            // 
-            this.otherthings_saveCompany_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveCompany_btn.Location = new System.Drawing.Point(111, 78);
-            this.otherthings_saveCompany_btn.Name = "otherthings_saveCompany_btn";
-            this.otherthings_saveCompany_btn.Size = new System.Drawing.Size(79, 28);
-            this.otherthings_saveCompany_btn.TabIndex = 7;
-            this.otherthings_saveCompany_btn.Text = "Save";
-            this.otherthings_saveCompany_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveCompany_btn.UseVisualStyleBackColor = true;
-            this.otherthings_saveCompany_btn.Click += new System.EventHandler(this.otherthings_saveCompany_btn_Click);
-            // 
-            // otherthings_saveCategory_btn
-            // 
-            this.otherthings_saveCategory_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherthings_saveCategory_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveCategory_btn.Location = new System.Drawing.Point(111, 77);
-            this.otherthings_saveCategory_btn.Name = "otherthings_saveCategory_btn";
-            this.otherthings_saveCategory_btn.Size = new System.Drawing.Size(79, 29);
-            this.otherthings_saveCategory_btn.TabIndex = 0;
-            this.otherthings_saveCategory_btn.Text = "Save";
-            this.otherthings_saveCategory_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveCategory_btn.Click += new System.EventHandler(this.otherthings_saveCategory_btn_Click);
-            // 
-            // otherthings_saveProduct_btn
-            // 
-            this.otherthings_saveProduct_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherthings_saveProduct_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveProduct_btn.Location = new System.Drawing.Point(117, 94);
-            this.otherthings_saveProduct_btn.Name = "otherthings_saveProduct_btn";
-            this.otherthings_saveProduct_btn.Size = new System.Drawing.Size(75, 29);
-            this.otherthings_saveProduct_btn.TabIndex = 4;
-            this.otherthings_saveProduct_btn.Text = "Save";
-            this.otherthings_saveProduct_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveProduct_btn.UseMnemonic = false;
-            this.otherthings_saveProduct_btn.UseVisualStyleBackColor = true;
-            this.otherthings_saveProduct_btn.Click += new System.EventHandler(this.otherthings_saveProduct_btn_Click);
-            // 
-            // otherthings_DescreptionNAme_text
-            // 
-            this.otherthings_DescreptionNAme_text.Location = new System.Drawing.Point(98, 26);
-            this.otherthings_DescreptionNAme_text.Name = "otherthings_DescreptionNAme_text";
-            this.otherthings_DescreptionNAme_text.Size = new System.Drawing.Size(204, 27);
-            this.otherthings_DescreptionNAme_text.TabIndex = 10;
-            // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.otherthings_saveLocation_btn);
@@ -406,6 +418,18 @@
             this.groupBox8.TabIndex = 9;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Location";
+            // 
+            // otherthings_saveLocation_btn
+            // 
+            this.otherthings_saveLocation_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.otherthings_saveLocation_btn.Location = new System.Drawing.Point(102, 66);
+            this.otherthings_saveLocation_btn.Name = "otherthings_saveLocation_btn";
+            this.otherthings_saveLocation_btn.Size = new System.Drawing.Size(79, 28);
+            this.otherthings_saveLocation_btn.TabIndex = 12;
+            this.otherthings_saveLocation_btn.Text = "Save";
+            this.otherthings_saveLocation_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.otherthings_saveLocation_btn.UseVisualStyleBackColor = true;
+            this.otherthings_saveLocation_btn.Click += new System.EventHandler(this.otherthings_saveLocation_btn_Click);
             // 
             // otherthings_Location_text
             // 
@@ -423,30 +447,6 @@
             this.label10.Size = new System.Drawing.Size(64, 19);
             this.label10.TabIndex = 13;
             this.label10.Text = "Location";
-            // 
-            // otherthings_saveLocation_btn
-            // 
-            this.otherthings_saveLocation_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveLocation_btn.Location = new System.Drawing.Point(102, 66);
-            this.otherthings_saveLocation_btn.Name = "otherthings_saveLocation_btn";
-            this.otherthings_saveLocation_btn.Size = new System.Drawing.Size(79, 28);
-            this.otherthings_saveLocation_btn.TabIndex = 12;
-            this.otherthings_saveLocation_btn.Text = "Save";
-            this.otherthings_saveLocation_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveLocation_btn.UseVisualStyleBackColor = true;
-            this.otherthings_saveLocation_btn.Click += new System.EventHandler(this.otherthings_saveLocation_btn_Click);
-            // 
-            // otherthings_saveDistrubutors_btn
-            // 
-            this.otherthings_saveDistrubutors_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otherthings_saveDistrubutors_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.otherthings_saveDistrubutors_btn.Location = new System.Drawing.Point(102, 65);
-            this.otherthings_saveDistrubutors_btn.Name = "otherthings_saveDistrubutors_btn";
-            this.otherthings_saveDistrubutors_btn.Size = new System.Drawing.Size(79, 29);
-            this.otherthings_saveDistrubutors_btn.TabIndex = 6;
-            this.otherthings_saveDistrubutors_btn.Text = "Save";
-            this.otherthings_saveDistrubutors_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.otherthings_saveDistrubutors_btn.Click += new System.EventHandler(this.otherthings_saveDistrubutors_btn_Click);
             // 
             // AddOtherThings
             // 

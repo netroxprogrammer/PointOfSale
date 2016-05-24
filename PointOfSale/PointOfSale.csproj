@@ -228,6 +228,33 @@
   <ItemGroup>
     <None Include="Resources\android-icon-96x961.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x361.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x363.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x364.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x366.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-icon-36x367.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

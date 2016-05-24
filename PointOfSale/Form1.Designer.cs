@@ -40,7 +40,6 @@
             this.importSheetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.custometListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSupplieerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,10 +88,34 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.suppliers_Button = new System.Windows.Forms.Button();
             this.customer_Button = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.WorkingForm_listView = new System.Windows.Forms.ListView();
+            this.customersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
             this.contextMenuStrip_Inventory.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperMenu
@@ -183,7 +206,7 @@
             // 
             this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewCustomersToolStripMenuItem,
-            this.custometListToolStripMenuItem});
+            this.customersListToolStripMenuItem});
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
             this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 19);
             this.customersToolStripMenuItem.Text = "Customers";
@@ -195,12 +218,6 @@
             this.addNewCustomersToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.addNewCustomersToolStripMenuItem.Text = "Add New Customers     Ctrl+N";
             this.addNewCustomersToolStripMenuItem.Click += new System.EventHandler(this.addNewCustomersToolStripMenuItem_Click);
-            // 
-            // custometListToolStripMenuItem
-            // 
-            this.custometListToolStripMenuItem.Name = "custometListToolStripMenuItem";
-            this.custometListToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.custometListToolStripMenuItem.Text = "Customet List";
             // 
             // supliersToolStripMenuItem
             // 
@@ -493,10 +510,11 @@
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.button6.FlatAppearance.BorderSize = 5;
-            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_72x728;
-            this.button6.Location = new System.Drawing.Point(560, 456);
+            this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x367;
+            this.button6.Location = new System.Drawing.Point(839, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(201, 131);
+            this.button6.Size = new System.Drawing.Size(84, 64);
             this.button6.TabIndex = 8;
             this.button6.Text = "Window";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -506,10 +524,11 @@
             // button5
             // 
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_72x727;
-            this.button5.Location = new System.Drawing.Point(308, 456);
+            this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x366;
+            this.button5.Location = new System.Drawing.Point(586, 14);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(201, 131);
+            this.button5.Size = new System.Drawing.Size(84, 62);
             this.button5.TabIndex = 7;
             this.button5.Text = "Users";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -518,10 +537,11 @@
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_72x726;
-            this.button4.Location = new System.Drawing.Point(822, 280);
+            this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x365;
+            this.button4.Location = new System.Drawing.Point(705, 14);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 132);
+            this.button4.Size = new System.Drawing.Size(107, 62);
             this.button4.TabIndex = 6;
             this.button4.Text = "Sale Inventory";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -531,10 +551,11 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatAppearance.BorderSize = 5;
-            this.button3.Image = global::PointOfSale.Properties.Resources.android_icon_72x729;
-            this.button3.Location = new System.Drawing.Point(315, 280);
+            this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::PointOfSale.Properties.Resources.android_icon_36x362;
+            this.button3.Location = new System.Drawing.Point(238, 14);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 132);
+            this.button3.Size = new System.Drawing.Size(84, 62);
             this.button3.TabIndex = 5;
             this.button3.Text = "Purchase";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -545,11 +566,12 @@
             // button2
             // 
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Image = global::PointOfSale.Properties.Resources.android_icon_72x723;
+            this.button2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::PointOfSale.Properties.Resources.android_icon_36x363;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(560, 280);
+            this.button2.Location = new System.Drawing.Point(350, 14);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 132);
+            this.button2.Size = new System.Drawing.Size(84, 62);
             this.button2.TabIndex = 4;
             this.button2.Text = "Histroy";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -560,12 +582,13 @@
             // 
             this.inventory_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.inventory_Button.FlatAppearance.BorderSize = 5;
-            this.inventory_Button.Image = global::PointOfSale.Properties.Resources.android_icon_72x722;
+            this.inventory_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventory_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x364;
             this.inventory_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.inventory_Button.Location = new System.Drawing.Point(815, 88);
-            this.inventory_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inventory_Button.Location = new System.Drawing.Point(469, 14);
+            this.inventory_Button.Margin = new System.Windows.Forms.Padding(4);
             this.inventory_Button.Name = "inventory_Button";
-            this.inventory_Button.Size = new System.Drawing.Size(201, 132);
+            this.inventory_Button.Size = new System.Drawing.Size(84, 62);
             this.inventory_Button.TabIndex = 3;
             this.inventory_Button.Text = "Inventory";
             this.inventory_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -578,13 +601,13 @@
             this.suppliers_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.suppliers_Button.FlatAppearance.BorderSize = 5;
             this.suppliers_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.suppliers_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.suppliers_Button.Image = global::PointOfSale.Properties.Resources.android_icon_72x721;
+            this.suppliers_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppliers_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x361;
             this.suppliers_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.suppliers_Button.Location = new System.Drawing.Point(560, 88);
-            this.suppliers_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.suppliers_Button.Location = new System.Drawing.Point(122, 14);
+            this.suppliers_Button.Margin = new System.Windows.Forms.Padding(4);
             this.suppliers_Button.Name = "suppliers_Button";
-            this.suppliers_Button.Size = new System.Drawing.Size(201, 132);
+            this.suppliers_Button.Size = new System.Drawing.Size(84, 62);
             this.suppliers_Button.TabIndex = 2;
             this.suppliers_Button.Text = "Suppliers";
             this.suppliers_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -596,13 +619,13 @@
             // 
             this.customer_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customer_Button.FlatAppearance.BorderSize = 5;
-            this.customer_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customer_Button.Image = global::PointOfSale.Properties.Resources.android_icon_72x72;
+            this.customer_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customer_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x36;
             this.customer_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.customer_Button.Location = new System.Drawing.Point(308, 88);
-            this.customer_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.customer_Button.Location = new System.Drawing.Point(7, 14);
+            this.customer_Button.Margin = new System.Windows.Forms.Padding(4);
             this.customer_Button.Name = "customer_Button";
-            this.customer_Button.Size = new System.Drawing.Size(201, 132);
+            this.customer_Button.Size = new System.Drawing.Size(84, 62);
             this.customer_Button.TabIndex = 1;
             this.customer_Button.Text = "Customers";
             this.customer_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -610,25 +633,84 @@
             this.customer_Button.UseVisualStyleBackColor = true;
             this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.customer_Button);
+            this.groupBox1.Controls.Add(this.suppliers_Button);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.inventory_Button);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Location = new System.Drawing.Point(12, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1305, 86);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.WorkingForm_listView);
+            this.panel1.Location = new System.Drawing.Point(0, 111);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1329, 622);
+            this.panel1.TabIndex = 10;
+            // 
+            // WorkingForm_listView
+            // 
+            this.WorkingForm_listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14,
+            this.columnHeader15,
+            this.columnHeader16,
+            this.columnHeader17,
+            this.columnHeader18});
+            this.WorkingForm_listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkingForm_listView.Location = new System.Drawing.Point(0, 0);
+            this.WorkingForm_listView.Name = "WorkingForm_listView";
+            this.WorkingForm_listView.Size = new System.Drawing.Size(1329, 622);
+            this.WorkingForm_listView.TabIndex = 0;
+            this.WorkingForm_listView.UseCompatibleStateImageBehavior = false;
+            this.WorkingForm_listView.View = System.Windows.Forms.View.Details;
+            // 
+            // customersListToolStripMenuItem
+            // 
+            this.customersListToolStripMenuItem.Name = "customersListToolStripMenuItem";
+            this.customersListToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
+            this.customersListToolStripMenuItem.Text = "Customers List";
+            this.customersListToolStripMenuItem.Click += new System.EventHandler(this.customersListToolStripMenuItem_Click);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Width = 112;
+            // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1329, 728);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.inventory_Button);
-            this.Controls.Add(this.suppliers_Button);
-            this.Controls.Add(this.customer_Button);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.upperMenu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.upperMenu;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WorkingForm";
             this.Text = "Point Of Sale";
             this.TopMost = true;
@@ -639,6 +721,8 @@
             this.contextMenuStrip_Customer.ResumeLayout(false);
             this.contextMenuStrip_Supplier.ResumeLayout(false);
             this.contextMenuStrip_Inventory.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -655,7 +739,6 @@
         private System.Windows.Forms.ToolStripMenuItem reIndexBalnaceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewCustomersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem custometListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supliersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewSupplieerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem supplierListToolStripMenuItem;
@@ -706,6 +789,28 @@
         private System.Windows.Forms.ToolStripMenuItem importSheetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addProductsToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView WorkingForm_listView;
+        private System.Windows.Forms.ToolStripMenuItem customersListToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.ColumnHeader columnHeader16;
+        private System.Windows.Forms.ColumnHeader columnHeader17;
+        private System.Windows.Forms.ColumnHeader columnHeader18;
     }
 }
 

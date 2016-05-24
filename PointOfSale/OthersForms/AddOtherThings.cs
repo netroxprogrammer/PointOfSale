@@ -249,5 +249,6 @@ namespace PointOfSale.OthersForms
 
             }
         }
+
     }
 }
