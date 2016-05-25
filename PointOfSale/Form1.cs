@@ -4,6 +4,7 @@ using PointOfSale.OthersForms;
 using PointOfSale.TableHandlerForms;
 using PointOfSale.TableInformationForm;
 using PointOfSale.Utils;
+using PointOfSale.Utils.CutomerData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -165,7 +166,76 @@ namespace PointOfSale
 
         private void customersListToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AddCustomerList();
 
+
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WorkingForm_listView.Columns.Clear();
+            WorkingForm_listView.Columns.Add("Customer Id", 110, HorizontalAlignment.Left);
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+            AddCustomerList();
+        }
+
+        /*
+        Add  Customer List...
+        */
+
+        public void AddCustomerList()
+        {
+            WorkingForm_listView.Columns.Clear();
+            HandleCustomer handleCustomer = new HandleCustomer();
+            WorkingForm_listView.Items.Clear();
+
+
+            //   foreach (TableColumns columns in list){
+            WorkingForm_listView.Columns.Add("Customer Id", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Name", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Discuont ", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Payment", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Phone Contact", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Reffered", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Phone 1", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Phone 2", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Phone 3", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Fax 1", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Fax 2", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Fax 3", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Email", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Address", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Remark", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Default", 110, HorizontalAlignment.Left);
+            WorkingForm_listView.Columns.Add("Inactive", 110, HorizontalAlignment.Left);
+            //         }
+
+
+            ArrayList data = handleCustomer.getCustomers();
+
+
+
+            foreach (TotalCustomerClass clms in data)
+            {
+                String[] rows = { clms.customerId.ToString(),clms.customerName.ToString(),
+                    clms.CustomerDiscount.ToString(),clms.customerPrice.ToString(), clms.CustomerPersonContact,
+                    clms.CustomerReffered,
+                    clms.CustomerPhone1, clms.CustomerPhone2, clms.CustomerPhone3, clms.CustomerFax, clms.CustomerFax1,
+                    clms.CustomerFax2, clms.CustomerEmail, clms.CustomerAddress,
+                    clms.CustomerRemark, clms.CustomerDefault,clms.CustomerInactive,};
+                ListViewItem items = new ListViewItem(rows);
+
+                WorkingForm_listView.Items.Add(items);
+            }
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new Customer_Information().Show();
         }
     }
 }

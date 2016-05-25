@@ -1,4 +1,5 @@
-﻿using PointOfSale.Utils.CutomerData;
+﻿using PointOfSale.Utils;
+using PointOfSale.Utils.CutomerData;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -95,14 +96,13 @@ namespace PointOfSale.DbConfiguration
         *    Get All Information About Customers 
         */
 
-        public  Tuple<ArrayList, ArrayList> getCustomers()
+        public ArrayList getCustomers()
         {
 
             Debug.WriteLine("get Customers");
 
-            ArrayList listbasic = new ArrayList();
+            ArrayList lists = new ArrayList();
 
-            ArrayList listinformation = new ArrayList();
 
             String sql = "SELECT customerBasic.customerId, customerBasic.customerName, customerBasic.customerDiscount, customerBasic.customerPaymentMethod,"+
                    "customerInformation.customerPersonContact,customerInformation.customerReffered,customerInformation.customerphone1,"+
@@ -114,32 +114,84 @@ namespace PointOfSale.DbConfiguration
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
             {
-                CustomerBasic customerbasic = new CustomerBasic();
-                CustomerInfomation customerInformations = new CustomerInfomation();
-                customerbasic.customerId = reader.GetInt32(0);
-                customerbasic.customerName = reader.GetString(1);
-                customerbasic.CustomerDiscount = reader.GetInt32(2);
-                customerbasic.customerPrice = reader.GetString(3);
-                listbasic.Add(customerbasic);
-                customerInformations.CustomerPersonContact = reader.GetString(4);
-                customerInformations.CustomerReffered = reader.GetString(5);
-                customerInformations.CustomerPhone1 = reader.GetString(6);
-                customerInformations.CustomerPhone2 = reader.GetString(7);
-                customerInformations.CustomerPhone3 = reader.GetString(8);
-                customerInformations.CustomerFax = reader.GetString(9);
-                customerInformations.CustomerFax1 = reader.GetString(10);
-                customerInformations.CustomerFax2 = reader.GetString(11);
-                customerInformations.CustomerEmail = reader.GetString(12);
-                customerInformations.CustomerAddress = reader.GetString(13);
-                customerInformations.CustomerRemark = reader.GetString(14);
-                customerInformations.CustomerDefault = reader.GetString(15);
-                customerInformations.CustomerInactive = reader.GetString(16);
-                listinformation.Add(customerInformations);
-                Debug.WriteLine(customerbasic);
+                TotalCustomerClass customers = new TotalCustomerClass();
+               
+                customers.customerId = reader.GetInt32(0);
+                customers.customerName = reader.GetString(1);
+                customers.CustomerDiscount = Int32.Parse(reader.GetString(2));
+                Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                customers.customerPrice = reader.GetString(3);
+                customers.Date = System.Convert.ToString(reader[4].ToString());
+                customers.CustomerPersonContact = reader.GetString(4);
+                customers.CustomerReffered = reader.GetString(5);
+
+
+                customers.CustomerPhone1 = reader.GetString(6);
+                customers.CustomerPhone2 = reader.GetString(7);
+                customers.CustomerPhone3 = reader.GetString(8);
+                customers.CustomerFax = reader.GetString(9);
+                customers.CustomerFax1 = reader.GetString(10);
+                customers.CustomerFax2 = reader.GetString(11);
+                customers.CustomerEmail = reader.GetString(12);
+                customers.CustomerAddress = reader.GetString(13);
+                customers.CustomerRemark = reader.GetString(14);
+                customers.CustomerDefault = reader.GetString(15);
+                customers.CustomerInactive = reader.GetString(16);
+                lists.Add(customers);
+               
 
             }
             reader.Close();
-            return Tuple.Create(listbasic, listinformation);
+            return lists;
         }
+
+        /*
+        get Customebasic Columns
+        */
+
+        public List<TableColumns> getCustomerBasicColums()
+        {
+            List<TableColumns> listTable = new List<TableColumns>();
+
+            SqlCommand commands = new SqlCommand("SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('customerBasic')", DatabaseConnections.Instance.getConnection());
+
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableColumns tbclm = new TableColumns();
+                tbclm.TableName = reader.GetString(0);
+                //tbclm.DataType = reader.GetString(7)
+                listTable.Add(tbclm);
+                Debug.WriteLine("Customer Columns List === "+reader.GetString(0));
+            }
+
+            return listTable;
+        }
+
+
+        /*
+        get Customer  Information Columns
+        */
+
+        public List<TableColumns> getCustomerInformationColums()
+        {
+            List<TableColumns> listTable = new List<TableColumns>();
+
+            SqlCommand commands = new SqlCommand("SELECT name FROM sys.columns WHERE object_id = OBJECT_ID('customerInformation')", DatabaseConnections.Instance.getConnection());
+
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableColumns tbclm = new TableColumns();
+                tbclm.TableName = reader.GetString(0);
+                //tbclm.DataType = reader.GetString(7)
+                listTable.Add(tbclm);
+                Debug.WriteLine("Customer Columns List === " + reader.GetString(0));
+            }
+
+            return listTable;
+        }
+
     }
 }

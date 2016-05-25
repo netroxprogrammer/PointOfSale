@@ -137,6 +137,6 @@ namespace PointOfSale.DbConfiguration
         }
     }
 
-
+    
 
 }
