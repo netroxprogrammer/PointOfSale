@@ -83,5 +83,10 @@ namespace PointOfSale.Employee
              employee = new HandleEmployee();
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

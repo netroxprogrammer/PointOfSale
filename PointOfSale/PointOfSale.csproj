@@ -122,6 +122,7 @@
     <Compile Include="Utils\TablesClass\TableProductName.cs" />
     <Compile Include="Utils\TablesClass\TablePurpose.cs" />
     <Compile Include="Utils\TablesClass\TableUnits.cs" />
+    <Compile Include="Utils\TablesClass\TotalEmployeeData.cs" />
     <EmbeddedResource Include="AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>

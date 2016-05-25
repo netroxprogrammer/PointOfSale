@@ -5,6 +5,7 @@ using PointOfSale.TableHandlerForms;
 using PointOfSale.TableInformationForm;
 using PointOfSale.Utils;
 using PointOfSale.Utils.CutomerData;
+using PointOfSale.Utils.TablesClass;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,8 +44,8 @@ namespace PointOfSale
 
         private void WorkingForm_Load(object sender, EventArgs e)
         {
+            WorkingForm_Employ_Panel.Visible = false;
 
-            
             if (Constants.checkLogin == false)
             {
                 this.Hide();
@@ -189,6 +190,7 @@ namespace PointOfSale
 
         public void AddCustomerList()
         {
+            WorkingForm_Employ_Panel.Visible = false;
             WorkingForm_listView.Columns.Clear();
             HandleCustomer handleCustomer = new HandleCustomer();
             WorkingForm_listView.Items.Clear();
@@ -232,10 +234,61 @@ namespace PointOfSale
                 WorkingForm_listView.Items.Add(items);
             }
         }
+        /*
+        get Employee List
+        */
 
+            public void getEmployeeList()
+        {
+
+            WorkingForm_EmployeList.Columns.Clear();
+            WorkingForm_EmployeList.Items.Clear();
+            WorkingForm_EmployeList.Columns.Add("Employee Id", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Emloyee Name", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Employee Phone ", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Father Name", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Employee CNIC", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Employee Address", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Location", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Emergancy Name", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Emergancy Contact", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Emergancy Relation", 110, HorizontalAlignment.Left);
+            WorkingForm_EmployeList.Columns.Add("Emergancy Location", 110, HorizontalAlignment.Left);
+
+            HandleEmployee employee = new HandleEmployee();
+            // WorkingForm_customerPanel.Visible = false;
+            WorkingForm_Employ_Panel.Visible = true;
+            ArrayList empl = employee.getEmployee();
+
+            foreach (TotalEmployeeData em in empl)
+            {
+                String[] rows = { em.EmployeeId.ToString(), em.EmployeeName, em.EmployeePhone, em.EmployeeFatherName,
+                    em.EmployeeCNIC, em.EmployeeAddress, em.EmployeeLocation, em.Name, em.Contact, em.Relation, em.Location};
+                ListViewItem items = new ListViewItem(rows);
+                WorkingForm_EmployeList.Items.Add(items);
+            }
+
+
+        }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             new Customer_Information().Show();
+        }
+
+        private void listOfEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            getEmployeeList();
+        }
+
+        private void addNewEmployeeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new AddEmployee().Show();
+
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            getEmployeeList();
         }
     }
 }

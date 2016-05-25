@@ -91,7 +91,7 @@
             this.suppliers_Button = new System.Windows.Forms.Button();
             this.customer_Button = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
             this.WorkingForm_listView = new System.Windows.Forms.ListView();
             this.WorkingForm_rightClick_menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,13 +100,21 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
+            this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
+            this.workingForm_Employee_rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewEmployeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
             this.contextMenuStrip_Inventory.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.WorkingForm_customerPanel.SuspendLayout();
             this.WorkingForm_rightClick_menu.SuspendLayout();
+            this.WorkingForm_Employ_Panel.SuspendLayout();
+            this.workingForm_Employee_rightClick.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperMenu
@@ -368,6 +376,7 @@
             this.listOfEmployeeToolStripMenuItem.Name = "listOfEmployeeToolStripMenuItem";
             this.listOfEmployeeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.listOfEmployeeToolStripMenuItem.Text = "List of Employee";
+            this.listOfEmployeeToolStripMenuItem.Click += new System.EventHandler(this.listOfEmployeeToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -655,23 +664,23 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // panel1
+            // WorkingForm_customerPanel
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.WorkingForm_listView);
-            this.panel1.Location = new System.Drawing.Point(0, 111);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1329, 622);
-            this.panel1.TabIndex = 10;
+            this.WorkingForm_customerPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_Employ_Panel);
+            this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_listView);
+            this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 111);
+            this.WorkingForm_customerPanel.Name = "WorkingForm_customerPanel";
+            this.WorkingForm_customerPanel.Size = new System.Drawing.Size(1329, 622);
+            this.WorkingForm_customerPanel.TabIndex = 10;
             // 
             // WorkingForm_listView
             // 
             this.WorkingForm_listView.ContextMenuStrip = this.WorkingForm_rightClick_menu;
-            this.WorkingForm_listView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WorkingForm_listView.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkingForm_listView.Location = new System.Drawing.Point(0, 0);
+            this.WorkingForm_listView.Location = new System.Drawing.Point(0, 69);
             this.WorkingForm_listView.Name = "WorkingForm_listView";
-            this.WorkingForm_listView.Size = new System.Drawing.Size(1329, 622);
+            this.WorkingForm_listView.Size = new System.Drawing.Size(1329, 553);
             this.WorkingForm_listView.TabIndex = 0;
             this.WorkingForm_listView.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_listView.View = System.Windows.Forms.View.Details;
@@ -686,7 +695,7 @@
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.WorkingForm_rightClick_menu.Name = "WorkingForm_rightClick_menu";
-            this.WorkingForm_rightClick_menu.Size = new System.Drawing.Size(216, 158);
+            this.WorkingForm_rightClick_menu.Size = new System.Drawing.Size(216, 136);
             // 
             // toolStripMenuItem1
             // 
@@ -726,13 +735,61 @@
             this.toolStripMenuItem6.Size = new System.Drawing.Size(215, 22);
             this.toolStripMenuItem6.Text = "Print Customer List";
             // 
+            // WorkingForm_Employ_Panel
+            // 
+            this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
+            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(0, 3);
+            this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
+            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
+            this.WorkingForm_Employ_Panel.TabIndex = 1;
+            // 
+            // WorkingForm_EmployeList
+            // 
+            this.WorkingForm_EmployeList.ContextMenuStrip = this.workingForm_Employee_rightClick;
+            this.WorkingForm_EmployeList.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkingForm_EmployeList.Location = new System.Drawing.Point(0, 69);
+            this.WorkingForm_EmployeList.Name = "WorkingForm_EmployeList";
+            this.WorkingForm_EmployeList.Size = new System.Drawing.Size(1329, 550);
+            this.WorkingForm_EmployeList.TabIndex = 0;
+            this.WorkingForm_EmployeList.UseCompatibleStateImageBehavior = false;
+            this.WorkingForm_EmployeList.View = System.Windows.Forms.View.Details;
+            // 
+            // workingForm_Employee_rightClick
+            // 
+            this.workingForm_Employee_rightClick.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.addNewEmployeeToolStripMenuItem1,
+            this.editEmployeeToolStripMenuItem});
+            this.workingForm_Employee_rightClick.Name = "workingForm_Employee_rightClick";
+            this.workingForm_Employee_rightClick.Size = new System.Drawing.Size(179, 92);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // addNewEmployeeToolStripMenuItem1
+            // 
+            this.addNewEmployeeToolStripMenuItem1.Name = "addNewEmployeeToolStripMenuItem1";
+            this.addNewEmployeeToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
+            this.addNewEmployeeToolStripMenuItem1.Text = "Add New Employee";
+            this.addNewEmployeeToolStripMenuItem1.Click += new System.EventHandler(this.addNewEmployeeToolStripMenuItem1_Click);
+            // 
+            // editEmployeeToolStripMenuItem
+            // 
+            this.editEmployeeToolStripMenuItem.Name = "editEmployeeToolStripMenuItem";
+            this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.editEmployeeToolStripMenuItem.Text = "Edit Employee";
+            // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1329, 728);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.WorkingForm_customerPanel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.upperMenu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -750,8 +807,10 @@
             this.contextMenuStrip_Supplier.ResumeLayout(false);
             this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.WorkingForm_customerPanel.ResumeLayout(false);
             this.WorkingForm_rightClick_menu.ResumeLayout(false);
+            this.WorkingForm_Employ_Panel.ResumeLayout(false);
+            this.workingForm_Employee_rightClick.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -819,7 +878,7 @@
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addProductsToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel WorkingForm_customerPanel;
         private System.Windows.Forms.ListView WorkingForm_listView;
         private System.Windows.Forms.ToolStripMenuItem customersListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
@@ -830,6 +889,12 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.Panel WorkingForm_Employ_Panel;
+        private System.Windows.Forms.ListView WorkingForm_EmployeList;
+        private System.Windows.Forms.ContextMenuStrip workingForm_Employee_rightClick;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewEmployeeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
     }
 }
 

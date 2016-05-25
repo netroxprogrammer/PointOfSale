@@ -1,5 +1,6 @@
 ﻿using PointOfSale.Utils.TablesClass;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -74,7 +75,48 @@ namespace PointOfSale.DbConfiguration
             return id;
 
         }
-        
-        
+
+        public ArrayList getEmployee()
+        {
+
+            Debug.WriteLine("get Employee");
+
+            ArrayList lists = new ArrayList();
+
+
+            String sql = "SELECT Employees.employeeId , employeeName, Employees.employeePhone, Employees.employeeFatherName, Employees.employeeCNIC,"+
+                "Employees.employeeAddress, Employees.employeeLocation, EmployeeEmergency.name, EmployeeEmergency.relation,EmployeeEmergency.contact,"+
+                 "EmployeeEmergency.location from[Employees]  INNER JOIN [EmployeeEmergency] ON Employees.employeeId = EmployeeEmergency.employeeId";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TotalEmployeeData emplooye = new TotalEmployeeData();
+
+                emplooye.EmployeeId = reader.GetInt32(0);
+                emplooye.EmployeeName = reader.GetString(1);
+                emplooye.EmployeePhone = reader.GetString(2);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                emplooye.EmployeeFatherName = reader.GetString(3);
+               
+                emplooye.EmployeeCNIC = reader.GetString(4);
+                emplooye.EmployeeAddress = reader.GetString(5);
+
+
+                emplooye.EmployeeLocation = reader.GetString(6);
+                emplooye.Name = reader.GetString(7);
+                emplooye.Relation = reader.GetString(8);
+                emplooye.Contact = reader.GetString(9);
+                emplooye.Location = reader.GetString(10);
+              
+                lists.Add(emplooye);
+
+
+            }
+            reader.Close();
+            return lists;
+        }
+
     }
 }
