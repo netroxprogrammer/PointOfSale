@@ -303,6 +303,7 @@
             this.groupBox2.Size = new System.Drawing.Size(372, 55);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // button3
             // 
@@ -314,6 +315,7 @@
             this.button3.Text = "Cancel";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 

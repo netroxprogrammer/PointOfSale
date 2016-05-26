@@ -41,27 +41,7 @@ namespace PointOfSale
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-
-            DialogResult result = colorDialog1.ShowDialog();
-            colorDialog1.SolidColorOnly = false;
-        
-            if (result == DialogResult.OK)
-            {
-                Color c = colorDialog1.Color;
-
-                if (c.IsKnownColor)
-                {
-                    // MessageBox.Show(c.Name.ToString());
-                    addProducts_colorName_label.Text = c.Name.ToString();
-                    addProducts_colorName_label.BackColor = c;
-                }
-                else {
-                    
-                    MessageBox.Show("Please Select Simple Color");
-                }
-
-            }
+            getColors(addProducts_colorName_label);
         }
 
         private void addProducts_colorName_label_Click(object sender, EventArgs e)
@@ -173,6 +153,69 @@ namespace PointOfSale
 
                 adddNewProducts_Units_comboBox.Items.Add(name.unitsName);
             }
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            getColors(addProducts_colorName_label2);
+        }
+        /*
+        Get Colors
+        */
+        public void getColors(Label textbox)
+        {
+
+            DialogResult result = colorDialog1.ShowDialog();
+            colorDialog1.SolidColorOnly = false;
+
+            if (result == DialogResult.OK)
+            {
+                Color c = colorDialog1.Color;
+
+                if (c.IsKnownColor)
+                {
+                    // MessageBox.Show(c.Name.ToString());
+
+                    // addProducts_colorName_label.Text = c.Name.ToString();
+                    textbox.BackColor = c;
+
+                }
+                else {
+
+                    MessageBox.Show("Please Select Simple Color");
+                }
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            getColors(addProducts_colorName_label3);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

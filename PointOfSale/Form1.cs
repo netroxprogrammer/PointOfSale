@@ -44,6 +44,8 @@ namespace PointOfSale
 
         private void WorkingForm_Load(object sender, EventArgs e)
         {
+            WorkingForm_listView.Focus();
+            WorkingForm_EmployeList.Focus();
             WorkingForm_Employ_Panel.Visible = false;
 
             if (Constants.checkLogin == false)
@@ -289,6 +291,25 @@ namespace PointOfSale
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             getEmployeeList();
+        }
+
+        private void WorkingForm_EmployeList_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            String id = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String name = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String phone = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String fName = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String CNIC = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String address = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String location = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String eName = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String eContact = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String eRelation = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+
+            String eLocatipn = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+
+            MessageBox.Show(name);
         }
     }
 }
