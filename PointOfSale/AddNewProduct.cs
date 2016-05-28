@@ -217,6 +217,192 @@ namespace PointOfSale
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            String code = addNewProduct_code_textbox.Text;
+            String pName = null;
+            String CName = null;
+            String purpose = null;
+            String description = null;
+            String  category = null;
+            String location = null;
+            String batch = null;
+            String size = null;
+            String unit = null, packs = null, TotalPacks = null,  Qtypack = null; ;
+            /* String CName = adddNewProducts_companyName_comboBox.SelectedItem.ToString();
+             String purpose = adddNewProducts_Purpose_comboBox.SelectedItem.ToString();
+             String  description =  adddNewProducts_Description_comboBox.SelectedItem.ToString();
+             String category = adddNewProducts_Category_comboBox.SelectedItem.ToString();
+             String location = adddNewProducts_Location_comboBox.SelectedItem.ToString();
+             DateTime dateTime = addNewProduct_Date_dateTimePicker.Value;
+             String batch = addNewProduct_Batch_textbox.Text;
+             String color1 = addProducts_colorName_label.Text;
+             String color2 = addProducts_colorName_label2.Text;
+             String color3 = addProducts_colorName_label3.Text;
+
+             String size = addNewProduct_size_textbox.Text;
+             String unit = adddNewProducts_Units_comboBox.Text;
+             String   Qtypack = addNewProduct_QtyPack_textbox.Text;
+             String QtyHand = addNewProduct_QtyHand_textbox.Text;
+             String QtyStock = addNewProduct_QtyStock_textbox.Text;
+             String maxQuantity = addNewProduct_MinStock_textbox.Text;
+             String  salePrice = addNewProduct_SalePrice_textbox.Text;
+             String  profit = addNewProduct_Profit_textbox.Text;
+             String  pPrice = addNewProduct_purchasePrice_textbox.Text;
+             String maxDiscount = addNewProduct_MaxDiscount_textbox.Text;*/
+
+            //  check product Name empty or Not
+            if (adddNewProducts_ProductName_comboBox.SelectedIndex != -1)
+            {
+                pName = adddNewProducts_ProductName_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_ProductName_comboBox.BackColor = Color.Red;
+            }
+            // Check Company Name Empty Or  Not
+            if(adddNewProducts_companyName_comboBox.SelectedIndex != -1)
+            {
+              CName= adddNewProducts_companyName_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_companyName_comboBox.BackColor = Color.Red;
+            }
+             //   Check Purpose
+             if(adddNewProducts_Purpose_comboBox.SelectedIndex != -1)
+            {
+              purpose = adddNewProducts_Purpose_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_Purpose_comboBox.BackColor = Color.Red;
+            }
+             // Check Description
+             if(adddNewProducts_Description_comboBox.SelectedIndex != -1)
+            {
+               description = adddNewProducts_Description_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_Description_comboBox.BackColor = Color.Red;
+            }
+            // Check Category
+            if(adddNewProducts_Category_comboBox.SelectedIndex != -1)
+            {
+                category =adddNewProducts_Category_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_Category_comboBox.BackColor = Color.Red;
+            }
+            // Check Location 
+
+            if (adddNewProducts_Location_comboBox.SelectedIndex != -1)
+            {
+                location = adddNewProducts_Location_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_Location_comboBox.BackColor = Color.Red;
+            }
+            // Check Batch ]
+            if (!String.IsNullOrEmpty(addNewProduct_Batch_textbox.Text))
+            {
+                batch = addNewProduct_Batch_textbox.Text;
+            }
+            else
+            {
+                addNewProduct_Batch_textbox.BackColor = Color.Red;
+            }
+
+            // check Size
+
+            if (!String.IsNullOrEmpty(addNewProduct_size_textbox.Text))
+            {
+               size = addNewProduct_size_textbox.Text;
+            }
+            else
+            {
+                addNewProduct_size_textbox.BackColor = Color.Red;
+            }
+            // Check Units
+            if (adddNewProducts_Units_comboBox.SelectedIndex != -1)
+            {
+               unit = adddNewProducts_Units_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                adddNewProducts_Units_comboBox.BackColor = Color.Red;
+
+            }
+            // Check Packs
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text))
+            {
+               Qtypack = addNewProduct_QtyPack_textbox.Text;
+            }
+            else
+            {
+                addNewProduct_QtyPack_textbox.BackColor = Color.Red;
+            }
+        }
+
+        private void adddNewProducts_ProductName_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_ProductName_comboBox.BackColor = Color.White;
+        }
+
+        private void adddNewProducts_companyName_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_companyName_comboBox.BackColor = Color.White;
+        }
+
+        private void adddNewProducts_Purpose_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_Purpose_comboBox.BackColor = Color.White;
+        }
+
+        private void adddNewProducts_Description_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_Description_comboBox.BackColor = Color.White;
+        }
+
+        private void adddNewProducts_Category_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_Category_comboBox.BackColor = Color.White;
+        }
+
+        private void adddNewProducts_Location_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_Location_comboBox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_Batch_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_Batch_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_size_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_size_textbox.BackColor = Color.Red;
+        }
+
+        private void adddNewProducts_Units_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            adddNewProducts_Units_comboBox.BackColor = Color.White;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewProduct_QtyPack_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_QtyPack_textbox.BackColor = Color.White;
+        }
     }
 }
 

@@ -34,37 +34,42 @@
             this.adddNewProducts_Category_comboBox = new System.Windows.Forms.ComboBox();
             this.adddNewProducts_Units_comboBox = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_size_textbox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.addProducts_colorName_label3 = new System.Windows.Forms.Label();
+            this.addProducts_colorName_label2 = new System.Windows.Forms.Label();
             this.addProducts_colorName_label = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.addNewProduct_updatestock_checkBox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_itemFixDiscount_textbox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.addNewProduct_Distrubutors_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_MaxDiscount_textbox = new System.Windows.Forms.TextBox();
+            this.addNewProduct_purchasePrice_textbox = new System.Windows.Forms.TextBox();
+            this.addNewProduct_Profit_textbox = new System.Windows.Forms.TextBox();
+            this.addNewProduct_SalePrice_textbox = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_MinStock_textbox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_QtyStock_textbox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_QtyHand_textbox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_QtyPack_textbox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_Batch_textbox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.addNewProduct_Date_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.adddNewProducts_Location_comboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -76,7 +81,7 @@
             this.adddNewProducts_ProductName_comboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addNewProduct_code_textbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -88,17 +93,16 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.addNewProduct_inActive_checkBox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.addProducts_colorName_label2 = new System.Windows.Forms.Label();
-            this.addProducts_colorName_label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.addNewProduct_Packs_textbox = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.addNewProduct_TotalPacks_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.gruop.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -133,17 +137,17 @@
             this.gruop.Controls.Add(this.adddNewProducts_Category_comboBox);
             this.gruop.Controls.Add(this.adddNewProducts_Units_comboBox);
             this.gruop.Controls.Add(this.label26);
-            this.gruop.Controls.Add(this.textBox17);
+            this.gruop.Controls.Add(this.addNewProduct_size_textbox);
             this.gruop.Controls.Add(this.label25);
             this.gruop.Controls.Add(this.groupBox6);
-            this.gruop.Controls.Add(this.checkBox1);
+            this.gruop.Controls.Add(this.addNewProduct_updatestock_checkBox);
             this.gruop.Controls.Add(this.groupBox5);
             this.gruop.Controls.Add(this.groupBox4);
             this.gruop.Controls.Add(this.groupBox2);
-            this.gruop.Controls.Add(this.textBox2);
+            this.gruop.Controls.Add(this.addNewProduct_Batch_textbox);
             this.gruop.Controls.Add(this.label10);
             this.gruop.Controls.Add(this.label9);
-            this.gruop.Controls.Add(this.dateTimePicker1);
+            this.gruop.Controls.Add(this.addNewProduct_Date_dateTimePicker);
             this.gruop.Controls.Add(this.adddNewProducts_Location_comboBox);
             this.gruop.Controls.Add(this.label8);
             this.gruop.Controls.Add(this.label7);
@@ -155,7 +159,7 @@
             this.gruop.Controls.Add(this.adddNewProducts_ProductName_comboBox);
             this.gruop.Controls.Add(this.label4);
             this.gruop.Controls.Add(this.label3);
-            this.gruop.Controls.Add(this.textBox1);
+            this.gruop.Controls.Add(this.addNewProduct_code_textbox);
             this.gruop.Controls.Add(this.label2);
             this.gruop.Location = new System.Drawing.Point(12, 82);
             this.gruop.Name = "gruop";
@@ -171,6 +175,7 @@
             this.adddNewProducts_Category_comboBox.Size = new System.Drawing.Size(121, 21);
             this.adddNewProducts_Category_comboBox.TabIndex = 29;
             this.adddNewProducts_Category_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_Category_comboBox_SelectedIndexChanged_1);
+            this.adddNewProducts_Category_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_Category_comboBox_MouseClick);
             // 
             // adddNewProducts_Units_comboBox
             // 
@@ -182,6 +187,7 @@
             this.adddNewProducts_Units_comboBox.Name = "adddNewProducts_Units_comboBox";
             this.adddNewProducts_Units_comboBox.Size = new System.Drawing.Size(131, 21);
             this.adddNewProducts_Units_comboBox.TabIndex = 28;
+            this.adddNewProducts_Units_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_Units_comboBox_MouseClick);
             // 
             // label26
             // 
@@ -194,14 +200,15 @@
             this.label26.TabIndex = 27;
             this.label26.Text = "Units";
             // 
-            // textBox17
+            // addNewProduct_size_textbox
             // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(245, 187);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(198, 21);
-            this.textBox17.TabIndex = 26;
+            this.addNewProduct_size_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_size_textbox.Location = new System.Drawing.Point(245, 187);
+            this.addNewProduct_size_textbox.Multiline = true;
+            this.addNewProduct_size_textbox.Name = "addNewProduct_size_textbox";
+            this.addNewProduct_size_textbox.Size = new System.Drawing.Size(198, 21);
+            this.addNewProduct_size_textbox.TabIndex = 26;
+            this.addNewProduct_size_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_size_textbox_MouseClick);
             // 
             // label25
             // 
@@ -229,6 +236,48 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
+            // button6
+            // 
+            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
+            this.button6.Location = new System.Drawing.Point(162, 30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 32);
+            this.button6.TabIndex = 8;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
+            this.button5.Location = new System.Drawing.Point(123, 30);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(32, 32);
+            this.button5.TabIndex = 7;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // addProducts_colorName_label3
+            // 
+            this.addProducts_colorName_label3.AutoSize = true;
+            this.addProducts_colorName_label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addProducts_colorName_label3.Location = new System.Drawing.Point(50, 39);
+            this.addProducts_colorName_label3.Name = "addProducts_colorName_label3";
+            this.addProducts_colorName_label3.Size = new System.Drawing.Size(14, 15);
+            this.addProducts_colorName_label3.TabIndex = 6;
+            this.addProducts_colorName_label3.Text = "3";
+            this.addProducts_colorName_label3.Click += new System.EventHandler(this.label28_Click);
+            // 
+            // addProducts_colorName_label2
+            // 
+            this.addProducts_colorName_label2.AutoSize = true;
+            this.addProducts_colorName_label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addProducts_colorName_label2.Location = new System.Drawing.Point(30, 39);
+            this.addProducts_colorName_label2.Name = "addProducts_colorName_label2";
+            this.addProducts_colorName_label2.Size = new System.Drawing.Size(14, 15);
+            this.addProducts_colorName_label2.TabIndex = 5;
+            this.addProducts_colorName_label2.Text = "2";
+            this.addProducts_colorName_label2.Click += new System.EventHandler(this.label27_Click);
+            // 
             // addProducts_colorName_label
             // 
             this.addProducts_colorName_label.AutoSize = true;
@@ -240,38 +289,48 @@
             this.addProducts_colorName_label.Text = "1";
             this.addProducts_colorName_label.Click += new System.EventHandler(this.addProducts_colorName_label_Click);
             // 
-            // checkBox1
+            // button4
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.checkBox1.Location = new System.Drawing.Point(10, 497);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(349, 23);
-            this.checkBox1.TabIndex = 23;
-            this.checkBox1.Text = "Update Stock Check Tag   (No Check tab save yet)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
+            this.button4.Location = new System.Drawing.Point(85, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 32);
+            this.button4.TabIndex = 4;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // addNewProduct_updatestock_checkBox
+            // 
+            this.addNewProduct_updatestock_checkBox.AutoSize = true;
+            this.addNewProduct_updatestock_checkBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_updatestock_checkBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.addNewProduct_updatestock_checkBox.Location = new System.Drawing.Point(14, 512);
+            this.addNewProduct_updatestock_checkBox.Name = "addNewProduct_updatestock_checkBox";
+            this.addNewProduct_updatestock_checkBox.Size = new System.Drawing.Size(349, 23);
+            this.addNewProduct_updatestock_checkBox.TabIndex = 23;
+            this.addNewProduct_updatestock_checkBox.Text = "Update Stock Check Tag   (No Check tab save yet)";
+            this.addNewProduct_updatestock_checkBox.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.addNewProduct_itemFixDiscount_textbox);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.comboBox7);
+            this.groupBox5.Controls.Add(this.addNewProduct_Distrubutors_comboBox);
             this.groupBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox5.Location = new System.Drawing.Point(311, 353);
+            this.groupBox5.Location = new System.Drawing.Point(310, 379);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(272, 127);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Distributers";
             // 
-            // textBox7
+            // addNewProduct_itemFixDiscount_textbox
             // 
-            this.textBox7.Location = new System.Drawing.Point(33, 94);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(123, 27);
-            this.textBox7.TabIndex = 8;
+            this.addNewProduct_itemFixDiscount_textbox.Location = new System.Drawing.Point(33, 94);
+            this.addNewProduct_itemFixDiscount_textbox.Name = "addNewProduct_itemFixDiscount_textbox";
+            this.addNewProduct_itemFixDiscount_textbox.Size = new System.Drawing.Size(123, 27);
+            this.addNewProduct_itemFixDiscount_textbox.TabIndex = 8;
             // 
             // label15
             // 
@@ -283,60 +342,60 @@
             this.label15.TabIndex = 4;
             this.label15.Text = "Item Fix Discount";
             // 
-            // comboBox7
+            // addNewProduct_Distrubutors_comboBox
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(6, 26);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(260, 27);
-            this.comboBox7.TabIndex = 0;
+            this.addNewProduct_Distrubutors_comboBox.FormattingEnabled = true;
+            this.addNewProduct_Distrubutors_comboBox.Location = new System.Drawing.Point(6, 26);
+            this.addNewProduct_Distrubutors_comboBox.Name = "addNewProduct_Distrubutors_comboBox";
+            this.addNewProduct_Distrubutors_comboBox.Size = new System.Drawing.Size(260, 27);
+            this.addNewProduct_Distrubutors_comboBox.TabIndex = 0;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox16);
-            this.groupBox4.Controls.Add(this.textBox15);
-            this.groupBox4.Controls.Add(this.textBox14);
-            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.addNewProduct_MaxDiscount_textbox);
+            this.groupBox4.Controls.Add(this.addNewProduct_purchasePrice_textbox);
+            this.groupBox4.Controls.Add(this.addNewProduct_Profit_textbox);
+            this.groupBox4.Controls.Add(this.addNewProduct_SalePrice_textbox);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.groupBox4.Location = new System.Drawing.Point(10, 342);
+            this.groupBox4.Location = new System.Drawing.Point(9, 368);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(284, 138);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Price & Discount";
             // 
-            // textBox16
+            // addNewProduct_MaxDiscount_textbox
             // 
-            this.textBox16.Location = new System.Drawing.Point(155, 105);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(123, 27);
-            this.textBox16.TabIndex = 7;
+            this.addNewProduct_MaxDiscount_textbox.Location = new System.Drawing.Point(155, 105);
+            this.addNewProduct_MaxDiscount_textbox.Name = "addNewProduct_MaxDiscount_textbox";
+            this.addNewProduct_MaxDiscount_textbox.Size = new System.Drawing.Size(123, 27);
+            this.addNewProduct_MaxDiscount_textbox.TabIndex = 7;
             // 
-            // textBox15
+            // addNewProduct_purchasePrice_textbox
             // 
-            this.textBox15.Location = new System.Drawing.Point(13, 103);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(123, 27);
-            this.textBox15.TabIndex = 6;
+            this.addNewProduct_purchasePrice_textbox.Location = new System.Drawing.Point(13, 103);
+            this.addNewProduct_purchasePrice_textbox.Name = "addNewProduct_purchasePrice_textbox";
+            this.addNewProduct_purchasePrice_textbox.Size = new System.Drawing.Size(123, 27);
+            this.addNewProduct_purchasePrice_textbox.TabIndex = 6;
             // 
-            // textBox14
+            // addNewProduct_Profit_textbox
             // 
-            this.textBox14.Location = new System.Drawing.Point(155, 40);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(123, 27);
-            this.textBox14.TabIndex = 5;
+            this.addNewProduct_Profit_textbox.Location = new System.Drawing.Point(155, 40);
+            this.addNewProduct_Profit_textbox.Name = "addNewProduct_Profit_textbox";
+            this.addNewProduct_Profit_textbox.Size = new System.Drawing.Size(123, 27);
+            this.addNewProduct_Profit_textbox.TabIndex = 5;
             // 
-            // textBox13
+            // addNewProduct_SalePrice_textbox
             // 
-            this.textBox13.Location = new System.Drawing.Point(13, 40);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(123, 27);
-            this.textBox13.TabIndex = 4;
+            this.addNewProduct_SalePrice_textbox.Location = new System.Drawing.Point(13, 40);
+            this.addNewProduct_SalePrice_textbox.Name = "addNewProduct_SalePrice_textbox";
+            this.addNewProduct_SalePrice_textbox.Size = new System.Drawing.Size(123, 27);
+            this.addNewProduct_SalePrice_textbox.TabIndex = 4;
             // 
             // label24
             // 
@@ -380,111 +439,117 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.addNewProduct_TotalPacks_textbox);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.label27);
+            this.groupBox2.Controls.Add(this.addNewProduct_Packs_textbox);
+            this.groupBox2.Controls.Add(this.addNewProduct_MinStock_textbox);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.addNewProduct_QtyStock_textbox);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.addNewProduct_QtyHand_textbox);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.addNewProduct_QtyPack_textbox);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox2.Location = new System.Drawing.Point(6, 255);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(591, 72);
+            this.groupBox2.Size = new System.Drawing.Size(591, 97);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock & Store";
             // 
-            // textBox6
+            // addNewProduct_MinStock_textbox
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(362, 45);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(104, 21);
-            this.textBox6.TabIndex = 28;
+            this.addNewProduct_MinStock_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_MinStock_textbox.Location = new System.Drawing.Point(487, 45);
+            this.addNewProduct_MinStock_textbox.Multiline = true;
+            this.addNewProduct_MinStock_textbox.Name = "addNewProduct_MinStock_textbox";
+            this.addNewProduct_MinStock_textbox.Size = new System.Drawing.Size(104, 21);
+            this.addNewProduct_MinStock_textbox.TabIndex = 28;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label14.Location = new System.Drawing.Point(361, 23);
+            this.label14.Location = new System.Drawing.Point(486, 23);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(72, 19);
             this.label14.TabIndex = 27;
             this.label14.Text = "Min Stock";
             // 
-            // textBox5
+            // addNewProduct_QtyStock_textbox
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(239, 45);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 21);
-            this.textBox5.TabIndex = 26;
+            this.addNewProduct_QtyStock_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_QtyStock_textbox.Location = new System.Drawing.Point(364, 45);
+            this.addNewProduct_QtyStock_textbox.Multiline = true;
+            this.addNewProduct_QtyStock_textbox.Name = "addNewProduct_QtyStock_textbox";
+            this.addNewProduct_QtyStock_textbox.Size = new System.Drawing.Size(114, 21);
+            this.addNewProduct_QtyStock_textbox.TabIndex = 26;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label13.Location = new System.Drawing.Point(235, 23);
+            this.label13.Location = new System.Drawing.Point(360, 23);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 19);
             this.label13.TabIndex = 25;
             this.label13.Text = "Max Stock";
             // 
-            // textBox4
+            // addNewProduct_QtyHand_textbox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(128, 45);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(102, 21);
-            this.textBox4.TabIndex = 24;
+            this.addNewProduct_QtyHand_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_QtyHand_textbox.Location = new System.Drawing.Point(248, 45);
+            this.addNewProduct_QtyHand_textbox.Multiline = true;
+            this.addNewProduct_QtyHand_textbox.Name = "addNewProduct_QtyHand_textbox";
+            this.addNewProduct_QtyHand_textbox.Size = new System.Drawing.Size(102, 21);
+            this.addNewProduct_QtyHand_textbox.TabIndex = 24;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label12.Location = new System.Drawing.Point(124, 23);
+            this.label12.Location = new System.Drawing.Point(244, 23);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 19);
             this.label12.TabIndex = 23;
             this.label12.Text = "Qty in Hand";
             // 
-            // textBox3
+            // addNewProduct_QtyPack_textbox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(9, 45);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 21);
-            this.textBox3.TabIndex = 22;
+            this.addNewProduct_QtyPack_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_QtyPack_textbox.Location = new System.Drawing.Point(75, 26);
+            this.addNewProduct_QtyPack_textbox.Multiline = true;
+            this.addNewProduct_QtyPack_textbox.Name = "addNewProduct_QtyPack_textbox";
+            this.addNewProduct_QtyPack_textbox.Size = new System.Drawing.Size(53, 30);
+            this.addNewProduct_QtyPack_textbox.TabIndex = 22;
+            this.addNewProduct_QtyPack_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_QtyPack_textbox_MouseClick);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label11.Location = new System.Drawing.Point(6, 23);
+            this.label11.Location = new System.Drawing.Point(6, 28);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 19);
             this.label11.TabIndex = 21;
             this.label11.Text = "Qty/Pack";
             // 
-            // textBox2
+            // addNewProduct_Batch_textbox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(470, 126);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 21);
-            this.textBox2.TabIndex = 19;
+            this.addNewProduct_Batch_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_Batch_textbox.Location = new System.Drawing.Point(470, 126);
+            this.addNewProduct_Batch_textbox.Multiline = true;
+            this.addNewProduct_Batch_textbox.Name = "addNewProduct_Batch_textbox";
+            this.addNewProduct_Batch_textbox.Size = new System.Drawing.Size(124, 21);
+            this.addNewProduct_Batch_textbox.TabIndex = 19;
+            this.addNewProduct_Batch_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_Batch_textbox_MouseClick);
             // 
             // label10
             // 
@@ -508,12 +573,13 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Expiry Date";
             // 
-            // dateTimePicker1
+            // addNewProduct_Date_dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(241, 125);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 16;
+            this.addNewProduct_Date_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.addNewProduct_Date_dateTimePicker.Location = new System.Drawing.Point(241, 125);
+            this.addNewProduct_Date_dateTimePicker.Name = "addNewProduct_Date_dateTimePicker";
+            this.addNewProduct_Date_dateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.addNewProduct_Date_dateTimePicker.TabIndex = 16;
             // 
             // adddNewProducts_Location_comboBox
             // 
@@ -522,6 +588,7 @@
             this.adddNewProducts_Location_comboBox.Name = "adddNewProducts_Location_comboBox";
             this.adddNewProducts_Location_comboBox.Size = new System.Drawing.Size(219, 21);
             this.adddNewProducts_Location_comboBox.TabIndex = 15;
+            this.adddNewProducts_Location_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_Location_comboBox_MouseClick);
             // 
             // label8
             // 
@@ -552,6 +619,7 @@
             this.adddNewProducts_Description_comboBox.Name = "adddNewProducts_Description_comboBox";
             this.adddNewProducts_Description_comboBox.Size = new System.Drawing.Size(219, 21);
             this.adddNewProducts_Description_comboBox.TabIndex = 11;
+            this.adddNewProducts_Description_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_Description_comboBox_MouseClick);
             // 
             // label6
             // 
@@ -571,6 +639,7 @@
             this.adddNewProducts_Purpose_comboBox.Name = "adddNewProducts_Purpose_comboBox";
             this.adddNewProducts_Purpose_comboBox.Size = new System.Drawing.Size(219, 21);
             this.adddNewProducts_Purpose_comboBox.TabIndex = 9;
+            this.adddNewProducts_Purpose_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_Purpose_comboBox_MouseClick);
             // 
             // label5
             // 
@@ -591,6 +660,7 @@
             this.adddNewProducts_companyName_comboBox.Size = new System.Drawing.Size(219, 21);
             this.adddNewProducts_companyName_comboBox.TabIndex = 7;
             this.adddNewProducts_companyName_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_companyName_comboBox_SelectedIndexChanged);
+            this.adddNewProducts_companyName_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_companyName_comboBox_MouseClick);
             // 
             // adddNewProducts_ProductName_comboBox
             // 
@@ -600,6 +670,7 @@
             this.adddNewProducts_ProductName_comboBox.Size = new System.Drawing.Size(219, 21);
             this.adddNewProducts_ProductName_comboBox.TabIndex = 6;
             this.adddNewProducts_ProductName_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_ProductName_comboBox_SelectedIndexChanged);
+            this.adddNewProducts_ProductName_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_ProductName_comboBox_MouseClick);
             // 
             // label4
             // 
@@ -623,14 +694,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Product Name";
             // 
-            // textBox1
+            // addNewProduct_code_textbox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 21);
-            this.textBox1.TabIndex = 1;
+            this.addNewProduct_code_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_code_textbox.Location = new System.Drawing.Point(9, 32);
+            this.addNewProduct_code_textbox.Multiline = true;
+            this.addNewProduct_code_textbox.Name = "addNewProduct_code_textbox";
+            this.addNewProduct_code_textbox.Size = new System.Drawing.Size(124, 21);
+            this.addNewProduct_code_textbox.TabIndex = 1;
             // 
             // label2
             // 
@@ -713,50 +784,28 @@
             this.label20.Size = new System.Drawing.Size(100, 23);
             this.label20.TabIndex = 0;
             // 
-            // checkBox2
+            // addNewProduct_inActive_checkBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.checkBox2.Location = new System.Drawing.Point(22, 640);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(132, 23);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Inactive Product";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.addNewProduct_inActive_checkBox.AutoSize = true;
+            this.addNewProduct_inActive_checkBox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_inActive_checkBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.addNewProduct_inActive_checkBox.Location = new System.Drawing.Point(22, 656);
+            this.addNewProduct_inActive_checkBox.Name = "addNewProduct_inActive_checkBox";
+            this.addNewProduct_inActive_checkBox.Size = new System.Drawing.Size(132, 23);
+            this.addNewProduct_inActive_checkBox.TabIndex = 2;
+            this.addNewProduct_inActive_checkBox.Text = "Inactive Product";
+            this.addNewProduct_inActive_checkBox.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(230, 640);
+            this.groupBox3.Location = new System.Drawing.Point(230, 656);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(389, 51);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            // 
-            // addProducts_colorName_label2
-            // 
-            this.addProducts_colorName_label2.AutoSize = true;
-            this.addProducts_colorName_label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_colorName_label2.Location = new System.Drawing.Point(30, 39);
-            this.addProducts_colorName_label2.Name = "addProducts_colorName_label2";
-            this.addProducts_colorName_label2.Size = new System.Drawing.Size(14, 15);
-            this.addProducts_colorName_label2.TabIndex = 5;
-            this.addProducts_colorName_label2.Text = "2";
-            this.addProducts_colorName_label2.Click += new System.EventHandler(this.label27_Click);
-            // 
-            // addProducts_colorName_label3
-            // 
-            this.addProducts_colorName_label3.AutoSize = true;
-            this.addProducts_colorName_label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_colorName_label3.Location = new System.Drawing.Point(50, 39);
-            this.addProducts_colorName_label3.Name = "addProducts_colorName_label3";
-            this.addProducts_colorName_label3.Size = new System.Drawing.Size(14, 15);
-            this.addProducts_colorName_label3.TabIndex = 6;
-            this.addProducts_colorName_label3.Text = "3";
-            this.addProducts_colorName_label3.Click += new System.EventHandler(this.label28_Click);
             // 
             // button3
             // 
@@ -795,44 +844,57 @@
             this.button1.Text = "Save & New";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // addNewProduct_Packs_textbox
             // 
-            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
-            this.button4.Location = new System.Drawing.Point(85, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 32);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.addNewProduct_Packs_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_Packs_textbox.Location = new System.Drawing.Point(151, 26);
+            this.addNewProduct_Packs_textbox.Multiline = true;
+            this.addNewProduct_Packs_textbox.Name = "addNewProduct_Packs_textbox";
+            this.addNewProduct_Packs_textbox.Size = new System.Drawing.Size(59, 30);
+            this.addNewProduct_Packs_textbox.TabIndex = 29;
+            this.addNewProduct_Packs_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button5
+            // label27
             // 
-            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
-            this.button5.Location = new System.Drawing.Point(123, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(32, 32);
-            this.button5.TabIndex = 7;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label27.Location = new System.Drawing.Point(129, 28);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(16, 19);
+            this.label27.TabIndex = 30;
+            this.label27.Text = "x";
             // 
-            // button6
+            // label28
             // 
-            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
-            this.button6.Location = new System.Drawing.Point(162, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 32);
-            this.button6.TabIndex = 8;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label28.Location = new System.Drawing.Point(6, 75);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(77, 19);
+            this.label28.TabIndex = 31;
+            this.label28.Text = "ToTal Pack";
+            // 
+            // addNewProduct_TotalPacks_textbox
+            // 
+            this.addNewProduct_TotalPacks_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_TotalPacks_textbox.Location = new System.Drawing.Point(89, 67);
+            this.addNewProduct_TotalPacks_textbox.Multiline = true;
+            this.addNewProduct_TotalPacks_textbox.Name = "addNewProduct_TotalPacks_textbox";
+            this.addNewProduct_TotalPacks_textbox.ReadOnly = true;
+            this.addNewProduct_TotalPacks_textbox.Size = new System.Drawing.Size(59, 30);
+            this.addNewProduct_TotalPacks_textbox.TabIndex = 32;
             // 
             // AddNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(631, 703);
+            this.ClientSize = new System.Drawing.Size(631, 719);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.addNewProduct_inActive_checkBox);
             this.Controls.Add(this.gruop);
             this.Controls.Add(this.panel1);
             this.Name = "AddNewProduct";
@@ -862,7 +924,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gruop;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox addNewProduct_code_textbox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox adddNewProducts_ProductName_comboBox;
@@ -875,17 +937,17 @@
         private System.Windows.Forms.ComboBox adddNewProducts_Location_comboBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker addNewProduct_Date_dateTimePicker;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox addNewProduct_Batch_textbox;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox addNewProduct_QtyPack_textbox;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox addNewProduct_QtyHand_textbox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox addNewProduct_QtyStock_textbox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox addNewProduct_MinStock_textbox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox8;
@@ -902,14 +964,14 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox addNewProduct_MaxDiscount_textbox;
+        private System.Windows.Forms.TextBox addNewProduct_purchasePrice_textbox;
+        private System.Windows.Forms.TextBox addNewProduct_Profit_textbox;
+        private System.Windows.Forms.TextBox addNewProduct_SalePrice_textbox;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ComboBox addNewProduct_Distrubutors_comboBox;
+        private System.Windows.Forms.CheckBox addNewProduct_updatestock_checkBox;
+        private System.Windows.Forms.CheckBox addNewProduct_inActive_checkBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -918,16 +980,20 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label addProducts_colorName_label;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox addNewProduct_size_textbox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox adddNewProducts_Units_comboBox;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox adddNewProducts_Category_comboBox;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox addNewProduct_itemFixDiscount_textbox;
         private System.Windows.Forms.Label addProducts_colorName_label3;
         private System.Windows.Forms.Label addProducts_colorName_label2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox addNewProduct_Packs_textbox;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox addNewProduct_TotalPacks_textbox;
     }
 }

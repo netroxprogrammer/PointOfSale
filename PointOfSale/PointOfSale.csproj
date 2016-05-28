@@ -111,6 +111,7 @@
     <Compile Include="Utils\CutomerData\CustomerBasic.cs" />
     <Compile Include="Utils\CutomerData\CustomerInfomation.cs" />
     <Compile Include="Utils\CutomerData\TotalCustomerClass.cs" />
+    <Compile Include="Utils\TablesClass\TableAddNewProducts.cs" />
     <Compile Include="Utils\TablesClass\TableEmployeeEmergancey.cs" />
     <Compile Include="Utils\TablesClass\TableDescription.cs" />
     <Compile Include="Utils\TablesClass\TableCategory.cs" />
