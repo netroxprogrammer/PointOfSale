@@ -208,6 +208,37 @@ namespace PointOfSale.DbConfiguration
             reader.Close();
             return list;
         }
+
+
+
+
+        /*
+      *      get Distributors from Table
+      */
+        public ArrayList getDistributors()
+        {
+
+            Debug.WriteLine("get Distributors");
+
+            ArrayList list = new ArrayList();
+
+
+
+            SqlCommand commands = new SqlCommand("Select  *from Distributors", DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableDistributors distributorsName = new TableDistributors();
+                distributorsName.distributorsId = reader.GetInt32(0);
+                distributorsName.distributorsName = reader.GetString(1);
+
+                list.Add(distributorsName);
+                Debug.WriteLine(distributorsName);
+
+            }
+            reader.Close();
+            return list;
+        }
         /**
         Add Product Names and  Dicounts
         */
@@ -378,13 +409,13 @@ namespace PointOfSale.DbConfiguration
         }
 
         /*
-        Add Location
+        Add DistributorsName
          */
 
         public int addDistributorsName(TableDistributors names)
         {
 
-            Debug.WriteLine("Add addDistributorsName Data");
+            Debug.WriteLine("Add DistributorsName Data");
 
             String sql = "insert into Distributors(distributorsName) output INSERTED.distributorsId" +
                 " values(@distributorsName)";
@@ -401,8 +432,15 @@ namespace PointOfSale.DbConfiguration
             return id;
 
         }
-
         /*
+            get Distributors..
+       */
+
+
+
+     
+            /*
+
         Add New Products....
         */
         public int addNewProducts(TableAddNewProducts names)
@@ -413,12 +451,12 @@ namespace PointOfSale.DbConfiguration
                 " ,productDescription,productExpridate,productBatch,productColor1,productColor2,productColor3"+
                 " ,productSize,productUnits,productQuantityPack,productQntHand,productTotalPeice"+
                 " ,productMinStock,productMaxStock,productSalePrice,ProductPurchasePrice,ProductProfit,productTotalProfit,productItemDiscount"+
-                " ,productDistributors,productUpdateStock,productInactive,productEntryDate) output INSERTED.productId" +
+                " ,productDistributors,productUpdateStock,productInactive,productEntryDate, updateDate) output INSERTED.productId" +
                 " values(@productName,@productCompanyName,@productPurpose,@productPurpose" +
                 " ,@productDescription,@productExpridate,@productBatch,@productColor1,@productColor2,@productColor3" +
                 " ,@productSize,@productUnits,@productQuantityPack,@productQntHand,@productTotalPeice" +
                 " ,@productMinStock,@productMaxStock,@productSalePrice,@ProductPurchasePrice,@ProductProfit,@productTotalProfit,@productItemDiscount" +
-                " ,@productDistributors,@productUpdateStock,@productInactive,@productEntryDate) output INSERTED.productId)";
+                " ,@productDistributors,@productUpdateStock,@productInactive,@productEntryDate,@updateDate)";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
 
@@ -448,6 +486,8 @@ namespace PointOfSale.DbConfiguration
             commands.Parameters.AddWithValue("@productUpdateStock", names.ProductUpdateStock);
             commands.Parameters.AddWithValue("@productInactive", names.ProductInactive);
             commands.Parameters.AddWithValue("@productEntryDate", names.ProductEntryDate);
+            commands.Parameters.AddWithValue("@updateDate", names.UpdateDate);
+
             int id = (int)commands.ExecuteScalar();
 
 

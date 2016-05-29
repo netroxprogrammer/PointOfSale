@@ -58,6 +58,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.addNewProduct_TotalPacks_textbox = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.addNewProduct_Packs_textbox = new System.Windows.Forms.TextBox();
             this.addNewProduct_MinStock_textbox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.addNewProduct_QtyStock_textbox = new System.Windows.Forms.TextBox();
@@ -99,10 +103,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.addNewProduct_Packs_textbox = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.addNewProduct_TotalPacks_textbox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.gruop.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -166,6 +166,7 @@
             this.gruop.Size = new System.Drawing.Size(614, 552);
             this.gruop.TabIndex = 1;
             this.gruop.TabStop = false;
+            this.gruop.Enter += new System.EventHandler(this.gruop_Enter);
             // 
             // adddNewProducts_Category_comboBox
             // 
@@ -349,6 +350,7 @@
             this.addNewProduct_Distrubutors_comboBox.Name = "addNewProduct_Distrubutors_comboBox";
             this.addNewProduct_Distrubutors_comboBox.Size = new System.Drawing.Size(260, 27);
             this.addNewProduct_Distrubutors_comboBox.TabIndex = 0;
+            this.addNewProduct_Distrubutors_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_Distrubutors_comboBox_MouseClick);
             // 
             // groupBox4
             // 
@@ -396,6 +398,7 @@
             this.addNewProduct_SalePrice_textbox.Name = "addNewProduct_SalePrice_textbox";
             this.addNewProduct_SalePrice_textbox.Size = new System.Drawing.Size(123, 27);
             this.addNewProduct_SalePrice_textbox.TabIndex = 4;
+            this.addNewProduct_SalePrice_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_SalePrice_textbox_MouseClick);
             // 
             // label24
             // 
@@ -460,6 +463,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock & Store";
             // 
+            // addNewProduct_TotalPacks_textbox
+            // 
+            this.addNewProduct_TotalPacks_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_TotalPacks_textbox.Location = new System.Drawing.Point(89, 67);
+            this.addNewProduct_TotalPacks_textbox.Multiline = true;
+            this.addNewProduct_TotalPacks_textbox.Name = "addNewProduct_TotalPacks_textbox";
+            this.addNewProduct_TotalPacks_textbox.ReadOnly = true;
+            this.addNewProduct_TotalPacks_textbox.Size = new System.Drawing.Size(59, 30);
+            this.addNewProduct_TotalPacks_textbox.TabIndex = 32;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label28.Location = new System.Drawing.Point(6, 75);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(77, 19);
+            this.label28.TabIndex = 31;
+            this.label28.Text = "ToTal Pack";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label27.Location = new System.Drawing.Point(129, 28);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(16, 19);
+            this.label27.TabIndex = 30;
+            this.label27.Text = "x";
+            // 
+            // addNewProduct_Packs_textbox
+            // 
+            this.addNewProduct_Packs_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_Packs_textbox.Location = new System.Drawing.Point(151, 26);
+            this.addNewProduct_Packs_textbox.Multiline = true;
+            this.addNewProduct_Packs_textbox.Name = "addNewProduct_Packs_textbox";
+            this.addNewProduct_Packs_textbox.Size = new System.Drawing.Size(59, 30);
+            this.addNewProduct_Packs_textbox.TabIndex = 29;
+            this.addNewProduct_Packs_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_Packs_textbox_MouseClick);
+            this.addNewProduct_Packs_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // addNewProduct_MinStock_textbox
             // 
             this.addNewProduct_MinStock_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -468,6 +514,7 @@
             this.addNewProduct_MinStock_textbox.Name = "addNewProduct_MinStock_textbox";
             this.addNewProduct_MinStock_textbox.Size = new System.Drawing.Size(104, 21);
             this.addNewProduct_MinStock_textbox.TabIndex = 28;
+            this.addNewProduct_MinStock_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_MinStock_textbox_MouseClick);
             // 
             // label14
             // 
@@ -488,6 +535,7 @@
             this.addNewProduct_QtyStock_textbox.Name = "addNewProduct_QtyStock_textbox";
             this.addNewProduct_QtyStock_textbox.Size = new System.Drawing.Size(114, 21);
             this.addNewProduct_QtyStock_textbox.TabIndex = 26;
+            this.addNewProduct_QtyStock_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_QtyStock_textbox_MouseClick);
             // 
             // label13
             // 
@@ -508,6 +556,7 @@
             this.addNewProduct_QtyHand_textbox.Name = "addNewProduct_QtyHand_textbox";
             this.addNewProduct_QtyHand_textbox.Size = new System.Drawing.Size(102, 21);
             this.addNewProduct_QtyHand_textbox.TabIndex = 24;
+            this.addNewProduct_QtyHand_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_QtyHand_textbox_MouseClick);
             // 
             // label12
             // 
@@ -702,6 +751,7 @@
             this.addNewProduct_code_textbox.Name = "addNewProduct_code_textbox";
             this.addNewProduct_code_textbox.Size = new System.Drawing.Size(124, 21);
             this.addNewProduct_code_textbox.TabIndex = 1;
+            this.addNewProduct_code_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_code_textbox_MouseClick);
             // 
             // label2
             // 
@@ -845,48 +895,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // addNewProduct_Packs_textbox
-            // 
-            this.addNewProduct_Packs_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewProduct_Packs_textbox.Location = new System.Drawing.Point(151, 26);
-            this.addNewProduct_Packs_textbox.Multiline = true;
-            this.addNewProduct_Packs_textbox.Name = "addNewProduct_Packs_textbox";
-            this.addNewProduct_Packs_textbox.Size = new System.Drawing.Size(59, 30);
-            this.addNewProduct_Packs_textbox.TabIndex = 29;
-            this.addNewProduct_Packs_textbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label27.Location = new System.Drawing.Point(129, 28);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(16, 19);
-            this.label27.TabIndex = 30;
-            this.label27.Text = "x";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label28.Location = new System.Drawing.Point(6, 75);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(77, 19);
-            this.label28.TabIndex = 31;
-            this.label28.Text = "ToTal Pack";
-            // 
-            // addNewProduct_TotalPacks_textbox
-            // 
-            this.addNewProduct_TotalPacks_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewProduct_TotalPacks_textbox.Location = new System.Drawing.Point(89, 67);
-            this.addNewProduct_TotalPacks_textbox.Multiline = true;
-            this.addNewProduct_TotalPacks_textbox.Name = "addNewProduct_TotalPacks_textbox";
-            this.addNewProduct_TotalPacks_textbox.ReadOnly = true;
-            this.addNewProduct_TotalPacks_textbox.Size = new System.Drawing.Size(59, 30);
-            this.addNewProduct_TotalPacks_textbox.TabIndex = 32;
             // 
             // AddNewProduct
             // 

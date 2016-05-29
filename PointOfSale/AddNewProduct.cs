@@ -15,6 +15,7 @@ namespace PointOfSale
 {
     public partial class AddNewProduct : Form
     {
+        public static int count;
         HandleProducts handleProducts;
         public AddNewProduct()
         {
@@ -36,6 +37,7 @@ namespace PointOfSale
             loadLocation();
             loadPurposeName();
             loadUnits();
+            loadDistrubutors();
             this.TopMost = true;
         }
 
@@ -143,7 +145,7 @@ namespace PointOfSale
         }
 
         /*
-             *  Load Location
+             *  Load units
              */
         public void loadUnits()
         {
@@ -152,6 +154,15 @@ namespace PointOfSale
             {
 
                 adddNewProducts_Units_comboBox.Items.Add(name.unitsName);
+            }
+        }
+        public void loadDistrubutors()
+        {
+            ArrayList getname = handleProducts.getDistributors();
+            foreach (TableDistributors name in getname)
+            {
+
+                addNewProduct_Distrubutors_comboBox.Items.Add(name.distributorsName);
             }
         }
 
@@ -220,133 +231,278 @@ namespace PointOfSale
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            String code = addNewProduct_code_textbox.Text;
+            
+             DateTime Expiridate;
+            String code =  null;
             String pName = null;
             String CName = null;
             String purpose = null;
             String description = null;
-            String  category = null;
-            String location = null;
-            String batch = null;
-            String size = null;
-            String unit = null, packs = null, TotalPacks = null,  Qtypack = null; ;
-            /* String CName = adddNewProducts_companyName_comboBox.SelectedItem.ToString();
-             String purpose = adddNewProducts_Purpose_comboBox.SelectedItem.ToString();
-             String  description =  adddNewProducts_Description_comboBox.SelectedItem.ToString();
-             String category = adddNewProducts_Category_comboBox.SelectedItem.ToString();
-             String location = adddNewProducts_Location_comboBox.SelectedItem.ToString();
-             DateTime dateTime = addNewProduct_Date_dateTimePicker.Value;
-             String batch = addNewProduct_Batch_textbox.Text;
-             String color1 = addProducts_colorName_label.Text;
-             String color2 = addProducts_colorName_label2.Text;
-             String color3 = addProducts_colorName_label3.Text;
+            String  category = null, color1 = null, color2= null, color3=null;
+            String location = null, fixDiscount = null, updateStock = null, inactiveProduct = null ;
+            String batch = null, salePrice=null, profit=null, pPrice=null, maxDiscount=null;
+            String size = null, QtyHand = null, QtyStock = null, minstock = null, maxQuantity = null;
+            String unit = null, packs = null, TotalPacks = null,  Qtypack = null, distrubutors =null;
 
-             String size = addNewProduct_size_textbox.Text;
-             String unit = adddNewProducts_Units_comboBox.Text;
-             String   Qtypack = addNewProduct_QtyPack_textbox.Text;
-             String QtyHand = addNewProduct_QtyHand_textbox.Text;
-             String QtyStock = addNewProduct_QtyStock_textbox.Text;
-             String maxQuantity = addNewProduct_MinStock_textbox.Text;
-             String  salePrice = addNewProduct_SalePrice_textbox.Text;
-             String  profit = addNewProduct_Profit_textbox.Text;
-             String  pPrice = addNewProduct_purchasePrice_textbox.Text;
-             String maxDiscount = addNewProduct_MaxDiscount_textbox.Text;*/
+            // check Code
+
+            if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text))
+            {
+                code = addNewProduct_code_textbox.Text;
+              
+            }
+            else
+            {
+                addNewProduct_code_textbox.BackColor = Color.Red;
+                
+            }
 
             //  check product Name empty or Not
             if (adddNewProducts_ProductName_comboBox.SelectedIndex != -1)
             {
                 pName = adddNewProducts_ProductName_comboBox.SelectedItem.ToString();
+               
             }
             else
             {
                 adddNewProducts_ProductName_comboBox.BackColor = Color.Red;
+                
             }
             // Check Company Name Empty Or  Not
             if(adddNewProducts_companyName_comboBox.SelectedIndex != -1)
             {
               CName= adddNewProducts_companyName_comboBox.SelectedItem.ToString();
+                
             }
             else
             {
                 adddNewProducts_companyName_comboBox.BackColor = Color.Red;
+                
             }
              //   Check Purpose
              if(adddNewProducts_Purpose_comboBox.SelectedIndex != -1)
             {
               purpose = adddNewProducts_Purpose_comboBox.SelectedItem.ToString();
+                
             }
             else
             {
                 adddNewProducts_Purpose_comboBox.BackColor = Color.Red;
+                
             }
              // Check Description
              if(adddNewProducts_Description_comboBox.SelectedIndex != -1)
             {
                description = adddNewProducts_Description_comboBox.SelectedItem.ToString();
+               
             }
             else
             {
                 adddNewProducts_Description_comboBox.BackColor = Color.Red;
+                
             }
             // Check Category
             if(adddNewProducts_Category_comboBox.SelectedIndex != -1)
             {
                 category =adddNewProducts_Category_comboBox.SelectedItem.ToString();
+                
             }
             else
             {
                 adddNewProducts_Category_comboBox.BackColor = Color.Red;
+              
             }
             // Check Location 
 
             if (adddNewProducts_Location_comboBox.SelectedIndex != -1)
             {
                 location = adddNewProducts_Location_comboBox.SelectedItem.ToString();
+                
             }
             else
             {
                 adddNewProducts_Location_comboBox.BackColor = Color.Red;
+                
             }
-            // Check Batch ]
+           
+            // Check Batch 
+        
             if (!String.IsNullOrEmpty(addNewProduct_Batch_textbox.Text))
             {
                 batch = addNewProduct_Batch_textbox.Text;
+               
             }
             else
             {
                 addNewProduct_Batch_textbox.BackColor = Color.Red;
+                
             }
+            
 
             // check Size
 
             if (!String.IsNullOrEmpty(addNewProduct_size_textbox.Text))
             {
                size = addNewProduct_size_textbox.Text;
+                
             }
             else
             {
                 addNewProduct_size_textbox.BackColor = Color.Red;
+                
             }
             // Check Units
             if (adddNewProducts_Units_comboBox.SelectedIndex != -1)
             {
                unit = adddNewProducts_Units_comboBox.SelectedItem.ToString();
+                
             }
             else
             {
                 adddNewProducts_Units_comboBox.BackColor = Color.Red;
+               
 
             }
-            // Check Packs
+            // Check Quantity Packs
             if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text))
             {
                Qtypack = addNewProduct_QtyPack_textbox.Text;
+               
             }
             else
             {
                 addNewProduct_QtyPack_textbox.BackColor = Color.Red;
+               
             }
+
+            //  Packs
+            if (!String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text))
+            {
+                TotalPacks = addNewProduct_Packs_textbox.Text;
+                
+            }
+            else
+            {
+                addNewProduct_Packs_textbox.BackColor = Color.Red;
+                
+            }
+
+            //  give total  Pack.........
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text))
+            {
+                int qPack = Int32.Parse(addNewProduct_QtyPack_textbox.Text);
+                int pack = Int32.Parse(addNewProduct_Packs_textbox.Text);
+               
+                int total = qPack * pack;
+                addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
+            }
+            else
+            {
+                
+            }
+                //   Add Quantity Packs
+                if (!String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+               QtyHand =  addNewProduct_QtyHand_textbox.Text;
+               
+            }
+            else
+            {
+                addNewProduct_QtyHand_textbox.BackColor = Color.Red;
+              
+            }
+            //   Add Quantity Stock
+            if (!String.IsNullOrEmpty(addNewProduct_QtyStock_textbox.Text))
+            {
+                QtyStock = addNewProduct_QtyStock_textbox.Text;
+                
+            }
+            else
+            {
+                addNewProduct_QtyStock_textbox.BackColor = Color.Red;
+               
+            }
+             // Min Stock
+            if (!String.IsNullOrEmpty(addNewProduct_MinStock_textbox.Text))
+            {
+                 minstock = addNewProduct_MinStock_textbox.Text;
+                
+            }
+            else
+            {
+                addNewProduct_MinStock_textbox.BackColor = Color.Red;
+                
+            }
+            // Check  Sale Price
+            if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text))
+            {
+                salePrice = addNewProduct_SalePrice_textbox.Text;
+               
+            }
+            else
+            {
+                addNewProduct_SalePrice_textbox.BackColor = Color.Red;
+                
+
+            }
+
+       
+            //  Check Distributors
+            if (addNewProduct_Distrubutors_comboBox.SelectedIndex != -1) {
+                distrubutors = addNewProduct_Distrubutors_comboBox.SelectedItem.ToString();
+                
+            }
+            else
+            {
+
+                addNewProduct_Distrubutors_comboBox.BackColor = Color.Red;
+              
+            }
+
+             // Check Update Stock
+            if (addNewProduct_updatestock_checkBox.Checked)
+            {
+                DateTime now = DateTime.Now;
+                updateStock = now.ToString() ;
+               
+            }
+            else
+            {
+                updateStock = "No Entery Data";
+            }
+
+            // Check Product Inactive or not
+            if (addNewProduct_inActive_checkBox.Checked)
+            {
+                inactiveProduct = "inactive";
+            }
+            else
+            {
+                inactiveProduct = "";
+            }
+            if(!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) && adddNewProducts_ProductName_comboBox.SelectedIndex != -1 &&
+                adddNewProducts_companyName_comboBox.SelectedIndex != -1 && adddNewProducts_Purpose_comboBox.SelectedIndex != -1 &&
+                adddNewProducts_Description_comboBox.SelectedIndex != -1 && adddNewProducts_Category_comboBox.SelectedIndex != -1 &&
+                adddNewProducts_Location_comboBox.SelectedIndex != -1 && !String.IsNullOrEmpty(addNewProduct_Batch_textbox.Text) &&
+                !String.IsNullOrEmpty(addNewProduct_size_textbox.Text) && adddNewProducts_Units_comboBox.SelectedIndex != -1 &&
+                !String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                 !String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_QtyStock_textbox.Text) &&
+                 !String.IsNullOrEmpty(addNewProduct_MinStock_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) &&
+                 addNewProduct_Distrubutors_comboBox.SelectedIndex != -1)
+            {
+                profit = addNewProduct_Profit_textbox.Text;
+                purpose = addNewProduct_purchasePrice_textbox.Text;
+                maxDiscount = addNewProduct_MaxDiscount_textbox.Text;
+                fixDiscount = addNewProduct_itemFixDiscount_textbox.Text;
+                color1 = addProducts_colorName_label.Text;
+                color2 = addProducts_colorName_label2.Text;
+                color3 = addProducts_colorName_label3.Text;
+                Expiridate = addNewProduct_Date_dateTimePicker.Value;
+
+                MessageBox.Show("Okkkk");
+              
+            }
+           
         }
 
         private void adddNewProducts_ProductName_comboBox_MouseClick(object sender, MouseEventArgs e)
@@ -386,7 +542,7 @@ namespace PointOfSale
 
         private void addNewProduct_size_textbox_MouseClick(object sender, MouseEventArgs e)
         {
-            addNewProduct_size_textbox.BackColor = Color.Red;
+            addNewProduct_size_textbox.BackColor = Color.White;
         }
 
         private void adddNewProducts_Units_comboBox_MouseClick(object sender, MouseEventArgs e)
@@ -402,6 +558,47 @@ namespace PointOfSale
         private void addNewProduct_QtyPack_textbox_MouseClick(object sender, MouseEventArgs e)
         {
             addNewProduct_QtyPack_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_Packs_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            addNewProduct_Packs_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_QtyHand_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_QtyHand_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_QtyStock_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_QtyStock_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_MinStock_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_MinStock_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_SalePrice_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_SalePrice_textbox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_Distrubutors_comboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_Distrubutors_comboBox.BackColor = Color.White;
+        }
+
+        private void addNewProduct_code_textbox_MouseClick(object sender, MouseEventArgs e)
+        {
+            addNewProduct_code_textbox.BackColor = Color.White;
+        }
+
+        private void gruop_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

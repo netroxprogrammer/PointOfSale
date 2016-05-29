@@ -34,7 +34,7 @@ namespace PointOfSale.Utils.TablesClass
         private String productUpdateStock;
         private String productInactive;
         private DateTime productEntryDate;
-
+        private String updateDate;
         public int ProductId
         {
             get
@@ -370,6 +370,19 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 productEntryDate = value;
+            }
+        }
+
+        public string UpdateDate
+        {
+            get
+            {
+                return updateDate;
+            }
+
+            set
+            {
+                updateDate = value;
             }
         }
     }
