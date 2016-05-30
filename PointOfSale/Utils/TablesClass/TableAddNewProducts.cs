@@ -9,10 +9,13 @@ namespace PointOfSale.Utils.TablesClass
     class TableAddNewProducts
     {
         private int productId;
+        private String barCode;
         private String productName;
         private String productCompanyName;
         private String productPurpose;
         private String productDescription;
+        private String Location;
+        private float  psize;
         private DateTime productExpidate;
         private int productBatch;
         private String productColor1;
@@ -23,6 +26,7 @@ namespace PointOfSale.Utils.TablesClass
         private int productQuantityPack;
         private int productQntHand;
         private int productTotalPeice;
+        private int productTotalPacks;
         private int productMinStock;
         private int productMaxStock;
         private int productSalePrice;
@@ -35,6 +39,8 @@ namespace PointOfSale.Utils.TablesClass
         private String productInactive;
         private DateTime productEntryDate;
         private String updateDate;
+        private String category;
+        private int maxDiscount;
         public int ProductId
         {
             get
@@ -383,6 +389,84 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 updateDate = value;
+            }
+        }
+
+        public string BarCode
+        {
+            get
+            {
+                return barCode;
+            }
+
+            set
+            {
+                barCode = value;
+            }
+        }
+
+        public string Category
+        {
+            get
+            {
+                return category;
+            }
+
+            set
+            {
+                category = value;
+            }
+        }
+
+        public string Location1
+        {
+            get
+            {
+                return Location;
+            }
+
+            set
+            {
+                Location = value;
+            }
+        }
+
+        public float Psize
+        {
+            get
+            {
+                return psize;
+            }
+
+            set
+            {
+                psize = value;
+            }
+        }
+
+        public int ProductTotalPacks
+        {
+            get
+            {
+                return productTotalPacks;
+            }
+
+            set
+            {
+                productTotalPacks = value;
+            }
+        }
+
+        public int MaxDiscount
+        {
+            get
+            {
+                return maxDiscount;
+            }
+
+            set
+            {
+                maxDiscount = value;
             }
         }
     }

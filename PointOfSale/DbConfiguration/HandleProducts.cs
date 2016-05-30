@@ -182,7 +182,7 @@ namespace PointOfSale.DbConfiguration
         }
 
         /*
-*      get purpose from Table
+*      get Units from Table
 */
         public ArrayList getUnitsNames()
         {
@@ -447,24 +447,30 @@ namespace PointOfSale.DbConfiguration
         {
             Debug.WriteLine("Add addNewProducts Data");
 
-            String sql = "insert into addNewProducts(productName,productCompanyName,productPurpose" +
-                " ,productDescription,productExpridate,productBatch,productColor1,productColor2,productColor3"+
-                " ,productSize,productUnits,productQuantityPack,productQntHand,productTotalPeice"+
-                " ,productMinStock,productMaxStock,productSalePrice,ProductPurchasePrice,ProductProfit,productTotalProfit,productItemDiscount"+
+            String sql = "insert into addNewProducts(productBarCode,productName,productCompanyName,productPurpose" +
+                " ,productDescription,productCategory,productLocation,productExpridate,productBatch,productColor1,productColor2,productColor3" +
+                " ,productSize,productUnits,productQuantityPack,productQntHand,productTotalPack,productTotalPeice" +
+                " ,productMinStock,productMaxStock,productSalePrice,ProductPurchasePrice,ProductProfit,ProductMaxDiscount,productTotalProfit,productItemDiscount" +
                 " ,productDistributors,productUpdateStock,productInactive,productEntryDate, updateDate) output INSERTED.productId" +
-                " values(@productName,@productCompanyName,@productPurpose,@productPurpose" +
-                " ,@productDescription,@productExpridate,@productBatch,@productColor1,@productColor2,@productColor3" +
-                " ,@productSize,@productUnits,@productQuantityPack,@productQntHand,@productTotalPeice" +
-                " ,@productMinStock,@productMaxStock,@productSalePrice,@ProductPurchasePrice,@ProductProfit,@productTotalProfit,@productItemDiscount" +
+                " values(@productBarCode,@productName,@productCompanyName,@productPurpose" +
+                " ,@productDescription,@productCategory,@productLocation,@productExpridate,@productBatch,@productColor1,@productColor2,@productColor3" +
+                " ,@productSize,@productUnits,@productQuantityPack,@productQntHand,@productTotalPack,@productTotalPeice" +
+                " ,@productMinStock,@productMaxStock,@productSalePrice,@ProductPurchasePrice,@ProductProfit,@ProductMaxDiscount,@productTotalProfit,@productItemDiscount" +
                 " ,@productDistributors,@productUpdateStock,@productInactive,@productEntryDate,@updateDate)";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
 
             commands.CommandType = CommandType.Text;
+            
+            commands.Parameters.AddWithValue("@productBarCode", names.BarCode);
             commands.Parameters.AddWithValue("@productName", names.ProductName);
             commands.Parameters.AddWithValue("@productCompanyName", names.ProductCompanyName);
             commands.Parameters.AddWithValue("@productPurpose", names.ProductPurpose);
             commands.Parameters.AddWithValue("@productDescription", names.ProductDescription);
+
+            commands.Parameters.AddWithValue("@productCategory", names.Category);
+            commands.Parameters.AddWithValue("@productLocation", names.Location1);
+
             commands.Parameters.AddWithValue("@productExpridate", names.ProductExpidate);
             commands.Parameters.AddWithValue("@productBatch", names.ProductBatch);
             commands.Parameters.AddWithValue("@productColor1", names.ProductColor1);
@@ -474,12 +480,14 @@ namespace PointOfSale.DbConfiguration
             commands.Parameters.AddWithValue("@productUnits", names.ProductUnits);
             commands.Parameters.AddWithValue("@productQuantityPack", names.ProductQuantityPack);
             commands.Parameters.AddWithValue("@productQntHand", names.ProductQntHand);
+            commands.Parameters.AddWithValue("@productTotalPack", names.ProductTotalPacks);
             commands.Parameters.AddWithValue("@productTotalPeice", names.ProductTotalPeice);
             commands.Parameters.AddWithValue("@productMinStock", names.ProductMinStock);
             commands.Parameters.AddWithValue("@productMaxStock", names.ProductMaxStock);
             commands.Parameters.AddWithValue("@productSalePrice", names.ProductSalePrice);
             commands.Parameters.AddWithValue("@ProductPurchasePrice", names.ProductPurchasePrice);
             commands.Parameters.AddWithValue("@ProductProfit", names.ProductProfit);
+            commands.Parameters.AddWithValue("@ProductMaxDiscount", names.MaxDiscount);
             commands.Parameters.AddWithValue("@productTotalProfit", names.ProductTotalPrice);
             commands.Parameters.AddWithValue("@productItemDiscount", names.ProductItemDiscount);
             commands.Parameters.AddWithValue("@productDistributors", names.ProductDistributors);

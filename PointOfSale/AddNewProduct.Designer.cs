@@ -536,6 +536,7 @@
             this.addNewProduct_QtyStock_textbox.Size = new System.Drawing.Size(114, 21);
             this.addNewProduct_QtyStock_textbox.TabIndex = 26;
             this.addNewProduct_QtyStock_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_QtyStock_textbox_MouseClick);
+            this.addNewProduct_QtyStock_textbox.TextChanged += new System.EventHandler(this.addNewProduct_QtyStock_textbox_TextChanged);
             // 
             // label13
             // 

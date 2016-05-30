@@ -1,5 +1,6 @@
 ﻿using PointOfSale.DbConfiguration;
 using PointOfSale.Utils;
+using PointOfSale.Utils.TablesClass;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -232,13 +233,13 @@ namespace PointOfSale
         private void button1_Click(object sender, EventArgs e)
         {
             
-             DateTime Expiridate;
+             DateTime? Expiridate = null;
             String code =  null;
             String pName = null;
             String CName = null;
             String purpose = null;
             String description = null;
-            String  category = null, color1 = null, color2= null, color3=null;
+            String  category = null, color1 = null, color2= null, color3=null, purchasePrice = null;
             String location = null, fixDiscount = null, updateStock = null, inactiveProduct = null ;
             String batch = null, salePrice=null, profit=null, pPrice=null, maxDiscount=null;
             String size = null, QtyHand = null, QtyStock = null, minstock = null, maxQuantity = null;
@@ -490,15 +491,45 @@ namespace PointOfSale
                  !String.IsNullOrEmpty(addNewProduct_MinStock_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) &&
                  addNewProduct_Distrubutors_comboBox.SelectedIndex != -1)
             {
+                TableAddNewProducts products = new TableAddNewProducts();
                 profit = addNewProduct_Profit_textbox.Text;
                 purpose = addNewProduct_purchasePrice_textbox.Text;
+                purchasePrice = addNewProduct_purchasePrice_textbox.Text;
                 maxDiscount = addNewProduct_MaxDiscount_textbox.Text;
                 fixDiscount = addNewProduct_itemFixDiscount_textbox.Text;
                 color1 = addProducts_colorName_label.Text;
                 color2 = addProducts_colorName_label2.Text;
                 color3 = addProducts_colorName_label3.Text;
                 Expiridate = addNewProduct_Date_dateTimePicker.Value;
+                products.BarCode = code;
+                products.ProductName = pName;
+                products.ProductCompanyName = CName;
+                products.ProductPurpose = purpose;
+                products.ProductDescription = description;
+                products.Category = category;
+                products.Location1 = location;
+                products.ProductExpidate = Expiridate.Value;
+                products.ProductBatch = Int32.Parse(batch);
+                products.ProductColor1 = color1;
+                products.ProductColor2 = color2;
+                products.ProductColor3 = color3;
+                products.Productsize = float.Parse(size);
+                products.ProductUnits = unit;
+                products.ProductQuantityPack = Int32.Parse(Qtypack);
+                products.ProductTotalPeice = Int32.Parse(TotalPacks);
+                products.ProductTotalPacks = Int32.Parse(addNewProduct_TotalPacks_textbox.Text);
 
+                products.ProductQntHand = Int32.Parse(QtyHand);
+                products.ProductMinStock = Int32.Parse(minstock);
+                products.ProductMaxStock = Int32.Parse(maxQuantity);
+                products.ProductSalePrice = Int32.Parse(salePrice);
+                products.ProductProfit = Int32.Parse(profit);
+                products.ProductPurchasePrice = Int32.Parse(purchasePrice);
+                products.MaxDiscount = Int32.Parse(maxDiscount);
+                products.ProductDistributors = distrubutors;
+                products.ProductItemDiscount = Int32.Parse(fixDiscount);
+                products.UpdateDate = updateStock;
+                products.ProductInactive = inactiveProduct;
                 MessageBox.Show("Okkkk");
               
             }
@@ -597,6 +628,11 @@ namespace PointOfSale
         }
 
         private void gruop_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewProduct_QtyStock_textbox_TextChanged(object sender, EventArgs e)
         {
 
         }
