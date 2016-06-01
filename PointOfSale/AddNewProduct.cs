@@ -400,20 +400,48 @@ namespace PointOfSale
 
             //  give total  Pack.........
 
-            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text))
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) && 
+                 !String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
             {
                 int qPack = Int32.Parse(addNewProduct_QtyPack_textbox.Text);
                 int pack = Int32.Parse(addNewProduct_Packs_textbox.Text);
-               
-                int total = qPack * pack;
+                int hand = Int32.Parse(addNewProduct_QtyHand_textbox.Text);
+                int total = qPack * pack + hand;
                 addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
             }
-            else
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                 String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
             {
-                addNewProduct_TotalPacks_textbox.Text = "0";
+                int qPack = Int32.Parse(addNewProduct_QtyPack_textbox.Text);
+                int pack = Int32.Parse(addNewProduct_Packs_textbox.Text);
+
+                int total = qPack * pack;
+                addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
+
+             
             }
-                //   Add Quantity Packs
-                if (!String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            if (String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                 !String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+
+                int total = Int32.Parse(addNewProduct_QtyHand_textbox.Text);
+                addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
+
+
+            }
+            if (String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+
+                addNewProduct_TotalPacks_textbox.Text = "0";
+
+                QtyHand = "0";
+
+
+            }
+
+            //
+            if (!String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
             {
                QtyHand =  addNewProduct_QtyHand_textbox.Text;
                
@@ -733,8 +761,25 @@ namespace PointOfSale
         private void addNewProduct_purchasePrice_textbox_TextChanged(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
+            {
                 addNewProduct_purchasePrice_textbox.Text = "";
                 MessageBox.Show("Sorry  Not ALLOW");
+            }
+
+        }
+
+        private void addNewProduct_Profit_textbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text)) { 
+            addNewProduct_Profit_textbox.Text = "";
+            MessageBox.Show("Sorry  Not ALLOW");
+        }
+
+        
+    }
+
+        private void addNewProduct_SalePrice_textbox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

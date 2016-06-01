@@ -243,6 +243,7 @@ namespace PointOfSale
             public void getEmployeeList()
         {
 
+            
             WorkingForm_EmployeList.Columns.Clear();
             WorkingForm_EmployeList.Items.Clear();
             WorkingForm_EmployeList.Columns.Add("Employee Id", 110, HorizontalAlignment.Left);
@@ -269,6 +270,68 @@ namespace PointOfSale
                 ListViewItem items = new ListViewItem(rows);
                 WorkingForm_EmployeList.Items.Add(items);
             }
+
+
+        }
+
+        /*
+       get Products List
+       */
+
+        public void getProductsList()
+        {
+
+            WorkingForm_Employ_Panel.Visible = true;
+            WorkingForm_AllProduct_listView.Columns.Clear();
+            WorkingForm_AllProduct_listView.Items.Clear();
+            WorkingForm_AllProduct_listView.Columns.Add("Product Id", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Bar Code", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Name", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Company Name", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Purpose", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Description", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Category", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Location", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Expiry date", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Batch", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Color 1", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Color 2", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Color 3", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Size", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Quantity Pack", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("No. Packs", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Total Packs", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Qty in hands", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Max Stock", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Min Stock", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Sale Price", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Profit %", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Purchase Price", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Max discount", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Item Discount", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Item Fix Discont", 110, HorizontalAlignment.Left);
+
+            WorkingForm_AllProduct_listView.Columns.Add("Distributors", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Update Stock Date", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Inactive Products", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Entry Date", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Update Product Date", 110, HorizontalAlignment.Left);
+
+            HandleProducts products = new HandleProducts();
+            // WorkingForm_customerPanel.Visible = false;
+            WorkingForm_Employ_Panel.Visible = true;
+            ArrayList prod = products.getProductList();
+
+            foreach (TableAddNewProducts em in prod)
+            {
+                String[] rows = {  em.BarCode, em.ProductName, em.ProductCompanyName,
+                    em.ProductPurpose , em.ProductDescription, em.Category, em.Location1, 
+                };
+                ListViewItem items = new ListViewItem(rows);
+                WorkingForm_AllProduct_listView.Items.Add(items);
+            }
+
+
 
 
         }
@@ -310,6 +373,26 @@ namespace PointOfSale
             String eLocatipn = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
 
             MessageBox.Show(name);
+        }
+
+        private void productListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            getProductsList();
+        }
+
+        private void WorkingForm_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void WorkingForm_Employ_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

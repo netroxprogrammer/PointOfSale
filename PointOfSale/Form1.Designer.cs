@@ -93,6 +93,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
             this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
             this.workingForm_Employee_rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,6 +107,9 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.WorkingForm_Products_ListView = new System.Windows.Forms.ListView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.WorkingForm_AllProduct_listView = new System.Windows.Forms.ListView();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
@@ -113,6 +117,7 @@
             this.groupBox1.SuspendLayout();
             this.WorkingForm_customerPanel.SuspendLayout();
             this.WorkingForm_Employ_Panel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.workingForm_Employee_rightClick.SuspendLayout();
             this.WorkingForm_rightClick_menu.SuspendLayout();
             this.SuspendLayout();
@@ -275,6 +280,7 @@
             this.productListToolStripMenuItem.Name = "productListToolStripMenuItem";
             this.productListToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.productListToolStripMenuItem.Text = "Product List";
+            this.productListToolStripMenuItem.Click += new System.EventHandler(this.productListToolStripMenuItem_Click);
             // 
             // salesToolStripMenuItem
             // 
@@ -669,18 +675,28 @@
             this.WorkingForm_customerPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_Employ_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_listView);
-            this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 111);
+            this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 120);
             this.WorkingForm_customerPanel.Name = "WorkingForm_customerPanel";
             this.WorkingForm_customerPanel.Size = new System.Drawing.Size(1329, 622);
             this.WorkingForm_customerPanel.TabIndex = 10;
             // 
             // WorkingForm_Employ_Panel
             // 
+            this.WorkingForm_Employ_Panel.Controls.Add(this.panel1);
             this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
-            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(0, 0);
+            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(3, 0);
             this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
-            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 622);
+            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
             this.WorkingForm_Employ_Panel.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.WorkingForm_AllProduct_listView);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1329, 619);
+            this.panel1.TabIndex = 1;
             // 
             // WorkingForm_EmployeList
             // 
@@ -690,7 +706,7 @@
             this.WorkingForm_EmployeList.GridLines = true;
             this.WorkingForm_EmployeList.Location = new System.Drawing.Point(0, 69);
             this.WorkingForm_EmployeList.Name = "WorkingForm_EmployeList";
-            this.WorkingForm_EmployeList.Size = new System.Drawing.Size(1329, 550);
+            this.WorkingForm_EmployeList.Size = new System.Drawing.Size(1332, 616);
             this.WorkingForm_EmployeList.TabIndex = 0;
             this.WorkingForm_EmployeList.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_EmployeList.View = System.Windows.Forms.View.Details;
@@ -733,10 +749,11 @@
             this.WorkingForm_listView.GridLines = true;
             this.WorkingForm_listView.Location = new System.Drawing.Point(0, 69);
             this.WorkingForm_listView.Name = "WorkingForm_listView";
-            this.WorkingForm_listView.Size = new System.Drawing.Size(1329, 553);
+            this.WorkingForm_listView.Size = new System.Drawing.Size(1329, 550);
             this.WorkingForm_listView.TabIndex = 0;
             this.WorkingForm_listView.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_listView.View = System.Windows.Forms.View.Details;
+            this.WorkingForm_listView.SelectedIndexChanged += new System.EventHandler(this.WorkingForm_listView_SelectedIndexChanged);
             // 
             // WorkingForm_rightClick_menu
             // 
@@ -788,6 +805,41 @@
             this.toolStripMenuItem6.Size = new System.Drawing.Size(215, 22);
             this.toolStripMenuItem6.Text = "Print Customer List";
             // 
+            // WorkingForm_Products_ListView
+            // 
+            this.WorkingForm_Products_ListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.WorkingForm_Products_ListView.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkingForm_Products_ListView.FullRowSelect = true;
+            this.WorkingForm_Products_ListView.GridLines = true;
+            this.WorkingForm_Products_ListView.Location = new System.Drawing.Point(3, 70);
+            this.WorkingForm_Products_ListView.Name = "WorkingForm_Products_ListView";
+            this.WorkingForm_Products_ListView.Size = new System.Drawing.Size(1323, 481);
+            this.WorkingForm_Products_ListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.WorkingForm_Products_ListView.TabIndex = 0;
+            this.WorkingForm_Products_ListView.UseCompatibleStateImageBehavior = false;
+            this.WorkingForm_Products_ListView.View = System.Windows.Forms.View.Details;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // WorkingForm_AllProduct_listView
+            // 
+            this.WorkingForm_AllProduct_listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.WorkingForm_AllProduct_listView.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WorkingForm_AllProduct_listView.FullRowSelect = true;
+            this.WorkingForm_AllProduct_listView.GridLines = true;
+            this.WorkingForm_AllProduct_listView.Location = new System.Drawing.Point(0, 83);
+            this.WorkingForm_AllProduct_listView.Name = "WorkingForm_AllProduct_listView";
+            this.WorkingForm_AllProduct_listView.Size = new System.Drawing.Size(1326, 533);
+            this.WorkingForm_AllProduct_listView.TabIndex = 0;
+            this.WorkingForm_AllProduct_listView.UseCompatibleStateImageBehavior = false;
+            this.WorkingForm_AllProduct_listView.View = System.Windows.Forms.View.Details;
+            // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -814,6 +866,7 @@
             this.groupBox1.ResumeLayout(false);
             this.WorkingForm_customerPanel.ResumeLayout(false);
             this.WorkingForm_Employ_Panel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.workingForm_Employee_rightClick.ResumeLayout(false);
             this.WorkingForm_rightClick_menu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -894,12 +947,16 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.Panel WorkingForm_Employ_Panel;
-        private System.Windows.Forms.ListView WorkingForm_EmployeList;
         private System.Windows.Forms.ContextMenuStrip workingForm_Employee_rightClick;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewEmployeeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ListView WorkingForm_EmployeList;
+        private System.Windows.Forms.ListView WorkingForm_Products_ListView;
+        private System.Windows.Forms.Panel WorkingForm_Employ_Panel;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView WorkingForm_AllProduct_listView;
     }
 }
 
