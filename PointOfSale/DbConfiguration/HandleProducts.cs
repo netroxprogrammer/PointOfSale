@@ -451,12 +451,12 @@ namespace PointOfSale.DbConfiguration
                 " ,productDescription,productCategory,productLocation,productExpridate,productBatch,productColor1,productColor2,productColor3" +
                 " ,productSize,productUnits,productQuantityPack,productQntHand,productTotalPack,productTotalPeice" +
                 " ,productMinStock,productMaxStock,productSalePrice,ProductPurchasePrice,ProductProfit,ProductMaxDiscount,productTotalProfit,productItemDiscount" +
-                " ,productDistributors,productUpdateStock,productInactive,productEntryDate, updateDate) output INSERTED.productId" +
+                " ,productDistributors,productUpdateStock,productInactive,updateDate) output INSERTED.productId" +
                 " values(@productBarCode,@productName,@productCompanyName,@productPurpose" +
                 " ,@productDescription,@productCategory,@productLocation,@productExpridate,@productBatch,@productColor1,@productColor2,@productColor3" +
                 " ,@productSize,@productUnits,@productQuantityPack,@productQntHand,@productTotalPack,@productTotalPeice" +
                 " ,@productMinStock,@productMaxStock,@productSalePrice,@ProductPurchasePrice,@ProductProfit,@ProductMaxDiscount,@productTotalProfit,@productItemDiscount" +
-                " ,@productDistributors,@productUpdateStock,@productInactive,@productEntryDate,@updateDate)";
+                " ,@productDistributors,@productUpdateStock,@productInactive,@updateDate)";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
 
@@ -491,10 +491,10 @@ namespace PointOfSale.DbConfiguration
             commands.Parameters.AddWithValue("@productTotalProfit", names.ProductTotalPrice);
             commands.Parameters.AddWithValue("@productItemDiscount", names.ProductItemDiscount);
             commands.Parameters.AddWithValue("@productDistributors", names.ProductDistributors);
-            commands.Parameters.AddWithValue("@productUpdateStock", names.ProductUpdateStock);
+           commands.Parameters.AddWithValue("@productUpdateStock", names.ProductUpdateStock);
             commands.Parameters.AddWithValue("@productInactive", names.ProductInactive);
-            commands.Parameters.AddWithValue("@productEntryDate", names.ProductEntryDate);
-            commands.Parameters.AddWithValue("@updateDate", names.UpdateDate);
+          //  commands.Parameters.AddWithValue("@productEntryDate", names.ProductEntryDate);
+           commands.Parameters.AddWithValue("@updateDate", names.UpdateDate);
 
             int id = (int)commands.ExecuteScalar();
 

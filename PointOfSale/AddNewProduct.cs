@@ -66,6 +66,7 @@ namespace PointOfSale
         private void adddNewProducts_ProductName_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+           
         }
         /*
         *  Load CompanyName
@@ -203,7 +204,7 @@ namespace PointOfSale
                 {
                     // MessageBox.Show(c.Name.ToString());
 
-                    // addProducts_colorName_label.Text = c.Name.ToString();
+                    textbox.Text = c.Name.ToString();
                     textbox.BackColor = c;
 
                 }
@@ -232,14 +233,17 @@ namespace PointOfSale
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-             DateTime? Expiridate = null;
+
+
+            float totalprofit = 0;
+            int purchasePrice = 0;
+            DateTime? Expiridate = null;
             String code =  null;
             String pName = null;
             String CName = null;
             String purpose = null;
             String description = null;
-            String  category = null, color1 = null, color2= null, color3=null, purchasePrice = null;
+            String  category = null, color1 = null, color2= null, color3=null;
             String location = null, fixDiscount = null, updateStock = null, inactiveProduct = null ;
             String batch = null, salePrice=null, profit=null, pPrice=null, maxDiscount=null;
             String size = null, QtyHand = null, QtyStock = null, minstock = null, maxQuantity = null;
@@ -277,7 +281,7 @@ namespace PointOfSale
             }
             else
             {
-                adddNewProducts_companyName_comboBox.BackColor = Color.Red;
+                CName = "";
                 
             }
              //   Check Purpose
@@ -288,8 +292,8 @@ namespace PointOfSale
             }
             else
             {
-                adddNewProducts_Purpose_comboBox.BackColor = Color.Red;
-                
+                purpose = "";
+
             }
              // Check Description
              if(adddNewProducts_Description_comboBox.SelectedIndex != -1)
@@ -299,8 +303,9 @@ namespace PointOfSale
             }
             else
             {
-                adddNewProducts_Description_comboBox.BackColor = Color.Red;
-                
+                description = "";
+
+
             }
             // Check Category
             if(adddNewProducts_Category_comboBox.SelectedIndex != -1)
@@ -322,8 +327,9 @@ namespace PointOfSale
             }
             else
             {
-                adddNewProducts_Location_comboBox.BackColor = Color.Red;
-                
+                location = "";
+
+
             }
            
             // Check Batch 
@@ -335,8 +341,9 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_Batch_textbox.BackColor = Color.Red;
-                
+                batch = "0";
+
+
             }
             
 
@@ -349,7 +356,7 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_size_textbox.BackColor = Color.Red;
+                size = "0";
                 
             }
             // Check Units
@@ -360,8 +367,9 @@ namespace PointOfSale
             }
             else
             {
-                adddNewProducts_Units_comboBox.BackColor = Color.Red;
-               
+                unit = "";
+
+
 
             }
             // Check Quantity Packs
@@ -372,8 +380,9 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_QtyPack_textbox.BackColor = Color.Red;
-               
+                Qtypack = "0";
+
+
             }
 
             //  Packs
@@ -384,11 +393,13 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_Packs_textbox.BackColor = Color.Red;
-                
+                TotalPacks = "0";
+
+
             }
 
             //  give total  Pack.........
+
             if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text))
             {
                 int qPack = Int32.Parse(addNewProduct_QtyPack_textbox.Text);
@@ -399,7 +410,7 @@ namespace PointOfSale
             }
             else
             {
-                
+                addNewProduct_TotalPacks_textbox.Text = "0";
             }
                 //   Add Quantity Packs
                 if (!String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
@@ -409,8 +420,9 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_QtyHand_textbox.BackColor = Color.Red;
-              
+                QtyHand = "0";
+
+
             }
             //   Add Quantity Stock
             if (!String.IsNullOrEmpty(addNewProduct_QtyStock_textbox.Text))
@@ -420,8 +432,9 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_QtyStock_textbox.BackColor = Color.Red;
-               
+                QtyStock = "0";
+
+
             }
              // Min Stock
             if (!String.IsNullOrEmpty(addNewProduct_MinStock_textbox.Text))
@@ -431,8 +444,9 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_MinStock_textbox.BackColor = Color.Red;
-                
+                minstock = "0";
+
+
             }
             // Check  Sale Price
             if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text))
@@ -442,9 +456,8 @@ namespace PointOfSale
             }
             else
             {
-                addNewProduct_SalePrice_textbox.BackColor = Color.Red;
-                
-
+                salePrice = "0";
+                    
             }
 
        
@@ -456,16 +469,19 @@ namespace PointOfSale
             else
             {
 
-                addNewProduct_Distrubutors_comboBox.BackColor = Color.Red;
-              
+                distrubutors = "0";
+
+
             }
 
              // Check Update Stock
             if (addNewProduct_updatestock_checkBox.Checked)
             {
-                DateTime now = DateTime.Now;
-                updateStock = now.ToString() ;
-               
+
+             
+
+                updateStock = DateTime.Today.ToString("dd-MM-yyyy");
+
             }
             else
             {
@@ -479,22 +495,57 @@ namespace PointOfSale
             }
             else
             {
-                inactiveProduct = "";
+                inactiveProduct = "no";
             }
-            if(!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) && adddNewProducts_ProductName_comboBox.SelectedIndex != -1 &&
-                adddNewProducts_companyName_comboBox.SelectedIndex != -1 && adddNewProducts_Purpose_comboBox.SelectedIndex != -1 &&
-                adddNewProducts_Description_comboBox.SelectedIndex != -1 && adddNewProducts_Category_comboBox.SelectedIndex != -1 &&
-                adddNewProducts_Location_comboBox.SelectedIndex != -1 && !String.IsNullOrEmpty(addNewProduct_Batch_textbox.Text) &&
-                !String.IsNullOrEmpty(addNewProduct_size_textbox.Text) && adddNewProducts_Units_comboBox.SelectedIndex != -1 &&
-                !String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
-                 !String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_QtyStock_textbox.Text) &&
-                 !String.IsNullOrEmpty(addNewProduct_MinStock_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) &&
-                 addNewProduct_Distrubutors_comboBox.SelectedIndex != -1)
+            if(!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) && (adddNewProducts_ProductName_comboBox.SelectedIndex != -1) &&
+                adddNewProducts_Category_comboBox.SelectedIndex != -1)
             {
                 TableAddNewProducts products = new TableAddNewProducts();
-                profit = addNewProduct_Profit_textbox.Text;
-                purpose = addNewProduct_purchasePrice_textbox.Text;
-                purchasePrice = addNewProduct_purchasePrice_textbox.Text;
+               
+                // check profit..
+                if (!String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text) && String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text))
+                {
+                    profit = addNewProduct_Profit_textbox.Text;
+                    totalprofit = (Int32.Parse(profit) / 100) * Int32.Parse(salePrice);
+
+                }
+                else
+                {
+                    profit = "0";
+                    totalprofit = 0;
+                }
+
+
+                if (!String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text) && String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
+                {
+                    totalprofit = Int32.Parse(salePrice) - purchasePrice;
+                }
+                else
+                {
+                    totalprofit = 0;
+                }
+
+
+
+                //  purpose = adddNewProducts_Purpose_comboBox.Text;
+                if (!String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text))
+                {
+                    purchasePrice = Int32.Parse(addNewProduct_purchasePrice_textbox.Text);
+                }
+                else
+                {
+                    purchasePrice = 0;
+                }
+                String totalP;
+                if (!String.IsNullOrEmpty(addNewProduct_TotalPacks_textbox.Text))
+                {
+                    totalP = addNewProduct_TotalPacks_textbox.Text;
+                }
+                else
+                {
+                    totalP = "0";
+                }
+              
                 maxDiscount = addNewProduct_MaxDiscount_textbox.Text;
                 fixDiscount = addNewProduct_itemFixDiscount_textbox.Text;
                 color1 = addProducts_colorName_label.Text;
@@ -508,6 +559,7 @@ namespace PointOfSale
                 products.ProductDescription = description;
                 products.Category = category;
                 products.Location1 = location;
+               
                 products.ProductExpidate = Expiridate.Value;
                 products.ProductBatch = Int32.Parse(batch);
                 products.ProductColor1 = color1;
@@ -515,25 +567,56 @@ namespace PointOfSale
                 products.ProductColor3 = color3;
                 products.Productsize = float.Parse(size);
                 products.ProductUnits = unit;
+                products.ProductUpdateStock = updateStock;
                 products.ProductQuantityPack = Int32.Parse(Qtypack);
                 products.ProductTotalPeice = Int32.Parse(TotalPacks);
-                products.ProductTotalPacks = Int32.Parse(addNewProduct_TotalPacks_textbox.Text);
+                products.ProductTotalPacks = Int32.Parse(totalP);
+
+                if (maxQuantity == null)
+                {
+                    maxQuantity = "0";
+                }
+               
+                if (!String.IsNullOrEmpty(maxDiscount))
+                {
+                    products.MaxDiscount = Int32.Parse(maxDiscount);
+                }
+                else
+                {
+                    products.MaxDiscount = 0;
+                }
+                if (!String.IsNullOrEmpty(fixDiscount))
+                {
+
+                    products.ProductItemDiscount = Int32.Parse(fixDiscount);
+
+                }
+                else
+                {
+                    products.ProductItemDiscount = 0;
+                }
 
                 products.ProductQntHand = Int32.Parse(QtyHand);
                 products.ProductMinStock = Int32.Parse(minstock);
                 products.ProductMaxStock = Int32.Parse(maxQuantity);
                 products.ProductSalePrice = Int32.Parse(salePrice);
                 products.ProductProfit = Int32.Parse(profit);
-                products.ProductPurchasePrice = Int32.Parse(purchasePrice);
-                products.MaxDiscount = Int32.Parse(maxDiscount);
+                products.ProductPurchasePrice = purchasePrice;
+                products.ProductTotalPrice = totalprofit;
+               DateTime Expiridatee= addNewProduct_Date_dateTimePicker.Value;
+                products.ProductExpidate = Expiridatee;
                 products.ProductDistributors = distrubutors;
-                products.ProductItemDiscount = Int32.Parse(fixDiscount);
+                //products.ProductItemDiscount = Int32.Parse(fixDiscount);
                 products.UpdateDate = updateStock;
                 products.ProductInactive = inactiveProduct;
-                MessageBox.Show("Okkkk");
-              
+
+                
+                handleProducts.addNewProducts(products);
+
+                MessageBox.Show("  Product Enter");
+
             }
-           
+
         }
 
         private void adddNewProducts_ProductName_comboBox_MouseClick(object sender, MouseEventArgs e)
@@ -634,6 +717,24 @@ namespace PointOfSale
 
         private void addNewProduct_QtyStock_textbox_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewProduct_QtyPack_textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addNewProduct_purchasePrice_textbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
+                addNewProduct_purchasePrice_textbox.Text = "";
+                MessageBox.Show("Sorry  Not ALLOW");
 
         }
     }

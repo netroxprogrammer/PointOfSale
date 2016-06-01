@@ -267,6 +267,18 @@
   <ItemGroup>
     <None Include="Resources\android-icon-36x368.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x169.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -37,12 +37,9 @@
             this.addNewProduct_size_textbox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.addProducts_colorName_label3 = new System.Windows.Forms.Label();
             this.addProducts_colorName_label2 = new System.Windows.Forms.Label();
             this.addProducts_colorName_label = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.addNewProduct_updatestock_checkBox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.addNewProduct_itemFixDiscount_textbox = new System.Windows.Forms.TextBox();
@@ -99,10 +96,20 @@
             this.label20 = new System.Windows.Forms.Label();
             this.addNewProduct_inActive_checkBox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button7 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gruop.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -134,7 +141,13 @@
             // 
             // gruop
             // 
+            this.gruop.Controls.Add(this.button13);
+            this.gruop.Controls.Add(this.button12);
+            this.gruop.Controls.Add(this.button11);
+            this.gruop.Controls.Add(this.button10);
+            this.gruop.Controls.Add(this.button8);
             this.gruop.Controls.Add(this.adddNewProducts_Category_comboBox);
+            this.gruop.Controls.Add(this.button7);
             this.gruop.Controls.Add(this.adddNewProducts_Units_comboBox);
             this.gruop.Controls.Add(this.label26);
             this.gruop.Controls.Add(this.addNewProduct_size_textbox);
@@ -170,6 +183,8 @@
             // 
             // adddNewProducts_Category_comboBox
             // 
+            this.adddNewProducts_Category_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_Category_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_Category_comboBox.FormattingEnabled = true;
             this.adddNewProducts_Category_comboBox.Location = new System.Drawing.Point(470, 78);
             this.adddNewProducts_Category_comboBox.Name = "adddNewProducts_Category_comboBox";
@@ -180,6 +195,8 @@
             // 
             // adddNewProducts_Units_comboBox
             // 
+            this.adddNewProducts_Units_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_Units_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_Units_comboBox.FormattingEnabled = true;
             this.adddNewProducts_Units_comboBox.Items.AddRange(new object[] {
             "kilo",
@@ -232,36 +249,16 @@
             this.groupBox6.Controls.Add(this.button4);
             this.groupBox6.Location = new System.Drawing.Point(16, 164);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 68);
+            this.groupBox6.Size = new System.Drawing.Size(219, 68);
             this.groupBox6.TabIndex = 24;
             this.groupBox6.TabStop = false;
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
-            // 
-            // button6
-            // 
-            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
-            this.button6.Location = new System.Drawing.Point(162, 30);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(32, 32);
-            this.button6.TabIndex = 8;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
-            this.button5.Location = new System.Drawing.Point(123, 30);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(32, 32);
-            this.button5.TabIndex = 7;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // addProducts_colorName_label3
             // 
             this.addProducts_colorName_label3.AutoSize = true;
             this.addProducts_colorName_label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_colorName_label3.Location = new System.Drawing.Point(50, 39);
+            this.addProducts_colorName_label3.Location = new System.Drawing.Point(68, 39);
             this.addProducts_colorName_label3.Name = "addProducts_colorName_label3";
             this.addProducts_colorName_label3.Size = new System.Drawing.Size(14, 15);
             this.addProducts_colorName_label3.TabIndex = 6;
@@ -272,7 +269,7 @@
             // 
             this.addProducts_colorName_label2.AutoSize = true;
             this.addProducts_colorName_label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_colorName_label2.Location = new System.Drawing.Point(30, 39);
+            this.addProducts_colorName_label2.Location = new System.Drawing.Point(40, 39);
             this.addProducts_colorName_label2.Name = "addProducts_colorName_label2";
             this.addProducts_colorName_label2.Size = new System.Drawing.Size(14, 15);
             this.addProducts_colorName_label2.TabIndex = 5;
@@ -290,16 +287,6 @@
             this.addProducts_colorName_label.Text = "1";
             this.addProducts_colorName_label.Click += new System.EventHandler(this.addProducts_colorName_label_Click);
             // 
-            // button4
-            // 
-            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
-            this.button4.Location = new System.Drawing.Point(85, 30);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 32);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // addNewProduct_updatestock_checkBox
             // 
             this.addNewProduct_updatestock_checkBox.AutoSize = true;
@@ -314,6 +301,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button14);
             this.groupBox5.Controls.Add(this.addNewProduct_itemFixDiscount_textbox);
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.addNewProduct_Distrubutors_comboBox);
@@ -345,6 +333,8 @@
             // 
             // addNewProduct_Distrubutors_comboBox
             // 
+            this.addNewProduct_Distrubutors_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.addNewProduct_Distrubutors_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.addNewProduct_Distrubutors_comboBox.FormattingEnabled = true;
             this.addNewProduct_Distrubutors_comboBox.Location = new System.Drawing.Point(6, 26);
             this.addNewProduct_Distrubutors_comboBox.Name = "addNewProduct_Distrubutors_comboBox";
@@ -384,6 +374,7 @@
             this.addNewProduct_purchasePrice_textbox.Name = "addNewProduct_purchasePrice_textbox";
             this.addNewProduct_purchasePrice_textbox.Size = new System.Drawing.Size(123, 27);
             this.addNewProduct_purchasePrice_textbox.TabIndex = 6;
+            this.addNewProduct_purchasePrice_textbox.TextChanged += new System.EventHandler(this.addNewProduct_purchasePrice_textbox_TextChanged);
             // 
             // addNewProduct_Profit_textbox
             // 
@@ -579,6 +570,7 @@
             this.addNewProduct_QtyPack_textbox.Size = new System.Drawing.Size(53, 30);
             this.addNewProduct_QtyPack_textbox.TabIndex = 22;
             this.addNewProduct_QtyPack_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_QtyPack_textbox_MouseClick);
+            this.addNewProduct_QtyPack_textbox.TextChanged += new System.EventHandler(this.addNewProduct_QtyPack_textbox_TextChanged);
             // 
             // label11
             // 
@@ -633,6 +625,8 @@
             // 
             // adddNewProducts_Location_comboBox
             // 
+            this.adddNewProducts_Location_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_Location_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_Location_comboBox.FormattingEnabled = true;
             this.adddNewProducts_Location_comboBox.Location = new System.Drawing.Point(10, 124);
             this.adddNewProducts_Location_comboBox.Name = "adddNewProducts_Location_comboBox";
@@ -664,6 +658,8 @@
             // 
             // adddNewProducts_Description_comboBox
             // 
+            this.adddNewProducts_Description_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_Description_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_Description_comboBox.FormattingEnabled = true;
             this.adddNewProducts_Description_comboBox.Location = new System.Drawing.Point(241, 78);
             this.adddNewProducts_Description_comboBox.Name = "adddNewProducts_Description_comboBox";
@@ -684,6 +680,8 @@
             // 
             // adddNewProducts_Purpose_comboBox
             // 
+            this.adddNewProducts_Purpose_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_Purpose_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_Purpose_comboBox.FormattingEnabled = true;
             this.adddNewProducts_Purpose_comboBox.Location = new System.Drawing.Point(10, 78);
             this.adddNewProducts_Purpose_comboBox.Name = "adddNewProducts_Purpose_comboBox";
@@ -704,6 +702,8 @@
             // 
             // adddNewProducts_companyName_comboBox
             // 
+            this.adddNewProducts_companyName_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_companyName_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_companyName_comboBox.FormattingEnabled = true;
             this.adddNewProducts_companyName_comboBox.Location = new System.Drawing.Point(382, 32);
             this.adddNewProducts_companyName_comboBox.Name = "adddNewProducts_companyName_comboBox";
@@ -714,10 +714,13 @@
             // 
             // adddNewProducts_ProductName_comboBox
             // 
+            this.adddNewProducts_ProductName_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.adddNewProducts_ProductName_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_ProductName_comboBox.FormattingEnabled = true;
             this.adddNewProducts_ProductName_comboBox.Location = new System.Drawing.Point(144, 32);
             this.adddNewProducts_ProductName_comboBox.Name = "adddNewProducts_ProductName_comboBox";
             this.adddNewProducts_ProductName_comboBox.Size = new System.Drawing.Size(219, 21);
+            this.adddNewProducts_ProductName_comboBox.Sorted = true;
             this.adddNewProducts_ProductName_comboBox.TabIndex = 6;
             this.adddNewProducts_ProductName_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_ProductName_comboBox_SelectedIndexChanged);
             this.adddNewProducts_ProductName_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_ProductName_comboBox_MouseClick);
@@ -857,6 +860,16 @@
             this.groupBox3.Size = new System.Drawing.Size(389, 51);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // button7
+            // 
+            this.button7.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button7.Location = new System.Drawing.Point(576, 4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(25, 25);
+            this.button7.TabIndex = 4;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -896,6 +909,91 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button6
+            // 
+            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
+            this.button6.Location = new System.Drawing.Point(181, 30);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 32);
+            this.button6.TabIndex = 8;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
+            this.button5.Location = new System.Drawing.Point(141, 30);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(32, 32);
+            this.button5.TabIndex = 7;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x368;
+            this.button4.Location = new System.Drawing.Point(103, 30);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 32);
+            this.button4.TabIndex = 4;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button8
+            // 
+            this.button8.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button8.Location = new System.Drawing.Point(338, 10);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(25, 25);
+            this.button8.TabIndex = 5;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button10.Location = new System.Drawing.Point(576, 54);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(25, 25);
+            this.button10.TabIndex = 30;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button11.Location = new System.Drawing.Point(435, 54);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(25, 25);
+            this.button11.TabIndex = 31;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button12.Location = new System.Drawing.Point(204, 54);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(25, 25);
+            this.button12.TabIndex = 32;
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button13.Location = new System.Drawing.Point(576, 158);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(25, 25);
+            this.button13.TabIndex = 33;
+            this.button13.Text = "1";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
+            this.button14.Location = new System.Drawing.Point(247, 0);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(25, 25);
+            this.button14.TabIndex = 34;
+            this.button14.UseVisualStyleBackColor = true;
             // 
             // AddNewProduct
             // 
@@ -1004,5 +1102,12 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox addNewProduct_TotalPacks_textbox;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button14;
     }
 }
