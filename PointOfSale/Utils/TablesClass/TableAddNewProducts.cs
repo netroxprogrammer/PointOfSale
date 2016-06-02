@@ -21,7 +21,7 @@ namespace PointOfSale.Utils.TablesClass
         private String productColor1;
         private String productColor2;
         private String productColor3;
-        private float productsize;
+        private int productsize;
         private String productUnits;
         private int productQuantityPack;
         private int productQntHand;
@@ -32,7 +32,7 @@ namespace PointOfSale.Utils.TablesClass
         private int productSalePrice;
         private int productPurchasePrice;
         private int productProfit;
-        private float productTotalPrice;
+        private int productTotalPrice;
         private int productItemDiscount;
         private String productDistributors;
         private String productUpdateStock;
@@ -171,7 +171,7 @@ namespace PointOfSale.Utils.TablesClass
             }
         }
 
-        public float Productsize
+        public int Productsize
         {
             get
             {
@@ -301,7 +301,7 @@ namespace PointOfSale.Utils.TablesClass
             }
         }
 
-        public float ProductTotalPrice
+        public int ProductTotalPrice
         {
             get
             {

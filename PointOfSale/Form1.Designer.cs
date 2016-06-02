@@ -839,6 +839,7 @@
             this.WorkingForm_AllProduct_listView.TabIndex = 0;
             this.WorkingForm_AllProduct_listView.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_AllProduct_listView.View = System.Windows.Forms.View.Details;
+            this.WorkingForm_AllProduct_listView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_AllProduct_listView_MouseDoubleClick);
             // 
             // WorkingForm
             // 

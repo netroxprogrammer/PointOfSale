@@ -16,7 +16,68 @@ namespace PointOfSale
 {
     public partial class AddNewProduct : Form
     {
-        public static int count;
+       
+
+        public  String barCode
+        {
+            set
+            {
+                addNewProduct_code_textbox.Text = value;
+            }
+        }
+        public String PName
+        {
+            set
+            {
+                adddNewProducts_ProductName_comboBox.Text = value;
+            }
+        }
+        public  String cName
+        {
+            set
+            {
+                adddNewProducts_companyName_comboBox.Text = value;
+            }
+        }
+        public String Purpose
+        {
+            set
+            {
+                adddNewProducts_Purpose_comboBox.Text = value;
+            }
+        } 
+
+        public String descreption
+        {
+            set
+            {
+                adddNewProducts_Description_comboBox.Text = value;
+            }
+        }
+
+        public String PCategory
+        {
+            set
+            {
+                adddNewProducts_Category_comboBox.Text = value;
+            }
+        }
+        public String Location
+        {
+            set
+            {
+                adddNewProducts_Location_comboBox.Text = value;
+            }
+        }
+
+        public DateTime ExpiryDate
+        {
+            set
+            {
+                addNewProduct_Date_dateTimePicker.Value = value;
+            }
+        }
+
         HandleProducts handleProducts;
         public AddNewProduct()
         {
@@ -30,17 +91,20 @@ namespace PointOfSale
 
         private void AddNewProduct_Load(object sender, EventArgs e)
         {
-             handleProducts = new HandleProducts();
+            handleProducts = new HandleProducts();
             loadProductCategory();
-             loadCompanyNames();
+            loadCompanyNames();
             loadProductName();
             loadDescreptionName();
             loadLocation();
             loadPurposeName();
             loadUnits();
             loadDistrubutors();
+
+
             this.TopMost = true;
-        }
+          
+          }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -235,7 +299,7 @@ namespace PointOfSale
         {
 
 
-            float totalprofit = 0;
+            int totalprofit = 0;
             int purchasePrice = 0;
             DateTime? Expiridate = null;
             String code =  null;
@@ -593,7 +657,7 @@ namespace PointOfSale
                 products.ProductColor1 = color1;
                 products.ProductColor2 = color2;
                 products.ProductColor3 = color3;
-                products.Productsize = float.Parse(size);
+                products.Productsize = Int32.Parse(size);
                 products.ProductUnits = unit;
                 products.ProductUpdateStock = updateStock;
                 products.ProductQuantityPack = Int32.Parse(Qtypack);

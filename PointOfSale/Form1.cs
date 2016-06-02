@@ -22,6 +22,8 @@ namespace PointOfSale
 {
     public partial class WorkingForm : Form
     {
+        HandleProducts products;
+        ArrayList prod;
         public WorkingForm()
         {
             InitializeComponent();
@@ -291,9 +293,9 @@ namespace PointOfSale
             WorkingForm_AllProduct_listView.Columns.Add("Purpose", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Description", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Category", 110, HorizontalAlignment.Left);
-            WorkingForm_AllProduct_listView.Columns.Add("Location", 110, HorizontalAlignment.Left);
+           // WorkingForm_AllProduct_listView.Columns.Add("Location", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Expiry date", 110, HorizontalAlignment.Left);
-            WorkingForm_AllProduct_listView.Columns.Add("Batch", 110, HorizontalAlignment.Left);
+          /*  WorkingForm_AllProduct_listView.Columns.Add("Batch", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Color 1", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Color 2", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Color 3", 110, HorizontalAlignment.Left);
@@ -315,17 +317,17 @@ namespace PointOfSale
             WorkingForm_AllProduct_listView.Columns.Add("Update Stock Date", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Inactive Products", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Entry Date", 110, HorizontalAlignment.Left);
-            WorkingForm_AllProduct_listView.Columns.Add("Update Product Date", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Update Product Date", 110, HorizontalAlignment.Left);*/
 
-            HandleProducts products = new HandleProducts();
+             products = new HandleProducts();
             // WorkingForm_customerPanel.Visible = false;
             WorkingForm_Employ_Panel.Visible = true;
-            ArrayList prod = products.getProductList();
+            prod = products.getProductList();
 
             foreach (TableAddNewProducts em in prod)
             {
-                String[] rows = {  em.BarCode, em.ProductName, em.ProductCompanyName,
-                    em.ProductPurpose , em.ProductDescription, em.Category, em.Location1, 
+                String[] rows = { em.ProductId.ToString(), em.BarCode, em.ProductName, em.ProductCompanyName,
+                    em.ProductPurpose , em.ProductDescription, em.Category, em.ProductExpidate.ToString() 
                 };
                 ListViewItem items = new ListViewItem(rows);
                 WorkingForm_AllProduct_listView.Items.Add(items);
@@ -359,6 +361,8 @@ namespace PointOfSale
         private void WorkingForm_EmployeList_MouseClick(object sender, MouseEventArgs e)
         {
 
+           
+
             String id = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
             String name = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
             String phone = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
@@ -371,7 +375,6 @@ namespace PointOfSale
             String eRelation = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
 
             String eLocatipn = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-
             MessageBox.Show(name);
         }
 
@@ -392,6 +395,40 @@ namespace PointOfSale
 
         private void WorkingForm_Employ_Panel_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void WorkingForm_AllProduct_listView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            String id = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[0].Text;
+            String barCode = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[1].Text;
+            String pname = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[2].Text;
+            String CName = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[3].Text;
+            String purpose = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[4].Text;
+            String disc = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[5].Text;
+            String category = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[6].Text;
+            String expdate = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[7].Text;
+            MessageBox.Show(CName);
+            AddNewProduct p = new AddNewProduct();
+         
+           
+            ArrayList  data = products.getProductList();
+
+            foreach(TableAddNewProducts d in data)
+            {
+                if(d.BarCode == barCode)
+                {
+                    p.barCode = barCode;
+                    p.PName = pname;
+                    p.cName = CName;
+                    p.Purpose = purpose;
+                    p.descreption = disc;
+                    p.PCategory = category;
+                    p.ExpiryDate =System.Convert.ToDateTime(expdate);
+                }
+            }
+               p.Show();
 
         }
     }
