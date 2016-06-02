@@ -14,3 +14,7 @@ C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\D
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.TableHandlerForms.ImportSheet.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddOtherThings.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.Employee.AddEmployee.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddProductName.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddCompanyName.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddDiscription.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddPurpose.resources

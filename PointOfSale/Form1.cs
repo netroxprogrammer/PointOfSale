@@ -426,6 +426,25 @@ namespace PointOfSale
                     p.descreption = disc;
                     p.PCategory = category;
                     p.ExpiryDate =System.Convert.ToDateTime(expdate);
+                    p.Batch = d.ProductBatch.ToString();
+                    p.PColor1 = d.ProductColor1;
+                    p.PColor2 = d.ProductColor2;
+                    p.PColor3 = d.ProductColor3;
+                    p.pSize = d.Productsize.ToString();
+                    p.Units = d.ProductUnits;
+                    p.qntyPack = d.ProductQuantityPack.ToString();
+                    p.packs = d.ProductTotalPeice.ToString();
+                    p.QntyHand = d.ProductQntHand.ToString();
+                    p.totalPacks = d.ProductTotalPacks.ToString();
+                    p.maxQuantity = d.ProductMaxStock.ToString();
+                    p.minQuantity = d.ProductMinStock.ToString();
+                    p.salePrice = d.ProductSalePrice.ToString();
+                    p.profit = d.ProductProfit.ToString();
+                    p.purchasePrice = d.ProductPurchasePrice.ToString();
+                    p.maxDiscount = d.MaxDiscount.ToString();
+                    p.itemDiscont = d.ProductItemDiscount.ToString();
+                    p.Distributor = d.ProductDistributors;
+
                 }
             }
                p.Show();

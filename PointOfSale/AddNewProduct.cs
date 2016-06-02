@@ -1,4 +1,5 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.OthersForms;
 using PointOfSale.Utils;
 using PointOfSale.Utils.TablesClass;
 using System;
@@ -77,6 +78,145 @@ namespace PointOfSale
                 addNewProduct_Date_dateTimePicker.Value = value;
             }
         }
+
+        public String Batch
+        {
+            set
+            {
+                addNewProduct_Batch_textbox.Text = value;
+
+            }
+        }
+
+        public  String PColor1
+        {
+            set
+            {
+                addProducts_colorName_label.Text = value;
+                addProducts_colorName_label.BackColor = System.Drawing.Color.FromName(addProducts_colorName_label.Text);
+            }
+        }
+
+        public String PColor2
+        {
+            set
+            {
+                addProducts_colorName_label2.Text = value;
+                addProducts_colorName_label2.BackColor = System.Drawing.Color.FromName(addProducts_colorName_label2.Text);
+            }
+        }
+        public String PColor3
+        {
+            set
+            {
+                addProducts_colorName_label3.Text = value;
+                addProducts_colorName_label3.BackColor = System.Drawing.Color.FromName(addProducts_colorName_label3.Text);
+            }
+        }
+        public String pSize
+        {
+            set
+            {
+                addNewProduct_size_textbox.Text = value;
+            }
+        }
+
+        public String Units
+        {
+            set
+            {
+                adddNewProducts_Units_comboBox.Text = value;
+            }
+        }
+        public String qntyPack
+        {
+            set
+            {
+                addNewProduct_QtyPack_textbox.Text = value;
+            }
+        }
+
+        public String packs
+        {
+            set
+            {
+                addNewProduct_Packs_textbox.Text = value;
+            }
+        }
+        public String QntyHand
+        {
+            set
+            {
+                addNewProduct_QtyHand_textbox.Text = value;
+            }
+        }
+        public String totalPacks
+        {
+            set
+            {
+                addNewProduct_TotalPacks_textbox.Text = value;
+            }
+        }
+        public String maxQuantity
+        {
+            set
+            {
+                addNewProduct_QtyStock_textbox.Text = value;
+
+            }
+        }
+        public  String minQuantity
+        {
+            set
+            {
+                addNewProduct_MinStock_textbox.Text = value;
+            }
+        }
+        public String salePrice
+        {
+            set
+            {
+                addNewProduct_SalePrice_textbox.Text = value;
+            }
+        }
+        public String profit
+        {
+            set
+            {
+                addNewProduct_Profit_textbox.Text = value;
+            }
+        }
+        public String purchasePrice
+        {
+            set
+            {
+                addNewProduct_purchasePrice_textbox.Text = value;
+            }
+        }
+
+        public String maxDiscount
+        {
+            set
+            {
+                addNewProduct_MaxDiscount_textbox.Text = value;
+            }
+        }
+        public String itemDiscont
+        {
+            set
+            {
+                addNewProduct_itemFixDiscount_textbox.Text = value;
+
+            }
+        }
+        public String Distributor
+        {
+            set
+            {
+                addNewProduct_Distrubutors_comboBox.Text = value;
+            }
+        }
+        
 
         HandleProducts handleProducts;
         public AddNewProduct()
@@ -845,6 +985,26 @@ namespace PointOfSale
         private void addNewProduct_SalePrice_textbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            new AddProductName().Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            new AddCompanyName().Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            new AddPurpose().Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            new AddDiscription().Show();
         }
     }
 }

@@ -87,11 +87,35 @@
     <Compile Include="LoginAthuntication.Designer.cs">
       <DependentUpon>LoginAthuntication.cs</DependentUpon>
     </Compile>
+    <Compile Include="OthersForms\AddCompanyName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OthersForms\AddCompanyName.Designer.cs">
+      <DependentUpon>AddCompanyName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OthersForms\AddDiscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OthersForms\AddDiscription.Designer.cs">
+      <DependentUpon>AddDiscription.cs</DependentUpon>
+    </Compile>
     <Compile Include="OthersForms\AddOtherThings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OthersForms\AddOtherThings.Designer.cs">
       <DependentUpon>AddOtherThings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OthersForms\AddProductName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OthersForms\AddProductName.Designer.cs">
+      <DependentUpon>AddProductName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OthersForms\AddPurpose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OthersForms\AddPurpose.Designer.cs">
+      <DependentUpon>AddPurpose.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,8 +163,20 @@
     <EmbeddedResource Include="LoginAthuntication.resx">
       <DependentUpon>LoginAthuntication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OthersForms\AddCompanyName.resx">
+      <DependentUpon>AddCompanyName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OthersForms\AddDiscription.resx">
+      <DependentUpon>AddDiscription.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OthersForms\AddOtherThings.resx">
       <DependentUpon>AddOtherThings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OthersForms\AddProductName.resx">
+      <DependentUpon>AddProductName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OthersForms\AddPurpose.resx">
+      <DependentUpon>AddPurpose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
