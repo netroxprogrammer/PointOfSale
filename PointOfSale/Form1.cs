@@ -46,9 +46,13 @@ namespace PointOfSale
 
         private void WorkingForm_Load(object sender, EventArgs e)
         {
+            products = new HandleProducts(); ;
+            loadProductName();
             WorkingForm_listView.Focus();
             WorkingForm_EmployeList.Focus();
             WorkingForm_Employ_Panel.Visible = false;
+            workingForm_Product_Panel.Visible = false;
+            workingForm_SaleInvoice_Panel.Visible = false;
 
             if (Constants.checkLogin == false)
             {
@@ -263,6 +267,8 @@ namespace PointOfSale
             HandleEmployee employee = new HandleEmployee();
             // WorkingForm_customerPanel.Visible = false;
             WorkingForm_Employ_Panel.Visible = true;
+            workingForm_Product_Panel.Visible = false;
+            workingForm_SaleInvoice_Panel.Visible = false;
             ArrayList empl = employee.getEmployee();
 
             foreach (TotalEmployeeData em in empl)
@@ -322,6 +328,8 @@ namespace PointOfSale
              products = new HandleProducts();
             // WorkingForm_customerPanel.Visible = false;
             WorkingForm_Employ_Panel.Visible = true;
+            workingForm_Product_Panel.Visible = true;
+            workingForm_SaleInvoice_Panel.Visible = false;
             prod = products.getProductList();
 
             foreach (TableAddNewProducts em in prod)
@@ -449,6 +457,191 @@ namespace PointOfSale
             }
                p.Show();
 
+        }
+
+        private void WorkingForm_customerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+         
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saleInvoiceListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void newSaleInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            workingForm_SaleInvoice_Panel.Visible = true;
+
+
+        }
+
+        /*
+       *  Load Product Name
+       */
+        public void loadProductName()
+        {
+            ArrayList getname = products.getProductList();
+            foreach (TableAddNewProducts name in getname)
+            {
+
+                Sale_Panel_ProductName_comboBox.Items.Add(name.ProductName);
+            }
+        }
+
+        private void Sale_Panel_ProductName_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+
+            {
+
+            }
         }
     }
 }
