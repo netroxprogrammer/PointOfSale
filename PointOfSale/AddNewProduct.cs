@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -964,23 +965,15 @@ namespace PointOfSale
 
         private void addNewProduct_purchasePrice_textbox_TextChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
-            {
-                addNewProduct_purchasePrice_textbox.Text = "";
-                MessageBox.Show("Sorry  Not ALLOW");
-            }
-
+          
         }
 
         private void addNewProduct_Profit_textbox_TextChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text)) { 
-            addNewProduct_Profit_textbox.Text = "";
-            MessageBox.Show("Sorry  Not ALLOW");
-        }
 
-        
-    }
+
+
+        }
 
         private void addNewProduct_SalePrice_textbox_TextChanged(object sender, EventArgs e)
         {
@@ -1005,6 +998,26 @@ namespace PointOfSale
         private void button11_Click(object sender, EventArgs e)
         {
             new AddDiscription().Show();
+        }
+
+        private void addNewProduct_Profit_textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+
+            {
+
+                //if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text) &&
+                //    String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text) &&
+                //    !String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
+                //{
+                float a = float.Parse(addNewProduct_Profit_textbox.Text);
+                 float f = Int32.Parse(addNewProduct_Profit_textbox.Text) / 100;
+               //     int t = ( f * Int32.Parse(addNewProduct_SalePrice_textbox.Text));
+                 Debug.WriteLine("dataaaa "+ Math.Round((a/100) * Int32.Parse(addNewProduct_SalePrice_textbox.Text)));
+                addNewProduct_purchasePrice_textbox.Text = "dsddsdsd";
+                //}
+            }
         }
     }
 }

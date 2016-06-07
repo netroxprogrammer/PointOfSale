@@ -34,6 +34,7 @@ namespace PointOfSale.DbConfiguration
             int id = (int)commands.ExecuteScalar();
 
 
+
             Debug.WriteLine("Database Entry number "+id);
             return id;
         }
@@ -193,5 +194,34 @@ namespace PointOfSale.DbConfiguration
             return listTable;
         }
 
+        /*
+        getCustomer NAme For sale Invoice
+        */
+        public ArrayList getCustomersNames()
+        {
+
+            Debug.WriteLine("get Customers");
+
+            ArrayList lists = new ArrayList();
+
+
+            String sql = "SELECT *from customerBasic";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TotalCustomerClass customers = new TotalCustomerClass();
+
+                customers.customerId = reader.GetInt32(0);
+                customers.customerName = reader.GetString(1);
+               
+
+                lists.Add(customers);
+
+
+            }
+            reader.Close();
+            return lists;
+        }
     }
 }

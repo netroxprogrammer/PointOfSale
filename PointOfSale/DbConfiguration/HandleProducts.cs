@@ -574,7 +574,7 @@ namespace PointOfSale.DbConfiguration
        /*
        Search Product By Name
        */
-       public TableAddNewProducts productByName(String productName)
+       public ArrayList productByName(String id)
         {
 
 
@@ -582,15 +582,15 @@ namespace PointOfSale.DbConfiguration
 
             ArrayList list = new ArrayList();
 
-            String sql = "Select * from addNewProducts where productName = @Pname";
+            String sql = "Select * from addNewProducts where productId = @id";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             commands.CommandType = CommandType.Text;
 
-            commands.Parameters.AddWithValue("@Pname", productName);
+            commands.Parameters.AddWithValue("@id", Int32.Parse(id));
             TableAddNewProducts products = null;
             SqlDataReader reader = commands.ExecuteReader();
-            if (reader.Read())
+            while (reader.Read())
             {
                  products = new TableAddNewProducts();
                 products.ProductId = reader.GetInt32(0);
@@ -635,7 +635,150 @@ namespace PointOfSale.DbConfiguration
                 products.ProductEntryDate = reader.GetDateTime(30);
                 products.UpdateDate = reader.GetString(31);
 
-               // list.Add(products);
+               list.Add(products);
+                Debug.WriteLine(products);
+
+            }
+            reader.Close();
+            return list;
+        }
+        /*
+        get Product By ItemCode
+        */
+        public TableAddNewProducts productByItemCode(String id)
+        {
+
+
+            Debug.WriteLine("get productByItemCode");
+
+            ArrayList list = new ArrayList();
+
+            String sql = "Select * from addNewProducts where productBarCode = @id";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+
+            commands.Parameters.AddWithValue("@id", id);
+            TableAddNewProducts products = null;
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                products = new TableAddNewProducts();
+                products.ProductId = reader.GetInt32(0);
+                products.BarCode = reader.GetString(1);
+                products.ProductName = reader.GetString(2);
+                products.ProductCompanyName = reader.GetString(3);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                products.ProductPurpose = reader.GetString(4);
+
+                products.ProductDescription = reader.GetString(5);
+                products.Category = reader.GetString(6);
+
+
+                products.Location1 = reader.GetString(7);
+                products.ProductExpidate = reader.GetDateTime(8);
+                products.ProductBatch = reader.GetInt32(9);
+                products.ProductColor1 = reader.GetString(10);
+                products.ProductColor2 = reader.GetString(11);
+                products.ProductColor3 = reader.GetString(12);
+                products.Productsize = reader.GetInt32(13);
+                products.ProductUnits = reader.GetString(14);
+                products.ProductQuantityPack = reader.GetInt32(15);
+                products.ProductQntHand = reader.GetInt32(16);
+                products.ProductTotalPacks = reader.GetInt32(17);
+
+                products.ProductTotalPeice = reader.GetInt32(18);
+
+                products.ProductMinStock = reader.GetInt32(19);
+                products.ProductMaxStock = reader.GetInt32(20);
+                products.ProductSalePrice = reader.GetInt32(21);
+                products.ProductPurchasePrice = reader.GetInt32(22);
+                products.ProductProfit = reader.GetInt32(23);
+
+                products.MaxDiscount = reader.GetInt32(24);
+                products.ProductTotalPrice = reader.GetInt32(25);
+                products.ProductItemDiscount = reader.GetInt32(26);
+                products.ProductDistributors = reader.GetString(27);
+
+                products.ProductUpdateStock = reader.GetString(28);
+                products.ProductInactive = reader.GetString(29);
+                products.ProductEntryDate = reader.GetDateTime(30);
+                products.UpdateDate = reader.GetString(31);
+
+                //   list.Add(products);
+                Debug.WriteLine(products);
+
+            }
+            reader.Close();
+            return products;
+        }
+
+        /*
+         Product by Descrption
+         */
+        public TableAddNewProducts productByDiscreption(String id)
+        {
+
+
+            Debug.WriteLine("get productByDiscreption");
+
+            ArrayList list = new ArrayList();
+
+            String sql = "Select * from addNewProducts where productId = @id";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+
+            commands.Parameters.AddWithValue("@id", Int32.Parse(id));
+            TableAddNewProducts products = null;
+            SqlDataReader reader = commands.ExecuteReader();
+            if (reader.Read())
+            {
+                products = new TableAddNewProducts();
+                products.ProductId = reader.GetInt32(0);
+                products.BarCode = reader.GetString(1);
+                products.ProductName = reader.GetString(2);
+                products.ProductCompanyName = reader.GetString(3);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                products.ProductPurpose = reader.GetString(4);
+
+                products.ProductDescription = reader.GetString(5);
+                products.Category = reader.GetString(6);
+
+
+                products.Location1 = reader.GetString(7);
+                products.ProductExpidate = reader.GetDateTime(8);
+                products.ProductBatch = reader.GetInt32(9);
+                products.ProductColor1 = reader.GetString(10);
+                products.ProductColor2 = reader.GetString(11);
+                products.ProductColor3 = reader.GetString(12);
+                products.Productsize = reader.GetInt32(13);
+                products.ProductUnits = reader.GetString(14);
+                products.ProductQuantityPack = reader.GetInt32(15);
+                products.ProductQntHand = reader.GetInt32(16);
+                products.ProductTotalPacks = reader.GetInt32(17);
+
+                products.ProductTotalPeice = reader.GetInt32(18);
+
+                products.ProductMinStock = reader.GetInt32(19);
+                products.ProductMaxStock = reader.GetInt32(20);
+                products.ProductSalePrice = reader.GetInt32(21);
+                products.ProductPurchasePrice = reader.GetInt32(22);
+                products.ProductProfit = reader.GetInt32(23);
+
+                products.MaxDiscount = reader.GetInt32(24);
+                products.ProductTotalPrice = reader.GetInt32(25);
+                products.ProductItemDiscount = reader.GetInt32(26);
+                products.ProductDistributors = reader.GetString(27);
+
+                products.ProductUpdateStock = reader.GetString(28);
+                products.ProductInactive = reader.GetString(29);
+                products.ProductEntryDate = reader.GetDateTime(30);
+                products.UpdateDate = reader.GetString(31);
+
+                //   list.Add(products);
                 Debug.WriteLine(products);
 
             }

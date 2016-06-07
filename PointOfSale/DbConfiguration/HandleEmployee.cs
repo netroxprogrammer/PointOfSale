@@ -75,7 +75,9 @@ namespace PointOfSale.DbConfiguration
             return id;
 
         }
-
+/*
+get all Employee Data
+*/
         public ArrayList getEmployee()
         {
 
@@ -118,5 +120,41 @@ namespace PointOfSale.DbConfiguration
             return lists;
         }
 
+        /*
+      get  Basic Information of Employe   
+    */
+        public ArrayList getEmployeeBasic()
+        {
+
+            Debug.WriteLine("get Employee");
+
+            ArrayList lists = new ArrayList();
+
+
+            String sql = "select *from Employees";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TotalEmployeeData emplooye = new TotalEmployeeData();
+
+                emplooye.EmployeeId = reader.GetInt32(0);
+                emplooye.EmployeeName = reader.GetString(1);
+                emplooye.EmployeePhone = reader.GetString(2);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                emplooye.EmployeeFatherName = reader.GetString(3);
+
+                emplooye.EmployeeCNIC = reader.GetString(4);
+                emplooye.EmployeeAddress = reader.GetString(5);
+                emplooye.EmployeeLocation = reader.GetString(6);
+          
+                lists.Add(emplooye);
+
+
+            }
+            reader.Close();
+            return lists;
+        }
     }
 }
