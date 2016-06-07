@@ -739,7 +739,9 @@ namespace PointOfSale
                 if (!String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text) && String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text))
                 {
                     profit = addNewProduct_Profit_textbox.Text;
-                    totalprofit = (Int32.Parse(profit) / 100) * Int32.Parse(salePrice);
+                    float a=float.Parse(profit);
+                    double d=  Math.Round((a / 100) * Int32.Parse(salePrice));
+                    totalprofit = Convert.ToInt32(d);
 
                 }
                 else
@@ -794,11 +796,11 @@ namespace PointOfSale
                 products.Location1 = location;
                
                 products.ProductExpidate = Expiridate.Value;
-                products.ProductBatch = Int32.Parse(batch);
+                products.ProductBatch = batch;
                 products.ProductColor1 = color1;
                 products.ProductColor2 = color2;
                 products.ProductColor3 = color3;
-                products.Productsize = Int32.Parse(size);
+                products.Productsize = size;
                 products.ProductUnits = unit;
                 products.ProductUpdateStock = updateStock;
                 products.ProductQuantityPack = Int32.Parse(Qtypack);
@@ -1012,11 +1014,25 @@ namespace PointOfSale
                 //    !String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
                 //{
                 float a = float.Parse(addNewProduct_Profit_textbox.Text);
-                 float f = Int32.Parse(addNewProduct_Profit_textbox.Text) / 100;
+                 float f = Int32.Parse(addNewProduct_Profit_textbox.Text) % 100;
                //     int t = ( f * Int32.Parse(addNewProduct_SalePrice_textbox.Text));
-                 Debug.WriteLine("dataaaa "+ Math.Round((a/100) * Int32.Parse(addNewProduct_SalePrice_textbox.Text)));
-                addNewProduct_purchasePrice_textbox.Text = "dsddsdsd";
+                 Debug.WriteLine("dataaaa "+ (a/100) * Int32.Parse(addNewProduct_SalePrice_textbox.Text));
+                addNewProduct_purchasePrice_textbox.Text =  Math.Round (((a / 100) * Int32.Parse(addNewProduct_SalePrice_textbox.Text))).ToString();
                 //}
+            }
+        }
+
+        private void addNewProduct_purchasePrice_textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+
+            {
+                float sale = float.Parse(addNewProduct_SalePrice_textbox.Text);
+                float purchase = float.Parse(addNewProduct_purchasePrice_textbox.Text);
+                int prof = Convert.ToInt32(sale - purchase);
+                addNewProduct_Profit_textbox.Text = prof.ToString();
+
             }
         }
     }

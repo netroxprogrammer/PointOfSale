@@ -473,6 +473,7 @@
             this.addNewProduct_purchasePrice_textbox.Size = new System.Drawing.Size(123, 27);
             this.addNewProduct_purchasePrice_textbox.TabIndex = 6;
             this.addNewProduct_purchasePrice_textbox.TextChanged += new System.EventHandler(this.addNewProduct_purchasePrice_textbox_TextChanged);
+            this.addNewProduct_purchasePrice_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addNewProduct_purchasePrice_textbox_KeyDown);
             // 
             // addNewProduct_Profit_textbox
             // 

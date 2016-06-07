@@ -17,11 +17,11 @@ namespace PointOfSale.Utils.TablesClass
         private String Location;
         private float  psize;
         private DateTime productExpidate;
-        private int productBatch;
+        private String productBatch;
         private String productColor1;
         private String productColor2;
         private String productColor3;
-        private int productsize;
+        private String productsize;
         private String productUnits;
         private int productQuantityPack;
         private int productQntHand;
@@ -119,7 +119,7 @@ namespace PointOfSale.Utils.TablesClass
             }
         }
 
-        public int ProductBatch
+        public String ProductBatch
         {
             get
             {
@@ -171,7 +171,7 @@ namespace PointOfSale.Utils.TablesClass
             }
         }
 
-        public int Productsize
+        public String Productsize
         {
             get
             {

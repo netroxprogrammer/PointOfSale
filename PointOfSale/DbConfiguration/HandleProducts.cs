@@ -514,7 +514,7 @@ namespace PointOfSale.DbConfiguration
             ArrayList lists = new ArrayList();
 
 
-            String sql = "select *from addNewProducts";
+            String sql = "select *from addNewProducts where productInactive='no'";
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
@@ -535,11 +535,11 @@ namespace PointOfSale.DbConfiguration
 
                 products.Location1 = reader.GetString(7);
                products.ProductExpidate = reader.GetDateTime(8);
-                products.ProductBatch = reader.GetInt32(9);
+                products.ProductBatch = reader.GetString(9);
                 products.ProductColor1 = reader.GetString(10);
                 products.ProductColor2 = reader.GetString(11);
                 products.ProductColor3 = reader.GetString(12);
-              products.Productsize = reader.GetInt32(13);
+                 products.Productsize = reader.GetString(13);
                 products.ProductUnits = reader.GetString(14);
                 products.ProductQuantityPack = reader.GetInt32(15);
                 products.ProductQntHand = reader.GetInt32(16);
@@ -607,11 +607,11 @@ namespace PointOfSale.DbConfiguration
 
                 products.Location1 = reader.GetString(7);
                 products.ProductExpidate = reader.GetDateTime(8);
-                products.ProductBatch = reader.GetInt32(9);
+                products.ProductBatch = reader.GetString(9);
                 products.ProductColor1 = reader.GetString(10);
                 products.ProductColor2 = reader.GetString(11);
                 products.ProductColor3 = reader.GetString(12);
-                products.Productsize = reader.GetInt32(13);
+                products.Productsize = reader.GetString(13);
                 products.ProductUnits = reader.GetString(14);
                 products.ProductQuantityPack = reader.GetInt32(15);
                 products.ProductQntHand = reader.GetInt32(16);
@@ -678,11 +678,11 @@ namespace PointOfSale.DbConfiguration
 
                 products.Location1 = reader.GetString(7);
                 products.ProductExpidate = reader.GetDateTime(8);
-                products.ProductBatch = reader.GetInt32(9);
+                products.ProductBatch = reader.GetString(9);
                 products.ProductColor1 = reader.GetString(10);
                 products.ProductColor2 = reader.GetString(11);
                 products.ProductColor3 = reader.GetString(12);
-                products.Productsize = reader.GetInt32(13);
+                products.Productsize = reader.GetString(13);
                 products.ProductUnits = reader.GetString(14);
                 products.ProductQuantityPack = reader.GetInt32(15);
                 products.ProductQntHand = reader.GetInt32(16);
@@ -750,11 +750,11 @@ namespace PointOfSale.DbConfiguration
 
                 products.Location1 = reader.GetString(7);
                 products.ProductExpidate = reader.GetDateTime(8);
-                products.ProductBatch = reader.GetInt32(9);
+                products.ProductBatch = reader.GetString(9);
                 products.ProductColor1 = reader.GetString(10);
                 products.ProductColor2 = reader.GetString(11);
                 products.ProductColor3 = reader.GetString(12);
-                products.Productsize = reader.GetInt32(13);
+                products.Productsize = reader.GetString(13);
                 products.ProductUnits = reader.GetString(14);
                 products.ProductQuantityPack = reader.GetInt32(15);
                 products.ProductQntHand = reader.GetInt32(16);
