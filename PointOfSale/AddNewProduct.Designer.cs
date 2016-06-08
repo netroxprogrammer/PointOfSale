@@ -359,7 +359,7 @@
             // 
             this.addProducts_colorName_label.AutoSize = true;
             this.addProducts_colorName_label.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addProducts_colorName_label.Location = new System.Drawing.Point(10, 39);
+            this.addProducts_colorName_label.Location = new System.Drawing.Point(11, 39);
             this.addProducts_colorName_label.Name = "addProducts_colorName_label";
             this.addProducts_colorName_label.Size = new System.Drawing.Size(14, 15);
             this.addProducts_colorName_label.TabIndex = 0;

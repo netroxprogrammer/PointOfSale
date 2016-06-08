@@ -59,6 +59,7 @@ namespace PointOfSale
 
                     this.Close();
                     Constants.checkLogin = true;
+                    Constants.userlogin = loginAthn_userName;
                     new WorkingForm().Show();
                 }
                 else

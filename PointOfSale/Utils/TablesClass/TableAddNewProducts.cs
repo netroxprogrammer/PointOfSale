@@ -41,6 +41,7 @@ namespace PointOfSale.Utils.TablesClass
         private String updateDate;
         private String category;
         private int maxDiscount;
+        private String loginUser;
         public int ProductId
         {
             get
@@ -467,6 +468,19 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 maxDiscount = value;
+            }
+        }
+
+        public string LoginUser
+        {
+            get
+            {
+                return loginUser;
+            }
+
+            set
+            {
+                loginUser = value;
             }
         }
     }
