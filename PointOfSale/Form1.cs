@@ -290,7 +290,7 @@ namespace PointOfSale
        get Products List
        */
 
-        public void getProductsList()
+        public void getProductsList(String active)
         {
 
             WorkingForm_Employ_Panel.Visible = true;
@@ -334,7 +334,7 @@ namespace PointOfSale
             WorkingForm_Employ_Panel.Visible = true;
             workingForm_Product_Panel.Visible = true;
             workingForm_SaleInvoice_Panel.Visible = false;
-            prod = products.getProductList();
+            prod = products.getProductList(active);
 
             foreach (TableAddNewProducts em in prod)
             {
@@ -392,7 +392,7 @@ namespace PointOfSale
 
         private void productListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            getProductsList();
+            getProductsList("no");
         }
 
         private void WorkingForm_listView_SelectedIndexChanged(object sender, EventArgs e)
@@ -421,16 +421,18 @@ namespace PointOfSale
             String disc = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[5].Text;
             String category = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[6].Text;
             String expdate = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[7].Text;
-            MessageBox.Show(CName);
+          //  MessageBox.Show(CName);
             AddNewProduct p = new AddNewProduct();
-         
-           
-            ArrayList  data = products.getProductList();
 
-            foreach(TableAddNewProducts d in data)
+
+            ArrayList data = products.getProductListNoFilter();
+
+
+            foreach (TableAddNewProducts d in data)
             {
-                if(d.BarCode == barCode)
-                {
+                if(d.BarCode == barCode && d.ProductId == Int32.Parse(id))
+                {   
+                    p.Id = id;
                     p.barCode = barCode;
                     p.PName = pname;
                     p.cName = CName;
@@ -456,8 +458,14 @@ namespace PointOfSale
                     p.maxDiscount = d.MaxDiscount.ToString();
                     p.itemDiscont = d.ProductItemDiscount.ToString();
                     p.Distributor = d.ProductDistributors;
-
+                    if(d.ProductInactive == "inactive")
+                    {
+                        p.ActiveOrIn = true;
+                    }
+                    p.T = true;
                 }
+               
+                
             }
                p.Show();
 
@@ -815,7 +823,7 @@ namespace PointOfSale
        */
         public void loadAllData()
         {
-            ArrayList getname = products.getProductList();
+            ArrayList getname = products.getProductList("no");
             foreach (TableAddNewProducts name in getname)
             {
 
@@ -1071,5 +1079,32 @@ namespace PointOfSale
                 e.Handled = true;
             }
         }
+
+        private void inactiveProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            getProductsList("inactive");
+
+        }
+
+        private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddNewProduct().Show();
+        }
+
+        private void editProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            getProductsList("no");
+        }
+
+        private void showAllProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            getProductsList("no");
+        
+    }
     }
 }

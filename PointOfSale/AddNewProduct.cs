@@ -18,8 +18,16 @@ namespace PointOfSale
 {
     public partial class AddNewProduct : Form
     {
-       public int  check=0;
-
+        public int  check=0;
+        private bool t;
+        private String id;
+        public bool ActiveOrIn
+        {
+            set
+            {
+                addNewProduct_inActive_checkBox.Checked = value;
+            }
+        }
         public  String barCode
         {
             set
@@ -217,7 +225,33 @@ namespace PointOfSale
                 addNewProduct_Distrubutors_comboBox.Text = value;
             }
         }
-        
+
+        public bool T
+        {
+            get
+            {
+                return t;
+            }
+
+            set
+            {
+                t = value;
+                AddNewProduct_Update_btn.Visible = true;
+            }
+        }
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
 
         HandleProducts handleProducts;
         public AddNewProduct()
@@ -1093,6 +1127,467 @@ namespace PointOfSale
                
             }
         }
-    }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            new AddNewCategory().Show();
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+            adddNewProducts_ProductName_comboBox.Items.Clear();
+            adddNewProducts_companyName_comboBox.Items.Clear();
+            adddNewProducts_Purpose_comboBox.Items.Clear();
+            adddNewProducts_Category_comboBox.Items.Clear();
+            adddNewProducts_Description_comboBox.Items.Clear();
+            adddNewProducts_Location_comboBox.Items.Clear();
+            adddNewProducts_Purpose_comboBox.Items.Clear();
+            adddNewProducts_Units_comboBox.Items.Clear();
+            addNewProduct_Distrubutors_comboBox.Items.Clear();
+            loadProductCategory();
+            loadCompanyNames();
+            loadProductName();
+            loadDescreptionName();
+            loadLocation();
+            loadPurposeName();
+            loadUnits();
+            loadDistrubutors();
+
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            new AddNewSize().Show();
+        }
+
+        private void AddNewProduct_Update_btn_Click(object sender, EventArgs e)
+        {
+            updateProducts();
+        }
+
+        public void updateProducts()
+        {
+            int totalprofit = 0;
+            int purchasePrice = 0;
+            DateTime? Expiridate = null;
+            String code = null;
+            String pName = null;
+            String CName = null;
+            String purpose = null;
+            String description = null;
+            String category = null, color1 = null, color2 = null, color3 = null;
+            String location = null, fixDiscount = null, updateStock = null, inactiveProduct = null;
+            String batch = null, salePrice = null, profit = null, pPrice = null, maxDiscount = null;
+            String size = null, QtyHand = null, QtyStock = null, minstock = null, maxQuantity = null;
+            String unit = null, packs = null, TotalPacks = null, Qtypack = null, distrubutors = null;
+
+            // check Code
+
+            if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text))
+            {
+                code = addNewProduct_code_textbox.Text;
+
+            }
+            else
+            {
+                addNewProduct_code_textbox.BackColor = Color.Red;
+
+            }
+
+            //  check product Name empty or Not
+            if (adddNewProducts_ProductName_comboBox.SelectedIndex != -1)
+            {
+                pName = adddNewProducts_ProductName_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                adddNewProducts_ProductName_comboBox.BackColor = Color.Red;
+
+            }
+            // Check Company Name Empty Or  Not
+            if (adddNewProducts_companyName_comboBox.SelectedIndex != -1)
+            {
+                CName = adddNewProducts_companyName_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                CName = "";
+
+            }
+            //   Check Purpose
+            if (adddNewProducts_Purpose_comboBox.SelectedIndex != -1)
+            {
+                purpose = adddNewProducts_Purpose_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                purpose = "";
+
+            }
+            // Check Description
+            if (adddNewProducts_Description_comboBox.SelectedIndex != -1)
+            {
+                description = adddNewProducts_Description_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                description = "";
+
+
+            }
+            // Check Category
+            if (adddNewProducts_Category_comboBox.SelectedIndex != -1)
+            {
+                category = adddNewProducts_Category_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                adddNewProducts_Category_comboBox.BackColor = Color.Red;
+
+            }
+            // Check Location 
+
+            if (adddNewProducts_Location_comboBox.SelectedIndex != -1)
+            {
+                location = adddNewProducts_Location_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                location = "";
+
+
+            }
+
+            // Check Batch 
+
+            if (!String.IsNullOrEmpty(addNewProduct_Batch_textbox.Text))
+            {
+                batch = addNewProduct_Batch_textbox.Text;
+
+            }
+            else
+            {
+                batch = "0";
+
+
+            }
+
+
+            // check Size
+
+            if (!String.IsNullOrEmpty(addNewProduct_size_textbox.Text))
+            {
+                size = addNewProduct_size_textbox.Text;
+
+            }
+            else
+            {
+                size = "0";
+
+            }
+            // Check Units
+            if (adddNewProducts_Units_comboBox.SelectedIndex != -1)
+            {
+                unit = adddNewProducts_Units_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+                unit = "";
+
+
+
+            }
+            // Check Quantity Packs
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text))
+            {
+                Qtypack = addNewProduct_QtyPack_textbox.Text;
+
+            }
+            else
+            {
+                Qtypack = "0";
+
+
+            }
+
+            //  Packs
+            if (!String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text))
+            {
+                TotalPacks = addNewProduct_Packs_textbox.Text;
+
+            }
+            else
+            {
+                TotalPacks = "0";
+
+
+            }
+
+            //  give total  Pack.........
+
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                 !String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+                int qPack = Int32.Parse(addNewProduct_QtyPack_textbox.Text);
+                int pack = Int32.Parse(addNewProduct_Packs_textbox.Text);
+                int hand = Int32.Parse(addNewProduct_QtyHand_textbox.Text);
+                int total = qPack * pack + hand;
+                addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
+            }
+            if (!String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                 String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+                int qPack = Int32.Parse(addNewProduct_QtyPack_textbox.Text);
+                int pack = Int32.Parse(addNewProduct_Packs_textbox.Text);
+
+                int total = qPack * pack;
+                addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
+
+
+            }
+            if (String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                 !String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+
+                int total = Int32.Parse(addNewProduct_QtyHand_textbox.Text);
+                addNewProduct_TotalPacks_textbox.Text = System.Convert.ToString(total);
+
+
+            }
+            if (String.IsNullOrEmpty(addNewProduct_QtyPack_textbox.Text) && String.IsNullOrEmpty(addNewProduct_Packs_textbox.Text) &&
+                String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+
+                addNewProduct_TotalPacks_textbox.Text = "0";
+
+                QtyHand = "0";
+
+
+            }
+
+            //
+            if (!String.IsNullOrEmpty(addNewProduct_QtyHand_textbox.Text))
+            {
+                QtyHand = addNewProduct_QtyHand_textbox.Text;
+
+            }
+            else
+            {
+                QtyHand = "0";
+
+
+            }
+            //   Add Quantity Stock
+            if (!String.IsNullOrEmpty(addNewProduct_QtyStock_textbox.Text))
+            {
+                QtyStock = addNewProduct_QtyStock_textbox.Text;
+
+            }
+            else
+            {
+                QtyStock = "0";
+
+
+            }
+            // Min Stock
+            if (!String.IsNullOrEmpty(addNewProduct_MinStock_textbox.Text))
+            {
+                minstock = addNewProduct_MinStock_textbox.Text;
+
+            }
+            else
+            {
+                minstock = "0";
+
+
+            }
+            // Check  Sale Price
+            if (!String.IsNullOrEmpty(addNewProduct_SalePrice_textbox.Text))
+            {
+                salePrice = addNewProduct_SalePrice_textbox.Text;
+
+            }
+            else
+            {
+                salePrice = "0";
+
+            }
+
+
+            //  Check Distributors
+            if (addNewProduct_Distrubutors_comboBox.SelectedIndex != -1)
+            {
+                distrubutors = addNewProduct_Distrubutors_comboBox.SelectedItem.ToString();
+
+            }
+            else
+            {
+
+                distrubutors = "0";
+
+
+            }
+
+            // Check Update Stock
+            if (addNewProduct_updatestock_checkBox.Checked)
+            {
+
+
+
+                updateStock = DateTime.Today.ToString("dd-MM-yyyy");
+
+            }
+            else
+            {
+                updateStock = "No Entery Data";
+            }
+
+            // Check Product Inactive or not
+            if (addNewProduct_inActive_checkBox.Checked)
+            {
+                inactiveProduct = "inactive";
+            }
+            else
+            {
+                inactiveProduct = "no";
+            }
+            if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) && (adddNewProducts_ProductName_comboBox.SelectedIndex != -1) &&
+                adddNewProducts_Category_comboBox.SelectedIndex != -1)
+            {
+                TableAddNewProducts products = new TableAddNewProducts();
+
+                // check profit..
+                if (!String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text) && String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text))
+                {
+                    profit = addNewProduct_Profit_textbox.Text;
+                    float a = float.Parse(profit);
+                    double d = Math.Round((a / 100) * Int32.Parse(salePrice));
+                    totalprofit = Convert.ToInt32(d);
+
+                }
+                else
+                {
+                    profit = "0";
+                    totalprofit = 0;
+                }
+
+
+                if (!String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text) && !String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text) && String.IsNullOrEmpty(addNewProduct_Profit_textbox.Text))
+                {
+                    totalprofit = Int32.Parse(salePrice) - purchasePrice;
+                }
+                else
+                {
+                    totalprofit = 0;
+                }
+
+
+
+                //  purpose = adddNewProducts_Purpose_comboBox.Text;
+                if (!String.IsNullOrEmpty(addNewProduct_purchasePrice_textbox.Text))
+                {
+                    purchasePrice = Int32.Parse(addNewProduct_purchasePrice_textbox.Text);
+                }
+                else
+                {
+                    purchasePrice = 0;
+                }
+                String totalP;
+                if (!String.IsNullOrEmpty(addNewProduct_TotalPacks_textbox.Text))
+                {
+                    totalP = addNewProduct_TotalPacks_textbox.Text;
+                }
+                else
+                {
+                    totalP = "0";
+                }
+
+                maxDiscount = addNewProduct_MaxDiscount_textbox.Text;
+                fixDiscount = addNewProduct_itemFixDiscount_textbox.Text;
+                color1 = addProducts_colorName_label.Text;
+                color2 = addProducts_colorName_label2.Text;
+                color3 = addProducts_colorName_label3.Text;
+                Expiridate = addNewProduct_Date_dateTimePicker.Value;
+                products.BarCode = code;
+                products.ProductName = pName;
+                products.ProductCompanyName = CName;
+                products.ProductPurpose = purpose;
+                products.ProductDescription = description;
+                products.Category = category;
+                products.Location1 = location;
+
+                products.ProductExpidate = Expiridate.Value;
+                products.ProductBatch = batch;
+                products.ProductColor1 = color1;
+                products.ProductColor2 = color2;
+                products.ProductColor3 = color3;
+                products.Productsize = size;
+                products.ProductUnits = unit;
+                products.ProductUpdateStock = updateStock;
+                products.ProductQuantityPack = Int32.Parse(Qtypack);
+                products.ProductTotalPeice = Int32.Parse(TotalPacks);
+                products.ProductTotalPacks = Int32.Parse(totalP);
+
+                if (maxQuantity == null)
+                {
+                    maxQuantity = "0";
+                }
+
+                if (!String.IsNullOrEmpty(maxDiscount))
+                {
+                    products.MaxDiscount = Int32.Parse(maxDiscount);
+                }
+                else
+                {
+                    products.MaxDiscount = 0;
+                }
+                if (!String.IsNullOrEmpty(fixDiscount))
+                {
+
+                    products.ProductItemDiscount = Int32.Parse(fixDiscount);
+
+                }
+                else
+                {
+                    products.ProductItemDiscount = 0;
+                }
+
+                products.ProductQntHand = Int32.Parse(QtyHand);
+                products.ProductMinStock = Int32.Parse(minstock);
+                products.ProductMaxStock = Int32.Parse(maxQuantity);
+                products.ProductSalePrice = Int32.Parse(salePrice);
+                products.ProductProfit = Int32.Parse(profit);
+                products.ProductPurchasePrice = purchasePrice;
+                products.ProductTotalPrice = totalprofit;
+                DateTime Expiridatee = addNewProduct_Date_dateTimePicker.Value;
+                products.ProductExpidate = Expiridatee;
+                products.ProductDistributors = distrubutors;
+                //products.ProductItemDiscount = Int32.Parse(fixDiscount);
+                products.UpdateDate = updateStock;
+                products.ProductInactive = inactiveProduct;
+
+                products.ProductId = Int32.Parse(id);
+                handleProducts.updateProductList(products);
+
+                MessageBox.Show("  Update Product");
+                Debug.WriteLine("User Login--- " + Constants.userlogin);
+            }
+
+            }
+        }
 }
 

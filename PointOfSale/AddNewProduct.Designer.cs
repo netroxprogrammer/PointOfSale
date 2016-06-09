@@ -32,12 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gruop = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.adddNewProducts_Category_comboBox = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.adddNewProducts_Units_comboBox = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.addNewProduct_size_textbox = new System.Windows.Forms.TextBox();
@@ -110,6 +106,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button7 = new System.Windows.Forms.Button();
+            this.AddNewProduct_Update_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gruop.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -142,12 +140,8 @@
             // gruop
             // 
             this.gruop.Controls.Add(this.button13);
-            this.gruop.Controls.Add(this.button12);
-            this.gruop.Controls.Add(this.button11);
             this.gruop.Controls.Add(this.button10);
-            this.gruop.Controls.Add(this.button8);
             this.gruop.Controls.Add(this.adddNewProducts_Category_comboBox);
-            this.gruop.Controls.Add(this.button7);
             this.gruop.Controls.Add(this.adddNewProducts_Units_comboBox);
             this.gruop.Controls.Add(this.label26);
             this.gruop.Controls.Add(this.addNewProduct_size_textbox);
@@ -188,28 +182,8 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(25, 25);
             this.button13.TabIndex = 33;
-            this.button13.Text = "1";
             this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
-            this.button12.Location = new System.Drawing.Point(204, 54);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(25, 25);
-            this.button12.TabIndex = 32;
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button11
-            // 
-            this.button11.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
-            this.button11.Location = new System.Drawing.Point(435, 54);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(25, 25);
-            this.button11.TabIndex = 31;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button10
             // 
@@ -219,16 +193,7 @@
             this.button10.Size = new System.Drawing.Size(25, 25);
             this.button10.TabIndex = 30;
             this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
-            this.button8.Location = new System.Drawing.Point(338, 10);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(25, 25);
-            this.button8.TabIndex = 5;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // adddNewProducts_Category_comboBox
             // 
@@ -241,16 +206,6 @@
             this.adddNewProducts_Category_comboBox.TabIndex = 29;
             this.adddNewProducts_Category_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_Category_comboBox_SelectedIndexChanged_1);
             this.adddNewProducts_Category_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_Category_comboBox_MouseClick);
-            // 
-            // button7
-            // 
-            this.button7.Image = global::PointOfSale.Properties.Resources.favicon_16x169;
-            this.button7.Location = new System.Drawing.Point(576, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(25, 25);
-            this.button7.TabIndex = 4;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // adddNewProducts_Units_comboBox
             // 
@@ -954,12 +909,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.AddNewProduct_Update_btn);
             this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(230, 656);
+            this.groupBox3.Location = new System.Drawing.Point(187, 656);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(389, 51);
+            this.groupBox3.Size = new System.Drawing.Size(439, 51);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
@@ -968,7 +924,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
-            this.button3.Location = new System.Drawing.Point(257, 13);
+            this.button3.Location = new System.Drawing.Point(337, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(89, 32);
             this.button3.TabIndex = 2;
@@ -981,7 +937,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
-            this.button2.Location = new System.Drawing.Point(127, 13);
+            this.button2.Location = new System.Drawing.Point(223, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 32);
             this.button2.TabIndex = 1;
@@ -994,7 +950,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button1.Location = new System.Drawing.Point(6, 13);
+            this.button1.Location = new System.Drawing.Point(107, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 32);
             this.button1.TabIndex = 0;
@@ -1003,11 +959,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button7
+            // 
+            this.button7.Image = global::PointOfSale.Properties.Resources.favicon_16x1610;
+            this.button7.Location = new System.Drawing.Point(12, 685);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 33);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Refresh";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_2);
+            // 
+            // AddNewProduct_Update_btn
+            // 
+            this.AddNewProduct_Update_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewProduct_Update_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
+            this.AddNewProduct_Update_btn.Location = new System.Drawing.Point(6, 11);
+            this.AddNewProduct_Update_btn.Name = "AddNewProduct_Update_btn";
+            this.AddNewProduct_Update_btn.Size = new System.Drawing.Size(88, 33);
+            this.AddNewProduct_Update_btn.TabIndex = 4;
+            this.AddNewProduct_Update_btn.Text = "Update";
+            this.AddNewProduct_Update_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddNewProduct_Update_btn.UseVisualStyleBackColor = true;
+            this.AddNewProduct_Update_btn.Visible = false;
+            this.AddNewProduct_Update_btn.Click += new System.EventHandler(this.AddNewProduct_Update_btn_Click);
+            // 
             // AddNewProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 719);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.addNewProduct_inActive_checkBox);
             this.Controls.Add(this.gruop);
@@ -1110,12 +1093,10 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox addNewProduct_TotalPacks_textbox;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button AddNewProduct_Update_btn;
     }
 }

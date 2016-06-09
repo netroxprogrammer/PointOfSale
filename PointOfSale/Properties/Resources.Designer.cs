@@ -343,6 +343,16 @@ namespace PointOfSale.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap favicon_16x1610 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-16x1610", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap favicon_16x162 {
             get {
                 object obj = ResourceManager.GetObject("favicon-16x162", resourceCulture);
@@ -446,6 +456,16 @@ namespace PointOfSale.Properties {
         internal static System.Drawing.Bitmap favicon_32x322 {
             get {
                 object obj = ResourceManager.GetObject("favicon-32x322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap favicon_32x323 {
+            get {
+                object obj = ResourceManager.GetObject("favicon-32x323", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

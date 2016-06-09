@@ -99,6 +99,18 @@
     <Compile Include="OthersForms\AddDiscription.Designer.cs">
       <DependentUpon>AddDiscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="OthersForms\AddNewCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OthersForms\AddNewCategory.Designer.cs">
+      <DependentUpon>AddNewCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OthersForms\AddNewSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OthersForms\AddNewSize.Designer.cs">
+      <DependentUpon>AddNewSize.cs</DependentUpon>
+    </Compile>
     <Compile Include="OthersForms\AddOtherThings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OthersForms\AddDiscription.resx">
       <DependentUpon>AddDiscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OthersForms\AddNewCategory.resx">
+      <DependentUpon>AddNewCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OthersForms\AddNewSize.resx">
+      <DependentUpon>AddNewSize.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OthersForms\AddOtherThings.resx">
       <DependentUpon>AddOtherThings.cs</DependentUpon>
@@ -323,6 +341,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\android-icon-36x369.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon-16x1610.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

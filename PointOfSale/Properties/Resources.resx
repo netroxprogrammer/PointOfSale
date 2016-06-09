@@ -127,14 +127,17 @@
   <data name="android-icon-36x365" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\android-icon-36x365.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="android-icon-72x726" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\android-icon-72x726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="android-icon-36x369" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\android-icon-36x369.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="android-icon-72x728" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\android-icon-72x728.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="android-icon-36x364" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\android-icon-36x364.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="android-icon-36x367" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\android-icon-36x367.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="favicon-16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon-16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +220,8 @@
   <data name="favicon-16x168" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon-16x168.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="android-icon-36x367" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\android-icon-36x367.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="android-icon-72x726" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\android-icon-72x726.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="android-icon-72x722" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\android-icon-72x722.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,7 +235,10 @@
   <data name="android-icon-96x96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\android-icon-96x96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="android-icon-36x369" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\android-icon-36x369.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="favicon-32x323" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\favicon-32x323.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="favicon-16x1610" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\favicon-16x1610.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

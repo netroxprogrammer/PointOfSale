@@ -18,3 +18,5 @@ C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\D
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddCompanyName.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddDiscription.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddPurpose.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddNewCategory.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.OthersForms.AddNewSize.resources

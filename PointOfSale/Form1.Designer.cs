@@ -41,7 +41,6 @@
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSupplieerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,6 +93,8 @@
             this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
             this.workingForm_SaleInvoice_Panel = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.salePricE_totalPrice_textBox = new System.Windows.Forms.TextBox();
+            this.salePanel_Employee_comboBox = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -120,6 +121,17 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.salePanel_Purpose_comboBox = new System.Windows.Forms.ComboBox();
             this.SalePanel_Expirydate_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.salePanel_Location_comboBox = new System.Windows.Forms.ComboBox();
@@ -155,6 +167,7 @@
             this.salePanel_Customer_comboBox = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -167,7 +180,6 @@
             this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inactiveProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
             this.workingForm_Employee_rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,20 +200,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.salePanel_Employee_comboBox = new System.Windows.Forms.ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.salePricE_totalPrice_textBox = new System.Windows.Forms.TextBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.showAllProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
@@ -312,8 +311,7 @@
             // 
             this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewCustomersToolStripMenuItem,
-            this.customersListToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.customersListToolStripMenuItem});
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
             this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 19);
             this.customersToolStripMenuItem.Text = "Customers";
@@ -332,13 +330,6 @@
             this.customersListToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.customersListToolStripMenuItem.Text = "Customers List";
             this.customersListToolStripMenuItem.Click += new System.EventHandler(this.customersListToolStripMenuItem_Click);
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.testToolStripMenuItem.Text = "test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // supliersToolStripMenuItem
             // 
@@ -791,7 +782,6 @@
             this.workingForm_SaleInvoice_Panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox3);
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox2);
-            this.workingForm_SaleInvoice_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(0, 0);
             this.workingForm_SaleInvoice_Panel.Name = "workingForm_SaleInvoice_Panel";
             this.workingForm_SaleInvoice_Panel.Size = new System.Drawing.Size(1329, 622);
@@ -847,6 +837,27 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // salePricE_totalPrice_textBox
+            // 
+            this.salePricE_totalPrice_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.salePricE_totalPrice_textBox.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salePricE_totalPrice_textBox.Location = new System.Drawing.Point(910, 243);
+            this.salePricE_totalPrice_textBox.Multiline = true;
+            this.salePricE_totalPrice_textBox.Name = "salePricE_totalPrice_textBox";
+            this.salePricE_totalPrice_textBox.ReadOnly = true;
+            this.salePricE_totalPrice_textBox.Size = new System.Drawing.Size(196, 74);
+            this.salePricE_totalPrice_textBox.TabIndex = 38;
+            this.salePricE_totalPrice_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // salePanel_Employee_comboBox
+            // 
+            this.salePanel_Employee_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salePanel_Employee_comboBox.FormattingEnabled = true;
+            this.salePanel_Employee_comboBox.Location = new System.Drawing.Point(137, 33);
+            this.salePanel_Employee_comboBox.Name = "salePanel_Employee_comboBox";
+            this.salePanel_Employee_comboBox.Size = new System.Drawing.Size(204, 23);
+            this.salePanel_Employee_comboBox.TabIndex = 37;
             // 
             // panel8
             // 
@@ -1129,6 +1140,50 @@
             this.listView2.TabIndex = 19;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "S.No";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Product";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Location";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Purpose";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Expiry";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Sale Price";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Qty";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Amount";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Disc";
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Net Amount";
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Bonus";
             // 
             // salePanel_Purpose_comboBox
             // 
@@ -1515,6 +1570,16 @@
             this.panel3.Size = new System.Drawing.Size(1109, 21);
             this.panel3.TabIndex = 0;
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(134, 3);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(59, 15);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Employee";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1606,33 +1671,30 @@
             this.refreshToolStripMenuItem1,
             this.addNewProductToolStripMenuItem,
             this.inactiveProductToolStripMenuItem,
-            this.editProductToolStripMenuItem});
+            this.showAllProductsToolStripMenuItem});
             this.Product_contextStrip.Name = "Product_contextStrip";
-            this.Product_contextStrip.Size = new System.Drawing.Size(169, 92);
+            this.Product_contextStrip.Size = new System.Drawing.Size(171, 92);
             // 
             // refreshToolStripMenuItem1
             // 
             this.refreshToolStripMenuItem1.Name = "refreshToolStripMenuItem1";
             this.refreshToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
             this.refreshToolStripMenuItem1.Text = "Refresh";
+            this.refreshToolStripMenuItem1.Click += new System.EventHandler(this.refreshToolStripMenuItem1_Click);
             // 
             // addNewProductToolStripMenuItem
             // 
             this.addNewProductToolStripMenuItem.Name = "addNewProductToolStripMenuItem";
             this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.addNewProductToolStripMenuItem.Text = "Add New Product";
+            this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
             // 
             // inactiveProductToolStripMenuItem
             // 
             this.inactiveProductToolStripMenuItem.Name = "inactiveProductToolStripMenuItem";
             this.inactiveProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.inactiveProductToolStripMenuItem.Text = "Inactive Product";
-            // 
-            // editProductToolStripMenuItem
-            // 
-            this.editProductToolStripMenuItem.Name = "editProductToolStripMenuItem";
-            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.editProductToolStripMenuItem.Text = "Edit Product";
+            this.inactiveProductToolStripMenuItem.Click += new System.EventHandler(this.inactiveProductToolStripMenuItem_Click);
             // 
             // WorkingForm_EmployeList
             // 
@@ -1798,80 +1860,12 @@
             this.label19.Size = new System.Drawing.Size(100, 23);
             this.label19.TabIndex = 0;
             // 
-            // salePanel_Employee_comboBox
+            // showAllProductsToolStripMenuItem
             // 
-            this.salePanel_Employee_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salePanel_Employee_comboBox.FormattingEnabled = true;
-            this.salePanel_Employee_comboBox.Location = new System.Drawing.Point(137, 33);
-            this.salePanel_Employee_comboBox.Name = "salePanel_Employee_comboBox";
-            this.salePanel_Employee_comboBox.Size = new System.Drawing.Size(204, 23);
-            this.salePanel_Employee_comboBox.TabIndex = 37;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(134, 3);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(59, 15);
-            this.label31.TabIndex = 3;
-            this.label31.Text = "Employee";
-            // 
-            // salePricE_totalPrice_textBox
-            // 
-            this.salePricE_totalPrice_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.salePricE_totalPrice_textBox.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salePricE_totalPrice_textBox.Location = new System.Drawing.Point(910, 243);
-            this.salePricE_totalPrice_textBox.Multiline = true;
-            this.salePricE_totalPrice_textBox.Name = "salePricE_totalPrice_textBox";
-            this.salePricE_totalPrice_textBox.ReadOnly = true;
-            this.salePricE_totalPrice_textBox.Size = new System.Drawing.Size(196, 74);
-            this.salePricE_totalPrice_textBox.TabIndex = 38;
-            this.salePricE_totalPrice_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "S.No";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Product";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Location";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Purpose";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Expiry";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Sale Price";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Qty";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Amount";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Disc";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Net Amount";
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Bonus";
+            this.showAllProductsToolStripMenuItem.Name = "showAllProductsToolStripMenuItem";
+            this.showAllProductsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.showAllProductsToolStripMenuItem.Text = "Show All Products";
+            this.showAllProductsToolStripMenuItem.Click += new System.EventHandler(this.showAllProductsToolStripMenuItem_Click);
             // 
             // WorkingForm
             // 
@@ -1989,7 +1983,6 @@
         private System.Windows.Forms.Panel WorkingForm_customerPanel;
         private System.Windows.Forms.ListView WorkingForm_listView;
         private System.Windows.Forms.ToolStripMenuItem customersListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip WorkingForm_rightClick_menu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -2011,7 +2004,6 @@
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addNewProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inactiveProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editProductToolStripMenuItem;
         private System.Windows.Forms.Panel workingForm_SaleInvoice_Panel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
@@ -2099,6 +2091,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ToolStripMenuItem showAllProductsToolStripMenuItem;
     }
 }
 

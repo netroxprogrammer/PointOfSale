@@ -506,7 +506,7 @@ namespace PointOfSale.DbConfiguration
         /*
         Add New Products... 
         */
-        public ArrayList getProductList()
+        public ArrayList getProductList(String actrive)
         {
 
             Debug.WriteLine("get Products");
@@ -514,7 +514,7 @@ namespace PointOfSale.DbConfiguration
             ArrayList lists = new ArrayList();
 
 
-            String sql = "select *from addNewProducts where productInactive='no'";
+            String sql = "select *from addNewProducts where productInactive='"+ actrive + "'";
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
@@ -571,10 +571,81 @@ namespace PointOfSale.DbConfiguration
             return lists;
         }
 
-       /*
-       Search Product By Name
+        /*
+         get All product without  filteration
+        */
+        /*
+       Add New Products... 
        */
-       public ArrayList productByName(String id)
+        public ArrayList getProductListNoFilter()
+        {
+
+            Debug.WriteLine("get Products");
+
+            ArrayList lists = new ArrayList();
+
+
+            String sql = "select *from addNewProducts";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TableAddNewProducts products = new TableAddNewProducts();
+
+                products.ProductId = reader.GetInt32(0);
+                products.BarCode = reader.GetString(1);
+                products.ProductName = reader.GetString(2);
+                products.ProductCompanyName = reader.GetString(3);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                products.ProductPurpose = reader.GetString(4);
+
+                products.ProductDescription = reader.GetString(5);
+                products.Category = reader.GetString(6);
+
+
+                products.Location1 = reader.GetString(7);
+                products.ProductExpidate = reader.GetDateTime(8);
+                products.ProductBatch = reader.GetString(9);
+                products.ProductColor1 = reader.GetString(10);
+                products.ProductColor2 = reader.GetString(11);
+                products.ProductColor3 = reader.GetString(12);
+                products.Productsize = reader.GetString(13);
+                products.ProductUnits = reader.GetString(14);
+                products.ProductQuantityPack = reader.GetInt32(15);
+                products.ProductQntHand = reader.GetInt32(16);
+                products.ProductTotalPacks = reader.GetInt32(17);
+
+                products.ProductTotalPeice = reader.GetInt32(18);
+
+                products.ProductMinStock = reader.GetInt32(19);
+                products.ProductMaxStock = reader.GetInt32(20);
+                products.ProductSalePrice = reader.GetInt32(21);
+                products.ProductPurchasePrice = reader.GetInt32(22);
+                products.ProductProfit = reader.GetInt32(23);
+
+                products.MaxDiscount = reader.GetInt32(24);
+                products.ProductTotalPrice = reader.GetInt32(25);
+                products.ProductItemDiscount = reader.GetInt32(26);
+                products.ProductDistributors = reader.GetString(27);
+
+                products.ProductUpdateStock = reader.GetString(28);
+                products.ProductInactive = reader.GetString(29);
+                products.ProductEntryDate = reader.GetDateTime(30);
+                products.UpdateDate = reader.GetString(31);
+
+                lists.Add(products);
+
+
+            }
+            reader.Close();
+            return lists;
+        }
+
+        /*
+        Search Product By Name
+        */
+        public ArrayList productByName(String id)
         {
 
 
@@ -784,6 +855,63 @@ namespace PointOfSale.DbConfiguration
             }
             reader.Close();
             return products;
+        }
+
+       public void updateProductList(TableAddNewProducts names)
+        {
+            String sql = "Update addNewProducts set ProductBarCode=@ProductBarCode,productName=@productName, productCompanyName=@productCompanyName,productPurpose=@productPurpose,productDescription=@productDescription," +
+                     "productCategory = @productCategory,productLocation = @productLocation,productExpridate = @productExpridate," +
+                     "productBatch = @productBatch,productColor1 = @productColor1,productColor2 = @productColor2,productColor3 = productColor3,productSize = @productSize,productUnits = @productUnits,productQuantityPack = @productQuantityPack," +
+                      "productQntHand = @productQntHand,productTotalPack = @productTotalPack,productTotalPeice = @productTotalPeice," +
+                      "productMinStock = @productMinStock,productMaxStock = @productMaxStock,productSalePrice = @productSalePrice," +
+                       "ProductPurchasePrice = @ProductPurchasePrice,ProductProfit = @ProductProfit,ProductMaxDiscount = @ProductMaxDiscount,productTotalProfit = @productTotalProfit,productItemDiscount = @productItemDiscount,productDistributors = @productDistributors," +
+                       "productUpdateStock = @productUpdateStock,productInactive = @productInactive, updateDate= @updateDate, loginBy=@loginBy where  productId = @productId";
+
+
+             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+            
+            commands.Parameters.AddWithValue("@productBarCode", names.BarCode);
+            commands.Parameters.AddWithValue("@productName", names.ProductName);
+            commands.Parameters.AddWithValue("@productCompanyName", names.ProductCompanyName);
+            commands.Parameters.AddWithValue("@productPurpose", names.ProductPurpose);
+            commands.Parameters.AddWithValue("@productDescription", names.ProductDescription);
+
+            commands.Parameters.AddWithValue("@productCategory", names.Category);
+            commands.Parameters.AddWithValue("@productLocation", names.Location1);
+
+            commands.Parameters.AddWithValue("@productExpridate", names.ProductExpidate);
+            commands.Parameters.AddWithValue("@productBatch", names.ProductBatch);
+            commands.Parameters.AddWithValue("@productColor1", names.ProductColor1);
+            commands.Parameters.AddWithValue("@productColor2", names.ProductColor2);
+            commands.Parameters.AddWithValue("@productColor3", names.ProductColor3);
+            commands.Parameters.AddWithValue("@productSize", names.Productsize);
+            commands.Parameters.AddWithValue("@productUnits", names.ProductUnits);
+            commands.Parameters.AddWithValue("@productQuantityPack", names.ProductQuantityPack);
+            commands.Parameters.AddWithValue("@productQntHand", names.ProductQntHand);
+            commands.Parameters.AddWithValue("@productTotalPack", names.ProductTotalPacks);
+            commands.Parameters.AddWithValue("@productTotalPeice", names.ProductTotalPeice);
+            commands.Parameters.AddWithValue("@productMinStock", names.ProductMinStock);
+            commands.Parameters.AddWithValue("@productMaxStock", names.ProductMaxStock);
+            commands.Parameters.AddWithValue("@productSalePrice", names.ProductSalePrice);
+            commands.Parameters.AddWithValue("@ProductPurchasePrice", names.ProductPurchasePrice);
+            commands.Parameters.AddWithValue("@ProductProfit", names.ProductProfit);
+            commands.Parameters.AddWithValue("@ProductMaxDiscount", names.MaxDiscount);
+            commands.Parameters.AddWithValue("@productTotalProfit", names.ProductTotalPrice);
+            commands.Parameters.AddWithValue("@productItemDiscount", names.ProductItemDiscount);
+            commands.Parameters.AddWithValue("@productDistributors", names.ProductDistributors);
+           commands.Parameters.AddWithValue("@productUpdateStock", names.ProductUpdateStock);
+            commands.Parameters.AddWithValue("@productInactive", names.ProductInactive);
+          
+            commands.Parameters.AddWithValue("@updateDate", names.UpdateDate);
+            commands.Parameters.AddWithValue("@loginBy", Constants.userlogin);
+            commands.Parameters.AddWithValue("@productId", names.ProductId);
+            commands.ExecuteNonQuery();
+ 
+
+            Debug.WriteLine("Update Products");
+           
         }
 
     }
