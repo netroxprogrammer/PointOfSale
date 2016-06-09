@@ -1715,6 +1715,7 @@
             this.WorkingForm_EmployeList.TabIndex = 0;
             this.WorkingForm_EmployeList.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_EmployeList.View = System.Windows.Forms.View.Details;
+            this.WorkingForm_EmployeList.SelectedIndexChanged += new System.EventHandler(this.WorkingForm_EmployeList_SelectedIndexChanged);
             this.WorkingForm_EmployeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_EmployeList_MouseClick);
             // 
             // workingForm_Employee_rightClick

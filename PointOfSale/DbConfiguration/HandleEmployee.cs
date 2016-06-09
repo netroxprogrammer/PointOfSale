@@ -156,5 +156,32 @@ get all Employee Data
             reader.Close();
             return lists;
         }
+          //   Update EmployeeInformation
+        public void UpdateEmployeeInformation(TableEmployee names)
+        {
+            String sql = "Update  Employees set  employeeName =@employeeName, employeePhone = @employeePhone ," +
+                     "employeeFatherName = @employeeFatherName,employeeCNIC = @employeeCNIC"+
+                      ",employeeAddress = @employeeAddress ,employeeLocation = @employeeLocation where employeeId=@employeeId";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+
+            commands.Parameters.AddWithValue("@employeeName", names.EmployeeName);
+            commands.Parameters.AddWithValue("@employeePhone", names.EmployeePhone);
+            commands.Parameters.AddWithValue("@employeeFatherName", names.EmployeeFatherName);
+            commands.Parameters.AddWithValue("@employeeCNIC", names.EmployeeCNIC);
+            commands.Parameters.AddWithValue("@employeeAddress", names.EmployeeAddress);
+            commands.Parameters.AddWithValue("@employeeLocation", names.EmployeeLocation);
+            commands.Parameters.AddWithValue("@employeeId", names.EmployeeId);
+           
+
+
+
+            commands.ExecuteNonQuery();
+
+
+            Debug.WriteLine("Update Customer");
+
+        }
     }
 }

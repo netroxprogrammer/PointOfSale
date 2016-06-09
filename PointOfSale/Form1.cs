@@ -25,6 +25,7 @@ namespace PointOfSale
         HandleProducts products;
         HandleEmployee employee;
         HandleCustomer customer;
+
         HandleCustomer handleCustomer;
         ArrayList prod;
         public WorkingForm()
@@ -267,7 +268,7 @@ namespace PointOfSale
             WorkingForm_EmployeList.Columns.Add("Emergancy Relation", 110, HorizontalAlignment.Left);
             WorkingForm_EmployeList.Columns.Add("Emergancy Location", 110, HorizontalAlignment.Left);
 
-            HandleEmployee employee = new HandleEmployee();
+          
             // WorkingForm_customerPanel.Visible = false;
             WorkingForm_Employ_Panel.Visible = true;
             workingForm_Product_Panel.Visible = false;
@@ -372,21 +373,43 @@ namespace PointOfSale
         private void WorkingForm_EmployeList_MouseClick(object sender, MouseEventArgs e)
         {
 
-           
+
 
             String id = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String name = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String phone = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String fName = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String CNIC = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String address = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String location = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String eName = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String eContact = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            String eRelation = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
+            String name = WorkingForm_EmployeList.SelectedItems[0].SubItems[1].Text;
+            String phone = WorkingForm_EmployeList.SelectedItems[0].SubItems[2].Text;
+            String fName = WorkingForm_EmployeList.SelectedItems[0].SubItems[3].Text;
+            String CNIC = WorkingForm_EmployeList.SelectedItems[0].SubItems[4].Text;
+            String address = WorkingForm_EmployeList.SelectedItems[0].SubItems[5].Text;
+            String location = WorkingForm_EmployeList.SelectedItems[0].SubItems[6].Text;
+            String eName = WorkingForm_EmployeList.SelectedItems[0].SubItems[7].Text;
+            String eContact = WorkingForm_EmployeList.SelectedItems[0].SubItems[8].Text;
+            String eRelation = WorkingForm_EmployeList.SelectedItems[0].SubItems[9].Text;
 
-            String eLocatipn = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-         //   MessageBox.Show(name);
+            String eLocation = WorkingForm_EmployeList.SelectedItems[0].SubItems[10].Text;
+
+            AddEmployee em = new AddEmployee();
+            ArrayList empl = employee.getEmployee();
+
+            foreach (TotalEmployeeData emm in empl)
+            {
+                if (emm.EmployeeId == Int32.Parse(id)) { 
+                em.EmployeId = id;
+                em.EmpName = name;
+                em.empFatherName = fName;
+                em.EmpPhoneN = phone;
+                em.empCNIC = CNIC;
+                em.empAddress = address;
+                em.empLocation = location;
+                em.EmerName = eName;
+                em.EmerContact = eContact;
+                em.EmerRelation = eRelation;
+                em.Emerlocatiion = eLocation;
+            }
+        }
+            em.Show();
+         
+            //MessageBox.Show(name);
         }
 
         private void productListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1181,6 +1204,11 @@ namespace PointOfSale
         }
 
         private void WorkingForm_Employ_Panel_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void WorkingForm_EmployeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -54,6 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Employee_SaveClose_btn = new System.Windows.Forms.Button();
+            this.AddNewEmployee_UpdateButtom = new System.Windows.Forms.Button();
             this.Im.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,6 +85,8 @@
             // 
             // Employee_Employeelocation_comboBox
             // 
+            this.Employee_Employeelocation_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Employee_Employeelocation_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Employee_Employeelocation_comboBox.FormattingEnabled = true;
             this.Employee_Employeelocation_comboBox.Items.AddRange(new object[] {
             "Sialkot",
@@ -183,6 +186,7 @@
             this.Employee_Name_text.Name = "Employee_Name_text";
             this.Employee_Name_text.Size = new System.Drawing.Size(154, 27);
             this.Employee_Name_text.TabIndex = 1;
+            this.Employee_Name_text.TextChanged += new System.EventHandler(this.Employee_Name_text_TextChanged);
             // 
             // label1
             // 
@@ -218,6 +222,8 @@
             this.Employee_Emergancelocation_comboBox.AutoCompleteCustomSource.AddRange(new string[] {
             "Lahore",
             "Gohaad Pure"});
+            this.Employee_Emergancelocation_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Employee_Emergancelocation_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Employee_Emergancelocation_comboBox.FormattingEnabled = true;
             this.Employee_Emergancelocation_comboBox.Items.AddRange(new object[] {
             "Sialkot",
@@ -295,12 +301,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.AddNewEmployee_UpdateButtom);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.Employee_SaveClose_btn);
-            this.groupBox2.Location = new System.Drawing.Point(275, 532);
+            this.groupBox2.Location = new System.Drawing.Point(212, 532);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(372, 55);
+            this.groupBox2.Size = new System.Drawing.Size(435, 55);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -308,7 +315,7 @@
             // button3
             // 
             this.button3.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
-            this.button3.Location = new System.Drawing.Point(266, 19);
+            this.button3.Location = new System.Drawing.Point(330, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(81, 30);
             this.button3.TabIndex = 2;
@@ -320,7 +327,7 @@
             // button2
             // 
             this.button2.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
-            this.button2.Location = new System.Drawing.Point(149, 19);
+            this.button2.Location = new System.Drawing.Point(229, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 30);
             this.button2.TabIndex = 1;
@@ -332,7 +339,7 @@
             // Employee_SaveClose_btn
             // 
             this.Employee_SaveClose_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.Employee_SaveClose_btn.Location = new System.Drawing.Point(25, 19);
+            this.Employee_SaveClose_btn.Location = new System.Drawing.Point(128, 19);
             this.Employee_SaveClose_btn.Name = "Employee_SaveClose_btn";
             this.Employee_SaveClose_btn.Size = new System.Drawing.Size(95, 30);
             this.Employee_SaveClose_btn.TabIndex = 0;
@@ -340,6 +347,18 @@
             this.Employee_SaveClose_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Employee_SaveClose_btn.UseVisualStyleBackColor = true;
             this.Employee_SaveClose_btn.Click += new System.EventHandler(this.Employee_SaveClose_btn_Click);
+            // 
+            // AddNewEmployee_UpdateButtom
+            // 
+            this.AddNewEmployee_UpdateButtom.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
+            this.AddNewEmployee_UpdateButtom.Location = new System.Drawing.Point(27, 19);
+            this.AddNewEmployee_UpdateButtom.Name = "AddNewEmployee_UpdateButtom";
+            this.AddNewEmployee_UpdateButtom.Size = new System.Drawing.Size(95, 30);
+            this.AddNewEmployee_UpdateButtom.TabIndex = 3;
+            this.AddNewEmployee_UpdateButtom.Text = "Update";
+            this.AddNewEmployee_UpdateButtom.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddNewEmployee_UpdateButtom.UseVisualStyleBackColor = true;
+            this.AddNewEmployee_UpdateButtom.Click += new System.EventHandler(this.AddNewEmployee_UpdateButtom_Click);
             // 
             // AddEmployee
             // 
@@ -391,5 +410,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox Employee_Employeelocation_comboBox;
         private System.Windows.Forms.ComboBox Employee_Emergancelocation_comboBox;
+        private System.Windows.Forms.Button AddNewEmployee_UpdateButtom;
     }
 }

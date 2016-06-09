@@ -83,6 +83,7 @@
             this.customerInformation_customerName_extBox.Name = "customerInformation_customerName_extBox";
             this.customerInformation_customerName_extBox.Size = new System.Drawing.Size(299, 25);
             this.customerInformation_customerName_extBox.TabIndex = 0;
+            this.customerInformation_customerName_extBox.TextChanged += new System.EventHandler(this.customerInformation_customerName_extBox_TextChanged);
             // 
             // label1
             // 
@@ -461,6 +462,7 @@
             this.customerInformation_inactive_checkBok.TabIndex = 5;
             this.customerInformation_inactive_checkBok.Text = "Customer is Inactive";
             this.customerInformation_inactive_checkBok.UseVisualStyleBackColor = false;
+            this.customerInformation_inactive_checkBok.CheckedChanged += new System.EventHandler(this.customerInformation_inactive_checkBok_CheckedChanged);
             // 
             // panel3
             // 
@@ -496,6 +498,7 @@
             this.customerInformation_SaveClose_Button.Text = "Save/Close";
             this.customerInformation_SaveClose_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.customerInformation_SaveClose_Button.UseVisualStyleBackColor = true;
+            this.customerInformation_SaveClose_Button.Click += new System.EventHandler(this.customerInformation_SaveClose_Button_Click);
             // 
             // customerInformation_SaveNew_Button
             // 
@@ -519,6 +522,7 @@
             this.AddCustomer_Udpate_btn.Text = "Update";
             this.AddCustomer_Udpate_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddCustomer_Udpate_btn.UseVisualStyleBackColor = true;
+            this.AddCustomer_Udpate_btn.Visible = false;
             this.AddCustomer_Udpate_btn.Click += new System.EventHandler(this.AddCustomer_Udpate_btn_Click);
             // 
             // Customer_Information
