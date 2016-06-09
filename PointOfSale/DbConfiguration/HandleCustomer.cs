@@ -97,7 +97,7 @@ namespace PointOfSale.DbConfiguration
         *    Get All Information About Customers 
         */
 
-        public ArrayList getCustomers()
+        public ArrayList getCustomers(String inActive)
         {
 
             Debug.WriteLine("get Customers");
@@ -110,7 +110,7 @@ namespace PointOfSale.DbConfiguration
                     "customerInformation.customerphone2, customerInformation.customerphone3, customerInformation.customerFax,"+
                     "customerInformation.customerFax, customerInformation.customerFax1, customerInformation.customerFax2, customerInformation.customerEmail,"+
                     "customerInformation.customerAddress, customerInformation.customerRemark,customerInformation.customerDefault,customerInformation.customerInactive from[customerBasic]" +
-                    "INNER JOIN[customerInformation] ON customerBasic.customerId = customerInformation.customerId";
+                    "INNER JOIN[customerInformation] ON customerBasic.customerId = customerInformation.customerId where  customerInformation.customerInactive='"+ inActive + "'";
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
@@ -216,6 +216,116 @@ namespace PointOfSale.DbConfiguration
                 customers.customerName = reader.GetString(1);
                
 
+                lists.Add(customers);
+
+
+            }
+            reader.Close();
+            return lists;
+        }
+
+        public void updateCsutomerBaisc(CustomerBasic names)
+        {
+            String sql = "Update customerBasic set customerName = @customerName,customerDiscount = @customerDiscount," +
+                          "customerPaymentMethod = @customerPaymentMethod where  customerId = @customerId";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+
+            commands.Parameters.AddWithValue("@customerName", names.customerName);
+            commands.Parameters.AddWithValue("@customerDiscount", names.CustomerDiscount);
+            commands.Parameters.AddWithValue("@customerPaymentMethod", names.customerPrice);
+            commands.Parameters.AddWithValue("@customerId", names.customerId);
+
+
+            commands.ExecuteNonQuery();
+
+
+            Debug.WriteLine("Update Customer");
+
+        }
+
+        public void updateCsutomerInformation(CustomerInfomation names)
+        {
+            String sql = "Update customerInformation set customerPersonContact=@customerPersonContact,customerReffered = @customerReffered" +
+                ",customerphone1 = @customerphone1, customerphone2 = @customerphone2,"+
+               "customerphone3 = @customerphone3 ,customerFax = @customerFax,customerFax1 = @customerFax1,customerFax2 = @customerFax2"+
+               ",customerEmail = @customerEmail,customerAddress = @customerAddress,customerRemark = @customerRemark"+
+               ",customerDefault = @customerDefault,customerInactive = @customerInactive where customerId=@customerId ";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+
+            commands.CommandType = CommandType.Text;
+
+            commands.Parameters.AddWithValue("@customerPersonContact", names.CustomerPersonContact);
+            commands.Parameters.AddWithValue("@customerReffered", names.CustomerReffered);
+            commands.Parameters.AddWithValue("@customerphone1", names.CustomerPhone1);
+            commands.Parameters.AddWithValue("@customerphone2", names.CustomerPhone2);
+            commands.Parameters.AddWithValue("@customerphone3", names.CustomerPhone3);
+            commands.Parameters.AddWithValue("@customerFax", names.CustomerFax);
+            commands.Parameters.AddWithValue("@customerFax1", names.CustomerFax1);
+            commands.Parameters.AddWithValue("@customerFax2", names.CustomerFax2);
+            commands.Parameters.AddWithValue("@customerEmail", names.CustomerEmail);
+            commands.Parameters.AddWithValue("@customerAddress", names.CustomerAddress);
+            commands.Parameters.AddWithValue("@customerRemark", names.CustomerRemark);
+            commands.Parameters.AddWithValue("@customerDefault", names.CustomerDefault);
+            commands.Parameters.AddWithValue("@customerInactive", names.CustomerInactive);
+            commands.Parameters.AddWithValue("@customerId", names.CustomerId);
+
+
+
+            commands.ExecuteNonQuery();
+
+
+            Debug.WriteLine("Update Customer");
+
+        }
+
+        /*
+       *    Get All Information About Customers  no Filter
+       */
+
+        public ArrayList getCustomersNoFilter()
+        {
+
+            Debug.WriteLine("get Customers");
+
+            ArrayList lists = new ArrayList();
+
+
+            String sql = "SELECT customerBasic.customerId, customerBasic.customerName, customerBasic.customerDiscount, customerBasic.customerPaymentMethod," +
+                   "customerInformation.customerPersonContact,customerInformation.customerReffered,customerInformation.customerphone1," +
+                    "customerInformation.customerphone2, customerInformation.customerphone3, customerInformation.customerFax," +
+                    "customerInformation.customerFax, customerInformation.customerFax1, customerInformation.customerFax2, customerInformation.customerEmail," +
+                    "customerInformation.customerAddress, customerInformation.customerRemark,customerInformation.customerDefault,customerInformation.customerInactive from[customerBasic]" +
+                    "INNER JOIN[customerInformation] ON customerBasic.customerId = customerInformation.customerId";
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                TotalCustomerClass customers = new TotalCustomerClass();
+
+                customers.customerId = reader.GetInt32(0);
+                customers.customerName = reader.GetString(1);
+                customers.CustomerDiscount = Int32.Parse(reader.GetString(2));
+                Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                customers.customerPrice = reader.GetString(3);
+                customers.Date = System.Convert.ToString(reader[4].ToString());
+                customers.CustomerPersonContact = reader.GetString(4);
+                customers.CustomerReffered = reader.GetString(5);
+
+
+                customers.CustomerPhone1 = reader.GetString(6);
+                customers.CustomerPhone2 = reader.GetString(7);
+                customers.CustomerPhone3 = reader.GetString(8);
+                customers.CustomerFax = reader.GetString(9);
+                customers.CustomerFax1 = reader.GetString(10);
+                customers.CustomerFax2 = reader.GetString(11);
+                customers.CustomerEmail = reader.GetString(12);
+                customers.CustomerAddress = reader.GetString(13);
+                customers.CustomerRemark = reader.GetString(14);
+                customers.CustomerDefault = reader.GetString(15);
+                customers.CustomerInactive = reader.GetString(16);
                 lists.Add(customers);
 
 

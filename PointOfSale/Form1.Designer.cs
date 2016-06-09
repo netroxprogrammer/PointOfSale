@@ -91,6 +91,8 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
+            this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
+            this.workingForm_Product_Panel = new System.Windows.Forms.Panel();
             this.workingForm_SaleInvoice_Panel = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.salePricE_totalPrice_textBox = new System.Windows.Forms.TextBox();
@@ -173,13 +175,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
-            this.workingForm_Product_Panel = new System.Windows.Forms.Panel();
             this.WorkingForm_AllProduct_listView = new System.Windows.Forms.ListView();
             this.Product_contextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inactiveProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
             this.workingForm_Employee_rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -189,8 +190,6 @@
             this.WorkingForm_rightClick_menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.WorkingForm_Products_ListView = new System.Windows.Forms.ListView();
@@ -200,13 +199,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.showAllProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inactiveCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
             this.contextMenuStrip_Inventory.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.WorkingForm_customerPanel.SuspendLayout();
+            this.WorkingForm_Employ_Panel.SuspendLayout();
+            this.workingForm_Product_Panel.SuspendLayout();
             this.workingForm_SaleInvoice_Panel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -216,8 +217,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.WorkingForm_Employ_Panel.SuspendLayout();
-            this.workingForm_Product_Panel.SuspendLayout();
             this.Product_contextStrip.SuspendLayout();
             this.workingForm_Employee_rightClick.SuspendLayout();
             this.WorkingForm_rightClick_menu.SuspendLayout();
@@ -768,7 +767,6 @@
             // WorkingForm_customerPanel
             // 
             this.WorkingForm_customerPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.WorkingForm_customerPanel.Controls.Add(this.workingForm_SaleInvoice_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_Employ_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_listView);
             this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 120);
@@ -776,13 +774,33 @@
             this.WorkingForm_customerPanel.Size = new System.Drawing.Size(1329, 622);
             this.WorkingForm_customerPanel.TabIndex = 10;
             this.WorkingForm_customerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_customerPanel_Paint);
+            this.WorkingForm_customerPanel.DoubleClick += new System.EventHandler(this.WorkingForm_customerPanel_DoubleClick);
+            // 
+            // WorkingForm_Employ_Panel
+            // 
+            this.WorkingForm_Employ_Panel.Controls.Add(this.workingForm_Product_Panel);
+            this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
+            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(0, 3);
+            this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
+            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
+            this.WorkingForm_Employ_Panel.TabIndex = 1;
+            this.WorkingForm_Employ_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_Employ_Panel_Paint_1);
+            // 
+            // workingForm_Product_Panel
+            // 
+            this.workingForm_Product_Panel.Controls.Add(this.workingForm_SaleInvoice_Panel);
+            this.workingForm_Product_Panel.Controls.Add(this.WorkingForm_AllProduct_listView);
+            this.workingForm_Product_Panel.Location = new System.Drawing.Point(32, 21);
+            this.workingForm_Product_Panel.Name = "workingForm_Product_Panel";
+            this.workingForm_Product_Panel.Size = new System.Drawing.Size(1329, 619);
+            this.workingForm_Product_Panel.TabIndex = 1;
             // 
             // workingForm_SaleInvoice_Panel
             // 
             this.workingForm_SaleInvoice_Panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox3);
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox2);
-            this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(0, 0);
+            this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(55, 19);
             this.workingForm_SaleInvoice_Panel.Name = "workingForm_SaleInvoice_Panel";
             this.workingForm_SaleInvoice_Panel.Size = new System.Drawing.Size(1329, 622);
             this.workingForm_SaleInvoice_Panel.TabIndex = 1;
@@ -1632,24 +1650,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sale Invoice";
             // 
-            // WorkingForm_Employ_Panel
-            // 
-            this.WorkingForm_Employ_Panel.Controls.Add(this.workingForm_Product_Panel);
-            this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
-            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(3, 0);
-            this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
-            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
-            this.WorkingForm_Employ_Panel.TabIndex = 1;
-            // 
-            // workingForm_Product_Panel
-            // 
-            this.workingForm_Product_Panel.Controls.Add(this.WorkingForm_AllProduct_listView);
-            this.workingForm_Product_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workingForm_Product_Panel.Location = new System.Drawing.Point(0, 0);
-            this.workingForm_Product_Panel.Name = "workingForm_Product_Panel";
-            this.workingForm_Product_Panel.Size = new System.Drawing.Size(1329, 619);
-            this.workingForm_Product_Panel.TabIndex = 1;
-            // 
             // WorkingForm_AllProduct_listView
             // 
             this.WorkingForm_AllProduct_listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1678,23 +1678,30 @@
             // refreshToolStripMenuItem1
             // 
             this.refreshToolStripMenuItem1.Name = "refreshToolStripMenuItem1";
-            this.refreshToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.refreshToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
             this.refreshToolStripMenuItem1.Text = "Refresh";
             this.refreshToolStripMenuItem1.Click += new System.EventHandler(this.refreshToolStripMenuItem1_Click);
             // 
             // addNewProductToolStripMenuItem
             // 
             this.addNewProductToolStripMenuItem.Name = "addNewProductToolStripMenuItem";
-            this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.addNewProductToolStripMenuItem.Text = "Add New Product";
             this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
             // 
             // inactiveProductToolStripMenuItem
             // 
             this.inactiveProductToolStripMenuItem.Name = "inactiveProductToolStripMenuItem";
-            this.inactiveProductToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.inactiveProductToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.inactiveProductToolStripMenuItem.Text = "Inactive Product";
             this.inactiveProductToolStripMenuItem.Click += new System.EventHandler(this.inactiveProductToolStripMenuItem_Click);
+            // 
+            // showAllProductsToolStripMenuItem
+            // 
+            this.showAllProductsToolStripMenuItem.Name = "showAllProductsToolStripMenuItem";
+            this.showAllProductsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.showAllProductsToolStripMenuItem.Text = "Show All Products";
+            this.showAllProductsToolStripMenuItem.Click += new System.EventHandler(this.showAllProductsToolStripMenuItem_Click);
             // 
             // WorkingForm_EmployeList
             // 
@@ -1752,55 +1759,43 @@
             this.WorkingForm_listView.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_listView.View = System.Windows.Forms.View.Details;
             this.WorkingForm_listView.SelectedIndexChanged += new System.EventHandler(this.WorkingForm_listView_SelectedIndexChanged);
+            this.WorkingForm_listView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_listView_MouseDoubleClick);
             // 
             // WorkingForm_rightClick_menu
             // 
             this.WorkingForm_rightClick_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
             this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
+            this.toolStripMenuItem6,
+            this.inactiveCustomerToolStripMenuItem});
             this.WorkingForm_rightClick_menu.Name = "WorkingForm_rightClick_menu";
-            this.WorkingForm_rightClick_menu.Size = new System.Drawing.Size(216, 136);
+            this.WorkingForm_rightClick_menu.Size = new System.Drawing.Size(211, 114);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(215, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 22);
             this.toolStripMenuItem1.Text = "Refresh";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(215, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(210, 22);
             this.toolStripMenuItem2.Text = "Add New Customer";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(215, 22);
-            this.toolStripMenuItem3.Text = "Show  in Active Users";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(215, 22);
-            this.toolStripMenuItem4.Text = "Edit Customer Information";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(215, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(210, 22);
             this.toolStripMenuItem5.Text = "Make  this suplier Inactive";
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(215, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(210, 22);
             this.toolStripMenuItem6.Text = "Print Customer List";
             // 
             // WorkingForm_Products_ListView
@@ -1860,12 +1855,12 @@
             this.label19.Size = new System.Drawing.Size(100, 23);
             this.label19.TabIndex = 0;
             // 
-            // showAllProductsToolStripMenuItem
+            // inactiveCustomerToolStripMenuItem
             // 
-            this.showAllProductsToolStripMenuItem.Name = "showAllProductsToolStripMenuItem";
-            this.showAllProductsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showAllProductsToolStripMenuItem.Text = "Show All Products";
-            this.showAllProductsToolStripMenuItem.Click += new System.EventHandler(this.showAllProductsToolStripMenuItem_Click);
+            this.inactiveCustomerToolStripMenuItem.Name = "inactiveCustomerToolStripMenuItem";
+            this.inactiveCustomerToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.inactiveCustomerToolStripMenuItem.Text = "Inactive Customer List";
+            this.inactiveCustomerToolStripMenuItem.Click += new System.EventHandler(this.inactiveCustomerToolStripMenuItem_Click);
             // 
             // WorkingForm
             // 
@@ -1892,6 +1887,8 @@
             this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.WorkingForm_customerPanel.ResumeLayout(false);
+            this.WorkingForm_Employ_Panel.ResumeLayout(false);
+            this.workingForm_Product_Panel.ResumeLayout(false);
             this.workingForm_SaleInvoice_Panel.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1908,8 +1905,6 @@
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.WorkingForm_Employ_Panel.ResumeLayout(false);
-            this.workingForm_Product_Panel.ResumeLayout(false);
             this.Product_contextStrip.ResumeLayout(false);
             this.workingForm_Employee_rightClick.ResumeLayout(false);
             this.WorkingForm_rightClick_menu.ResumeLayout(false);
@@ -1986,8 +1981,6 @@
         private System.Windows.Forms.ContextMenuStrip WorkingForm_rightClick_menu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ContextMenuStrip workingForm_Employee_rightClick;
@@ -2092,6 +2085,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ToolStripMenuItem showAllProductsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inactiveCustomerToolStripMenuItem;
     }
 }
 

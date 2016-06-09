@@ -16,6 +16,142 @@ namespace PointOfSale
     public partial class Customer_Information : Form
     {
         HandleCustomer customerHandle;
+        private String customerId;
+
+        public string CustomerId
+        {
+            get
+            {
+                return customerId;
+            }
+
+            set
+            {
+                customerId = value;
+            }
+        }
+        public String CustumerName
+        {
+            set
+            {
+                customerInformation_customerName_extBox.Text = value;
+            }
+        }
+        public bool CustomerCash
+        {
+            set
+            {
+                customerInformation_cash_radioButton.Checked = value;
+            }
+        }
+
+        public int CustomerDisccount
+        {
+            set
+            {
+                customerInformation_Discount_numericUpDown.Value = value;
+            }
+        }
+
+        public bool Customercridt
+        {
+            set
+            {
+                customerInformation_credit_radioButton.Checked = value;
+            }
+        }
+        public String CContact
+        {
+            set
+            {
+                customerInformation_ContactPerson_extBox.Text = value;
+            }
+        }
+        public String CReffered
+        {
+            set
+            {
+                 customerInformation_RefferedBy_extBox.Text  = value;
+            }
+        }
+        public String CPhone1
+        {
+            set
+            {
+                customerInformation_Phone1_extBox.Text = value;
+
+            }
+        }
+        public String CPhone2
+        {
+            set
+            {
+                customerInformation_Phone2_extBox.Text = value;
+            }
+        }
+        public String CPhone3
+        {
+            set
+            {
+                customerInformation_Phone3_extBox.Text = value;
+            }
+        }
+        public String CFax1
+        {
+            set
+            {
+                customerInformation_Fax1_extBox.Text = value;
+            }
+        }
+        public  String CFax2
+        {
+            set
+            {
+                customerInformation_Fax2_extBox.Text = value;
+            }
+        }
+        public String CFax3
+        {
+            set
+            {
+                customerInformation_Fax3_extBox.Text = value;
+            }
+        }
+        public String CEmail
+        {
+            set {
+                customerInformation_Email_extBox.Text = value;
+            }
+        }
+        public String CAddress
+        {
+            set
+            {
+                customerInformation_Address_extBox.Text = value;
+            }
+        }
+        public String CRemark
+        {
+            set
+            {
+                customerInformation_Remark_extBox.Text = value;
+            }
+        }
+
+        public bool Cdefualt {
+            set {
+                customerInformation_default_checkBok.Checked = value;
+                    
+                    }
+        }
+
+        public bool cInActive
+        {
+            set
+            {
+                customerInformation_inactive_checkBok.Checked = value;
+            }
+        }
         public Customer_Information()
         {
             InitializeComponent();
@@ -44,15 +180,97 @@ namespace PointOfSale
             String customerDefault = null;
             String customerInactive = null;
             String cutomerName = customerInformation_customerName_extBox.Text;
+            if (!String.IsNullOrEmpty(customerInformation_customerName_extBox.Text))
+            {
+                decimal customerDiscount = customerInformation_Discount_numericUpDown.Value;
+                if (customerInformation_cash_radioButton.Checked)
+                {
+                    priceCheck = "cash";
+                }
+                if (customerInformation_credit_radioButton.Checked)
+                {
+                    priceCheck = "credit";
+                }
+                if (!customerInformation_credit_radioButton.Checked &&
+                    !customerInformation_cash_radioButton.Checked)
+                {
+                    priceCheck = "";
+                }
+
+                String contactPerson = customerInformation_ContactPerson_extBox.Text;
+                String refferedBy = customerInformation_RefferedBy_extBox.Text;
+                String phone1 = customerInformation_Phone1_extBox.Text;
+                String phone2 = customerInformation_Phone2_extBox.Text;
+                String phone3 = customerInformation_Phone3_extBox.Text;
+                String fax1 = customerInformation_Fax1_extBox.Text;
+                String fax2 = customerInformation_Fax2_extBox.Text;
+                String fax3 = customerInformation_Fax3_extBox.Text;
+                String email = customerInformation_Email_extBox.Text;
+                String Address = customerInformation_Address_extBox.Text;
+                String remark = customerInformation_Remark_extBox.Text;
+                if (customerInformation_default_checkBok.Checked)
+                {
+                    customerDefault = "default";
+                }
+                else
+                {
+                    customerDefault = " ";
+                }
+                if (customerInformation_inactive_checkBok.Checked)
+                {
+                    customerInactive = "inactive";
+                }
+                else
+                {
+                    customerInactive = " ";
+                }
+                //  add information  in CustomerBasic Table
+                int id = customerHandle.addCustomerBasicInformation(cutomerName, Decimal.ToInt32(customerDiscount), priceCheck);
+                // Add CustomerInformation Table
+                CustomerInfomation customer = new CustomerInfomation();
+                customer.CustomerId = id;
+
+
+                customer.CustomerPersonContact = contactPerson;
+                customer.CustomerReffered = refferedBy;
+                customer.CustomerPhone1 = phone1;
+                customer.CustomerPhone2 = phone2;
+                customer.CustomerPhone3 = phone3;
+                customer.CustomerFax = fax1;
+                customer.CustomerFax1 = fax2;
+                customer.CustomerFax2 = fax3;
+                customer.CustomerEmail = email;
+                customer.CustomerAddress = fax1;
+                customer.CustomerRemark = remark;
+                customer.CustomerDefault = customerDefault;
+                customer.CustomerInactive = customerInactive;
+                Debug.WriteLine("check" + customer.CustomerPersonContact);
+                customerHandle.addCustomerInformation(customer);
+            }
+        }
+
+        private void customerInformation_ContactPerson_extBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddCustomer_Udpate_btn_Click(object sender, EventArgs e)
+        {
+            String priceCheck = null;
+            String customerDefault = null;
+            String customerInactive = null;
+            String cutomerName = customerInformation_customerName_extBox.Text;
             decimal customerDiscount = customerInformation_Discount_numericUpDown.Value;
             if (customerInformation_cash_radioButton.Checked)
             {
                 priceCheck = "cash";
             }
-            if (customerInformation_credit_radioButton.Checked)
+
+             if (customerInformation_credit_radioButton.Checked)
             {
                 priceCheck = "credit";
             }
+           
 
             String contactPerson = customerInformation_ContactPerson_extBox.Text;
             String refferedBy = customerInformation_RefferedBy_extBox.Text;
@@ -82,27 +300,54 @@ namespace PointOfSale
                 customerInactive = " ";
             }
             //  add information  in CustomerBasic Table
-          int id = customerHandle.addCustomerBasicInformation(cutomerName,Decimal.ToInt32(customerDiscount), priceCheck);
+           // int id = customerHandle.addCustomerBasicInformation(cutomerName, Decimal.ToInt32(customerDiscount), priceCheck);
             // Add CustomerInformation Table
-            CustomerInfomation customer = new CustomerInfomation();
-           customer.CustomerId = id;
+            CustomerBasic customer = new CustomerBasic();
+            customer.customerId = Int32.Parse(customerId);
 
-         
-            customer.CustomerPersonContact = contactPerson;
-            customer.CustomerReffered= refferedBy;
-            customer.CustomerPhone1 = phone1;
-            customer.CustomerPhone2 = phone2;
-            customer.CustomerPhone3 = phone3;
-            customer.CustomerFax =  fax1;
-            customer.CustomerFax1 = fax2;
-            customer.CustomerFax2 = fax3;
-            customer.CustomerEmail = email;
-            customer.CustomerAddress = fax1;
-            customer.CustomerRemark = remark;
-            customer.CustomerDefault = customerDefault;
-            customer.CustomerInactive = customerInactive;
-            Debug.WriteLine("check" + customer.CustomerPersonContact);
-           customerHandle.addCustomerInformation(customer);
+            customer.customerName = cutomerName;
+            customer.CustomerDiscount = Decimal.ToInt32(customerDiscount);
+            customer.customerPrice = customerInactive;
+          
+            customerHandle.updateCsutomerBaisc(customer);
+            CustomerInfomation customerinfo = new CustomerInfomation();
+            customerinfo.CustomerPersonContact = contactPerson;
+            customerinfo.CustomerReffered = refferedBy;
+            customerinfo.CustomerPhone1 = phone1;
+            customerinfo.CustomerPhone2 = phone2;
+            customerinfo.CustomerPhone3 = phone3;
+            customerinfo.CustomerFax = fax1;
+            customerinfo.CustomerFax1 = fax2;
+            customerinfo.CustomerFax2 = fax3;
+            customerinfo.CustomerEmail = email;
+            customerinfo.CustomerAddress = Address;
+            customerinfo.CustomerRemark = Address;
+            customerinfo.CustomerDefault = customerDefault;
+            customerinfo.CustomerInactive = customerInactive;
+            customerinfo.CustomerId = Int32.Parse(customerId);
+
+            customerHandle.updateCsutomerInformation(customerinfo);
+        }
+
+        private void customerInformation_Discount_numericUpDown_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void customerInformation_Cancel_Button_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

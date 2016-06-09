@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.customerInformation_customerName_extBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,13 +61,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.customerInformation_ContactPerson_extBox = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.customerInformation_default_checkBok = new System.Windows.Forms.CheckBox();
             this.customerInformation_inactive_checkBok = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.customerInformation_Cancel_Button = new System.Windows.Forms.Button();
             this.customerInformation_SaveClose_Button = new System.Windows.Forms.Button();
             this.customerInformation_SaveNew_Button = new System.Windows.Forms.Button();
+            this.AddCustomer_Udpate_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerInformation_Discount_numericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
@@ -123,10 +122,16 @@
             // 
             this.customerInformation_Discount_numericUpDown.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerInformation_Discount_numericUpDown.Location = new System.Drawing.Point(336, 33);
+            this.customerInformation_Discount_numericUpDown.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.customerInformation_Discount_numericUpDown.Name = "customerInformation_Discount_numericUpDown";
             this.customerInformation_Discount_numericUpDown.Size = new System.Drawing.Size(133, 26);
             this.customerInformation_Discount_numericUpDown.TabIndex = 0;
             this.customerInformation_Discount_numericUpDown.ValueChanged += new System.EventHandler(this.customerInformation_Discount_numericUpDown_ValueChanged);
+            this.customerInformation_Discount_numericUpDown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.customerInformation_Discount_numericUpDown_KeyPress);
             // 
             // Payment
             // 
@@ -429,12 +434,7 @@
             this.customerInformation_ContactPerson_extBox.Name = "customerInformation_ContactPerson_extBox";
             this.customerInformation_ContactPerson_extBox.Size = new System.Drawing.Size(319, 27);
             this.customerInformation_ContactPerson_extBox.TabIndex = 0;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.customerInformation_ContactPerson_extBox.TextChanged += new System.EventHandler(this.customerInformation_ContactPerson_extBox_TextChanged);
             // 
             // customerInformation_default_checkBok
             // 
@@ -465,29 +465,31 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.AddCustomer_Udpate_btn);
             this.panel3.Controls.Add(this.customerInformation_Cancel_Button);
             this.panel3.Controls.Add(this.customerInformation_SaveClose_Button);
             this.panel3.Controls.Add(this.customerInformation_SaveNew_Button);
-            this.panel3.Location = new System.Drawing.Point(374, 466);
+            this.panel3.Location = new System.Drawing.Point(299, 466);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(354, 54);
+            this.panel3.Size = new System.Drawing.Size(429, 54);
             this.panel3.TabIndex = 6;
             // 
             // customerInformation_Cancel_Button
             // 
             this.customerInformation_Cancel_Button.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
-            this.customerInformation_Cancel_Button.Location = new System.Drawing.Point(233, 12);
+            this.customerInformation_Cancel_Button.Location = new System.Drawing.Point(329, 12);
             this.customerInformation_Cancel_Button.Name = "customerInformation_Cancel_Button";
             this.customerInformation_Cancel_Button.Size = new System.Drawing.Size(90, 29);
             this.customerInformation_Cancel_Button.TabIndex = 2;
             this.customerInformation_Cancel_Button.Text = "Cancel";
             this.customerInformation_Cancel_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.customerInformation_Cancel_Button.UseVisualStyleBackColor = true;
+            this.customerInformation_Cancel_Button.Click += new System.EventHandler(this.customerInformation_Cancel_Button_Click);
             // 
             // customerInformation_SaveClose_Button
             // 
             this.customerInformation_SaveClose_Button.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
-            this.customerInformation_SaveClose_Button.Location = new System.Drawing.Point(122, 12);
+            this.customerInformation_SaveClose_Button.Location = new System.Drawing.Point(221, 12);
             this.customerInformation_SaveClose_Button.Name = "customerInformation_SaveClose_Button";
             this.customerInformation_SaveClose_Button.Size = new System.Drawing.Size(93, 29);
             this.customerInformation_SaveClose_Button.TabIndex = 1;
@@ -498,7 +500,7 @@
             // customerInformation_SaveNew_Button
             // 
             this.customerInformation_SaveNew_Button.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.customerInformation_SaveNew_Button.Location = new System.Drawing.Point(5, 12);
+            this.customerInformation_SaveNew_Button.Location = new System.Drawing.Point(120, 12);
             this.customerInformation_SaveNew_Button.Name = "customerInformation_SaveNew_Button";
             this.customerInformation_SaveNew_Button.Size = new System.Drawing.Size(95, 29);
             this.customerInformation_SaveNew_Button.TabIndex = 0;
@@ -506,6 +508,18 @@
             this.customerInformation_SaveNew_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.customerInformation_SaveNew_Button.UseVisualStyleBackColor = true;
             this.customerInformation_SaveNew_Button.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // AddCustomer_Udpate_btn
+            // 
+            this.AddCustomer_Udpate_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
+            this.AddCustomer_Udpate_btn.Location = new System.Drawing.Point(14, 12);
+            this.AddCustomer_Udpate_btn.Name = "AddCustomer_Udpate_btn";
+            this.AddCustomer_Udpate_btn.Size = new System.Drawing.Size(93, 29);
+            this.AddCustomer_Udpate_btn.TabIndex = 3;
+            this.AddCustomer_Udpate_btn.Text = "Update";
+            this.AddCustomer_Udpate_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddCustomer_Udpate_btn.UseVisualStyleBackColor = true;
+            this.AddCustomer_Udpate_btn.Click += new System.EventHandler(this.AddCustomer_Udpate_btn_Click);
             // 
             // Customer_Information
             // 
@@ -546,7 +560,6 @@
         private System.Windows.Forms.RadioButton customerInformation_cash_radioButton;
         private System.Windows.Forms.GroupBox contact_information_groupBox;
         private System.Windows.Forms.RadioButton customerInformation_credit_radioButton;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label Payment;
         private System.Windows.Forms.TextBox customerInformation_ContactPerson_extBox;
         private System.Windows.Forms.Label label4;
@@ -577,5 +590,6 @@
         private System.Windows.Forms.Button customerInformation_SaveClose_Button;
         private System.Windows.Forms.Button customerInformation_Cancel_Button;
         private System.Windows.Forms.NumericUpDown customerInformation_Discount_numericUpDown;
+        private System.Windows.Forms.Button AddCustomer_Udpate_btn;
     }
 }

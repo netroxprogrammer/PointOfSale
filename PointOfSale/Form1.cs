@@ -25,6 +25,7 @@ namespace PointOfSale
         HandleProducts products;
         HandleEmployee employee;
         HandleCustomer customer;
+        HandleCustomer handleCustomer;
         ArrayList prod;
         public WorkingForm()
         {
@@ -179,7 +180,7 @@ namespace PointOfSale
 
         private void customersListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddCustomerList();
+            AddCustomerList("");
 
 
         }
@@ -193,18 +194,18 @@ namespace PointOfSale
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            AddCustomerList();
+            AddCustomerList("");
         }
 
         /*
         Add  Customer List...
         */
 
-        public void AddCustomerList()
+        public void AddCustomerList(String filter)
         {
             WorkingForm_Employ_Panel.Visible = false;
             WorkingForm_listView.Columns.Clear();
-            HandleCustomer handleCustomer = new HandleCustomer();
+            handleCustomer = new HandleCustomer();
             WorkingForm_listView.Items.Clear();
 
 
@@ -216,20 +217,20 @@ namespace PointOfSale
             WorkingForm_listView.Columns.Add("Phone Contact", 110, HorizontalAlignment.Left);
             WorkingForm_listView.Columns.Add("Reffered", 110, HorizontalAlignment.Left);
             WorkingForm_listView.Columns.Add("Phone 1", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Phone 2", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Phone 3", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Fax 1", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Fax 2", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Fax 3", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Email", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Address", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Remark", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Default", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Inactive", 110, HorizontalAlignment.Left);
+            /*   WorkingForm_listView.Columns.Add("Phone 2", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Phone 3", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Fax 1", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Fax 2", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Fax 3", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Email", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Address", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Remark", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Default", 110, HorizontalAlignment.Left);
+               WorkingForm_listView.Columns.Add("Inactive", 110, HorizontalAlignment.Left);*/
             //         }
 
 
-            ArrayList data = handleCustomer.getCustomers();
+            ArrayList data = handleCustomer.getCustomers(filter);
 
 
 
@@ -238,9 +239,7 @@ namespace PointOfSale
                 String[] rows = { clms.customerId.ToString(),clms.customerName.ToString(),
                     clms.CustomerDiscount.ToString(),clms.customerPrice.ToString(), clms.CustomerPersonContact,
                     clms.CustomerReffered,
-                    clms.CustomerPhone1, clms.CustomerPhone2, clms.CustomerPhone3, clms.CustomerFax, clms.CustomerFax1,
-                    clms.CustomerFax2, clms.CustomerEmail, clms.CustomerAddress,
-                    clms.CustomerRemark, clms.CustomerDefault,clms.CustomerInactive,};
+                    clms.CustomerPhone1};
                 ListViewItem items = new ListViewItem(rows);
 
                 WorkingForm_listView.Items.Add(items);
@@ -387,7 +386,7 @@ namespace PointOfSale
             String eRelation = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
 
             String eLocatipn = WorkingForm_EmployeList.SelectedItems[0].SubItems[0].Text;
-            MessageBox.Show(name);
+         //   MessageBox.Show(name);
         }
 
         private void productListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1106,5 +1105,84 @@ namespace PointOfSale
             getProductsList("no");
         
     }
+
+        private void WorkingForm_customerPanel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void WorkingForm_customerPanel_DoubleClick(object sender, EventArgs e)
+        {
+            
+          
+
+        }
+
+        private void WorkingForm_listView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            String id = WorkingForm_listView.SelectedItems[0].SubItems[0].Text;
+            String name = WorkingForm_listView.SelectedItems[0].SubItems[1].Text;
+            String Discount = WorkingForm_listView.SelectedItems[0].SubItems[2].Text;
+            String payment = WorkingForm_listView.SelectedItems[0].SubItems[3].Text;
+            String pContact = WorkingForm_listView.SelectedItems[0].SubItems[4].Text;
+            String reffered = WorkingForm_listView.SelectedItems[0].SubItems[5].Text;
+            String Phone1 = WorkingForm_listView.SelectedItems[0].SubItems[6].Text;
+             
+            Customer_Information cs = new Customer_Information();
+            ArrayList data = handleCustomer.getCustomersNoFilter();
+
+
+
+            foreach (TotalCustomerClass clms in data)
+            {
+                if (clms.customerId == Int32.Parse(id))
+                {
+                    cs.CustomerId = id;
+                    cs.CustumerName = name;
+                    cs.CustomerDisccount = Int32.Parse(Discount);
+                    if(payment == "cash"){
+                        cs.CustomerCash  = true;
+                    }
+                    if(payment == "credit")
+                    {
+
+                        cs.CustomerCash = true;
+                    }
+
+                    cs.CContact = pContact;
+                    cs.CReffered = reffered;
+                    cs.CPhone1 = Phone1;
+                    cs.CPhone2 = clms.CustomerPhone2;
+                    cs.CPhone3 = clms.CustomerPhone3;
+                    cs.CFax1 = clms.CustomerFax;
+                    cs.CFax2 = clms.CustomerFax1;
+                    cs.CFax3 = clms.CustomerFax2;
+                    cs.CEmail = clms.CustomerEmail;
+                    cs.CAddress = clms.CustomerAddress;
+                    cs.CRemark = clms.CustomerRemark;
+                    if (clms.CustomerDefault == "default")
+                    {
+                        cs.Cdefualt = true;
+                    }
+                    if(clms.CustomerInactive == "inactive")
+                    {
+                        cs.cInActive = true;
+                    }
+                }
+               
+            }
+            cs.Show();
+        }
+
+        private void inactiveCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            AddCustomerList("inactive");
+        }
+
+        private void WorkingForm_Employ_Panel_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
