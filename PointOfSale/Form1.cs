@@ -28,6 +28,7 @@ namespace PointOfSale
         HandleInvoice invoice;
         HandleCustomer handleCustomer;
         ArrayList prod;
+       static int counter = 0;
         int invoiceNumber=0;
         public WorkingForm()
         {
@@ -1281,11 +1282,11 @@ namespace PointOfSale
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String PName=null,description=null,companyName=null,location=null,purpose=null;
-//int invoiceNumber = invoice.getInvoiceNumber() +1;
-          
-            float discount=0;
-            int  price,bonace,quantity=0,amount=0,Rs,netAmount=0;
+            String PName = null, description = null, companyName = null, location = null, purpose = null;
+            //int invoiceNumber = invoice.getInvoiceNumber() +1;
+
+            float discount = 0;
+            int price, bonace, quantity = 0, amount = 0, Rs, netAmount = 0;
             DateTime expriydate;
             if (Sale_Panel_ProductName_comboBox.SelectedIndex != -1)
             {
@@ -1297,7 +1298,7 @@ namespace PointOfSale
             }
 
 
-               price = Int32.Parse(salePanel_Price_tetxbox.Text);
+            price = Int32.Parse(salePanel_Price_tetxbox.Text);
             if (!String.IsNullOrEmpty(salePanel_bonuce_textBox.Text))
             {
                 bonace = Int32.Parse(salePanel_bonuce_textBox.Text);
@@ -1322,22 +1323,22 @@ namespace PointOfSale
             }
             else
             {
-                amount=  price* quantity;
+                amount = price * quantity;
                 salePanel_Amount_textBox.Text = amount.ToString();
             }
 
             //     amount = Int32.Parse(salePanel_Amount_textBox.Text);
             if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
             {
-                int q = quantity*price;
+                int q = quantity * price;
                 discount = float.Parse(salePanel_Discount_textBox.Text);
                 double dvalue = Math.Round((discount / 100) * q);
-                salePanel_RS_textBox.Text = ( q - dvalue).ToString();
+                salePanel_RS_textBox.Text = (q - dvalue).ToString();
                 salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
             }
             else
             {
-                
+
                 int q = quantity * price;
 
                 salePanel_RS_textBox.Text = q.ToString();
@@ -1358,7 +1359,7 @@ namespace PointOfSale
                 }
 
             }
-            if(!String.IsNullOrEmpty(salePanel_NetAmount_textBox.Text))
+            if (!String.IsNullOrEmpty(salePanel_NetAmount_textBox.Text))
             {
                 netAmount = Int32.Parse(salePanel_NetAmount_textBox.Text);
             }
@@ -1368,27 +1369,37 @@ namespace PointOfSale
             }
             expriydate = SalePanel_Expirydate_dateTimePicker.Value;
 
-            if(salePanel_Descreption_comboBox.SelectedIndex != -1)
+            if (salePanel_Descreption_comboBox.SelectedIndex != -1)
             {
                 description = salePanel_Descreption_comboBox.SelectedItem.ToString();
             }
-            if(salePanel_CompanyName_comboBox.SelectedIndex != -1)
+            if (salePanel_CompanyName_comboBox.SelectedIndex != -1)
             {
                 companyName = salePanel_CompanyName_comboBox.SelectedItem.ToString();
             }
-            if(salePanel_Location_comboBox.SelectedIndex != -1)
+            if (salePanel_Location_comboBox.SelectedIndex != -1)
             {
-               location = salePanel_Location_comboBox.SelectedItem.ToString();
+                location = salePanel_Location_comboBox.SelectedItem.ToString();
             }
-            if(salePanel_Purpose_comboBox.SelectedIndex != -1)
+            if (salePanel_Purpose_comboBox.SelectedIndex != -1)
             {
                 purpose = salePanel_Purpose_comboBox.SelectedItem.ToString();
             }
-            
-            String[]  rows  =  { invoice.getInvoiceNumber().ToString(), PName, location, purpose, expriydate.ToString(), price.ToString(),quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
+
+         
+
+            String[] rows = { (++counter).ToString(),PName, location, purpose, expriydate.ToString(), price.ToString(), quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
             ListViewItem item = new ListViewItem(rows);
-          
+            int sum = 0;
             saleInvoice_productList.Items.Add(item);
+          
+                for (int i = 0; i < saleInvoice_productList.Items.Count; i++)
+                {
+                sum = sum + Int32.Parse(saleInvoice_productList.Items[i].SubItems[9].Text);
+                    }
+            salePricE_totalPrice_textBox.Text = sum.ToString();
+           saleInvoice_totalAmn_textbox.Text = sum.ToString();
+            saleInvoice_totalnetAmount_textbox.Text = sum.ToString();
         }
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1428,6 +1439,37 @@ namespace PointOfSale
                     }
 
                 }
+            }
+        }
+
+        private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textBox11_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                float disc;
+                int totalprice, bonace, amount, Rs, netAmount;
+               
+                if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text) &&
+                    !String.IsNullOrEmpty(saleInvoice_totalAmn_textbox.Text))
+                {
+                    totalprice = Int32.Parse(saleInvoice_totalAmn_textbox.Text);
+                    disc = Int32.Parse(saleInvoice_Discount_Textbox.Text);
+
+                   // discount = float.Parse(salePanel_Discount_textBox.Text);
+                    double dvalue = Math.Round((disc / 100) * totalprice);
+                    saleInvoice_afterCalculation_textbox.Text = (totalprice - dvalue).ToString();
+                  
+                }
+
+
+
+
             }
         }
     }

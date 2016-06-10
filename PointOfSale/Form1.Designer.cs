@@ -112,11 +112,11 @@
             this.label28 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.saleInvoice_afterCalculation_textbox = new System.Windows.Forms.TextBox();
+            this.saleInvoice_Discount_Textbox = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.saleInvoice_totalnetAmount_textbox = new System.Windows.Forms.TextBox();
+            this.saleInvoice_totalAmn_textbox = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -803,11 +803,11 @@
             this.groupBox3.Controls.Add(this.label28);
             this.groupBox3.Controls.Add(this.textBox13);
             this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.saleInvoice_afterCalculation_textbox);
+            this.groupBox3.Controls.Add(this.saleInvoice_Discount_Textbox);
             this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.textBox10);
-            this.groupBox3.Controls.Add(this.textBox9);
+            this.groupBox3.Controls.Add(this.saleInvoice_totalnetAmount_textbox);
+            this.groupBox3.Controls.Add(this.saleInvoice_totalAmn_textbox);
             this.groupBox3.Controls.Add(this.panel6);
             this.groupBox3.Controls.Add(this.saleInvoice_productList);
             this.groupBox3.Controls.Add(this.salePanel_Purpose_comboBox);
@@ -1044,21 +1044,23 @@
             this.label27.Text = "Payment:";
             this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
-            // textBox12
+            // saleInvoice_afterCalculation_textbox
             // 
-            this.textBox12.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(785, 239);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(117, 23);
-            this.textBox12.TabIndex = 23;
+            this.saleInvoice_afterCalculation_textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_afterCalculation_textbox.Location = new System.Drawing.Point(785, 239);
+            this.saleInvoice_afterCalculation_textbox.Name = "saleInvoice_afterCalculation_textbox";
+            this.saleInvoice_afterCalculation_textbox.Size = new System.Drawing.Size(117, 23);
+            this.saleInvoice_afterCalculation_textbox.TabIndex = 23;
             // 
-            // textBox11
+            // saleInvoice_Discount_Textbox
             // 
-            this.textBox11.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(730, 243);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(55, 23);
-            this.textBox11.TabIndex = 22;
+            this.saleInvoice_Discount_Textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_Discount_Textbox.Location = new System.Drawing.Point(730, 243);
+            this.saleInvoice_Discount_Textbox.Name = "saleInvoice_Discount_Textbox";
+            this.saleInvoice_Discount_Textbox.Size = new System.Drawing.Size(55, 23);
+            this.saleInvoice_Discount_Textbox.TabIndex = 22;
+            this.saleInvoice_Discount_Textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
+            this.saleInvoice_Discount_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
             // 
             // label26
             // 
@@ -1071,27 +1073,27 @@
             this.label26.TabIndex = 7;
             this.label26.Text = "Discount:";
             // 
-            // textBox10
+            // saleInvoice_totalnetAmount_textbox
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(785, 214);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(117, 23);
-            this.textBox10.TabIndex = 0;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.saleInvoice_totalnetAmount_textbox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.saleInvoice_totalnetAmount_textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_totalnetAmount_textbox.Location = new System.Drawing.Point(785, 214);
+            this.saleInvoice_totalnetAmount_textbox.Name = "saleInvoice_totalnetAmount_textbox";
+            this.saleInvoice_totalnetAmount_textbox.ReadOnly = true;
+            this.saleInvoice_totalnetAmount_textbox.Size = new System.Drawing.Size(117, 23);
+            this.saleInvoice_totalnetAmount_textbox.TabIndex = 0;
+            this.saleInvoice_totalnetAmount_textbox.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
-            // textBox9
+            // saleInvoice_totalAmn_textbox
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(675, 217);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(110, 23);
-            this.textBox9.TabIndex = 21;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.saleInvoice_totalAmn_textbox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.saleInvoice_totalAmn_textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_totalAmn_textbox.Location = new System.Drawing.Point(675, 217);
+            this.saleInvoice_totalAmn_textbox.Name = "saleInvoice_totalAmn_textbox";
+            this.saleInvoice_totalAmn_textbox.ReadOnly = true;
+            this.saleInvoice_totalAmn_textbox.Size = new System.Drawing.Size(110, 23);
+            this.saleInvoice_totalAmn_textbox.TabIndex = 21;
+            this.saleInvoice_totalAmn_textbox.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // panel6
             // 
@@ -2063,11 +2065,11 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox saleInvoice_totalAmn_textbox;
+        private System.Windows.Forms.TextBox saleInvoice_totalnetAmount_textbox;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox saleInvoice_afterCalculation_textbox;
+        private System.Windows.Forms.TextBox saleInvoice_Discount_Textbox;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
