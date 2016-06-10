@@ -68,6 +68,7 @@
     <Compile Include="DbConfiguration\DatabaseConnections.cs" />
     <Compile Include="DbConfiguration\HandleCustomer.cs" />
     <Compile Include="DbConfiguration\HandleEmployee.cs" />
+    <Compile Include="DbConfiguration\HandleInvoice.cs" />
     <Compile Include="DbConfiguration\HandleProducts.cs" />
     <Compile Include="Employee\AddEmployee.cs">
       <SubType>Form</SubType>
@@ -155,6 +156,7 @@
     <Compile Include="Utils\TablesClass\TableCompany.cs" />
     <Compile Include="Utils\TablesClass\TableDistributors.cs" />
     <Compile Include="Utils\TablesClass\TableEmployee.cs" />
+    <Compile Include="Utils\TablesClass\TableInvoice.cs" />
     <Compile Include="Utils\TablesClass\TableLocation.cs" />
     <Compile Include="Utils\TablesClass\TableProductName.cs" />
     <Compile Include="Utils\TablesClass\TablePurpose.cs" />

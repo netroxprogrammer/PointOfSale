@@ -577,7 +577,7 @@ namespace PointOfSale
         {
             TableAddNewProducts getprod = products.productByItemCode(salePanel_itemCode_comboBox.SelectedItem.ToString());
             // Debug.WriteLine("Select Index ---  " + Sale_Panel_ProductName_comboBox.SelectedIndex + 1);
-            salePanel_Dsecreption_comboBox.Items.Clear();
+            salePanel_Descreption_comboBox.Items.Clear();
             salePanel_CompanyName_comboBox.Items.Clear();
             salePanel_Location_comboBox.Items.Clear();
             Sale_Panel_ProductName_comboBox.Items.Clear();
@@ -588,13 +588,13 @@ namespace PointOfSale
                 if (!String.IsNullOrEmpty(getprod.ProductDescription))
                 {      //  check no empty space add in ComboBox
 
-                    salePanel_Dsecreption_comboBox.Text = getprod.ProductDescription;
-                    salePanel_Dsecreption_comboBox.Items.Add(getprod.ProductDescription);
+                    salePanel_Descreption_comboBox.Text = getprod.ProductDescription;
+                    salePanel_Descreption_comboBox.Items.Add(getprod.ProductDescription);
 
                 }
                 else
                 {
-                    salePanel_Dsecreption_comboBox.Text = "";
+                    salePanel_Descreption_comboBox.Text = "";
                 }
                 if (!String.IsNullOrEmpty(getprod.ProductCompanyName))
                 {
@@ -644,7 +644,7 @@ namespace PointOfSale
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
           ///  salePanel_itemCode_comboBox.Items.Clear();
-            salePanel_Dsecreption_comboBox.Items.Clear();
+            salePanel_Descreption_comboBox.Items.Clear();
             salePanel_CompanyName_comboBox.Items.Clear();
             salePanel_Location_comboBox.Items.Clear();
             salePanel_Purpose_comboBox.Items.Clear();
@@ -657,13 +657,13 @@ namespace PointOfSale
                 salePanel_itemCode_comboBox.Items.Add(getprod.BarCode);
                 if (!String.IsNullOrEmpty(getprod.ProductDescription)) {      //  check no empty space add in ComboBox
 
-                    salePanel_Dsecreption_comboBox.Text = getprod.ProductDescription;
-                    salePanel_Dsecreption_comboBox.Items.Add(getprod.ProductDescription);
+                    salePanel_Descreption_comboBox.Text = getprod.ProductDescription;
+                    salePanel_Descreption_comboBox.Items.Add(getprod.ProductDescription);
                    
                 }
                 else
                 {
-                    salePanel_Dsecreption_comboBox.Text = "";
+                    salePanel_Descreption_comboBox.Text = "";
                 }
                 if (!String.IsNullOrEmpty(getprod.ProductCompanyName))
                 {
@@ -753,10 +753,10 @@ namespace PointOfSale
             salePanel_CompanyName_comboBox.Items.Clear();
             salePanel_Location_comboBox.Items.Clear();
             salePanel_Purpose_comboBox.Items.Clear();
-            String Pname = salePanel_Dsecreption_comboBox.SelectedItem.ToString();
-            int index = salePanel_Dsecreption_comboBox.SelectedIndex + 1;
+            String Pname = salePanel_Descreption_comboBox.SelectedItem.ToString();
+            int index = salePanel_Descreption_comboBox.SelectedIndex + 1;
             TableAddNewProducts getprod = products.productByDiscreption(index.ToString());
-            Debug.WriteLine("Select Index ---  " + salePanel_Dsecreption_comboBox.SelectedIndex + 1);
+            Debug.WriteLine("Select Index ---  " + salePanel_Descreption_comboBox.SelectedIndex + 1);
                 
                 salePanel_itemCode_comboBox.Text = getprod.BarCode;
                 //salePanel_itemCode_comboBox.Items.Add(getprod.BarCode);
@@ -852,11 +852,11 @@ namespace PointOfSale
                 Sale_Panel_ProductName_comboBox.Items.Add(name.ProductName);
                 if (!String.IsNullOrEmpty(name.ProductDescription))
                 {
-                    salePanel_Dsecreption_comboBox.Items.Add(name.ProductDescription);
+                    salePanel_Descreption_comboBox.Items.Add(name.ProductDescription);
                 }
                 else
                 {
-                    salePanel_Dsecreption_comboBox.Items.Add("No Description Found");
+                    salePanel_Descreption_comboBox.Items.Add("No Description Found");
 
                 }
                 if (!String.IsNullOrEmpty(name.ProductCompanyName))
@@ -890,7 +890,7 @@ namespace PointOfSale
                 }
                 else
                 {
-                    salePanel_Dsecreption_comboBox.Items.Add("No Company BarCode Found");
+                    salePanel_Descreption_comboBox.Items.Add("No Company BarCode Found");
                 }
             }
 
@@ -917,7 +917,7 @@ namespace PointOfSale
             if (e.KeyCode == Keys.Enter)
 
             {
-                salePanel_Dsecreption_comboBox.Items.Clear();
+                salePanel_Descreption_comboBox.Items.Clear();
                 salePanel_itemCode_comboBox.Items.Clear();
                 Sale_Panel_ProductName_comboBox.Items.Clear();
                 salePanel_Purpose_comboBox.Items.Clear();
@@ -938,7 +938,7 @@ namespace PointOfSale
             if (e.KeyCode == Keys.Enter)
 
             {
-                salePanel_Dsecreption_comboBox.Items.Clear();
+                salePanel_Descreption_comboBox.Items.Clear();
                 salePanel_itemCode_comboBox.Items.Clear();
                 Sale_Panel_ProductName_comboBox.Items.Clear();
                 salePanel_Purpose_comboBox.Items.Clear();
@@ -965,7 +965,7 @@ namespace PointOfSale
             //salePanel_itemCode_comboBox.Items.Add(getprod.BarCode);
             if (!String.IsNullOrEmpty(getprod.ProductDescription))
             {
-                salePanel_Dsecreption_comboBox.Items.Add(getprod.ProductDescription);
+                salePanel_Descreption_comboBox.Items.Add(getprod.ProductDescription);
             }
             else
             {
@@ -1014,7 +1014,7 @@ namespace PointOfSale
             if (e.KeyCode == Keys.Enter)
 
             {
-                salePanel_Dsecreption_comboBox.Items.Clear();
+                salePanel_Descreption_comboBox.Items.Clear();
                 salePanel_itemCode_comboBox.Items.Clear();
                 Sale_Panel_ProductName_comboBox.Items.Clear();
                 salePanel_Purpose_comboBox.Items.Clear();
@@ -1030,7 +1030,7 @@ namespace PointOfSale
             if (e.KeyCode == Keys.Enter)
 
             {
-                salePanel_Dsecreption_comboBox.Items.Clear();
+                salePanel_Descreption_comboBox.Items.Clear();
                 salePanel_itemCode_comboBox.Items.Clear();
                 Sale_Panel_ProductName_comboBox.Items.Clear();
                 salePanel_Purpose_comboBox.Items.Clear();
@@ -1046,7 +1046,7 @@ namespace PointOfSale
             if (e.KeyCode == Keys.Enter)
 
             {
-                salePanel_Dsecreption_comboBox.Items.Clear();
+                salePanel_Descreption_comboBox.Items.Clear();
                 salePanel_itemCode_comboBox.Items.Clear();
                 Sale_Panel_ProductName_comboBox.Items.Clear();
                 salePanel_Purpose_comboBox.Items.Clear();
@@ -1062,7 +1062,7 @@ namespace PointOfSale
             if (e.KeyCode == Keys.Enter)
 
             {
-                salePanel_Dsecreption_comboBox.Items.Clear();
+                salePanel_Descreption_comboBox.Items.Clear();
                 salePanel_itemCode_comboBox.Items.Clear();
                 Sale_Panel_ProductName_comboBox.Items.Clear();
                 salePanel_Purpose_comboBox.Items.Clear();
@@ -1083,6 +1083,7 @@ namespace PointOfSale
 
                 salePanel_Amount_textBox.Text = (price * quantity).ToString();
                 salePanel_NetAmount_textBox.Text = (price * quantity).ToString();
+                salePanel_RS_textBox.Text = (price * quantity).ToString();
             }
         }
 
@@ -1211,6 +1212,216 @@ namespace PointOfSale
         private void WorkingForm_EmployeList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void salePanel_Price_tetxbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+              (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void salePanel_bonuce_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+              (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void salePanel_Discount_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+              (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void salePanel_RS_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+              (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String PName=null,description=null,companyName=null,location=null,purpose=null;
+
+            float discount=0;
+            int  price,bonace,quantity=0,amount=0,Rs,netAmount=0;
+            DateTime expriydate;
+            if (Sale_Panel_ProductName_comboBox.SelectedIndex != -1)
+            {
+                PName = Sale_Panel_ProductName_comboBox.SelectedItem.ToString();
+            }
+            else
+            {
+                Sale_Panel_ProductName_comboBox.BackColor = Color.Red;
+            }
+
+
+               price = Int32.Parse(salePanel_Price_tetxbox.Text);
+            if (!String.IsNullOrEmpty(salePanel_bonuce_textBox.Text))
+            {
+                bonace = Int32.Parse(salePanel_bonuce_textBox.Text);
+            }
+            else
+            {
+                bonace = 0;
+                salePanel_bonuce_textBox.Text = "0";
+            }
+            if (!String.IsNullOrEmpty(salePanel_qntyu_textBox.Text))
+            {
+                quantity = Int32.Parse(salePanel_qntyu_textBox.Text);
+            }
+            else
+            {
+                quantity = 1;
+                salePanel_qntyu_textBox.Text = "1";
+            }
+            if (!String.IsNullOrEmpty(salePanel_Amount_textBox.Text))
+            {
+                amount = Int32.Parse(salePanel_Amount_textBox.Text);
+            }
+            else
+            {
+                amount=  price* quantity;
+                salePanel_Amount_textBox.Text = amount.ToString();
+            }
+
+            //     amount = Int32.Parse(salePanel_Amount_textBox.Text);
+            if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
+            {
+                int q = quantity*price;
+                discount = float.Parse(salePanel_Discount_textBox.Text);
+                double dvalue = Math.Round((discount / 100) * q);
+                salePanel_RS_textBox.Text = ( q - dvalue).ToString();
+                salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
+            }
+            else
+            {
+                
+                int q = quantity * price;
+
+                salePanel_RS_textBox.Text = q.ToString();
+                salePanel_NetAmount_textBox.Text = q.ToString();
+            }
+            if (!String.IsNullOrEmpty(salePanel_RS_textBox.Text) || String.IsNullOrEmpty(salePanel_RS_textBox.Text))
+            {
+                if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
+                {
+                    {
+                        int q = quantity * price;
+                        discount = float.Parse(salePanel_Discount_textBox.Text);
+                        double dvalue = Math.Round((discount / 100) * q);
+                        salePanel_RS_textBox.Text = (q - dvalue).ToString();
+                        salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
+                    }
+
+                }
+
+            }
+            if(!String.IsNullOrEmpty(salePanel_NetAmount_textBox.Text))
+            {
+                netAmount = Int32.Parse(salePanel_NetAmount_textBox.Text);
+            }
+            else
+            {
+                salePanel_NetAmount_textBox.Text = salePanel_RS_textBox.Text;
+            }
+            expriydate = SalePanel_Expirydate_dateTimePicker.Value;
+
+            if(salePanel_Descreption_comboBox.SelectedIndex != -1)
+            {
+                description = salePanel_Descreption_comboBox.SelectedItem.ToString();
+            }
+            if(salePanel_CompanyName_comboBox.SelectedIndex != -1)
+            {
+                companyName = salePanel_CompanyName_comboBox.SelectedItem.ToString();
+            }
+            if(salePanel_Location_comboBox.SelectedIndex != -1)
+            {
+               location = salePanel_Location_comboBox.SelectedItem.ToString();
+            }
+            if(salePanel_Purpose_comboBox.SelectedIndex != -1)
+            {
+                purpose = salePanel_Purpose_comboBox.SelectedItem.ToString();
+            }
+          
+            String[]  rows  =  {"23", PName, location, purpose, expriydate.ToString(), price.ToString(),quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
+            ListViewItem item = new ListViewItem(rows);
+            saleInvoice_productList.Items.Add(item);
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salePanel_Discount_textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+
+            {
+                float discount;
+                int price, bonace, quantity, amount, Rs, netAmount;
+                price = Int32.Parse(salePanel_Price_tetxbox.Text);
+                if (!String.IsNullOrEmpty(salePanel_qntyu_textBox.Text))
+                {
+                    quantity = Int32.Parse(salePanel_qntyu_textBox.Text);
+                }
+                else
+                {
+                    quantity = 1;
+                    salePanel_qntyu_textBox.Text = "1";
+                }
+                if (!String.IsNullOrEmpty(salePanel_RS_textBox.Text) || String.IsNullOrEmpty(salePanel_RS_textBox.Text))
+                {
+                    if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
+                    {
+                        {
+                            int q = quantity * price;
+                            discount = float.Parse(salePanel_Discount_textBox.Text);
+                            double dvalue = Math.Round((discount / 100) * q);
+                            salePanel_RS_textBox.Text = (q - dvalue).ToString();
+                            salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
+                        }
+
+                    }
+
+                }
+            }
         }
     }
 }
