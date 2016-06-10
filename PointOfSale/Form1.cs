@@ -25,9 +25,10 @@ namespace PointOfSale
         HandleProducts products;
         HandleEmployee employee;
         HandleCustomer customer;
-
+        HandleInvoice invoice;
         HandleCustomer handleCustomer;
         ArrayList prod;
+        int invoiceNumber=0;
         public WorkingForm()
         {
             InitializeComponent();
@@ -53,6 +54,10 @@ namespace PointOfSale
             products = new HandleProducts();
             employee = new HandleEmployee();
             customer = new HandleCustomer();
+            invoice =  new HandleInvoice();
+
+            invoiceNumber  = invoice.getInvoiceNumber() + 1;
+            SaleInvoice_invuse_textb.Text = invoiceNumber.ToString();
             loadAllData();
             WorkingForm_listView.Focus();
             WorkingForm_EmployeList.Focus();
@@ -1277,7 +1282,8 @@ namespace PointOfSale
         private void button1_Click(object sender, EventArgs e)
         {
             String PName=null,description=null,companyName=null,location=null,purpose=null;
-
+//int invoiceNumber = invoice.getInvoiceNumber() +1;
+          
             float discount=0;
             int  price,bonace,quantity=0,amount=0,Rs,netAmount=0;
             DateTime expriydate;
@@ -1378,9 +1384,10 @@ namespace PointOfSale
             {
                 purpose = salePanel_Purpose_comboBox.SelectedItem.ToString();
             }
-          
-            String[]  rows  =  {"23", PName, location, purpose, expriydate.ToString(), price.ToString(),quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
+            
+            String[]  rows  =  { invoice.getInvoiceNumber().ToString(), PName, location, purpose, expriydate.ToString(), price.ToString(),quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
             ListViewItem item = new ListViewItem(rows);
+          
             saleInvoice_productList.Items.Add(item);
         }
 

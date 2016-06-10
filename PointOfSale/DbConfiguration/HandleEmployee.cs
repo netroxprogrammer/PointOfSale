@@ -22,10 +22,12 @@ namespace PointOfSale.DbConfiguration
             Debug.WriteLine("Add AddEmployees Data");
 
         
-            String sql = "insert into Employees(employeeName, employeePhone, employeeFatherName,"+
-                "employeeCNIC,employeeAddress,employeeLocation)" +
-                "output INSERTED.employeeId values(@employeeName,@employeePhone,@employeeFatherName,"+
-                "@employeeCNIC,@employeeAddress,@employeeLocation)";
+            String sql = "INSERT INTO saleinvoice (employeeName,cstomerName,invoiceDate,itemCode,pNamePrice,Quantity,Bonouce,Amount,"+
+                    "Discount,Rs,netAmount,Descreption,companyName,Location,ExpiryDate,purpose,totalAmount,"+
+                    "TotalNetAmount,paymentMethod,TotalDiscount,totalpaymment,balance,writeDescription,EntryDate) values("+
+                    "employeeName, cstomerName, invoiceDate, itemCode, pNamePrice, Quantity, Bonouce, Amount,"+
+                     "Discount, Rs, netAmount, Descreption, companyName, Location, ExpiryDate, purpose, totalAmount,"+
+                    "TotalNetAmount, paymentMethod, TotalDiscount, totalpaymment, balance, writeDescription, EntryDate)";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
 
