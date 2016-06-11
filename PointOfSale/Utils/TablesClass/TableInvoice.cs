@@ -32,7 +32,7 @@ namespace PointOfSale.Utils.TablesClass
         private int  totalPayment;
         private int balance;
         private String Disception;
-
+        private String loginBy;
         public int InvoiceId
         {
             get
@@ -342,6 +342,19 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 Disception = value;
+            }
+        }
+
+        public string LoginBy
+        {
+            get
+            {
+                return loginBy;
+            }
+
+            set
+            {
+                loginBy = value;
             }
         }
     }

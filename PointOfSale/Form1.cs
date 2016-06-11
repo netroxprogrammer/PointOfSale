@@ -840,7 +840,39 @@ namespace PointOfSale
 
         private void button8_Click(object sender, EventArgs e)
         {
+            String empNAme=  salePanel_Employee_comboBox.SelectedItem.ToString();
+            String customerName =     salePanel_Customer_comboBox.SelectedItem.ToString();
+            DateTime date = dateTimePicker1.Value;
+            String totalamount = saleInvoice_totalAmn_textbox.Text;
+            String totalnetAmount = saleInvoice_totalnetAmount_textbox.Text;
+            String peyemnt_method="";
+            if (saleInvoicePayment_cash.Checked) {
+                peyemnt_method = "Cash";
+            }
+            //saleInvoicePayment_credit
+            String disount = saleInvoice_Discount_Textbox.Text;
+            String totalbill = salePricE_totalPrice_textBox.Text;
+            //   saleInvoice_afterCalculation_textbox
+            String payemnt = saleInvoice_Payment_textbox.Text;
+            String balance = saleInvoice_balacne_textbox.Text;
+            TableInvoice inv = new TableInvoice();
+            inv.EmployeeName = empNAme;
+            inv.CustomerName = customerName;
+            inv.CurrentDate = date;
+            inv.TotalAmount = Int32.Parse( totalamount);
+            inv.TotalNetAmount = Int32.Parse(totalnetAmount);
+            inv.PaymentMethod = peyemnt_method;
+            inv.TotalDiscount = Int32.Parse(disount);
+            inv.Disception1 = writeDescription.Text;
+            inv.LoginBy = Constants.userlogin;
 
+
+            inv.Balance = Int32.Parse(balance);
+           int id =  invoice.AddSaleoInvoice(inv);
+            if (id > 0)
+            {
+                MessageBox.Show("invoice Add");
+            }
         }
 
         private void saleInvoiceListToolStripMenuItem_Click(object sender, EventArgs e)

@@ -101,14 +101,14 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.writeDescription = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.salePrice_QntHand_textBox = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.saleInvoicePayment_cash = new System.Windows.Forms.RadioButton();
+            this.saleInvoicePayment_credit = new System.Windows.Forms.RadioButton();
             this.saleInvoice_balacne_textbox = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.saleInvoice_Payment_textbox = new System.Windows.Forms.TextBox();
@@ -803,7 +803,7 @@
             this.groupBox3.Controls.Add(this.salePanel_Employee_comboBox);
             this.groupBox3.Controls.Add(this.panel8);
             this.groupBox3.Controls.Add(this.button7);
-            this.groupBox3.Controls.Add(this.textBox16);
+            this.groupBox3.Controls.Add(this.writeDescription);
             this.groupBox3.Controls.Add(this.label30);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.salePrice_QntHand_textBox);
@@ -928,14 +928,14 @@
             this.button7.Text = "Refresh (F5)";
             this.button7.UseVisualStyleBackColor = true;
             // 
-            // textBox16
+            // writeDescription
             // 
-            this.textBox16.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(780, 407);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(287, 20);
-            this.textBox16.TabIndex = 34;
+            this.writeDescription.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.writeDescription.Location = new System.Drawing.Point(780, 407);
+            this.writeDescription.Multiline = true;
+            this.writeDescription.Name = "writeDescription";
+            this.writeDescription.Size = new System.Drawing.Size(287, 20);
+            this.writeDescription.TabIndex = 34;
             // 
             // label30
             // 
@@ -974,8 +974,8 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.checkBox1);
-            this.panel7.Controls.Add(this.radioButton2);
-            this.panel7.Controls.Add(this.radioButton1);
+            this.panel7.Controls.Add(this.saleInvoicePayment_cash);
+            this.panel7.Controls.Add(this.saleInvoicePayment_credit);
             this.panel7.Location = new System.Drawing.Point(906, 187);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(200, 49);
@@ -992,29 +992,29 @@
             this.checkBox1.Text = "Print / Save";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // saleInvoicePayment_cash
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(3, 4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(51, 19);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "cash";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.saleInvoicePayment_cash.AutoSize = true;
+            this.saleInvoicePayment_cash.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoicePayment_cash.Location = new System.Drawing.Point(3, 4);
+            this.saleInvoicePayment_cash.Name = "saleInvoicePayment_cash";
+            this.saleInvoicePayment_cash.Size = new System.Drawing.Size(51, 19);
+            this.saleInvoicePayment_cash.TabIndex = 1;
+            this.saleInvoicePayment_cash.TabStop = true;
+            this.saleInvoicePayment_cash.Text = "cash";
+            this.saleInvoicePayment_cash.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // saleInvoicePayment_credit
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(103, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 19);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "credit";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.saleInvoicePayment_credit.AutoSize = true;
+            this.saleInvoicePayment_credit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoicePayment_credit.Location = new System.Drawing.Point(103, 4);
+            this.saleInvoicePayment_credit.Name = "saleInvoicePayment_credit";
+            this.saleInvoicePayment_credit.Size = new System.Drawing.Size(57, 19);
+            this.saleInvoicePayment_credit.TabIndex = 0;
+            this.saleInvoicePayment_credit.TabStop = true;
+            this.saleInvoicePayment_credit.Text = "credit";
+            this.saleInvoicePayment_credit.UseVisualStyleBackColor = true;
             // 
             // saleInvoice_balacne_textbox
             // 
@@ -2084,12 +2084,12 @@
         private System.Windows.Forms.TextBox saleInvoice_balacne_textbox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton saleInvoicePayment_cash;
+        private System.Windows.Forms.RadioButton saleInvoicePayment_credit;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox salePrice_QntHand_textBox;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox writeDescription;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel8;
