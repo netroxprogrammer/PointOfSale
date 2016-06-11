@@ -91,6 +91,7 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
+            this.workingForm_Product_Panel = new System.Windows.Forms.Panel();
             this.workingForm_SaleInvoice_Panel = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.salePricE_totalPrice_textBox = new System.Windows.Forms.TextBox();
@@ -108,9 +109,9 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.saleInvoice_balacne_textbox = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.saleInvoice_Payment_textbox = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.saleInvoice_afterCalculation_textbox = new System.Windows.Forms.TextBox();
             this.saleInvoice_Discount_Textbox = new System.Windows.Forms.TextBox();
@@ -173,14 +174,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
-            this.workingForm_Product_Panel = new System.Windows.Forms.Panel();
             this.WorkingForm_AllProduct_listView = new System.Windows.Forms.ListView();
             this.Product_contextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inactiveProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
             this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
             this.workingForm_Employee_rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -206,6 +206,7 @@
             this.contextMenuStrip_Inventory.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.WorkingForm_customerPanel.SuspendLayout();
+            this.workingForm_Product_Panel.SuspendLayout();
             this.workingForm_SaleInvoice_Panel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -215,9 +216,8 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.WorkingForm_Employ_Panel.SuspendLayout();
-            this.workingForm_Product_Panel.SuspendLayout();
             this.Product_contextStrip.SuspendLayout();
+            this.WorkingForm_Employ_Panel.SuspendLayout();
             this.workingForm_Employee_rightClick.SuspendLayout();
             this.WorkingForm_rightClick_menu.SuspendLayout();
             this.SuspendLayout();
@@ -767,7 +767,7 @@
             // WorkingForm_customerPanel
             // 
             this.WorkingForm_customerPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.WorkingForm_customerPanel.Controls.Add(this.workingForm_SaleInvoice_Panel);
+            this.WorkingForm_customerPanel.Controls.Add(this.workingForm_Product_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_Employ_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_listView);
             this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 120);
@@ -777,12 +777,21 @@
             this.WorkingForm_customerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_customerPanel_Paint);
             this.WorkingForm_customerPanel.DoubleClick += new System.EventHandler(this.WorkingForm_customerPanel_DoubleClick);
             // 
+            // workingForm_Product_Panel
+            // 
+            this.workingForm_Product_Panel.Controls.Add(this.workingForm_SaleInvoice_Panel);
+            this.workingForm_Product_Panel.Controls.Add(this.WorkingForm_AllProduct_listView);
+            this.workingForm_Product_Panel.Location = new System.Drawing.Point(0, 0);
+            this.workingForm_Product_Panel.Name = "workingForm_Product_Panel";
+            this.workingForm_Product_Panel.Size = new System.Drawing.Size(1329, 619);
+            this.workingForm_Product_Panel.TabIndex = 1;
+            // 
             // workingForm_SaleInvoice_Panel
             // 
             this.workingForm_SaleInvoice_Panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox3);
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox2);
-            this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(3, 0);
+            this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(0, 0);
             this.workingForm_SaleInvoice_Panel.Name = "workingForm_SaleInvoice_Panel";
             this.workingForm_SaleInvoice_Panel.Size = new System.Drawing.Size(1329, 622);
             this.workingForm_SaleInvoice_Panel.TabIndex = 1;
@@ -799,9 +808,9 @@
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.salePrice_QntHand_textBox);
             this.groupBox3.Controls.Add(this.panel7);
-            this.groupBox3.Controls.Add(this.textBox14);
+            this.groupBox3.Controls.Add(this.saleInvoice_balacne_textbox);
             this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.textBox13);
+            this.groupBox3.Controls.Add(this.saleInvoice_Payment_textbox);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.saleInvoice_afterCalculation_textbox);
             this.groupBox3.Controls.Add(this.saleInvoice_Discount_Textbox);
@@ -852,6 +861,8 @@
             // 
             // salePanel_Employee_comboBox
             // 
+            this.salePanel_Employee_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.salePanel_Employee_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.salePanel_Employee_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salePanel_Employee_comboBox.FormattingEnabled = true;
             this.salePanel_Employee_comboBox.Location = new System.Drawing.Point(137, 33);
@@ -1005,13 +1016,13 @@
             this.radioButton1.Text = "credit";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox14
+            // saleInvoice_balacne_textbox
             // 
-            this.textBox14.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(784, 294);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(117, 23);
-            this.textBox14.TabIndex = 27;
+            this.saleInvoice_balacne_textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_balacne_textbox.Location = new System.Drawing.Point(784, 294);
+            this.saleInvoice_balacne_textbox.Name = "saleInvoice_balacne_textbox";
+            this.saleInvoice_balacne_textbox.Size = new System.Drawing.Size(117, 23);
+            this.saleInvoice_balacne_textbox.TabIndex = 27;
             // 
             // label28
             // 
@@ -1024,13 +1035,14 @@
             this.label28.TabIndex = 26;
             this.label28.Text = "Balance";
             // 
-            // textBox13
+            // saleInvoice_Payment_textbox
             // 
-            this.textBox13.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(785, 266);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(117, 23);
-            this.textBox13.TabIndex = 25;
+            this.saleInvoice_Payment_textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_Payment_textbox.Location = new System.Drawing.Point(785, 266);
+            this.saleInvoice_Payment_textbox.Name = "saleInvoice_Payment_textbox";
+            this.saleInvoice_Payment_textbox.Size = new System.Drawing.Size(117, 23);
+            this.saleInvoice_Payment_textbox.TabIndex = 25;
+            this.saleInvoice_Payment_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox13_KeyDown);
             // 
             // label27
             // 
@@ -1047,10 +1059,11 @@
             // saleInvoice_afterCalculation_textbox
             // 
             this.saleInvoice_afterCalculation_textbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saleInvoice_afterCalculation_textbox.Location = new System.Drawing.Point(785, 239);
+            this.saleInvoice_afterCalculation_textbox.Location = new System.Drawing.Point(785, 243);
             this.saleInvoice_afterCalculation_textbox.Name = "saleInvoice_afterCalculation_textbox";
             this.saleInvoice_afterCalculation_textbox.Size = new System.Drawing.Size(117, 23);
             this.saleInvoice_afterCalculation_textbox.TabIndex = 23;
+            this.saleInvoice_afterCalculation_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saleInvoice_afterCalculation_textbox_KeyDown);
             // 
             // saleInvoice_Discount_Textbox
             // 
@@ -1205,6 +1218,7 @@
             this.salePanel_Purpose_comboBox.Name = "salePanel_Purpose_comboBox";
             this.salePanel_Purpose_comboBox.Size = new System.Drawing.Size(258, 23);
             this.salePanel_Purpose_comboBox.TabIndex = 18;
+            this.salePanel_Purpose_comboBox.SelectedIndexChanged += new System.EventHandler(this.salePanel_Purpose_comboBox_SelectedIndexChanged);
             this.salePanel_Purpose_comboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.salePanel_Purpose_comboBox_KeyDown);
             // 
             // SalePanel_Expirydate_dateTimePicker
@@ -1226,6 +1240,7 @@
             this.salePanel_Location_comboBox.Name = "salePanel_Location_comboBox";
             this.salePanel_Location_comboBox.Size = new System.Drawing.Size(171, 23);
             this.salePanel_Location_comboBox.TabIndex = 16;
+            this.salePanel_Location_comboBox.SelectedIndexChanged += new System.EventHandler(this.salePanel_Location_comboBox_SelectedIndexChanged);
             this.salePanel_Location_comboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.salePanel_Location_comboBox_KeyDown);
             // 
             // salePanel_CompanyName_comboBox
@@ -1286,6 +1301,7 @@
             this.salePanel_RS_textBox.Size = new System.Drawing.Size(110, 23);
             this.salePanel_RS_textBox.TabIndex = 11;
             this.salePanel_RS_textBox.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.salePanel_RS_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.salePanel_RS_textBox_KeyDown);
             this.salePanel_RS_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.salePanel_RS_textBox_KeyPress);
             // 
             // salePanel_Discount_textBox
@@ -1556,6 +1572,8 @@
             // 
             // salePanel_Customer_comboBox
             // 
+            this.salePanel_Customer_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.salePanel_Customer_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.salePanel_Customer_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salePanel_Customer_comboBox.FormattingEnabled = true;
             this.salePanel_Customer_comboBox.Location = new System.Drawing.Point(350, 33);
@@ -1648,24 +1666,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sale Invoice";
             // 
-            // WorkingForm_Employ_Panel
-            // 
-            this.WorkingForm_Employ_Panel.Controls.Add(this.workingForm_Product_Panel);
-            this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
-            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(0, 3);
-            this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
-            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
-            this.WorkingForm_Employ_Panel.TabIndex = 1;
-            this.WorkingForm_Employ_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_Employ_Panel_Paint_1);
-            // 
-            // workingForm_Product_Panel
-            // 
-            this.workingForm_Product_Panel.Controls.Add(this.WorkingForm_AllProduct_listView);
-            this.workingForm_Product_Panel.Location = new System.Drawing.Point(3, 0);
-            this.workingForm_Product_Panel.Name = "workingForm_Product_Panel";
-            this.workingForm_Product_Panel.Size = new System.Drawing.Size(1329, 619);
-            this.workingForm_Product_Panel.TabIndex = 1;
-            // 
             // WorkingForm_AllProduct_listView
             // 
             this.WorkingForm_AllProduct_listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -1718,6 +1718,15 @@
             this.showAllProductsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.showAllProductsToolStripMenuItem.Text = "Show All Products";
             this.showAllProductsToolStripMenuItem.Click += new System.EventHandler(this.showAllProductsToolStripMenuItem_Click);
+            // 
+            // WorkingForm_Employ_Panel
+            // 
+            this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
+            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(3, 3);
+            this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
+            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
+            this.WorkingForm_Employ_Panel.TabIndex = 1;
+            this.WorkingForm_Employ_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_Employ_Panel_Paint_1);
             // 
             // WorkingForm_EmployeList
             // 
@@ -1904,6 +1913,7 @@
             this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.WorkingForm_customerPanel.ResumeLayout(false);
+            this.workingForm_Product_Panel.ResumeLayout(false);
             this.workingForm_SaleInvoice_Panel.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1920,9 +1930,8 @@
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.WorkingForm_Employ_Panel.ResumeLayout(false);
-            this.workingForm_Product_Panel.ResumeLayout(false);
             this.Product_contextStrip.ResumeLayout(false);
+            this.WorkingForm_Employ_Panel.ResumeLayout(false);
             this.workingForm_Employee_rightClick.ResumeLayout(false);
             this.WorkingForm_rightClick_menu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2071,8 +2080,8 @@
         private System.Windows.Forms.TextBox saleInvoice_afterCalculation_textbox;
         private System.Windows.Forms.TextBox saleInvoice_Discount_Textbox;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox saleInvoice_Payment_textbox;
+        private System.Windows.Forms.TextBox saleInvoice_balacne_textbox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.RadioButton radioButton2;

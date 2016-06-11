@@ -145,6 +145,13 @@ namespace PointOfSale
             }
         }
 
+        public bool updateButon
+        {
+            set
+            {
+                AddCustomer_Udpate_btn.Visible = value;
+            }
+        }
         public bool Cdefualt {
             set {
                 customerInformation_default_checkBok.Checked = value;
