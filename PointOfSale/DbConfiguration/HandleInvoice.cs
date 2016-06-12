@@ -1,5 +1,6 @@
 ﻿using PointOfSale.Utils.TablesClass;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -69,6 +70,44 @@ namespace PointOfSale.DbConfiguration
             return id;
 
         }
+        //  read InvoiceData
+        public ArrayList readInvoiceData()
+        {
+            Debug.WriteLine("get readInvoiceData");
 
+            ArrayList list = new ArrayList();
+
+            String sql = "Select * from saleinvoice";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+
+          
+            TableInvoice invlice = null;
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                invlice = new TableInvoice();
+                invlice.InvoiceId = reader.GetInt32(0);
+                invlice.CurrentDate = reader.GetDateTime(3);
+                invlice.PaymentMethod = reader.GetString(6);
+               
+              //  invlice.Discount1 = reader.GetInt32(7);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                invlice.TotalNetAmount = reader.GetInt32(5);
+
+                invlice.TotalPayment = reader.GetInt32(8);
+                invlice.Balance= reader.GetInt32(9);
+
+
+                list.Add(invlice);
+                Debug.WriteLine(invlice);
+
+            }
+            reader.Close();
+            return list;
+
+        }
     }
 }

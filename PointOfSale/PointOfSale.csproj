@@ -82,6 +82,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListForms\ProductList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForms\ProductList.Designer.cs">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListForms\SaleInvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForms\SaleInvoiceList.Designer.cs">
+      <DependentUpon>SaleInvoiceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginAthuntication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +185,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForms\ProductList.resx">
+      <DependentUpon>ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForms\SaleInvoiceList.resx">
+      <DependentUpon>SaleInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAthuntication.resx">
       <DependentUpon>LoginAthuntication.cs</DependentUpon>

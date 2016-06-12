@@ -91,7 +91,6 @@
             this.inventory_Button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
-            this.workingForm_Product_Panel = new System.Windows.Forms.Panel();
             this.workingForm_SaleInvoice_Panel = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.salePricE_totalPrice_textBox = new System.Windows.Forms.TextBox();
@@ -174,12 +173,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.WorkingForm_AllProduct_listView = new System.Windows.Forms.ListView();
-            this.Product_contextStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inactiveProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showAllProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
             this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
             this.workingForm_Employee_rightClick = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -206,7 +199,6 @@
             this.contextMenuStrip_Inventory.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.WorkingForm_customerPanel.SuspendLayout();
-            this.workingForm_Product_Panel.SuspendLayout();
             this.workingForm_SaleInvoice_Panel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -216,7 +208,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.Product_contextStrip.SuspendLayout();
             this.WorkingForm_Employ_Panel.SuspendLayout();
             this.workingForm_Employee_rightClick.SuspendLayout();
             this.WorkingForm_rightClick_menu.SuspendLayout();
@@ -767,7 +758,7 @@
             // WorkingForm_customerPanel
             // 
             this.WorkingForm_customerPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.WorkingForm_customerPanel.Controls.Add(this.workingForm_Product_Panel);
+            this.WorkingForm_customerPanel.Controls.Add(this.workingForm_SaleInvoice_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_Employ_Panel);
             this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_listView);
             this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 120);
@@ -776,15 +767,6 @@
             this.WorkingForm_customerPanel.TabIndex = 10;
             this.WorkingForm_customerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_customerPanel_Paint);
             this.WorkingForm_customerPanel.DoubleClick += new System.EventHandler(this.WorkingForm_customerPanel_DoubleClick);
-            // 
-            // workingForm_Product_Panel
-            // 
-            this.workingForm_Product_Panel.Controls.Add(this.workingForm_SaleInvoice_Panel);
-            this.workingForm_Product_Panel.Controls.Add(this.WorkingForm_AllProduct_listView);
-            this.workingForm_Product_Panel.Location = new System.Drawing.Point(0, 0);
-            this.workingForm_Product_Panel.Name = "workingForm_Product_Panel";
-            this.workingForm_Product_Panel.Size = new System.Drawing.Size(1329, 619);
-            this.workingForm_Product_Panel.TabIndex = 1;
             // 
             // workingForm_SaleInvoice_Panel
             // 
@@ -1153,6 +1135,8 @@
             this.columnHeader10,
             this.columnHeader11});
             this.saleInvoice_productList.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleInvoice_productList.FullRowSelect = true;
+            this.saleInvoice_productList.GridLines = true;
             this.saleInvoice_productList.Location = new System.Drawing.Point(-3, 177);
             this.saleInvoice_productList.Name = "saleInvoice_productList";
             this.saleInvoice_productList.Size = new System.Drawing.Size(669, 350);
@@ -1666,59 +1650,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sale Invoice";
             // 
-            // WorkingForm_AllProduct_listView
-            // 
-            this.WorkingForm_AllProduct_listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.WorkingForm_AllProduct_listView.ContextMenuStrip = this.Product_contextStrip;
-            this.WorkingForm_AllProduct_listView.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkingForm_AllProduct_listView.FullRowSelect = true;
-            this.WorkingForm_AllProduct_listView.GridLines = true;
-            this.WorkingForm_AllProduct_listView.Location = new System.Drawing.Point(0, 83);
-            this.WorkingForm_AllProduct_listView.Name = "WorkingForm_AllProduct_listView";
-            this.WorkingForm_AllProduct_listView.Size = new System.Drawing.Size(1326, 533);
-            this.WorkingForm_AllProduct_listView.TabIndex = 0;
-            this.WorkingForm_AllProduct_listView.UseCompatibleStateImageBehavior = false;
-            this.WorkingForm_AllProduct_listView.View = System.Windows.Forms.View.Details;
-            this.WorkingForm_AllProduct_listView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_AllProduct_listView_MouseDoubleClick);
-            // 
-            // Product_contextStrip
-            // 
-            this.Product_contextStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem1,
-            this.addNewProductToolStripMenuItem,
-            this.inactiveProductToolStripMenuItem,
-            this.showAllProductsToolStripMenuItem});
-            this.Product_contextStrip.Name = "Product_contextStrip";
-            this.Product_contextStrip.Size = new System.Drawing.Size(171, 92);
-            // 
-            // refreshToolStripMenuItem1
-            // 
-            this.refreshToolStripMenuItem1.Name = "refreshToolStripMenuItem1";
-            this.refreshToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.refreshToolStripMenuItem1.Text = "Refresh";
-            this.refreshToolStripMenuItem1.Click += new System.EventHandler(this.refreshToolStripMenuItem1_Click);
-            // 
-            // addNewProductToolStripMenuItem
-            // 
-            this.addNewProductToolStripMenuItem.Name = "addNewProductToolStripMenuItem";
-            this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.addNewProductToolStripMenuItem.Text = "Add New Product";
-            this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
-            // 
-            // inactiveProductToolStripMenuItem
-            // 
-            this.inactiveProductToolStripMenuItem.Name = "inactiveProductToolStripMenuItem";
-            this.inactiveProductToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.inactiveProductToolStripMenuItem.Text = "Inactive Product";
-            this.inactiveProductToolStripMenuItem.Click += new System.EventHandler(this.inactiveProductToolStripMenuItem_Click);
-            // 
-            // showAllProductsToolStripMenuItem
-            // 
-            this.showAllProductsToolStripMenuItem.Name = "showAllProductsToolStripMenuItem";
-            this.showAllProductsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showAllProductsToolStripMenuItem.Text = "Show All Products";
-            this.showAllProductsToolStripMenuItem.Click += new System.EventHandler(this.showAllProductsToolStripMenuItem_Click);
-            // 
             // WorkingForm_Employ_Panel
             // 
             this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
@@ -1913,7 +1844,6 @@
             this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.WorkingForm_customerPanel.ResumeLayout(false);
-            this.workingForm_Product_Panel.ResumeLayout(false);
             this.workingForm_SaleInvoice_Panel.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1930,7 +1860,6 @@
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.Product_contextStrip.ResumeLayout(false);
             this.WorkingForm_Employ_Panel.ResumeLayout(false);
             this.workingForm_Employee_rightClick.ResumeLayout(false);
             this.WorkingForm_rightClick_menu.ResumeLayout(false);
@@ -2017,101 +1946,94 @@
         private System.Windows.Forms.ListView WorkingForm_Products_ListView;
         private System.Windows.Forms.Panel WorkingForm_Employ_Panel;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Panel workingForm_Product_Panel;
-        private System.Windows.Forms.ListView WorkingForm_AllProduct_listView;
-        private System.Windows.Forms.ContextMenuStrip Product_contextStrip;
-        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem addNewProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inactiveProductToolStripMenuItem;
-        private System.Windows.Forms.Panel workingForm_SaleInvoice_Panel;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox SaleInvoice_invuse_textb;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox salePanel_Customer_comboBox;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ToolStripMenuItem inactiveCustomerToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox SaleInvoice_invuse_textb;
+        private System.Windows.Forms.ComboBox salePanel_Customer_comboBox;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox salePanel_itemCode_comboBox;
         private System.Windows.Forms.ComboBox Sale_Panel_ProductName_comboBox;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox salePanel_Price_tetxbox;
-        private System.Windows.Forms.TextBox salePanel_NetAmount_textBox;
-        private System.Windows.Forms.TextBox salePanel_RS_textBox;
-        private System.Windows.Forms.TextBox salePanel_Discount_textBox;
-        private System.Windows.Forms.TextBox salePanel_Amount_textBox;
-        private System.Windows.Forms.TextBox salePanel_bonuce_textBox;
         private System.Windows.Forms.TextBox salePanel_qntyu_textBox;
+        private System.Windows.Forms.TextBox salePanel_bonuce_textBox;
+        private System.Windows.Forms.TextBox salePanel_Amount_textBox;
+        private System.Windows.Forms.TextBox salePanel_Discount_textBox;
+        private System.Windows.Forms.TextBox salePanel_RS_textBox;
+        private System.Windows.Forms.TextBox salePanel_NetAmount_textBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox salePanel_Purpose_comboBox;
-        private System.Windows.Forms.DateTimePicker SalePanel_Expirydate_dateTimePicker;
-        private System.Windows.Forms.ComboBox salePanel_Location_comboBox;
-        private System.Windows.Forms.ComboBox salePanel_CompanyName_comboBox;
         private System.Windows.Forms.ComboBox salePanel_Descreption_comboBox;
+        private System.Windows.Forms.ComboBox salePanel_CompanyName_comboBox;
+        private System.Windows.Forms.ComboBox salePanel_Location_comboBox;
+        private System.Windows.Forms.DateTimePicker SalePanel_Expirydate_dateTimePicker;
+        private System.Windows.Forms.ComboBox salePanel_Purpose_comboBox;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ListView saleInvoice_productList;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox saleInvoice_totalAmn_textbox;
         private System.Windows.Forms.TextBox saleInvoice_totalnetAmount_textbox;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox saleInvoice_afterCalculation_textbox;
         private System.Windows.Forms.TextBox saleInvoice_Discount_Textbox;
+        private System.Windows.Forms.TextBox saleInvoice_afterCalculation_textbox;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox saleInvoice_Payment_textbox;
-        private System.Windows.Forms.TextBox saleInvoice_balacne_textbox;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.RadioButton saleInvoicePayment_cash;
+        private System.Windows.Forms.TextBox saleInvoice_balacne_textbox;
         private System.Windows.Forms.RadioButton saleInvoicePayment_credit;
+        private System.Windows.Forms.RadioButton saleInvoicePayment_cash;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox salePrice_QntHand_textBox;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox writeDescription;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox writeDescription;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ComboBox salePanel_Employee_comboBox;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox salePricE_totalPrice_textBox;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ToolStripMenuItem showAllProductsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem inactiveCustomerToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel workingForm_SaleInvoice_Panel;
     }
 }
 
