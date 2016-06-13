@@ -475,6 +475,17 @@ namespace PointOfSale
         {
             
             addNewProducts();
+            ClearForm();
+        }
+
+
+        /*
+        Clear Form
+        */
+
+            public void ClearForm()
+        {
+
             if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) &&
                  (adddNewProducts_ProductName_comboBox.SelectedIndex != -1) &&
                  (adddNewProducts_Category_comboBox.SelectedIndex != -1))
@@ -509,7 +520,7 @@ namespace PointOfSale
                 addNewProduct_purchasePrice_textbox.Clear();
                 addNewProduct_Distrubutors_comboBox.Text = "";
                 addNewProduct_itemFixDiscount_textbox.Clear();
-               
+
                 addNewProduct_MaxDiscount_textbox.Clear();
                 if (addNewProduct_updatestock_checkBox.Checked)
                 {
@@ -731,7 +742,24 @@ namespace PointOfSale
 
             if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text))
             {
-                code = addNewProduct_code_textbox.Text;
+                // check  Duplication off bar code....
+               ArrayList list =   handleProducts.getProductListNoFilter();
+                foreach(TableAddNewProducts  p  in list)
+                {
+                    if(p.BarCode == addNewProduct_code_textbox.Text)
+                    {
+                        MessageBox.Show("This barcode Already  used");
+                       
+                        ClearForm();
+                        Close();
+                    }
+                    else {
+                        code = addNewProduct_code_textbox.Text;
+
+                    }
+                }
+
+               
 
             }
             else
