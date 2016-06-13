@@ -48,6 +48,7 @@
             this.WorkingForm_EmployeList.TabIndex = 1;
             this.WorkingForm_EmployeList.UseCompatibleStateImageBehavior = false;
             this.WorkingForm_EmployeList.View = System.Windows.Forms.View.Details;
+            this.WorkingForm_EmployeList.SelectedIndexChanged += new System.EventHandler(this.WorkingForm_EmployeList_SelectedIndexChanged);
             this.WorkingForm_EmployeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_EmployeList_MouseDoubleClick);
             // 
             // workingForm_Employee_rightClick
@@ -56,7 +57,7 @@
             this.refreshToolStripMenuItem,
             this.addNewEmployeeToolStripMenuItem1});
             this.workingForm_Employee_rightClick.Name = "workingForm_Employee_rightClick";
-            this.workingForm_Employee_rightClick.Size = new System.Drawing.Size(179, 70);
+            this.workingForm_Employee_rightClick.Size = new System.Drawing.Size(179, 48);
             // 
             // refreshToolStripMenuItem
             // 

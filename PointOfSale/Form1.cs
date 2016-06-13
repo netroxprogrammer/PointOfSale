@@ -25,7 +25,7 @@ namespace PointOfSale
     {
         HandleProducts products;
         HandleEmployee employee;
-        HandleCustomer customer;
+       
         HandleInvoice invoice;
         HandleCustomer handleCustomer;
         ArrayList prod;
@@ -56,15 +56,13 @@ namespace PointOfSale
         {
             products = new HandleProducts();
             employee = new HandleEmployee();
-            customer = new HandleCustomer();
+         handleCustomer =  new HandleCustomer();
             invoice = new HandleInvoice();
 
             invoiceNumber = invoice.getInvoiceNumber() + 1;
             SaleInvoice_invuse_textb.Text = invoiceNumber.ToString();
             loadAllData();
-            WorkingForm_listView.Focus();
-            WorkingForm_EmployeList.Focus();
-            WorkingForm_Employ_Panel.Visible = false;
+        
           
             workingForm_SaleInvoice_Panel.Visible = false;
 
@@ -189,71 +187,24 @@ namespace PointOfSale
 
         private void customersListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddCustomerList("");
+            new CustomerList().Show();
 
 
         }
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WorkingForm_listView.Columns.Clear();
-            WorkingForm_listView.Columns.Add("Customer Id", 110, HorizontalAlignment.Left);
+          
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            AddCustomerList("");
         }
 
-        /*
-        Add  Customer List...
-        */
+       
 
-        public void AddCustomerList(String filter)
-        {
-            WorkingForm_Employ_Panel.Visible = false;
-            WorkingForm_listView.Columns.Clear();
-            handleCustomer = new HandleCustomer();
-            WorkingForm_listView.Items.Clear();
-
-
-            //   foreach (TableColumns columns in list){
-            WorkingForm_listView.Columns.Add("Customer Id", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Name", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Discuont ", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Payment", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Phone Contact", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Reffered", 110, HorizontalAlignment.Left);
-            WorkingForm_listView.Columns.Add("Phone 1", 110, HorizontalAlignment.Left);
-            /*   WorkingForm_listView.Columns.Add("Phone 2", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Phone 3", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Fax 1", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Fax 2", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Fax 3", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Email", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Address", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Remark", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Default", 110, HorizontalAlignment.Left);
-               WorkingForm_listView.Columns.Add("Inactive", 110, HorizontalAlignment.Left);*/
-            //         }
-
-
-            ArrayList data = handleCustomer.getCustomers(filter);
-
-
-
-            foreach (TotalCustomerClass clms in data)
-            {
-                String[] rows = { clms.customerId.ToString(),clms.customerName.ToString(),
-                    clms.CustomerDiscount.ToString(),clms.customerPrice.ToString(), clms.CustomerPersonContact,
-                    clms.CustomerReffered,
-                    clms.CustomerPhone1};
-                ListViewItem items = new ListViewItem(rows);
-
-                WorkingForm_listView.Items.Add(items);
-            }
-        }
+      
         /*
         get Employee List
         */
@@ -457,6 +408,7 @@ namespace PointOfSale
             }
 
             salePanel_Price_tetxbox.Text = getprod.ProductSalePrice.ToString();
+            salePrice_QntHand_textBox.Clear();
             salePrice_QntHand_textBox.Text = getprod.ProductTotalPacks.ToString();
 
         }
@@ -652,39 +604,114 @@ namespace PointOfSale
 
         private void button8_Click(object sender, EventArgs e)
         {
-            String empNAme=  salePanel_Employee_comboBox.SelectedItem.ToString();
-            String customerName =     salePanel_Customer_comboBox.SelectedItem.ToString();
-            DateTime date = dateTimePicker1.Value;
-            String totalamount = saleInvoice_totalAmn_textbox.Text;
-            String totalnetAmount = saleInvoice_totalnetAmount_textbox.Text;
-            String peyemnt_method="";
-            if (saleInvoicePayment_cash.Checked) {
-                peyemnt_method = "Cash";
-            }
-            //saleInvoicePayment_credit
-            String disount = saleInvoice_Discount_Textbox.Text;
-            String totalbill = salePricE_totalPrice_textBox.Text;
-            //   saleInvoice_afterCalculation_textbox
-            String payemnt = saleInvoice_Payment_textbox.Text;
-            String balance = saleInvoice_balacne_textbox.Text;
-            TableInvoice inv = new TableInvoice();
-            inv.EmployeeName = empNAme;
-            inv.CustomerName = customerName;
-            inv.CurrentDate = date;
-            inv.TotalAmount = Int32.Parse( totalamount);
-            inv.TotalNetAmount = Int32.Parse(totalnetAmount);
-            inv.PaymentMethod = peyemnt_method;
-            inv.TotalDiscount = Int32.Parse(disount);
-            inv.Disception1 = writeDescription.Text;
-            inv.LoginBy = Constants.userlogin;
-
-
-            inv.Balance = Int32.Parse(balance);
-           int id =  invoice.AddSaleoInvoice(inv);
-            if (id > 0)
+            String empNAme = null;
+            String customerName = null;
+            String totalamount = null;
+            String totalnetAmount = null;
+            String disountpersent = null;
+            String discuntprise = null;
+            String discount =null;
+            String totalbill = null;
+            String payemnt = null;
+            String balance = null;
+            if (!String.IsNullOrEmpty(saleInvoice_totalAmn_textbox.Text) && (!String.IsNullOrEmpty(saleInvoice_totalnetAmount_textbox.Text)))
             {
-                MessageBox.Show("invoice Add");
+                if (salePanel_Employee_comboBox.SelectedIndex != -1)
+                {
+                    empNAme = salePanel_Employee_comboBox.SelectedItem.ToString();
+                }
+                else
+                {
+                    empNAme = "";
+                }
+                if (salePanel_Customer_comboBox.SelectedIndex != -1)
+                {
+                    customerName = salePanel_Customer_comboBox.SelectedItem.ToString();
+                }
+                else {
+                    customerName = "";
+                }
+
+
+                DateTime date = dateTimePicker1.Value;
+                totalamount = saleInvoice_totalAmn_textbox.Text;
+                 totalnetAmount = saleInvoice_totalnetAmount_textbox.Text;
+                String peyemnt_method = "";
+                if (saleInvoicePayment_cash.Checked)
+                {
+                    peyemnt_method = "Cash";
+                }
+                  if (saleInvoicePayment_credit.Checked)
+                {
+                    peyemnt_method = "credit";
+                }
+
+                //saleInvoicePayment_credit
+                if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text)){
+                    disountpersent = saleInvoice_Discount_Textbox.Text;
+                    discount = disountpersent;
+                }
+                else
+                {
+                   // disountpersent = "0";
+                    discount = "0";
+                }
+
+                if (!String.IsNullOrEmpty(saleInvoice_afterCalculation_textbox.Text))
+                {
+                    discuntprise = saleInvoice_afterCalculation_textbox.Text;
+                    discount = discuntprise;
+                }
+                else
+                {
+                 //   discuntprise = "0";
+                    discount = "0";
+                }
+                if (!String.IsNullOrEmpty(salePricE_totalPrice_textBox.Text))
+                {
+                    totalbill = salePricE_totalPrice_textBox.Text;
+
+                }
+                if (!String.IsNullOrEmpty(saleInvoice_Payment_textbox.Text))
+                {
+                     payemnt = saleInvoice_Payment_textbox.Text;
+                }
+                else
+                {
+                    payemnt = "0";
+                    saleInvoicePayment_credit.Checked = true;
+                    peyemnt_method = "credit";
+                    saleInvoice_balacne_textbox.Text = salePricE_totalPrice_textBox.Text;
+                }
+                if (!String.IsNullOrEmpty(saleInvoice_balacne_textbox.Text)) {
+                  balance = saleInvoice_balacne_textbox.Text;
+
+                }
+
+                //   saleInvoice_afterCalculation_textbox
+
+
+                TableInvoice inv = new TableInvoice();
+                inv.EmployeeName = empNAme;
+                inv.CustomerName = customerName;
+                inv.CurrentDate = date;
+                inv.TotalAmount = Int32.Parse(totalamount);
+                inv.TotalNetAmount = Int32.Parse(totalnetAmount);
+                inv.PaymentMethod = peyemnt_method;
+                inv.TotalDiscount = Int32.Parse(discount);
+                inv.Disception1 = writeDescription.Text;
+                inv.TotalPayment = Int32.Parse(payemnt);
+                inv.LoginBy = Constants.userlogin;
+
+
+                inv.Balance = Int32.Parse(balance);
+                int id = invoice.AddSaleoInvoice(inv);
+                if (id > 0)
+                {
+                    MessageBox.Show("invoice Add");
+                }
             }
+
         }
 
         private void saleInvoiceListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -767,7 +794,7 @@ namespace PointOfSale
 
             /*  Load Customer Names */
 
-            ArrayList custm = customer.getCustomersNames();
+            ArrayList custm = handleCustomer.getCustomersNames();
             foreach (TotalCustomerClass cutm in custm)
             {
                 salePanel_Customer_comboBox.Items.Add(cutm.customerName);
@@ -1006,66 +1033,12 @@ namespace PointOfSale
 
         private void WorkingForm_listView_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            String id = WorkingForm_listView.SelectedItems[0].SubItems[0].Text;
-            String name = WorkingForm_listView.SelectedItems[0].SubItems[1].Text;
-            String Discount = WorkingForm_listView.SelectedItems[0].SubItems[2].Text;
-            String payment = WorkingForm_listView.SelectedItems[0].SubItems[3].Text;
-            String pContact = WorkingForm_listView.SelectedItems[0].SubItems[4].Text;
-            String reffered = WorkingForm_listView.SelectedItems[0].SubItems[5].Text;
-            String Phone1 = WorkingForm_listView.SelectedItems[0].SubItems[6].Text;
-
-            Customer_Information cs = new Customer_Information();
-            ArrayList data = handleCustomer.getCustomersNoFilter();
-
-
-
-            foreach (TotalCustomerClass clms in data)
-            {
-                if (clms.customerId == Int32.Parse(id))
-                {
-                    cs.CustomerId = id;
-                    cs.CustumerName = name;
-                    cs.CustomerDisccount = Int32.Parse(Discount);
-                    if (payment == "cash")
-                    {
-                        cs.CustomerCash = true;
-                    }
-                    if (payment == "credit")
-                    {
-
-                        cs.CustomerCash = true;
-                    }
-
-                    cs.CContact = pContact;
-                    cs.CReffered = reffered;
-                    cs.CPhone1 = Phone1;
-                    cs.CPhone2 = clms.CustomerPhone2;
-                    cs.CPhone3 = clms.CustomerPhone3;
-                    cs.CFax1 = clms.CustomerFax;
-                    cs.CFax2 = clms.CustomerFax1;
-                    cs.CFax3 = clms.CustomerFax2;
-                    cs.CEmail = clms.CustomerEmail;
-                    cs.CAddress = clms.CustomerAddress;
-                    cs.CRemark = clms.CustomerRemark;
-                    if (clms.CustomerDefault == "default")
-                    {
-                        cs.Cdefualt = true;
-                    }
-                    if (clms.CustomerInactive == "inactive")
-                    {
-                        cs.cInActive = true;
-                    }
-                    cs.updateButon = true;
-                }
-
-            }
-            cs.Show();
         }
 
         private void inactiveCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            AddCustomerList("inactive");
+           
         }
 
         private void WorkingForm_Employ_Panel_Paint_1(object sender, PaintEventArgs e)
@@ -1140,144 +1113,162 @@ namespace PointOfSale
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (salePanel_itemCode_comboBox.SelectedIndex != -1 && !String.IsNullOrEmpty(salePanel_Price_tetxbox.Text)) 
+            if (salePanel_itemCode_comboBox.SelectedIndex != -1 && !String.IsNullOrEmpty(salePanel_Price_tetxbox.Text))
             {
-                String PName = null, description = null, companyName = null, location = null, purpose = null;
-                //int invoiceNumber = invoice.getInvoiceNumber() +1;
 
-                float discount = 0;
-                int price, bonace, quantity = 0, amount = 0, Rs, netAmount = 0;
-                DateTime expriydate;
-                if (Sale_Panel_ProductName_comboBox.SelectedIndex != -1)
+                if (Int32.Parse(salePrice_QntHand_textBox.Text) == 0)
                 {
-                    PName = Sale_Panel_ProductName_comboBox.SelectedItem.ToString();
+                    clearInvoiceForm();
+                    MessageBox.Show("Sorry Product Quantity is ZERO");
+
                 }
-                else
-                {
-                    Sale_Panel_ProductName_comboBox.BackColor = Color.Red;
-                }
+                else {
+
+                    String PName = null, description = null, companyName = null, location = null, purpose = null;
+                    //int invoiceNumber = invoice.getInvoiceNumber() +1;
+
+                    float discount = 0;
+                    int price, bonace, quantity = 0, amount = 0, Rs, netAmount = 0;
+                    DateTime expriydate;
+                    if (Sale_Panel_ProductName_comboBox.SelectedIndex != -1)
+                    {
+                        PName = Sale_Panel_ProductName_comboBox.SelectedItem.ToString();
+                    }
+                    else
+                    {
+                        Sale_Panel_ProductName_comboBox.BackColor = Color.Red;
+                    }
 
 
-                price = Int32.Parse(salePanel_Price_tetxbox.Text);
-                if (!String.IsNullOrEmpty(salePanel_bonuce_textBox.Text))
-                {
-                    bonace = Int32.Parse(salePanel_bonuce_textBox.Text);
-                }
-                else
-                {
-                    bonace = 0;
-                    salePanel_bonuce_textBox.Text = "0";
-                }
-                if (!String.IsNullOrEmpty(salePanel_qntyu_textBox.Text))
-                {
-                    quantity = Int32.Parse(salePanel_qntyu_textBox.Text);
-                }
-                else
-                {
-                    quantity = 1;
-                    salePanel_qntyu_textBox.Text = "1";
-                }
-                if (!String.IsNullOrEmpty(salePanel_Amount_textBox.Text))
-                {
-                    amount = Int32.Parse(salePanel_Amount_textBox.Text);
-                }
-                else
-                {
-                    amount = price * quantity;
-                    salePanel_Amount_textBox.Text = amount.ToString();
-                }
+                    price = Int32.Parse(salePanel_Price_tetxbox.Text);
+                    if (!String.IsNullOrEmpty(salePanel_bonuce_textBox.Text))
+                    {
+                        bonace = Int32.Parse(salePanel_bonuce_textBox.Text);
+                    }
+                    else
+                    {
+                        bonace = 0;
+                        salePanel_bonuce_textBox.Text = "0";
+                    }
+                    if (!String.IsNullOrEmpty(salePanel_qntyu_textBox.Text))
+                    {
+                        quantity = Int32.Parse(salePanel_qntyu_textBox.Text);
+                    }
+                    else
+                    {
+                        quantity = 1;
+                        salePanel_qntyu_textBox.Text = "1";
+                    }
+                    if (!String.IsNullOrEmpty(salePanel_Amount_textBox.Text))
+                    {
+                        amount = Int32.Parse(salePanel_Amount_textBox.Text);
+                    }
+                    else
+                    {
+                        amount = price * quantity;
+                        salePanel_Amount_textBox.Text = amount.ToString();
+                    }
 
-                //     amount = Int32.Parse(salePanel_Amount_textBox.Text);
-                if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
-                {
-                    int q = quantity * price;
-                    discount = float.Parse(salePanel_Discount_textBox.Text);
-                    double dvalue = Math.Round((discount / 100) * q);
-                    //   salePanel_RS_textBox.Text = (q - dvalue).ToString();
-                    salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
-                }
-                else
-                {
-
-                    int q = quantity * price;
-
-                    salePanel_RS_textBox.Text = q.ToString();
-                    salePanel_NetAmount_textBox.Text = q.ToString();
-                }
-                if (!String.IsNullOrEmpty(salePanel_RS_textBox.Text) || String.IsNullOrEmpty(salePanel_RS_textBox.Text))
-                {
+                    //     amount = Int32.Parse(salePanel_Amount_textBox.Text);
                     if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
                     {
+                        int q = quantity * price;
+                        discount = float.Parse(salePanel_Discount_textBox.Text);
+                        double dvalue = Math.Round((discount / 100) * q);
+                        //   salePanel_RS_textBox.Text = (q - dvalue).ToString();
+                        salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
+                    }
+                    else
+                    {
+
+                        int q = quantity * price;
+
+                        salePanel_RS_textBox.Text = q.ToString();
+                        salePanel_NetAmount_textBox.Text = q.ToString();
+                    }
+                    if (!String.IsNullOrEmpty(salePanel_RS_textBox.Text) || String.IsNullOrEmpty(salePanel_RS_textBox.Text))
+                    {
+                        if (!String.IsNullOrEmpty(salePanel_Discount_textBox.Text))
                         {
-                            int q = quantity * price;
-                            discount = float.Parse(salePanel_Discount_textBox.Text);
-                            double dvalue = Math.Round((discount / 100) * q);
-                            salePanel_RS_textBox.Text = (q - dvalue).ToString();
-                            salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
+                            {
+                                int q = quantity * price;
+                                discount = float.Parse(salePanel_Discount_textBox.Text);
+                                double dvalue = Math.Round((discount / 100) * q);
+                                salePanel_RS_textBox.Text = (q - dvalue).ToString();
+                                salePanel_NetAmount_textBox.Text = (q - dvalue).ToString();
+                            }
+
                         }
 
                     }
-                  
+
+                    if (!String.IsNullOrEmpty(salePanel_NetAmount_textBox.Text))
+                    {
+                        netAmount = Int32.Parse(salePanel_NetAmount_textBox.Text);
+                    }
+                    else
+                    {
+                        salePanel_NetAmount_textBox.Text = salePanel_RS_textBox.Text;
+                    }
+                    expriydate = SalePanel_Expirydate_dateTimePicker.Value;
+
+                    if (salePanel_Descreption_comboBox.SelectedIndex != -1)
+                    {
+                        description = salePanel_Descreption_comboBox.SelectedItem.ToString();
+                    }
+                    if (salePanel_CompanyName_comboBox.SelectedIndex != -1)
+                    {
+                        companyName = salePanel_CompanyName_comboBox.SelectedItem.ToString();
+                    }
+                    if (salePanel_Location_comboBox.SelectedIndex != -1)
+                    {
+                        location = salePanel_Location_comboBox.SelectedItem.ToString();
+                    }
+                    if (salePanel_Purpose_comboBox.SelectedIndex != -1)
+                    {
+                        purpose = salePanel_Purpose_comboBox.SelectedItem.ToString();
+                    }
+
+
+
+                    String[] rows = { (++counter).ToString(), PName, location, purpose, expriydate.ToString(), price.ToString(), quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
+                    ListViewItem item = new ListViewItem(rows);
+
+                    saleInvoice_productList.Items.Add(item);
+
+                    for (int i = 0; i < saleInvoice_productList.Items.Count; i++)
+                    {
+                        sum = sum + Int32.Parse(saleInvoice_productList.Items[i].SubItems[9].Text);
+                    }
+                    clearInvoiceForm();
                 }
-
-                if (!String.IsNullOrEmpty(salePanel_NetAmount_textBox.Text))
-                {
-                    netAmount = Int32.Parse(salePanel_NetAmount_textBox.Text);
-                }
-                else
-                {
-                    salePanel_NetAmount_textBox.Text = salePanel_RS_textBox.Text;
-                }
-                expriydate = SalePanel_Expirydate_dateTimePicker.Value;
-
-                if (salePanel_Descreption_comboBox.SelectedIndex != -1)
-                {
-                    description = salePanel_Descreption_comboBox.SelectedItem.ToString();
-                }
-                if (salePanel_CompanyName_comboBox.SelectedIndex != -1)
-                {
-                    companyName = salePanel_CompanyName_comboBox.SelectedItem.ToString();
-                }
-                if (salePanel_Location_comboBox.SelectedIndex != -1)
-                {
-                    location = salePanel_Location_comboBox.SelectedItem.ToString();
-                }
-                if (salePanel_Purpose_comboBox.SelectedIndex != -1)
-                {
-                    purpose = salePanel_Purpose_comboBox.SelectedItem.ToString();
-                }
-
-
-
-                String[] rows = { (++counter).ToString(), PName, location, purpose, expriydate.ToString(), price.ToString(), quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
-                ListViewItem item = new ListViewItem(rows);
-
-                saleInvoice_productList.Items.Add(item);
-
-                for (int i = 0; i < saleInvoice_productList.Items.Count; i++)
-                {
-                    sum = sum + Int32.Parse(saleInvoice_productList.Items[i].SubItems[9].Text);
-                }
-                salePricE_totalPrice_textBox.Text = sum.ToString();
-                saleInvoice_totalAmn_textbox.Text = sum.ToString();
-                saleInvoice_totalnetAmount_textbox.Text = sum.ToString();
-                salePanel_itemCode_comboBox.Text = "";
-                Sale_Panel_ProductName_comboBox.Text = "";
-                salePanel_Price_tetxbox.Clear();
-                salePanel_qntyu_textBox.Clear();
-                salePanel_Amount_textBox.Clear();
-                salePanel_Discount_textBox.Clear();
-
-                salePanel_RS_textBox.Clear();
-
-                salePanel_NetAmount_textBox.Clear();
-
-                salePanel_Descreption_comboBox.Text = "";
-                salePanel_CompanyName_comboBox.Text = "";
-                salePanel_Location_comboBox.Text = "";
-                SalePanel_Expirydate_dateTimePicker.Value = DateTime.Now;
-                salePanel_Purpose_comboBox.Text = "";
             }
+        }
+        /*
+         clear  invocie form 
+        */
+
+            public  void clearInvoiceForm()
+        {
+            salePricE_totalPrice_textBox.Text = sum.ToString();
+            saleInvoice_totalAmn_textbox.Text = sum.ToString();
+            saleInvoice_totalnetAmount_textbox.Text = sum.ToString();
+            salePanel_itemCode_comboBox.Text = "";
+            Sale_Panel_ProductName_comboBox.Text = "";
+            salePanel_Price_tetxbox.Clear();
+            salePanel_qntyu_textBox.Clear();
+            salePanel_Amount_textBox.Clear();
+            salePanel_Discount_textBox.Clear();
+
+            salePanel_RS_textBox.Clear();
+
+            salePanel_NetAmount_textBox.Clear();
+
+            salePanel_Descreption_comboBox.Text = "";
+            salePanel_CompanyName_comboBox.Text = "";
+            salePanel_Location_comboBox.Text = "";
+            SalePanel_Expirydate_dateTimePicker.Value = DateTime.Now;
+            salePanel_Purpose_comboBox.Text = "";
         }
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1422,6 +1413,33 @@ namespace PointOfSale
         }
 
         private void WorkingForm_AllProduct_listView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salePanel_Customer_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saleInvoice_productList_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete)
+            {
+                /*
+                String id = saleInvoice_productList.SelectedItems[0].SubItems[0].Text;
+                String name = saleInvoice_productList.SelectedItems[0].SubItems[1].Text;
+                String phone = saleInvoice_productList.SelectedItems[0].SubItems[2].Text;
+                String fName = saleInvoice_productList.SelectedItems[0].SubItems[3].Text;
+                */
+                saleInvoice_productList.SelectedItems[0].Remove();
+                
+              //  MessageBox.Show(name);
+
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }

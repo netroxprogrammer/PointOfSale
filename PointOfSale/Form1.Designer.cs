@@ -82,12 +82,22 @@
             this.addNewInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.WorkingForm_customerPanel = new System.Windows.Forms.Panel();
+            this.customer_Button = new System.Windows.Forms.Button();
+            this.suppliers_Button = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.inventory_Button = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.workingForm_SaleInvoice_Panel = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.salePricE_totalPrice_textBox = new System.Windows.Forms.TextBox();
             this.salePanel_Employee_comboBox = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.writeDescription = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -126,6 +136,7 @@
             this.salePanel_Location_comboBox = new System.Windows.Forms.ComboBox();
             this.salePanel_CompanyName_comboBox = new System.Windows.Forms.ComboBox();
             this.salePanel_Descreption_comboBox = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.salePanel_NetAmount_textBox = new System.Windows.Forms.TextBox();
             this.salePanel_RS_textBox = new System.Windows.Forms.TextBox();
             this.salePanel_Discount_textBox = new System.Windows.Forms.TextBox();
@@ -161,9 +172,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.WorkingForm_Employ_Panel = new System.Windows.Forms.Panel();
-            this.WorkingForm_EmployeList = new System.Windows.Forms.ListView();
-            this.WorkingForm_listView = new System.Windows.Forms.ListView();
             this.WorkingForm_rightClick_menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -177,24 +185,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.customer_Button = new System.Windows.Forms.Button();
-            this.suppliers_Button = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.inventory_Button = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.upperMenu.SuspendLayout();
             this.contextMenuStrip_Customer.SuspendLayout();
             this.contextMenuStrip_Supplier.SuspendLayout();
             this.contextMenuStrip_Inventory.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.WorkingForm_customerPanel.SuspendLayout();
             this.workingForm_SaleInvoice_Panel.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -204,7 +199,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.WorkingForm_Employ_Panel.SuspendLayout();
             this.WorkingForm_rightClick_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -622,24 +616,140 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // WorkingForm_customerPanel
+            // customer_Button
             // 
-            this.WorkingForm_customerPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_Employ_Panel);
-            this.WorkingForm_customerPanel.Controls.Add(this.WorkingForm_listView);
-            this.WorkingForm_customerPanel.Location = new System.Drawing.Point(0, 120);
-            this.WorkingForm_customerPanel.Name = "WorkingForm_customerPanel";
-            this.WorkingForm_customerPanel.Size = new System.Drawing.Size(1329, 622);
-            this.WorkingForm_customerPanel.TabIndex = 10;
-            this.WorkingForm_customerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_customerPanel_Paint);
-            this.WorkingForm_customerPanel.DoubleClick += new System.EventHandler(this.WorkingForm_customerPanel_DoubleClick);
+            this.customer_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customer_Button.FlatAppearance.BorderSize = 5;
+            this.customer_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customer_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x36;
+            this.customer_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.customer_Button.Location = new System.Drawing.Point(7, 14);
+            this.customer_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.customer_Button.Name = "customer_Button";
+            this.customer_Button.Size = new System.Drawing.Size(84, 62);
+            this.customer_Button.TabIndex = 1;
+            this.customer_Button.Text = "Customers";
+            this.customer_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.customer_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.customer_Button.UseVisualStyleBackColor = true;
+            this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
+            // 
+            // suppliers_Button
+            // 
+            this.suppliers_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.suppliers_Button.FlatAppearance.BorderSize = 5;
+            this.suppliers_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.suppliers_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppliers_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x361;
+            this.suppliers_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.suppliers_Button.Location = new System.Drawing.Point(122, 14);
+            this.suppliers_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.suppliers_Button.Name = "suppliers_Button";
+            this.suppliers_Button.Size = new System.Drawing.Size(84, 62);
+            this.suppliers_Button.TabIndex = 2;
+            this.suppliers_Button.Text = "Suppliers";
+            this.suppliers_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.suppliers_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.suppliers_Button.UseVisualStyleBackColor = true;
+            this.suppliers_Button.Click += new System.EventHandler(this.suppliers_Button_Click);
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 5;
+            this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::PointOfSale.Properties.Resources.android_icon_36x362;
+            this.button3.Location = new System.Drawing.Point(238, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(84, 62);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Purchase";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::PointOfSale.Properties.Resources.android_icon_36x363;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(350, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(84, 62);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Histroy";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x365;
+            this.button4.Location = new System.Drawing.Point(705, 14);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 62);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Sale Inventory";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.button6.FlatAppearance.BorderSize = 5;
+            this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x367;
+            this.button6.Location = new System.Drawing.Point(839, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(84, 64);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "Window";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // inventory_Button
+            // 
+            this.inventory_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.inventory_Button.FlatAppearance.BorderSize = 5;
+            this.inventory_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventory_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x364;
+            this.inventory_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.inventory_Button.Location = new System.Drawing.Point(469, 14);
+            this.inventory_Button.Margin = new System.Windows.Forms.Padding(4);
+            this.inventory_Button.Name = "inventory_Button";
+            this.inventory_Button.Size = new System.Drawing.Size(84, 62);
+            this.inventory_Button.TabIndex = 3;
+            this.inventory_Button.Text = "Inventory";
+            this.inventory_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.inventory_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.inventory_Button.UseVisualStyleBackColor = true;
+            this.inventory_Button.Click += new System.EventHandler(this.inventory_Button_Click);
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x366;
+            this.button5.Location = new System.Drawing.Point(586, 14);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(84, 62);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Users";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // workingForm_SaleInvoice_Panel
             // 
             this.workingForm_SaleInvoice_Panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox3);
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox2);
-            this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(57, 3);
+            this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(0, 116);
             this.workingForm_SaleInvoice_Panel.Name = "workingForm_SaleInvoice_Panel";
             this.workingForm_SaleInvoice_Panel.Size = new System.Drawing.Size(1329, 622);
             this.workingForm_SaleInvoice_Panel.TabIndex = 1;
@@ -729,6 +839,43 @@
             this.panel8.Size = new System.Drawing.Size(327, 39);
             this.panel8.TabIndex = 36;
             // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
+            this.button10.Location = new System.Drawing.Point(226, 3);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(91, 29);
+            this.button10.TabIndex = 39;
+            this.button10.Text = "Cancel";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
+            this.button9.Location = new System.Drawing.Point(120, 3);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(100, 29);
+            this.button9.TabIndex = 38;
+            this.button9.Text = "Save/ Close\r\n";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
+            this.button8.Location = new System.Drawing.Point(14, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(91, 29);
+            this.button8.TabIndex = 37;
+            this.button8.Text = "Save / New";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -806,6 +953,7 @@
             // saleInvoicePayment_cash
             // 
             this.saleInvoicePayment_cash.AutoSize = true;
+            this.saleInvoicePayment_cash.Checked = true;
             this.saleInvoicePayment_cash.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saleInvoicePayment_cash.Location = new System.Drawing.Point(3, 4);
             this.saleInvoicePayment_cash.Name = "saleInvoicePayment_cash";
@@ -823,7 +971,6 @@
             this.saleInvoicePayment_credit.Name = "saleInvoicePayment_credit";
             this.saleInvoicePayment_credit.Size = new System.Drawing.Size(57, 19);
             this.saleInvoicePayment_credit.TabIndex = 0;
-            this.saleInvoicePayment_credit.TabStop = true;
             this.saleInvoicePayment_credit.Text = "credit";
             this.saleInvoicePayment_credit.UseVisualStyleBackColor = true;
             // 
@@ -973,6 +1120,7 @@
             this.saleInvoice_productList.UseCompatibleStateImageBehavior = false;
             this.saleInvoice_productList.View = System.Windows.Forms.View.Details;
             this.saleInvoice_productList.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            this.saleInvoice_productList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saleInvoice_productList_KeyDown);
             // 
             // columnHeader1
             // 
@@ -1082,6 +1230,19 @@
             this.salePanel_Descreption_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             this.salePanel_Descreption_comboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.salePanel_Dsecreption_comboBox_KeyDown);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::PointOfSale.Properties.Resources.android_icon_36x369;
+            this.button1.Location = new System.Drawing.Point(1034, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 49);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Add";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // salePanel_NetAmount_textBox
             // 
             this.salePanel_NetAmount_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -1149,6 +1310,7 @@
             // 
             // salePanel_Price_tetxbox
             // 
+            this.salePanel_Price_tetxbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.salePanel_Price_tetxbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salePanel_Price_tetxbox.Location = new System.Drawing.Point(312, 91);
             this.salePanel_Price_tetxbox.Name = "salePanel_Price_tetxbox";
@@ -1229,6 +1391,7 @@
             // 
             this.Sale_Panel_ProductName_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Sale_Panel_ProductName_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Sale_Panel_ProductName_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Sale_Panel_ProductName_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sale_Panel_ProductName_comboBox.FormattingEnabled = true;
             this.Sale_Panel_ProductName_comboBox.Location = new System.Drawing.Point(137, 91);
@@ -1242,6 +1405,7 @@
             // 
             this.salePanel_itemCode_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.salePanel_itemCode_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.salePanel_itemCode_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.salePanel_itemCode_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salePanel_itemCode_comboBox.FormattingEnabled = true;
             this.salePanel_itemCode_comboBox.Location = new System.Drawing.Point(0, 90);
@@ -1380,6 +1544,7 @@
             this.salePanel_Customer_comboBox.Name = "salePanel_Customer_comboBox";
             this.salePanel_Customer_comboBox.Size = new System.Drawing.Size(435, 23);
             this.salePanel_Customer_comboBox.TabIndex = 2;
+            this.salePanel_Customer_comboBox.SelectedIndexChanged += new System.EventHandler(this.salePanel_Customer_comboBox_SelectedIndexChanged);
             // 
             // SaleInvoice_invuse_textb
             // 
@@ -1454,6 +1619,7 @@
             this.groupBox2.Size = new System.Drawing.Size(921, 54);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label1
             // 
@@ -1465,45 +1631,6 @@
             this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sale Invoice";
-            // 
-            // WorkingForm_Employ_Panel
-            // 
-            this.WorkingForm_Employ_Panel.Controls.Add(this.workingForm_SaleInvoice_Panel);
-            this.WorkingForm_Employ_Panel.Controls.Add(this.WorkingForm_EmployeList);
-            this.WorkingForm_Employ_Panel.Location = new System.Drawing.Point(3, 3);
-            this.WorkingForm_Employ_Panel.Name = "WorkingForm_Employ_Panel";
-            this.WorkingForm_Employ_Panel.Size = new System.Drawing.Size(1329, 619);
-            this.WorkingForm_Employ_Panel.TabIndex = 1;
-            this.WorkingForm_Employ_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.WorkingForm_Employ_Panel_Paint_1);
-            // 
-            // WorkingForm_EmployeList
-            // 
-            this.WorkingForm_EmployeList.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkingForm_EmployeList.FullRowSelect = true;
-            this.WorkingForm_EmployeList.GridLines = true;
-            this.WorkingForm_EmployeList.Location = new System.Drawing.Point(0, 69);
-            this.WorkingForm_EmployeList.Name = "WorkingForm_EmployeList";
-            this.WorkingForm_EmployeList.Size = new System.Drawing.Size(1332, 616);
-            this.WorkingForm_EmployeList.TabIndex = 0;
-            this.WorkingForm_EmployeList.UseCompatibleStateImageBehavior = false;
-            this.WorkingForm_EmployeList.View = System.Windows.Forms.View.Details;
-            this.WorkingForm_EmployeList.SelectedIndexChanged += new System.EventHandler(this.WorkingForm_EmployeList_SelectedIndexChanged);
-            this.WorkingForm_EmployeList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_EmployeList_MouseClick);
-            // 
-            // WorkingForm_listView
-            // 
-            this.WorkingForm_listView.ContextMenuStrip = this.WorkingForm_rightClick_menu;
-            this.WorkingForm_listView.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WorkingForm_listView.FullRowSelect = true;
-            this.WorkingForm_listView.GridLines = true;
-            this.WorkingForm_listView.Location = new System.Drawing.Point(0, 69);
-            this.WorkingForm_listView.Name = "WorkingForm_listView";
-            this.WorkingForm_listView.Size = new System.Drawing.Size(1329, 550);
-            this.WorkingForm_listView.TabIndex = 0;
-            this.WorkingForm_listView.UseCompatibleStateImageBehavior = false;
-            this.WorkingForm_listView.View = System.Windows.Forms.View.Details;
-            this.WorkingForm_listView.SelectedIndexChanged += new System.EventHandler(this.WorkingForm_listView_SelectedIndexChanged);
-            this.WorkingForm_listView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.WorkingForm_listView_MouseDoubleClick);
             // 
             // WorkingForm_rightClick_menu
             // 
@@ -1606,191 +1733,13 @@
             this.label19.Size = new System.Drawing.Size(100, 23);
             this.label19.TabIndex = 0;
             // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Image = global::PointOfSale.Properties.Resources.favicon_16x161;
-            this.button10.Location = new System.Drawing.Point(226, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(91, 29);
-            this.button10.TabIndex = 39;
-            this.button10.Text = "Cancel";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
-            this.button9.Location = new System.Drawing.Point(120, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 29);
-            this.button9.TabIndex = 38;
-            this.button9.Text = "Save/ Close\r\n";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = global::PointOfSale.Properties.Resources.favicon_16x162;
-            this.button8.Location = new System.Drawing.Point(14, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 29);
-            this.button8.TabIndex = 37;
-            this.button8.Text = "Save / New";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::PointOfSale.Properties.Resources.android_icon_36x369;
-            this.button1.Location = new System.Drawing.Point(1034, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 49);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Add";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // customer_Button
-            // 
-            this.customer_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customer_Button.FlatAppearance.BorderSize = 5;
-            this.customer_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customer_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x36;
-            this.customer_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.customer_Button.Location = new System.Drawing.Point(7, 14);
-            this.customer_Button.Margin = new System.Windows.Forms.Padding(4);
-            this.customer_Button.Name = "customer_Button";
-            this.customer_Button.Size = new System.Drawing.Size(84, 62);
-            this.customer_Button.TabIndex = 1;
-            this.customer_Button.Text = "Customers";
-            this.customer_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.customer_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.customer_Button.UseVisualStyleBackColor = true;
-            this.customer_Button.Click += new System.EventHandler(this.customer_Button_Click);
-            // 
-            // suppliers_Button
-            // 
-            this.suppliers_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.suppliers_Button.FlatAppearance.BorderSize = 5;
-            this.suppliers_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.suppliers_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.suppliers_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x361;
-            this.suppliers_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.suppliers_Button.Location = new System.Drawing.Point(122, 14);
-            this.suppliers_Button.Margin = new System.Windows.Forms.Padding(4);
-            this.suppliers_Button.Name = "suppliers_Button";
-            this.suppliers_Button.Size = new System.Drawing.Size(84, 62);
-            this.suppliers_Button.TabIndex = 2;
-            this.suppliers_Button.Text = "Suppliers";
-            this.suppliers_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.suppliers_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.suppliers_Button.UseVisualStyleBackColor = true;
-            this.suppliers_Button.Click += new System.EventHandler(this.suppliers_Button_Click);
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 5;
-            this.button3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::PointOfSale.Properties.Resources.android_icon_36x362;
-            this.button3.Location = new System.Drawing.Point(238, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 62);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Purchase";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::PointOfSale.Properties.Resources.android_icon_36x363;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(350, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 62);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Histroy";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::PointOfSale.Properties.Resources.android_icon_36x365;
-            this.button4.Location = new System.Drawing.Point(705, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(107, 62);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Sale Inventory";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button6.FlatAppearance.BorderSize = 5;
-            this.button6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = global::PointOfSale.Properties.Resources.android_icon_36x367;
-            this.button6.Location = new System.Drawing.Point(839, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 64);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Window";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // inventory_Button
-            // 
-            this.inventory_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.inventory_Button.FlatAppearance.BorderSize = 5;
-            this.inventory_Button.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventory_Button.Image = global::PointOfSale.Properties.Resources.android_icon_36x364;
-            this.inventory_Button.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.inventory_Button.Location = new System.Drawing.Point(469, 14);
-            this.inventory_Button.Margin = new System.Windows.Forms.Padding(4);
-            this.inventory_Button.Name = "inventory_Button";
-            this.inventory_Button.Size = new System.Drawing.Size(84, 62);
-            this.inventory_Button.TabIndex = 3;
-            this.inventory_Button.Text = "Inventory";
-            this.inventory_Button.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.inventory_Button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.inventory_Button.UseVisualStyleBackColor = true;
-            this.inventory_Button.Click += new System.EventHandler(this.inventory_Button_Click);
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::PointOfSale.Properties.Resources.android_icon_36x366;
-            this.button5.Location = new System.Drawing.Point(586, 14);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 62);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Users";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
             // WorkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1329, 750);
-            this.Controls.Add(this.WorkingForm_customerPanel);
+            this.Controls.Add(this.workingForm_SaleInvoice_Panel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.upperMenu);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -1808,7 +1757,6 @@
             this.contextMenuStrip_Supplier.ResumeLayout(false);
             this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.WorkingForm_customerPanel.ResumeLayout(false);
             this.workingForm_SaleInvoice_Panel.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -1825,7 +1773,6 @@
             this.panel3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.WorkingForm_Employ_Panel.ResumeLayout(false);
             this.WorkingForm_rightClick_menu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1894,17 +1841,13 @@
         private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addProductsToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel WorkingForm_customerPanel;
-        private System.Windows.Forms.ListView WorkingForm_listView;
         private System.Windows.Forms.ToolStripMenuItem customersListToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip WorkingForm_rightClick_menu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.ListView WorkingForm_EmployeList;
         private System.Windows.Forms.ListView WorkingForm_Products_ListView;
-        private System.Windows.Forms.Panel WorkingForm_Employ_Panel;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;

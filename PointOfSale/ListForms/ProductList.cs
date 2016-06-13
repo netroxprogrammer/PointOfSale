@@ -1,4 +1,5 @@
 ﻿using PointOfSale.DbConfiguration;
+using PointOfSale.Utils;
 using PointOfSale.Utils.TablesClass;
 using System;
 using System.Collections;
@@ -16,6 +17,7 @@ namespace PointOfSale.ListForms
     public partial class ProductList : Form
     {
         HandleProducts products;
+        
         public ProductList()
         {
             InitializeComponent();
@@ -167,6 +169,304 @@ namespace PointOfSale.ListForms
         {
 
             getProductsList("no");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if(Serach_Product_comboBox.SelectedIndex != -1)
+            {
+                if(Serach_Product_comboBox.SelectedItem.ToString() == "BarCode")
+                {
+                    choice.Enabled = true;
+                    chooseDate.Enabled = false;
+                    Select_Search_comboBox.Items.Clear();
+                    Select_Search_comboBox.Text = " << BarCode >>";
+                  ArrayList  data =    products.getProductList("no");
+                    foreach (TableAddNewProducts p in data)
+                    {
+                        Select_Search_comboBox.Items.Add(p.BarCode);
+                    }
+                }
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "product Name")
+                {
+
+                    choice.Enabled = true;
+                    chooseDate.Enabled = false;
+                    Select_Search_comboBox.Items.Clear();
+                    Select_Search_comboBox.Text = " << product Name >>";
+                    loadProductName();
+
+                }
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Company Name")
+                {
+
+                    choice.Enabled = true;
+                    chooseDate.Enabled = false;
+                    Select_Search_comboBox.Items.Clear();
+                    Select_Search_comboBox.Text = " << Company Name >>";
+                    loadCompanyNames();
+                }
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Purpose")
+                {
+
+                    choice.Enabled = true;
+                    chooseDate.Enabled = false;
+                    Select_Search_comboBox.Items.Clear();
+                    Select_Search_comboBox.Text = " << Purpose >>";
+                    loadPurposeName();
+                }
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Category")
+                {
+
+                    choice.Enabled = true;
+                    chooseDate.Enabled = false;
+                    Select_Search_comboBox.Items.Clear();
+                    Select_Search_comboBox.Text = " << Category >>";
+                    loadProductCategory();
+                }
+
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Descreption")
+                {
+
+                    choice.Enabled = true;
+                   
+                    Select_Search_comboBox.Items.Clear();
+                    Select_Search_comboBox.Text = " << Descreption >>";
+                    loadDescreptionName();
+                }
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Expirydate")
+                {
+                    chooseDate.Enabled = true;
+                    choice.Enabled = false;
+                }
+            }
+        }
+        
+        /*
+        *  Load Product Category
+        */
+        public void loadProductCategory()
+        {
+            ArrayList getCatrg = products.getCategory();
+            foreach (TableCategory category in getCatrg)
+            {
+
+                Select_Search_comboBox.Items.Add(category.cagtegoryName);
+            }
+        }
+
+        /*
+       *  Load CompanyName
+       */
+        public void loadCompanyNames()
+        {
+            ArrayList getProd = products.getCompanyNames(); ;
+            foreach (TableCompany products in getProd)
+            {
+
+                Select_Search_comboBox.Items.Add(products.companyName);
+            }
+        }
+
+        /*
+        *  Load Product Name
+        */
+        public void loadProductName()
+        {
+            ArrayList getname = products.getProductNames();
+            foreach (TableProductName name in getname)
+            {
+
+                Select_Search_comboBox.Items.Add(name.productName);
+            }
+        }
+
+        /*
+       *  Load Descreption
+       */
+        public void loadDescreptionName()
+        {
+            ArrayList getname = products.getDescreptions();
+            foreach (TableDescription name in getname)
+            {
+
+                Select_Search_comboBox.Items.Add(name.descriptionName);
+            }
+        }
+
+        /*
+             *  Load Purpose
+             */
+        public void loadPurposeName()
+        {
+            ArrayList getname = products.getPurposeNames();
+            foreach (TablePurpose name in getname)
+            {
+
+                Select_Search_comboBox.Items.Add(name.purposeName);
+            }
+        }
+
+        /*
+             *  Load Location
+             */
+        public void loadLocation()
+        {
+            ArrayList getname = products.getProductLocationNames();
+            foreach (TableLocation name in getname)
+            {
+
+                Select_Search_comboBox.Items.Add(name.locationName);
+            }
+        }
+
+        private void Select_Search_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(Select_Search_comboBox.SelectedIndex != -1 && Serach_Product_comboBox.SelectedIndex != -1)
+            {
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "BarCode")
+                {
+                    //  filter by bar code
+                    TableAddNewProducts addp = new TableAddNewProducts();
+                    addp.BarCode = Select_Search_comboBox.SelectedItem.ToString();
+                    addp.ProductName = "emptyNAmes";
+                    addp.ProductCompanyName = "emptyNAmes";
+                    addp.ProductDescription = "emptyNAmes";
+                    addp.ProductPurpose = "emptyNAmes";
+                    addp.Category = "emptyNAmes";
+
+
+                  ArrayList list =  products.productSearchAllTypes(addp);
+                    addFilterList(list);
+                }
+                  // filter  by name
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "product Name")
+                {
+                    TableAddNewProducts addp = new TableAddNewProducts();
+                    addp.ProductName = Select_Search_comboBox.SelectedItem.ToString();
+                    addp.BarCode = "emptyNAmes";
+                    addp.ProductCompanyName = "emptyNAmes";
+                    addp.ProductDescription = "emptyNAmes";
+                    addp.ProductPurpose = "emptyNAmes";
+                    addp.Category = "emptyNAmes";
+                    ArrayList list = products.productSearchAllTypes(addp);
+                    addFilterList(list);
+                }
+
+                // filter  by Descreption
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Descreption")
+                {
+                    TableAddNewProducts addp = new TableAddNewProducts();
+                    addp.ProductDescription = Select_Search_comboBox.SelectedItem.ToString();
+                    addp.BarCode = "emptyNAmes";
+                    addp.ProductCompanyName = "emptyNAmes";
+                    addp.ProductName = "emptyNAmes";
+                    addp.ProductPurpose = "emptyNAmes";
+                    addp.Category = "emptyNAmes";
+                    ArrayList list = products.productSearchAllTypes(addp);
+                    addFilterList(list);
+                }
+                // filter  by Purpose
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Purpose")
+                {
+                    TableAddNewProducts addp = new TableAddNewProducts();
+                    addp.ProductPurpose = Select_Search_comboBox.SelectedItem.ToString();
+                    addp.BarCode = "emptyNAmes";
+                    addp.ProductCompanyName = "emptyNAmes";
+                    addp.ProductDescription = "emptyNAmes";
+                    addp.ProductName = "emptyNAmes";
+                    addp.Category = "emptyNAmes";
+                    ArrayList list = products.productSearchAllTypes(addp);
+                    addFilterList(list);
+                }
+
+                // filter  by Category
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Category")
+                {
+                    TableAddNewProducts addp = new TableAddNewProducts();
+                    addp.Category = Select_Search_comboBox.SelectedItem.ToString();
+                    addp.BarCode = "emptyNAmes";
+                    addp.ProductCompanyName = "emptyNAmes";
+                    addp.ProductDescription = "emptyNAmes";
+                    addp.ProductPurpose = "emptyNAmes";
+                    addp.ProductName = "emptyNAmes";
+                    ArrayList list = products.productSearchAllTypes(addp);
+                    addFilterList(list);
+                }
+                // filter  by Company name
+                if (Serach_Product_comboBox.SelectedItem.ToString() == "Company Name")
+                {
+                    TableAddNewProducts addp = new TableAddNewProducts();
+                    addp.ProductCompanyName = Select_Search_comboBox.SelectedItem.ToString();
+                    addp.BarCode = "emptyNAmes";
+                    addp.ProductName = "emptyNAmes";
+                    addp.ProductDescription = "emptyNAmes";
+                    addp.ProductPurpose = "emptyNAmes";
+                    addp.Category = "emptyNAmes";
+                    ArrayList list = products.productSearchAllTypes(addp);
+                    addFilterList(list);
+                }
+            }
+
+        }
+
+        /* 
+          Add Filter List
+
+    */
+     public void addFilterList(ArrayList list)
+        {
+        
+
+            WorkingForm_AllProduct_listView.Columns.Clear();
+            WorkingForm_AllProduct_listView.Items.Clear();
+            WorkingForm_AllProduct_listView.Columns.Add("Product Id", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Bar Code", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Name", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Company Name", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Purpose", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Description", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Category", 110, HorizontalAlignment.Left);
+            // WorkingForm_AllProduct_listView.Columns.Add("Location", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Expiry date", 110, HorizontalAlignment.Left);
+            /*  WorkingForm_AllProduct_listView.Columns.Add("Batch", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Color 1", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Color 2", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Color 3", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Size", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Quantity Pack", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("No. Packs", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Total Packs", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Qty in hands", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Max Stock", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Min Stock", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Sale Price", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Profit %", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Purchase Price", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Max discount", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Item Discount", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Item Fix Discont", 110, HorizontalAlignment.Left);
+
+              WorkingForm_AllProduct_listView.Columns.Add("Distributors", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Update Stock Date", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Inactive Products", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Entry Date", 110, HorizontalAlignment.Left);
+              WorkingForm_AllProduct_listView.Columns.Add("Update Product Date", 110, HorizontalAlignment.Left);*/
+
+          
+
+         
+
+            foreach (TableAddNewProducts em in list)
+            {
+                String[] rows = { em.ProductId.ToString(), em.BarCode, em.ProductName, em.ProductCompanyName,
+                    em.ProductPurpose , em.ProductDescription, em.Category, em.ProductExpidate.ToString()
+                };
+                ListViewItem items = new ListViewItem(rows);
+                WorkingForm_AllProduct_listView.Items.Add(items);
+            }
+
         }
     }
 }

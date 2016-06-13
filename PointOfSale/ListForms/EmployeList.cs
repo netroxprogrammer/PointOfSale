@@ -113,5 +113,10 @@ namespace PointOfSale.ListForms
         {
             new AddEmployee().Show();
         }
+
+        private void WorkingForm_EmployeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
