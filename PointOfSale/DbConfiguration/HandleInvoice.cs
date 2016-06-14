@@ -99,7 +99,7 @@ namespace PointOfSale.DbConfiguration
 
                 invlice.TotalPayment = reader.GetInt32(8);
                 invlice.Balance= reader.GetInt32(9);
-
+                invlice.Description1 = reader.GetString(10);
 
                 list.Add(invlice);
                 Debug.WriteLine(invlice);
@@ -141,7 +141,7 @@ namespace PointOfSale.DbConfiguration
 
                 invlice.TotalPayment = reader.GetInt32(8);
                 invlice.Balance = reader.GetInt32(9);
-
+                invlice.Description1 = reader.GetString(10);
 
                 list.Add(invlice);
                 Debug.WriteLine(invlice);
@@ -149,6 +149,30 @@ namespace PointOfSale.DbConfiguration
             }
             reader.Close();
             return list;
+
+        }
+
+        // Update Invoice Data
+        public void UpdateInvoiceBalancea(TableInvoice names)
+        {
+            Debug.WriteLine("get filerInvoiceData");
+
+            ArrayList list = new ArrayList();
+
+            String sql = " Update saleinvoice set paymentMethod = @paymentMethod, totalpaymment = @totalpaymment ,balance = @balance where invoiceId = @invoiceId";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+            commands.Parameters.AddWithValue("@paymentMethod", names.PaymentMethod);
+            commands.Parameters.AddWithValue("@totalpaymment", names.TotalPayment);
+            commands.Parameters.AddWithValue("@balance", names.Balance);
+            commands.Parameters.AddWithValue("@invoiceId", names.InvoiceId);
+
+
+            commands.ExecuteNonQuery();
+
+
+            Debug.WriteLine("Update invoice balance");
 
         }
     }

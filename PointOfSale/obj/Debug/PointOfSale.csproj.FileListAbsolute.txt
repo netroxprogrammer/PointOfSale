@@ -24,3 +24,4 @@ C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\D
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.ListForms.ProductList.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.ListForms.EmployeList.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.ListForms.CustomerList.resources
+C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.ListForms.UpdateInvoiceForm.resources

@@ -102,12 +102,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.addNewProduct_inActive_checkBox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AddNewProduct_Update_btn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.button7 = new System.Windows.Forms.Button();
-            this.AddNewProduct_Update_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gruop.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -199,6 +199,7 @@
             // 
             this.adddNewProducts_Category_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.adddNewProducts_Category_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.adddNewProducts_Category_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.adddNewProducts_Category_comboBox.FormattingEnabled = true;
             this.adddNewProducts_Category_comboBox.Location = new System.Drawing.Point(470, 78);
             this.adddNewProducts_Category_comboBox.Name = "adddNewProducts_Category_comboBox";
@@ -773,6 +774,7 @@
             // 
             this.adddNewProducts_ProductName_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.adddNewProducts_ProductName_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.adddNewProducts_ProductName_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.adddNewProducts_ProductName_comboBox.FormattingEnabled = true;
             this.adddNewProducts_ProductName_comboBox.Location = new System.Drawing.Point(144, 32);
             this.adddNewProducts_ProductName_comboBox.Name = "adddNewProducts_ProductName_comboBox";
@@ -806,6 +808,7 @@
             // 
             // addNewProduct_code_textbox
             // 
+            this.addNewProduct_code_textbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.addNewProduct_code_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewProduct_code_textbox.Location = new System.Drawing.Point(9, 32);
             this.addNewProduct_code_textbox.Multiline = true;
@@ -813,6 +816,7 @@
             this.addNewProduct_code_textbox.Size = new System.Drawing.Size(124, 21);
             this.addNewProduct_code_textbox.TabIndex = 1;
             this.addNewProduct_code_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_code_textbox_MouseClick);
+            this.addNewProduct_code_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addNewProduct_code_textbox_KeyDown);
             // 
             // label2
             // 
@@ -920,6 +924,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // AddNewProduct_Update_btn
+            // 
+            this.AddNewProduct_Update_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewProduct_Update_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
+            this.AddNewProduct_Update_btn.Location = new System.Drawing.Point(6, 11);
+            this.AddNewProduct_Update_btn.Name = "AddNewProduct_Update_btn";
+            this.AddNewProduct_Update_btn.Size = new System.Drawing.Size(88, 33);
+            this.AddNewProduct_Update_btn.TabIndex = 4;
+            this.AddNewProduct_Update_btn.Text = "Update";
+            this.AddNewProduct_Update_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddNewProduct_Update_btn.UseVisualStyleBackColor = true;
+            this.AddNewProduct_Update_btn.Visible = false;
+            this.AddNewProduct_Update_btn.Click += new System.EventHandler(this.AddNewProduct_Update_btn_Click);
+            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -970,20 +988,6 @@
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click_2);
-            // 
-            // AddNewProduct_Update_btn
-            // 
-            this.AddNewProduct_Update_btn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewProduct_Update_btn.Image = global::PointOfSale.Properties.Resources.favicon_16x16;
-            this.AddNewProduct_Update_btn.Location = new System.Drawing.Point(6, 11);
-            this.AddNewProduct_Update_btn.Name = "AddNewProduct_Update_btn";
-            this.AddNewProduct_Update_btn.Size = new System.Drawing.Size(88, 33);
-            this.AddNewProduct_Update_btn.TabIndex = 4;
-            this.AddNewProduct_Update_btn.Text = "Update";
-            this.AddNewProduct_Update_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddNewProduct_Update_btn.UseVisualStyleBackColor = true;
-            this.AddNewProduct_Update_btn.Visible = false;
-            this.AddNewProduct_Update_btn.Click += new System.EventHandler(this.AddNewProduct_Update_btn_Click);
             // 
             // AddNewProduct
             // 

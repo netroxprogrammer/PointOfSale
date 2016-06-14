@@ -1021,6 +1021,7 @@
             this.saleInvoice_afterCalculation_textbox.Name = "saleInvoice_afterCalculation_textbox";
             this.saleInvoice_afterCalculation_textbox.Size = new System.Drawing.Size(117, 23);
             this.saleInvoice_afterCalculation_textbox.TabIndex = 23;
+            this.saleInvoice_afterCalculation_textbox.TextChanged += new System.EventHandler(this.saleInvoice_afterCalculation_textbox_TextChanged);
             this.saleInvoice_afterCalculation_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saleInvoice_afterCalculation_textbox_KeyDown);
             // 
             // saleInvoice_Discount_Textbox
@@ -1030,6 +1031,7 @@
             this.saleInvoice_Discount_Textbox.Name = "saleInvoice_Discount_Textbox";
             this.saleInvoice_Discount_Textbox.Size = new System.Drawing.Size(55, 23);
             this.saleInvoice_Discount_Textbox.TabIndex = 22;
+            this.saleInvoice_Discount_Textbox.TextChanged += new System.EventHandler(this.saleInvoice_Discount_Textbox_TextChanged);
             this.saleInvoice_Discount_Textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox11_KeyDown);
             this.saleInvoice_Discount_Textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox11_KeyPress);
             // 
@@ -1121,6 +1123,7 @@
             this.saleInvoice_productList.View = System.Windows.Forms.View.Details;
             this.saleInvoice_productList.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             this.saleInvoice_productList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saleInvoice_productList_KeyDown);
+            this.saleInvoice_productList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.saleInvoice_productList_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -1312,8 +1315,10 @@
             // 
             this.salePanel_Price_tetxbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.salePanel_Price_tetxbox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salePanel_Price_tetxbox.HideSelection = false;
             this.salePanel_Price_tetxbox.Location = new System.Drawing.Point(312, 91);
             this.salePanel_Price_tetxbox.Name = "salePanel_Price_tetxbox";
+            this.salePanel_Price_tetxbox.ShortcutsEnabled = false;
             this.salePanel_Price_tetxbox.Size = new System.Drawing.Size(89, 23);
             this.salePanel_Price_tetxbox.TabIndex = 6;
             this.salePanel_Price_tetxbox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -1389,7 +1394,7 @@
             // 
             // Sale_Panel_ProductName_comboBox
             // 
-            this.Sale_Panel_ProductName_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Sale_Panel_ProductName_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.Sale_Panel_ProductName_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Sale_Panel_ProductName_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Sale_Panel_ProductName_comboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

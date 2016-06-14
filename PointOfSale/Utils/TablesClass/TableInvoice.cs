@@ -193,12 +193,12 @@ namespace PointOfSale.Utils.TablesClass
         {
             get
             {
-                return Description;
+                return Description2;
             }
 
             set
             {
-                Description = value;
+                Description2 = value;
             }
         }
 
@@ -355,6 +355,19 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 loginBy = value;
+            }
+        }
+
+        public string Description2
+        {
+            get
+            {
+                return Description;
+            }
+
+            set
+            {
+                Description = value;
             }
         }
     }

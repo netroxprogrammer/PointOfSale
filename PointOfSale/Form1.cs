@@ -346,6 +346,11 @@ namespace PointOfSale
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+
+
+
+
             TableAddNewProducts getprod = products.productByItemCode(salePanel_itemCode_comboBox.SelectedItem.ToString());
             // Debug.WriteLine("Select Index ---  " + Sale_Panel_ProductName_comboBox.SelectedIndex + 1);
             //  salePanel_Descreption_comboBox.Items.Clear();
@@ -415,6 +420,7 @@ namespace PointOfSale
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             ///  salePanel_itemCode_comboBox.Items.Clear();
             // salePanel_Descreption_comboBox.Items.Clear();
             // salePanel_CompanyName_comboBox.Items.Clear();
@@ -424,7 +430,7 @@ namespace PointOfSale
             int index = Sale_Panel_ProductName_comboBox.SelectedIndex + 1;
             ArrayList get = products.productByName(index.ToString());
             Debug.WriteLine("Select Index ---  " + Sale_Panel_ProductName_comboBox.SelectedIndex + 1);
-
+          
             foreach (TableAddNewProducts getprod in get)
             {
 
@@ -485,8 +491,9 @@ namespace PointOfSale
 
                 salePanel_Price_tetxbox.Text = getprod.ProductSalePrice.ToString();
                 salePrice_QntHand_textBox.Text = getprod.ProductTotalPacks.ToString();
-
+              
             }
+           
         }
 
 
@@ -679,8 +686,7 @@ namespace PointOfSale
                 else
                 {
                     payemnt = "0";
-                    saleInvoicePayment_credit.Checked = true;
-                    peyemnt_method = "credit";
+                  
                     saleInvoice_balacne_textbox.Text = salePricE_totalPrice_textBox.Text;
                 }
                 if (!String.IsNullOrEmpty(saleInvoice_balacne_textbox.Text)) {
@@ -1240,6 +1246,7 @@ namespace PointOfSale
                     {
                         sum = sum + Int32.Parse(saleInvoice_productList.Items[i].SubItems[9].Text);
                     }
+                    PName = null;
                     clearInvoiceForm();
                 }
             }
@@ -1441,6 +1448,60 @@ namespace PointOfSale
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void saleInvoice_Discount_Textbox_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text))
+            {
+                saleInvoice_afterCalculation_textbox.Clear();
+            }
+        }
+
+        private void saleInvoice_afterCalculation_textbox_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(saleInvoice_afterCalculation_textbox.Text))
+            {
+                saleInvoice_Discount_Textbox.Clear();
+            }
+        }
+
+        private void saleInvoice_productList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            String id = saleInvoice_productList.SelectedItems[0].SubItems[0].Text;
+            String proName = saleInvoice_productList.SelectedItems[0].SubItems[1].Text;
+            String location = saleInvoice_productList.SelectedItems[0].SubItems[2].Text;
+            String purpose = saleInvoice_productList.SelectedItems[0].SubItems[3].Text;
+
+            String expiry = saleInvoice_productList.SelectedItems[0].SubItems[4].Text;
+            String saleprice = saleInvoice_productList.SelectedItems[0].SubItems[5].Text;
+            String quantity = saleInvoice_productList.SelectedItems[0].SubItems[6].Text;
+            String amuont = saleInvoice_productList.SelectedItems[0].SubItems[7].Text;
+            String discount = saleInvoice_productList.SelectedItems[0].SubItems[8].Text;
+            String netamount = saleInvoice_productList.SelectedItems[0].SubItems[9].Text;
+
+            Sale_Panel_ProductName_comboBox.Text = proName;
+            salePanel_Price_tetxbox.Text = saleprice;
+            salePanel_qntyu_textBox.Text = quantity;
+            salePanel_Amount_textBox.Text = amuont;
+            salePanel_Discount_textBox.Text = discount;
+            salePanel_NetAmount_textBox.Text = netamount;
+            SalePanel_Expirydate_dateTimePicker.Value = System.Convert.ToDateTime(expiry);
+            salePanel_Location_comboBox.Text = location;
+            salePanel_Purpose_comboBox.Text = purpose;
+            int calculationl = Int32.Parse(salePricE_totalPrice_textBox.Text)-  (Int32.Parse(netamount) * Int32.Parse(quantity));
+
+            int calculation2 = Int32.Parse(saleInvoice_totalAmn_textbox.Text) - (Int32.Parse(netamount) * Int32.Parse(quantity));
+
+            int calculation3 = Int32.Parse(saleInvoice_totalnetAmount_textbox.Text) - (Int32.Parse(netamount) * Int32.Parse(quantity));
+
+            salePricE_totalPrice_textBox.Text = calculationl.ToString();
+            saleInvoice_totalAmn_textbox.Text = calculation2.ToString();
+            saleInvoice_totalnetAmount_textbox.Text = calculation3.ToString();
+            saleInvoice_productList.SelectedItems[0].Remove();
+
 
         }
     }

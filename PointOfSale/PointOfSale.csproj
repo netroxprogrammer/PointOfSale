@@ -106,6 +106,12 @@
     <Compile Include="ListForms\SaleInvoiceList.Designer.cs">
       <DependentUpon>SaleInvoiceList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListForms\UpdateInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForms\UpdateInvoiceForm.Designer.cs">
+      <DependentUpon>UpdateInvoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginAthuntication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListForms\SaleInvoiceList.resx">
       <DependentUpon>SaleInvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForms\UpdateInvoiceForm.resx">
+      <DependentUpon>UpdateInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAthuntication.resx">
       <DependentUpon>LoginAthuntication.cs</DependentUpon>

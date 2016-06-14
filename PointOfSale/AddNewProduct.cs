@@ -742,24 +742,9 @@ namespace PointOfSale
 
             if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text))
             {
-                // check  Duplication off bar code....
-               ArrayList list =   handleProducts.getProductListNoFilter();
-                foreach(TableAddNewProducts  p  in list)
-                {
-                    if(p.BarCode == addNewProduct_code_textbox.Text)
-                    {
-                        MessageBox.Show("This barcode Already  used");
-                       
-                        ClearForm();
-                        Close();
-                    }
-                    else {
-                        code = addNewProduct_code_textbox.Text;
+                code = addNewProduct_code_textbox.Text;
 
-                    }
-                }
-
-               
+              
 
             }
             else
@@ -1616,6 +1601,29 @@ namespace PointOfSale
             }
 
             }
+
+        private void addNewProduct_code_textbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode  == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text)) { 
+                // check  Duplication off bar code....
+                ArrayList list = handleProducts.getProductListNoFilter();
+                foreach (TableAddNewProducts p in list)
+                {
+                    if (p.BarCode == addNewProduct_code_textbox.Text)
+                    {
+                        MessageBox.Show("This barcode Already  used");
+
+                            ClearForm();
+                        
+                    }
+                  
+                }
+                }
+            }
         }
+    }
 }
 

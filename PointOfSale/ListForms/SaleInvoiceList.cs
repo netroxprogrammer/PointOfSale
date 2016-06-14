@@ -37,7 +37,7 @@ namespace PointOfSale.ListForms
             foreach (TableInvoice em in data)
             {
                 String[] rows = { em.InvoiceId.ToString(), em.CurrentDate.ToString(), em.PaymentMethod, em.TotalDiscount.ToString(),
-                    em.TotalNetAmount.ToString() , em.TotalPayment.ToString(), em.Balance.ToString(), em.LoginBy
+                    em.TotalNetAmount.ToString() , em.TotalPayment.ToString(), em.Balance.ToString(), em.LoginBy, em.Description1
                 };
                 ListViewItem items = new ListViewItem(rows);
                 saleInvoiceList_Data_listView.Items.Add(items);
@@ -169,6 +169,33 @@ namespace PointOfSale.ListForms
             {
                 String[] rows = { em.InvoiceId.ToString(), em.CurrentDate.ToString(), em.PaymentMethod, em.TotalDiscount.ToString(),
                     em.TotalNetAmount.ToString() , em.TotalPayment.ToString(), em.Balance.ToString(), em.LoginBy
+                };
+                ListViewItem items = new ListViewItem(rows);
+                saleInvoiceList_Data_listView.Items.Add(items);
+            }
+        }
+
+        private void saleInvoiceList_Data_listView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            String id = saleInvoiceList_Data_listView.SelectedItems[0].SubItems[0].Text;
+            String oldpay = saleInvoiceList_Data_listView.SelectedItems[0].SubItems[5].Text;
+            String oldb = saleInvoiceList_Data_listView.SelectedItems[0].SubItems[6].Text;
+            String netamt = saleInvoiceList_Data_listView.SelectedItems[0].SubItems[4].Text;
+            UpdateInvoiceForm up = new UpdateInvoiceForm();
+            up.oldBalacne = oldb;
+            up.OldPayment = oldpay;
+            up.SerialId1 = id;
+            up.NetAmount = netamt;
+            up.Show();
+        }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ArrayList data = invoice.readInvoiceData();
+            foreach (TableInvoice em in data)
+            {
+                String[] rows = { em.InvoiceId.ToString(), em.CurrentDate.ToString(), em.PaymentMethod, em.TotalDiscount.ToString(),
+                    em.TotalNetAmount.ToString() , em.TotalPayment.ToString(), em.Balance.ToString(), em.LoginBy, em.Description1
                 };
                 ListViewItem items = new ListViewItem(rows);
                 saleInvoiceList_Data_listView.Items.Add(items);
