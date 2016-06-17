@@ -201,6 +201,27 @@ namespace PointOfSale.ListForms
                 saleInvoiceList_Data_listView.Items.Add(items);
             }
         }
+
+        private void saleInvoiceList_Data_listView_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                if (saleInvoiceList_Data_listView.FocusedItem.Bounds.Contains(e.Location) == true)
+                {
+                    SaleInvoiceList_contextMenu.Show(Cursor.Position);
+                }
+            }
+        }
+
+        private void viewReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String id = saleInvoiceList_Data_listView.SelectedItems[0].SubItems[0].Text;
+            CrstalReportView cs = new CrstalReportView();
+            cs.InvoiceId = id;
+            cs.Show();
+
+        }
     }
     
 }

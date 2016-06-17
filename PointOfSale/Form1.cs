@@ -715,7 +715,10 @@ namespace PointOfSale
                 if (id > 0)
                 {
                     MessageBox.Show("invoice Add");
+                    addInvoiceData();
+
                 }
+
             }
 
         }
@@ -1241,7 +1244,7 @@ namespace PointOfSale
                     ListViewItem item = new ListViewItem(rows);
 
                     saleInvoice_productList.Items.Add(item);
-
+                    salePricE_totalPrice_textBox.Clear();
                     for (int i = 0; i < saleInvoice_productList.Items.Count; i++)
                     {
                         sum = sum + Int32.Parse(saleInvoice_productList.Items[i].SubItems[9].Text);
@@ -1439,6 +1442,9 @@ namespace PointOfSale
                 String phone = saleInvoice_productList.SelectedItems[0].SubItems[2].Text;
                 String fName = saleInvoice_productList.SelectedItems[0].SubItems[3].Text;
                 */
+                String amount = saleInvoice_productList.SelectedItems[0].SubItems[7].Text;
+                int price = Int32.Parse(salePricE_totalPrice_textBox.Text) - Int32.Parse(amount);
+                salePricE_totalPrice_textBox.Text = price.ToString();
                 saleInvoice_productList.SelectedItems[0].Remove();
                 
               //  MessageBox.Show(name);
@@ -1502,7 +1508,75 @@ namespace PointOfSale
             saleInvoice_totalnetAmount_textbox.Text = calculation3.ToString();
             saleInvoice_productList.SelectedItems[0].Remove();
 
+            saleInvoice_productList.Update();
+        }
 
+        private void salePricE_totalPrice_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+        Add invoiceData in database
+        */
+
+        public void addInvoiceData()
+        {
+
+           
+
+            foreach (ListViewItem item in saleInvoice_productList.Items)
+            {
+                TableInvoiceData data = new TableInvoiceData();
+
+                //.Items[i].Selected = true;
+
+                //  String netamount = saleInvoice_productList.SelectedItems[i].SubItems[9].Text;
+                //MessageBox.Show(netamount.ToString());
+
+                String listid = item.SubItems[0].Text;
+                   String proName = item.SubItems[1].Text;
+                   String location = item.SubItems[2].Text;
+                   String purpose = item.SubItems[3].Text;
+
+                   String expiry = item.SubItems[4].Text;
+                   String saleprice = item.SubItems[5].Text;
+                   String quantity = item.SubItems[6].Text;
+                   String amuont = item.SubItems[7].Text;
+                   String discount = item.SubItems[8].Text;
+                   String netamount = item.SubItems[9].Text;
+                   String bonus = item.SubItems[10].Text;
+                   data.InvoiceId = invoiceNumber;
+                   data.ProductListNumber = Int32.Parse(listid);
+                   data.ProductName = proName;
+                if (!String.IsNullOrEmpty(location))
+                {
+                    data.Location = location;
+                }
+                else
+                {
+                    data.Location = "";
+                }
+                if (!String.IsNullOrEmpty(purpose))
+                {
+                    data.Purpose = purpose;
+                }
+                else
+                {
+                    data.Purpose = "";
+                }
+             
+                   data.ExpiryDate1 = expiry;
+                   data.SalePrice = Int32.Parse(saleprice);
+                   data.Qty1 = Int32.Parse(quantity);
+                   data.Amount1 = Int32.Parse(amuont);
+                   data.Discount = Int32.Parse(discount);
+                 data.NetAmount = Int32.Parse(netamount);
+
+                int id = invoice.addInvoiceData(data);
+
+            }
+           
         }
     }
 }

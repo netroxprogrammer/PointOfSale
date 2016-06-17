@@ -101,8 +101,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.writeDescription = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.salePrice_QntHand_textBox = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.saleInvoicePayment_cash = new System.Windows.Forms.RadioButton();
@@ -172,6 +170,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.salePrice_QntHand_textBox = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.WorkingForm_rightClick_menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -749,6 +749,8 @@
             this.workingForm_SaleInvoice_Panel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox3);
             this.workingForm_SaleInvoice_Panel.Controls.Add(this.groupBox2);
+            this.workingForm_SaleInvoice_Panel.Controls.Add(this.salePrice_QntHand_textBox);
+            this.workingForm_SaleInvoice_Panel.Controls.Add(this.label29);
             this.workingForm_SaleInvoice_Panel.Location = new System.Drawing.Point(0, 116);
             this.workingForm_SaleInvoice_Panel.Name = "workingForm_SaleInvoice_Panel";
             this.workingForm_SaleInvoice_Panel.Size = new System.Drawing.Size(1329, 622);
@@ -763,8 +765,6 @@
             this.groupBox3.Controls.Add(this.button7);
             this.groupBox3.Controls.Add(this.writeDescription);
             this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.salePrice_QntHand_textBox);
             this.groupBox3.Controls.Add(this.panel7);
             this.groupBox3.Controls.Add(this.saleInvoice_balacne_textbox);
             this.groupBox3.Controls.Add(this.label28);
@@ -816,6 +816,7 @@
             this.salePricE_totalPrice_textBox.Size = new System.Drawing.Size(196, 74);
             this.salePricE_totalPrice_textBox.TabIndex = 38;
             this.salePricE_totalPrice_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.salePricE_totalPrice_textBox.TextChanged += new System.EventHandler(this.salePricE_totalPrice_textBox_TextChanged);
             // 
             // salePanel_Employee_comboBox
             // 
@@ -904,28 +905,6 @@
             this.label30.Size = new System.Drawing.Size(104, 15);
             this.label30.TabIndex = 33;
             this.label30.Text = "Write Description";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(675, 355);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(100, 15);
-            this.label29.TabIndex = 32;
-            this.label29.Text = "Quantity in Hand";
-            // 
-            // salePrice_QntHand_textBox
-            // 
-            this.salePrice_QntHand_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.salePrice_QntHand_textBox.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salePrice_QntHand_textBox.Location = new System.Drawing.Point(780, 323);
-            this.salePrice_QntHand_textBox.Multiline = true;
-            this.salePrice_QntHand_textBox.Name = "salePrice_QntHand_textBox";
-            this.salePrice_QntHand_textBox.ReadOnly = true;
-            this.salePrice_QntHand_textBox.Size = new System.Drawing.Size(122, 68);
-            this.salePrice_QntHand_textBox.TabIndex = 31;
-            this.salePrice_QntHand_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel7
             // 
@@ -1118,7 +1097,8 @@
             this.saleInvoice_productList.Location = new System.Drawing.Point(-3, 177);
             this.saleInvoice_productList.Name = "saleInvoice_productList";
             this.saleInvoice_productList.Size = new System.Drawing.Size(669, 350);
-            this.saleInvoice_productList.TabIndex = 19;
+            this.saleInvoice_productList.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.saleInvoice_productList.TabIndex = 0;
             this.saleInvoice_productList.UseCompatibleStateImageBehavior = false;
             this.saleInvoice_productList.View = System.Windows.Forms.View.Details;
             this.saleInvoice_productList.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
@@ -1637,6 +1617,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sale Invoice";
             // 
+            // salePrice_QntHand_textBox
+            // 
+            this.salePrice_QntHand_textBox.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.salePrice_QntHand_textBox.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salePrice_QntHand_textBox.Location = new System.Drawing.Point(1218, 10);
+            this.salePrice_QntHand_textBox.Multiline = true;
+            this.salePrice_QntHand_textBox.Name = "salePrice_QntHand_textBox";
+            this.salePrice_QntHand_textBox.ReadOnly = true;
+            this.salePrice_QntHand_textBox.Size = new System.Drawing.Size(98, 64);
+            this.salePrice_QntHand_textBox.TabIndex = 31;
+            this.salePrice_QntHand_textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(1111, 30);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(100, 15);
+            this.label29.TabIndex = 32;
+            this.label29.Text = "Quantity in Hand";
+            // 
             // WorkingForm_rightClick_menu
             // 
             this.WorkingForm_rightClick_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1763,6 +1765,7 @@
             this.contextMenuStrip_Inventory.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.workingForm_SaleInvoice_Panel.ResumeLayout(false);
+            this.workingForm_SaleInvoice_Panel.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel8.ResumeLayout(false);

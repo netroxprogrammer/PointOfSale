@@ -39,6 +39,8 @@
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SaleInvoiceList_contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.emplye_customer_group = new System.Windows.Forms.GroupBox();
             this.customer_comboBox = new System.Windows.Forms.ComboBox();
@@ -46,12 +48,11 @@
             this.payement_comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.saleList_Search_comboBox = new System.Windows.Forms.ComboBox();
-            this.SaleInvoiceList_contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaleInvoiceList_contextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.emplye_customer_group.SuspendLayout();
             this.payment.SuspendLayout();
-            this.SaleInvoiceList_contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // saleInvoiceList_Data_listView
@@ -78,6 +79,7 @@
             this.saleInvoiceList_Data_listView.UseCompatibleStateImageBehavior = false;
             this.saleInvoiceList_Data_listView.View = System.Windows.Forms.View.Details;
             this.saleInvoiceList_Data_listView.SelectedIndexChanged += new System.EventHandler(this.saleInvoiceList_Data_listView_SelectedIndexChanged);
+            this.saleInvoiceList_Data_listView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.saleInvoiceList_Data_listView_MouseClick);
             this.saleInvoiceList_Data_listView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.saleInvoiceList_Data_listView_MouseDoubleClick);
             // 
             // columnHeader12
@@ -122,6 +124,21 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Description";
+            // 
+            // SaleInvoiceList_contextMenu
+            // 
+            this.SaleInvoiceList_contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.viewReportToolStripMenuItem});
+            this.SaleInvoiceList_contextMenu.Name = "SaleInvoiceList_contextMenu";
+            this.SaleInvoiceList_contextMenu.Size = new System.Drawing.Size(153, 70);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -216,19 +233,12 @@
             this.saleList_Search_comboBox.Text = "  << Select Category>>";
             this.saleList_Search_comboBox.SelectedIndexChanged += new System.EventHandler(this.saleList_Search_comboBox_SelectedIndexChanged);
             // 
-            // SaleInvoiceList_contextMenu
+            // viewReportToolStripMenuItem
             // 
-            this.SaleInvoiceList_contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refreshToolStripMenuItem});
-            this.SaleInvoiceList_contextMenu.Name = "SaleInvoiceList_contextMenu";
-            this.SaleInvoiceList_contextMenu.Size = new System.Drawing.Size(114, 26);
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            this.viewReportToolStripMenuItem.Name = "viewReportToolStripMenuItem";
+            this.viewReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewReportToolStripMenuItem.Text = "View Report";
+            this.viewReportToolStripMenuItem.Click += new System.EventHandler(this.viewReportToolStripMenuItem_Click);
             // 
             // SaleInvoiceList
             // 
@@ -242,11 +252,11 @@
             this.Text = "SaleInvoiceList";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.SaleInvoiceList_Load);
+            this.SaleInvoiceList_contextMenu.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.emplye_customer_group.ResumeLayout(false);
             this.payment.ResumeLayout(false);
-            this.SaleInvoiceList_contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -271,5 +281,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ContextMenuStrip SaleInvoiceList_contextMenu;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewReportToolStripMenuItem;
     }
 }

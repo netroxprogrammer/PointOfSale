@@ -175,5 +175,91 @@ namespace PointOfSale.DbConfiguration
             Debug.WriteLine("Update invoice balance");
 
         }
+        //  read InvoiceData  for Crystal Report
+        public TableInvoice filerInvoiceCrystalReport(TableInvoice names)
+        {
+            Debug.WriteLine("get filerInvoiceDataCrystalReport");
+
+            ArrayList list = new ArrayList();
+
+            String sql = "Select * from saleinvoice where invoiceId = @invoiceId";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+            commands.Parameters.AddWithValue("@invoiceId", names.InvoiceId);
+      
+
+            TableInvoice invlice = null;
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                invlice = new TableInvoice();
+                invlice.InvoiceId = reader.GetInt32(0);
+                invlice.CurrentDate = reader.GetDateTime(3);
+                invlice.PaymentMethod = reader.GetString(6);
+
+                invlice.TotalDiscount = reader.GetInt32(7);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                invlice.TotalNetAmount = reader.GetInt32(5);
+
+                invlice.TotalPayment = reader.GetInt32(8);
+                invlice.Balance = reader.GetInt32(9);
+                invlice.Description1 = reader.GetString(10);
+
+               // list.Add(invlice);
+                Debug.WriteLine(invlice);
+
+            }
+            reader.Close();
+            return invlice;
+
+        }
+
+
+        public int addInvoiceData(TableInvoiceData names)
+        {
+
+            Debug.WriteLine("Add AddSaleoInvoice Data");
+
+
+            String sql = "insert into InvoiceData (invoiceId,productListNumber,productName,location," +
+                         "purpose,Expirydate,salePrice,Qty,Amount,discount,netamount) " +
+                          "values (@invoiceId, @productListNumber, @productName, @location," +
+                         "@purpose, @Expirydate, @salePrice, @Qty, @Amount, @discount, @netamount)";
+
+               SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            Debug.WriteLine("invoice list == " + names.InvoiceId);
+            Debug.WriteLine("invoice list == " + names.ProductListNumber);
+            Debug.WriteLine("invoice list == " + names.ProductName);
+            Debug.WriteLine("invoice list == " + names.ProductName);
+            Debug.WriteLine("invoice list == " + names.Location);
+            Debug.WriteLine("invoice list == " + names.Purpose);
+            Debug.WriteLine("invoice list == " + names.ExpiryDate1);
+            commands.CommandType = CommandType.Text;
+            commands.Parameters.AddWithValue("@invoiceId", names.InvoiceId);
+            commands.Parameters.AddWithValue("@productListNumber", names.ProductListNumber);
+            commands.Parameters.AddWithValue("@productName", names.ProductName);
+
+            commands.Parameters.AddWithValue("@location", names.Location);
+            commands.Parameters.AddWithValue("@purpose", names.Purpose);
+            commands.Parameters.AddWithValue("@Expirydate", names.ExpiryDate1);
+            commands.Parameters.AddWithValue("@salePrice", names.SalePrice);
+            commands.Parameters.AddWithValue("@Qty", names.Qty1);
+            commands.Parameters.AddWithValue("@Amount", names.Amount1);
+            commands.Parameters.AddWithValue("@discount", names.Discount);
+
+            commands.Parameters.AddWithValue("@netamount", names.NetAmount);
+            commands.ExecuteScalar();
+
+
+           /// Debug.WriteLine("Database Entry number " + id);
+            return 1;
+
+        }
+        /*
+             Crystal Report
+        */
+      
     }
 }
