@@ -12,6 +12,8 @@ namespace PointOfSale.Utils.TablesClass
         private String employeeName;
         private String customerName;
         private DateTime currentDate;
+        private DateTime FromDate;
+        private DateTime ToDate;
         private String itemCode;
         private String pName;
         private int price;
@@ -368,6 +370,32 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 Description = value;
+            }
+        }
+
+        public DateTime FromDate1
+        {
+            get
+            {
+                return FromDate;
+            }
+
+            set
+            {
+                FromDate = value;
+            }
+        }
+
+        public DateTime ToDate1
+        {
+            get
+            {
+                return ToDate;
+            }
+
+            set
+            {
+                ToDate = value;
             }
         }
     }

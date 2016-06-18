@@ -1,0 +1,1 @@
+﻿Select  *from  [saleinvoice] where   invoiceDate  > '6/15/2016' AND invoiceDate < '6/18/2016'    

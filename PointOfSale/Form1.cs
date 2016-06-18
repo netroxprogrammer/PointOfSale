@@ -1,4 +1,6 @@
-﻿using PointOfSale.DbConfiguration;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using PointOfSale.DbConfiguration;
 using PointOfSale.Employee;
 using PointOfSale.ListForms;
 using PointOfSale.OthersForms;
@@ -25,7 +27,8 @@ namespace PointOfSale
     {
         HandleProducts products;
         HandleEmployee employee;
-       
+        String tBalance = null;
+        String tPayemnt = null;
         HandleInvoice invoice;
         HandleCustomer handleCustomer;
         ArrayList prod;
@@ -56,7 +59,7 @@ namespace PointOfSale
         {
             products = new HandleProducts();
             employee = new HandleEmployee();
-         handleCustomer =  new HandleCustomer();
+            handleCustomer =  new HandleCustomer();
             invoice = new HandleInvoice();
 
             invoiceNumber = invoice.getInvoiceNumber() + 1;
@@ -611,16 +614,34 @@ namespace PointOfSale
 
         private void button8_Click(object sender, EventArgs e)
         {
+          int id=  saveInvoiceData();
+            clearInvoiceForm();
+            saleInvoice_productList.Clear();
+            salePricE_totalPrice_textBox.Clear();
+            saleInvoice_productList.Update();
+            sum = 0;
+            saleInvoice_totalAmn_textbox.Clear();
+            saleInvoice_totalnetAmount_textbox.Clear();
+            saleInvoice_afterCalculation_textbox.Clear();
+            saleInvoice_Discount_Textbox.Clear();
+        }
+
+        /*
+        Savc All Invoice Data List
+        */
+        public int  saveInvoiceData()
+        {
+            int getid = 0;
             String empNAme = null;
             String customerName = null;
             String totalamount = null;
             String totalnetAmount = null;
             String disountpersent = null;
             String discuntprise = null;
-            String discount =null;
+            String discount = null;
             String totalbill = null;
-            String payemnt = null;
-            String balance = null;
+            
+           
             if (!String.IsNullOrEmpty(saleInvoice_totalAmn_textbox.Text) && (!String.IsNullOrEmpty(saleInvoice_totalnetAmount_textbox.Text)))
             {
                 if (salePanel_Employee_comboBox.SelectedIndex != -1)
@@ -642,25 +663,26 @@ namespace PointOfSale
 
                 DateTime date = dateTimePicker1.Value;
                 totalamount = saleInvoice_totalAmn_textbox.Text;
-                 totalnetAmount = saleInvoice_totalnetAmount_textbox.Text;
+                totalnetAmount = saleInvoice_totalnetAmount_textbox.Text;
                 String peyemnt_method = "";
                 if (saleInvoicePayment_cash.Checked)
                 {
                     peyemnt_method = "Cash";
                 }
-                  if (saleInvoicePayment_credit.Checked)
+                if (saleInvoicePayment_credit.Checked)
                 {
                     peyemnt_method = "credit";
                 }
 
                 //saleInvoicePayment_credit
-                if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text)){
+                if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text))
+                {
                     disountpersent = saleInvoice_Discount_Textbox.Text;
                     discount = disountpersent;
                 }
                 else
                 {
-                   // disountpersent = "0";
+                    // disountpersent = "0";
                     discount = "0";
                 }
 
@@ -671,7 +693,7 @@ namespace PointOfSale
                 }
                 else
                 {
-                 //   discuntprise = "0";
+                    //   discuntprise = "0";
                     discount = "0";
                 }
                 if (!String.IsNullOrEmpty(salePricE_totalPrice_textBox.Text))
@@ -681,16 +703,17 @@ namespace PointOfSale
                 }
                 if (!String.IsNullOrEmpty(saleInvoice_Payment_textbox.Text))
                 {
-                     payemnt = saleInvoice_Payment_textbox.Text;
+                    tPayemnt = saleInvoice_Payment_textbox.Text;
                 }
                 else
                 {
-                    payemnt = "0";
-                  
+                    tPayemnt = "0";
+
                     saleInvoice_balacne_textbox.Text = salePricE_totalPrice_textBox.Text;
                 }
-                if (!String.IsNullOrEmpty(saleInvoice_balacne_textbox.Text)) {
-                  balance = saleInvoice_balacne_textbox.Text;
+                if (!String.IsNullOrEmpty(saleInvoice_balacne_textbox.Text))
+                {
+                    tBalance = saleInvoice_balacne_textbox.Text;
 
                 }
 
@@ -706,24 +729,24 @@ namespace PointOfSale
                 inv.PaymentMethod = peyemnt_method;
                 inv.TotalDiscount = Int32.Parse(discount);
                 inv.Disception1 = writeDescription.Text;
-                inv.TotalPayment = Int32.Parse(payemnt);
+                inv.TotalPayment = Int32.Parse(tPayemnt);
                 inv.LoginBy = Constants.userlogin;
 
 
-                inv.Balance = Int32.Parse(balance);
+                inv.Balance = Int32.Parse(tBalance);
                 int id = invoice.AddSaleoInvoice(inv);
                 if (id > 0)
                 {
+                    getid = id;
                     MessageBox.Show("invoice Add");
-                    MessageBox.Show(id.ToString());
+                    //MessageBox.Show(id.ToString());
                     addInvoiceData();
 
                 }
 
             }
-
+            return getid;
         }
-
         private void saleInvoiceListToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -1252,6 +1275,7 @@ namespace PointOfSale
                     }
                     PName = null;
                     clearInvoiceForm();
+                    
                 }
             }
         }
@@ -1261,6 +1285,7 @@ namespace PointOfSale
 
             public  void clearInvoiceForm()
         {
+
             salePricE_totalPrice_textBox.Text = sum.ToString();
             saleInvoice_totalAmn_textbox.Text = sum.ToString();
             saleInvoice_totalnetAmount_textbox.Text = sum.ToString();
@@ -1280,6 +1305,11 @@ namespace PointOfSale
             salePanel_Location_comboBox.Text = "";
             SalePanel_Expirydate_dateTimePicker.Value = DateTime.Now;
             salePanel_Purpose_comboBox.Text = "";
+            SaleInvoice_invuse_textb.Clear();
+            invoiceNumber = invoice.getInvoiceNumber() + 1;
+            SaleInvoice_invuse_textb.Text = invoiceNumber.ToString();
+            saleInvoice_balacne_textbox.Clear();
+            saleInvoice_Payment_textbox.Clear();
         }
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1579,6 +1609,83 @@ namespace PointOfSale
 
             }
            
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (printSave.Checked)
+            {
+                if (saleInvoicePayment_cash.Checked)
+                {
+                    tBalance = "0";
+                }
+               
+                int id = saveInvoiceData();
+                //  MessageBox.Show(id.ToString());
+                sum = 0;
+                ReportDocument cryRpt = new ReportDocument();
+
+                cryRpt.Load("C:\\Users\\mac\\Documents\\Visual Studio 2015\\Projects\\PointOfSale\\PointOfSale\\CrystalReport4.rpt");
+
+                ParameterFieldDefinitions crParameterFieldDefinitions;
+                ParameterFieldDefinition crParameterFieldDefinition;
+                ParameterValues crParameterValues = new ParameterValues();
+                ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+                crParameterDiscreteValue.Value = id;
+                crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
+                crParameterFieldDefinition = crParameterFieldDefinitions["InvoiceId"];
+                crParameterValues = crParameterFieldDefinition.CurrentValues;
+
+                crParameterValues.Clear();
+                crParameterValues.Add(crParameterDiscreteValue);
+                crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);
+
+                //CrystalReport4 report1 = new CrystalReport4();
+                // cryRpt.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
+              
+                //cryRpt.PrintOptions.PaperSize = PaperSiz;
+                cryRpt.PrintToPrinter(1, false, 0,0 );
+
+                clearInvoiceForm();
+                saleInvoice_productList.Clear();
+                salePricE_totalPrice_textBox.Clear();
+                saleInvoice_productList.Update();
+                saleInvoice_totalAmn_textbox.Clear();
+                saleInvoice_totalnetAmount_textbox.Clear();
+                saleInvoice_afterCalculation_textbox.Clear();
+                saleInvoice_Discount_Textbox.Clear();
+                printSave.Checked = false;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int id = saveInvoiceData();
+            clearInvoiceForm();
+            saleInvoice_productList.Clear();
+            salePricE_totalPrice_textBox.Clear();
+            saleInvoice_productList.Update();
+            sum = 0;
+            saleInvoice_totalAmn_textbox.Clear();
+            saleInvoice_totalnetAmount_textbox.Clear();
+            saleInvoice_afterCalculation_textbox.Clear();
+            saleInvoice_Discount_Textbox.Clear();
+            workingForm_SaleInvoice_Panel.Visible = false;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            clearInvoiceForm();
+            saleInvoice_productList.Clear();
+            salePricE_totalPrice_textBox.Clear();
+            saleInvoice_productList.Update();
+            sum = 0;
+            saleInvoice_totalAmn_textbox.Clear();
+            saleInvoice_totalnetAmount_textbox.Clear();
+            saleInvoice_afterCalculation_textbox.Clear();
+            saleInvoice_Discount_Textbox.Clear();
+            workingForm_SaleInvoice_Panel.Visible = false;
         }
     }
 }

@@ -102,7 +102,7 @@
             this.writeDescription = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.printSave = new System.Windows.Forms.CheckBox();
             this.saleInvoicePayment_cash = new System.Windows.Forms.RadioButton();
             this.saleInvoicePayment_credit = new System.Windows.Forms.RadioButton();
             this.saleInvoice_balacne_textbox = new System.Windows.Forms.TextBox();
@@ -803,6 +803,7 @@
             this.groupBox3.Size = new System.Drawing.Size(1115, 533);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "-";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // salePricE_totalPrice_textBox
@@ -851,6 +852,7 @@
             this.button10.Text = "Cancel";
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -863,6 +865,7 @@
             this.button9.Text = "Save/ Close\r\n";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -910,7 +913,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.checkBox1);
+            this.panel7.Controls.Add(this.printSave);
             this.panel7.Controls.Add(this.saleInvoicePayment_cash);
             this.panel7.Controls.Add(this.saleInvoicePayment_credit);
             this.panel7.Location = new System.Drawing.Point(906, 187);
@@ -918,16 +921,17 @@
             this.panel7.Size = new System.Drawing.Size(200, 49);
             this.panel7.TabIndex = 28;
             // 
-            // checkBox1
+            // printSave
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(3, 29);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 19);
-            this.checkBox1.TabIndex = 29;
-            this.checkBox1.Text = "Print / Save";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.printSave.AutoSize = true;
+            this.printSave.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printSave.Location = new System.Drawing.Point(3, 29);
+            this.printSave.Name = "printSave";
+            this.printSave.Size = new System.Drawing.Size(89, 19);
+            this.printSave.TabIndex = 29;
+            this.printSave.Text = "Print / Save";
+            this.printSave.UseVisualStyleBackColor = true;
+            this.printSave.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // saleInvoicePayment_cash
             // 
@@ -1930,7 +1934,7 @@
         private System.Windows.Forms.TextBox saleInvoice_balacne_textbox;
         private System.Windows.Forms.RadioButton saleInvoicePayment_credit;
         private System.Windows.Forms.RadioButton saleInvoicePayment_cash;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox printSave;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox salePrice_QntHand_textBox;
         private System.Windows.Forms.Label label29;

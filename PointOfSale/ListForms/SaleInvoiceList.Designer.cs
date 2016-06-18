@@ -49,10 +49,23 @@
             this.payement_comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.saleList_Search_comboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SaleList_Total_Paid_textBox = new System.Windows.Forms.TextBox();
+            this.Sale_List_Total_Balance_textBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SearchByDate = new System.Windows.Forms.GroupBox();
+            this.FromDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.ToDatePiker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SaleInvoiceList_contextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.emplye_customer_group.SuspendLayout();
             this.payment.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.SearchByDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // saleInvoiceList_Data_listView
@@ -74,7 +87,7 @@
             this.saleInvoiceList_Data_listView.LabelEdit = true;
             this.saleInvoiceList_Data_listView.Location = new System.Drawing.Point(-1, 120);
             this.saleInvoiceList_Data_listView.Name = "saleInvoiceList_Data_listView";
-            this.saleInvoiceList_Data_listView.Size = new System.Drawing.Size(949, 527);
+            this.saleInvoiceList_Data_listView.Size = new System.Drawing.Size(949, 474);
             this.saleInvoiceList_Data_listView.TabIndex = 0;
             this.saleInvoiceList_Data_listView.UseCompatibleStateImageBehavior = false;
             this.saleInvoiceList_Data_listView.View = System.Windows.Forms.View.Details;
@@ -149,6 +162,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.SearchByDate);
             this.groupBox1.Controls.Add(this.emplye_customer_group);
             this.groupBox1.Controls.Add(this.payment);
             this.groupBox1.Controls.Add(this.label1);
@@ -166,7 +180,7 @@
             this.emplye_customer_group.Controls.Add(this.customer_comboBox);
             this.emplye_customer_group.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emplye_customer_group.ForeColor = System.Drawing.Color.Blue;
-            this.emplye_customer_group.Location = new System.Drawing.Point(267, 22);
+            this.emplye_customer_group.Location = new System.Drawing.Point(254, 22);
             this.emplye_customer_group.Name = "emplye_customer_group";
             this.emplye_customer_group.Size = new System.Drawing.Size(197, 61);
             this.emplye_customer_group.TabIndex = 6;
@@ -192,7 +206,7 @@
             this.payment.Controls.Add(this.payement_comboBox1);
             this.payment.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payment.ForeColor = System.Drawing.Color.Blue;
-            this.payment.Location = new System.Drawing.Point(470, 22);
+            this.payment.Location = new System.Drawing.Point(457, 22);
             this.payment.Name = "payment";
             this.payment.Size = new System.Drawing.Size(187, 61);
             this.payment.TabIndex = 4;
@@ -218,7 +232,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(19, 47);
+            this.label1.Location = new System.Drawing.Point(6, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 15);
             this.label1.TabIndex = 1;
@@ -233,18 +247,130 @@
             "Employee",
             "Date",
             "paymentType"});
-            this.saleList_Search_comboBox.Location = new System.Drawing.Point(115, 41);
+            this.saleList_Search_comboBox.Location = new System.Drawing.Point(102, 41);
             this.saleList_Search_comboBox.Name = "saleList_Search_comboBox";
             this.saleList_Search_comboBox.Size = new System.Drawing.Size(146, 23);
             this.saleList_Search_comboBox.TabIndex = 0;
             this.saleList_Search_comboBox.Text = "  << Select Category>>";
             this.saleList_Search_comboBox.SelectedIndexChanged += new System.EventHandler(this.saleList_Search_comboBox_SelectedIndexChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Sale_List_Total_Balance_textBox);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.SaleList_Total_Paid_textBox);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.groupBox2.Location = new System.Drawing.Point(12, 600);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(907, 70);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Total";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Total Paid:";
+            // 
+            // SaleList_Total_Paid_textBox
+            // 
+            this.SaleList_Total_Paid_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.SaleList_Total_Paid_textBox.Location = new System.Drawing.Point(144, 32);
+            this.SaleList_Total_Paid_textBox.Name = "SaleList_Total_Paid_textBox";
+            this.SaleList_Total_Paid_textBox.ReadOnly = true;
+            this.SaleList_Total_Paid_textBox.Size = new System.Drawing.Size(133, 26);
+            this.SaleList_Total_Paid_textBox.TabIndex = 1;
+            // 
+            // Sale_List_Total_Balance_textBox
+            // 
+            this.Sale_List_Total_Balance_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Sale_List_Total_Balance_textBox.Location = new System.Drawing.Point(453, 32);
+            this.Sale_List_Total_Balance_textBox.Name = "Sale_List_Total_Balance_textBox";
+            this.Sale_List_Total_Balance_textBox.ReadOnly = true;
+            this.Sale_List_Total_Balance_textBox.Size = new System.Drawing.Size(133, 26);
+            this.Sale_List_Total_Balance_textBox.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(337, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Total  Balnace:";
+            // 
+            // SearchByDate
+            // 
+            this.SearchByDate.Controls.Add(this.button1);
+            this.SearchByDate.Controls.Add(this.label5);
+            this.SearchByDate.Controls.Add(this.label4);
+            this.SearchByDate.Controls.Add(this.ToDatePiker);
+            this.SearchByDate.Controls.Add(this.FromDatePicker);
+            this.SearchByDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchByDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.SearchByDate.Location = new System.Drawing.Point(650, 20);
+            this.SearchByDate.Name = "SearchByDate";
+            this.SearchByDate.Size = new System.Drawing.Size(267, 63);
+            this.SearchByDate.TabIndex = 7;
+            this.SearchByDate.TabStop = false;
+            this.SearchByDate.Text = "Search By Date";
+            // 
+            // FromDatePicker
+            // 
+            this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FromDatePicker.Location = new System.Drawing.Point(20, 34);
+            this.FromDatePicker.Name = "FromDatePicker";
+            this.FromDatePicker.Size = new System.Drawing.Size(103, 23);
+            this.FromDatePicker.TabIndex = 0;
+            // 
+            // ToDatePiker
+            // 
+            this.ToDatePiker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ToDatePiker.Location = new System.Drawing.Point(143, 34);
+            this.ToDatePiker.Name = "ToDatePiker";
+            this.ToDatePiker.Size = new System.Drawing.Size(114, 23);
+            this.ToDatePiker.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "From";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(179, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "To";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(214, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Go";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SaleInvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 647);
+            this.ClientSize = new System.Drawing.Size(947, 682);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.saleInvoiceList_Data_listView);
             this.MaximizeBox = false;
@@ -258,6 +384,10 @@
             this.groupBox1.PerformLayout();
             this.emplye_customer_group.ResumeLayout(false);
             this.payment.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.SearchByDate.ResumeLayout(false);
+            this.SearchByDate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +413,16 @@
         private System.Windows.Forms.ContextMenuStrip SaleInvoiceList_contextMenu;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewReportToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SaleList_Total_Paid_textBox;
+        private System.Windows.Forms.TextBox Sale_List_Total_Balance_textBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox SearchByDate;
+        private System.Windows.Forms.DateTimePicker FromDatePicker;
+        private System.Windows.Forms.DateTimePicker ToDatePiker;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

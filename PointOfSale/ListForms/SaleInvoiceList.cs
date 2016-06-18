@@ -14,8 +14,11 @@ using System.Windows.Forms;
 
 namespace PointOfSale.ListForms
 {
+      
     public partial class SaleInvoiceList : Form
-    { 
+    {
+        int sum = 0;
+        int tBalance  = 0;
         HandleInvoice invoice;
         HandleCustomer handleCustomer;
         HandleEmployee employee;
@@ -42,6 +45,18 @@ namespace PointOfSale.ListForms
                 ListViewItem items = new ListViewItem(rows);
                 saleInvoiceList_Data_listView.Items.Add(items);
             }
+
+            for (int i = 0; i < saleInvoiceList_Data_listView.Items.Count; i++)
+            {
+                sum = sum + Int32.Parse(saleInvoiceList_Data_listView.Items[i].SubItems[5].Text);
+                tBalance = tBalance + Int32.Parse(saleInvoiceList_Data_listView.Items[i].SubItems[6].Text);
+            }
+
+           
+            SaleList_Total_Paid_textBox.Text = sum.ToString();
+
+            Sale_List_Total_Balance_textBox.Text = tBalance.ToString();
+
         }
 
         private void SaleInvice_Panel_Paint(object sender, PaintEventArgs e)
@@ -221,12 +236,27 @@ namespace PointOfSale.ListForms
             CrstalReportView cs = new CrstalReportView();
             cs.InvoiceId = id;
             cs.Show();
+            
 
         }
 
         private void SaleInvoiceList_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saleInvoiceList_Data_listView.Items.Clear();
+               TableInvoice invoiceTable = new TableInvoice();
+            invoiceTable.ToDate1 = ToDatePiker.Value;
+            invoiceTable.FromDate1 = FromDatePicker.Value;
+            invoiceTable.CustomerName = "no customer";
+            invoiceTable.PaymentMethod = "no peyment";
+            ArrayList data = invoice.filerInvoiceData(invoiceTable);
+            loadArrayList(data);
+
+           
         }
     }
     

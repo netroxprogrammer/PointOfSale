@@ -117,15 +117,16 @@ namespace PointOfSale.DbConfiguration
             Debug.WriteLine("get filerInvoiceData");
 
             ArrayList list = new ArrayList();
-
-            String sql = "Select * from saleinvoice where paymentMethod = @paymentMethod OR  CustomerName = @CustomerName OR employeName= @employeName";
+            
+            String sql = "Select * from saleinvoice where paymentMethod = @paymentMethod OR  CustomerName = @CustomerName OR employeName= @employeName OR invoiceDate > @FromDate1 AND invoiceDate < @ToDate1 ";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             commands.CommandType = CommandType.Text;
             commands.Parameters.AddWithValue("@paymentMethod", names.PaymentMethod);
             commands.Parameters.AddWithValue("@CustomerName", names.CustomerName);
             commands.Parameters.AddWithValue("@employeName", names.CustomerName);
-
+            commands.Parameters.AddWithValue("@FromDate1", names.FromDate1);
+            commands.Parameters.AddWithValue("@ToDate1", names.ToDate1);
             TableInvoice invlice = null;
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
