@@ -715,6 +715,7 @@ namespace PointOfSale
                 if (id > 0)
                 {
                     MessageBox.Show("invoice Add");
+                    MessageBox.Show(id.ToString());
                     addInvoiceData();
 
                 }
@@ -1546,6 +1547,7 @@ namespace PointOfSale
                    String discount = item.SubItems[8].Text;
                    String netamount = item.SubItems[9].Text;
                    String bonus = item.SubItems[10].Text;
+                MessageBox.Show(invoiceNumber.ToString());
                    data.InvoiceId = invoiceNumber;
                    data.ProductListNumber = Int32.Parse(listid);
                    data.ProductName = proName;
@@ -1573,7 +1575,7 @@ namespace PointOfSale
                    data.Discount = Int32.Parse(discount);
                  data.NetAmount = Int32.Parse(netamount);
 
-                int id = invoice.addInvoiceData(data);
+                invoice.addInvoiceData(data);
 
             }
            

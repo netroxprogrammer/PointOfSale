@@ -41,6 +41,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SaleInvoiceList_contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.emplye_customer_group = new System.Windows.Forms.GroupBox();
             this.customer_comboBox = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,6 @@
             this.payement_comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.saleList_Search_comboBox = new System.Windows.Forms.ComboBox();
-            this.viewReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaleInvoiceList_contextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.emplye_customer_group.SuspendLayout();
@@ -131,14 +131,21 @@
             this.refreshToolStripMenuItem,
             this.viewReportToolStripMenuItem});
             this.SaleInvoiceList_contextMenu.Name = "SaleInvoiceList_contextMenu";
-            this.SaleInvoiceList_contextMenu.Size = new System.Drawing.Size(153, 70);
+            this.SaleInvoiceList_contextMenu.Size = new System.Drawing.Size(138, 48);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // viewReportToolStripMenuItem
+            // 
+            this.viewReportToolStripMenuItem.Name = "viewReportToolStripMenuItem";
+            this.viewReportToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.viewReportToolStripMenuItem.Text = "View Report";
+            this.viewReportToolStripMenuItem.Click += new System.EventHandler(this.viewReportToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -233,13 +240,6 @@
             this.saleList_Search_comboBox.Text = "  << Select Category>>";
             this.saleList_Search_comboBox.SelectedIndexChanged += new System.EventHandler(this.saleList_Search_comboBox_SelectedIndexChanged);
             // 
-            // viewReportToolStripMenuItem
-            // 
-            this.viewReportToolStripMenuItem.Name = "viewReportToolStripMenuItem";
-            this.viewReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.viewReportToolStripMenuItem.Text = "View Report";
-            this.viewReportToolStripMenuItem.Click += new System.EventHandler(this.viewReportToolStripMenuItem_Click);
-            // 
             // SaleInvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +251,7 @@
             this.Name = "SaleInvoiceList";
             this.Text = "SaleInvoiceList";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SaleInvoiceList_FormClosed);
             this.Load += new System.EventHandler(this.SaleInvoiceList_Load);
             this.SaleInvoiceList_contextMenu.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

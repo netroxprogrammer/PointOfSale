@@ -17,7 +17,7 @@ namespace PointOfSale.ListForms
 {
     public partial class CrstalReportView : Form
     {
-        private String invoiceId;
+        private String invoiceId = null;
         HandleInvoice invoice;
 
         public string InvoiceId
@@ -47,16 +47,17 @@ private void CrstalReportView_Load_1(object sender, EventArgs e)
         private void crystalReportViewer2_Load(object sender, EventArgs e)
         {
             ReportDocument cryRpt = new ReportDocument();
-           cryRpt.Load("C:\\Users\\mac\\Documents\\Visual Studio 2015\\Projects\\PointOfSale\\PointOfSale\\CrystalReport3.rpt");
+           
+           cryRpt.Load("C:\\Users\\mac\\Documents\\Visual Studio 2015\\Projects\\PointOfSale\\PointOfSale\\CrystalReport4.rpt");
 
             ParameterFieldDefinitions crParameterFieldDefinitions;
             ParameterFieldDefinition crParameterFieldDefinition;
             ParameterValues crParameterValues = new ParameterValues();
             ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
 
-            crParameterDiscreteValue.Value = invoiceId;
+            crParameterDiscreteValue.Value =  invoiceId;
             crParameterFieldDefinitions = cryRpt.DataDefinition.ParameterFields;
-            crParameterFieldDefinition = crParameterFieldDefinitions["invoiceId"];
+            crParameterFieldDefinition = crParameterFieldDefinitions["InvoiceId"];
             crParameterValues = crParameterFieldDefinition.CurrentValues;
 
             crParameterValues.Clear();
@@ -65,7 +66,15 @@ private void CrstalReportView_Load_1(object sender, EventArgs e)
 
             crystalReportViewer2.ReportSource = cryRpt;
             crystalReportViewer2.Refresh();
+            crystalReportViewer2.PrintReport();
 
+
+
+        }
+
+        private void CrstalReportView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            invoiceId = null;
         }
         //{
         //    CrystalReport1 crystalReport = new CrystalReport1();

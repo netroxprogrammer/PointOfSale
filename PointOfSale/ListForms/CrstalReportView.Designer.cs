@@ -52,6 +52,7 @@
             this.Controls.Add(this.crystalReportViewer2);
             this.Name = "CrstalReportView";
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CrstalReportView_FormClosed);
             this.Load += new System.EventHandler(this.CrstalReportView_Load_1);
             this.ResumeLayout(false);
 

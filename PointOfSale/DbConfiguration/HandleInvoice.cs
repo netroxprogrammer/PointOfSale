@@ -15,20 +15,21 @@ namespace PointOfSale.DbConfiguration
     {
         public int getInvoiceNumber()
         {
-
+          
 
             Debug.WriteLine("get getInvoiceNumber");
             int invoiceNumber = 0;
 
-            String sql = "select  count(invoiceId) from saleinvoice";
+            String sql = "select invoiceId from saleinvoice";
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
             {
 
                 invoiceNumber = reader.GetInt32(0);
-              
+                Debug.WriteLine(invoiceNumber + "Numberrrr");
             }
+            
             reader.Close();
             return invoiceNumber;
 
@@ -217,7 +218,7 @@ namespace PointOfSale.DbConfiguration
         }
 
 
-        public int addInvoiceData(TableInvoiceData names)
+        public void addInvoiceData(TableInvoiceData names)
         {
 
             Debug.WriteLine("Add AddSaleoInvoice Data");
@@ -253,8 +254,8 @@ namespace PointOfSale.DbConfiguration
             commands.ExecuteScalar();
 
 
-           /// Debug.WriteLine("Database Entry number " + id);
-            return 1;
+           //Debug.WriteLine("Database Entry number " + id);
+           // return 1;
 
         }
         /*
