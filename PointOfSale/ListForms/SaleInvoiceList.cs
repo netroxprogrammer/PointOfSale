@@ -77,6 +77,7 @@ namespace PointOfSale.ListForms
                 {
                     payment.Enabled = false;
                     emplye_customer_group.Enabled = true;
+                    SearchByDate.Enabled = false;
                     customer_comboBox.Items.Clear();
                     loadEmployee(); ;
                 }
@@ -86,6 +87,7 @@ namespace PointOfSale.ListForms
                 {
                     payment.Enabled = false;
                     emplye_customer_group.Enabled = true;
+                    SearchByDate.Enabled = false;
                     customer_comboBox.Items.Clear();
                     laodCustomer(); 
                 }
@@ -94,8 +96,15 @@ namespace PointOfSale.ListForms
                     customer_comboBox.Items.Clear();
                     emplye_customer_group.Enabled = false;
                     payment.Enabled = true;
+                    SearchByDate.Enabled = false;
                 }
-                
+                if (saleList_Search_comboBox.SelectedItem.ToString() == "Date")
+                {
+                    customer_comboBox.Items.Clear();
+                    emplye_customer_group.Enabled = false;
+                    payment.Enabled = false;
+                    SearchByDate.Enabled = true;
+                }
             }
         }
 
@@ -119,6 +128,7 @@ namespace PointOfSale.ListForms
                     {
                         table.CustomerName = "no customer";
                         table.PaymentMethod = "no peyment";
+                       
                     }
                 }
             }
@@ -171,7 +181,8 @@ namespace PointOfSale.ListForms
                     {
                         table.CustomerName = "no customer";
                         table.PaymentMethod = "no peyment";
-                    }
+                      
+                }
                 }
             }
         }
@@ -247,16 +258,30 @@ namespace PointOfSale.ListForms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            sum = 0;
+            tBalance = 0;
+            SaleList_Total_Paid_textBox.Clear();
+            Sale_List_Total_Balance_textBox.Clear();
             saleInvoiceList_Data_listView.Items.Clear();
                TableInvoice invoiceTable = new TableInvoice();
             invoiceTable.ToDate1 = ToDatePiker.Value;
             invoiceTable.FromDate1 = FromDatePicker.Value;
             invoiceTable.CustomerName = "no customer";
             invoiceTable.PaymentMethod = "no peyment";
-            ArrayList data = invoice.filerInvoiceData(invoiceTable);
+            ArrayList data = invoice.filerByDate(invoiceTable);
             loadArrayList(data);
 
-           
+            for (int i = 0; i < saleInvoiceList_Data_listView.Items.Count; i++)
+            {
+                sum = sum + Int32.Parse(saleInvoiceList_Data_listView.Items[i].SubItems[5].Text);
+                tBalance = tBalance + Int32.Parse(saleInvoiceList_Data_listView.Items[i].SubItems[6].Text);
+            }
+
+
+            SaleList_Total_Paid_textBox.Text = sum.ToString();
+
+            Sale_List_Total_Balance_textBox.Text = tBalance.ToString();
+
         }
     }
     

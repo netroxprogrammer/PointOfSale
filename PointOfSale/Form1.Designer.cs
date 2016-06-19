@@ -1006,6 +1006,7 @@
             this.saleInvoice_afterCalculation_textbox.TabIndex = 23;
             this.saleInvoice_afterCalculation_textbox.TextChanged += new System.EventHandler(this.saleInvoice_afterCalculation_textbox_TextChanged);
             this.saleInvoice_afterCalculation_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.saleInvoice_afterCalculation_textbox_KeyDown);
+            this.saleInvoice_afterCalculation_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.saleInvoice_afterCalculation_textbox_KeyPress);
             // 
             // saleInvoice_Discount_Textbox
             // 

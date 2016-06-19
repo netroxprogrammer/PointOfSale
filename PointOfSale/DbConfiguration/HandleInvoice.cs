@@ -78,7 +78,7 @@ namespace PointOfSale.DbConfiguration
 
             ArrayList list = new ArrayList();
 
-            String sql = "Select * from saleinvoice";
+            String sql = "Select * from saleinvoice  where CONVERT(varchar(10),invoiceDate,105) =  CONVERT(varchar(10),GETDATE(),	105)";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             commands.CommandType = CommandType.Text;
@@ -118,15 +118,14 @@ namespace PointOfSale.DbConfiguration
 
             ArrayList list = new ArrayList();
             
-            String sql = "Select * from saleinvoice where paymentMethod = @paymentMethod OR  CustomerName = @CustomerName OR employeName= @employeName OR invoiceDate > @FromDate1 AND invoiceDate < @ToDate1 ";
+            String sql = "Select * from saleinvoice where paymentMethod = @paymentMethod OR  CustomerName = @CustomerName OR employeName= @employeName ";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             commands.CommandType = CommandType.Text;
             commands.Parameters.AddWithValue("@paymentMethod", names.PaymentMethod);
             commands.Parameters.AddWithValue("@CustomerName", names.CustomerName);
             commands.Parameters.AddWithValue("@employeName", names.CustomerName);
-            commands.Parameters.AddWithValue("@FromDate1", names.FromDate1);
-            commands.Parameters.AddWithValue("@ToDate1", names.ToDate1);
+           
             TableInvoice invlice = null;
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
@@ -260,8 +259,48 @@ namespace PointOfSale.DbConfiguration
 
         }
         /*
-             Crystal Report
+             Search By Date
         */
-      
+
+        public ArrayList filerByDate(TableInvoice names)
+        {
+            Debug.WriteLine("get filerInvoiceData");
+
+            ArrayList list = new ArrayList();
+
+            String sql = "Select * from saleinvoice where invoiceDate > @FromDate1 AND invoiceDate < @ToDate1 ";
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+         
+            commands.Parameters.AddWithValue("@FromDate1", names.FromDate1);
+            commands.Parameters.AddWithValue("@ToDate1", names.ToDate1);
+            TableInvoice invlice = null;
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                invlice = new TableInvoice();
+                invlice.InvoiceId = reader.GetInt32(0);
+                invlice.CurrentDate = reader.GetDateTime(3);
+                invlice.PaymentMethod = reader.GetString(6);
+
+                invlice.TotalDiscount = reader.GetInt32(7);
+                // Debug.WriteLine("Discount=== " + reader[4].ToString());
+
+                invlice.TotalNetAmount = reader.GetInt32(5);
+
+                invlice.TotalPayment = reader.GetInt32(8);
+                invlice.Balance = reader.GetInt32(9);
+                invlice.Description1 = reader.GetString(10);
+
+                list.Add(invlice);
+                Debug.WriteLine(invlice);
+
+            }
+            reader.Close();
+            return list;
+
+        }
+
     }
 }

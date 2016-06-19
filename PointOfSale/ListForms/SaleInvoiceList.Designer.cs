@@ -43,6 +43,12 @@
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SearchByDate = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ToDatePiker = new System.Windows.Forms.DateTimePicker();
+            this.FromDatePicker = new System.Windows.Forms.DateTimePicker();
             this.emplye_customer_group = new System.Windows.Forms.GroupBox();
             this.customer_comboBox = new System.Windows.Forms.ComboBox();
             this.payment = new System.Windows.Forms.GroupBox();
@@ -50,22 +56,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.saleList_Search_comboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.SaleList_Total_Paid_textBox = new System.Windows.Forms.TextBox();
             this.Sale_List_Total_Balance_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.SearchByDate = new System.Windows.Forms.GroupBox();
-            this.FromDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.ToDatePiker = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SaleList_Total_Paid_textBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SaleInvoiceList_contextMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.SearchByDate.SuspendLayout();
             this.emplye_customer_group.SuspendLayout();
             this.payment.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.SearchByDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // saleInvoiceList_Data_listView
@@ -175,6 +175,68 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Panel";
             // 
+            // SearchByDate
+            // 
+            this.SearchByDate.Controls.Add(this.button1);
+            this.SearchByDate.Controls.Add(this.label5);
+            this.SearchByDate.Controls.Add(this.label4);
+            this.SearchByDate.Controls.Add(this.ToDatePiker);
+            this.SearchByDate.Controls.Add(this.FromDatePicker);
+            this.SearchByDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchByDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.SearchByDate.Location = new System.Drawing.Point(650, 20);
+            this.SearchByDate.Name = "SearchByDate";
+            this.SearchByDate.Size = new System.Drawing.Size(267, 63);
+            this.SearchByDate.TabIndex = 7;
+            this.SearchByDate.TabStop = false;
+            this.SearchByDate.Text = "Search By Date";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(210, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Go";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(135, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "To";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "From";
+            // 
+            // ToDatePiker
+            // 
+            this.ToDatePiker.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToDatePiker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ToDatePiker.Location = new System.Drawing.Point(118, 34);
+            this.ToDatePiker.Name = "ToDatePiker";
+            this.ToDatePiker.Size = new System.Drawing.Size(70, 21);
+            this.ToDatePiker.TabIndex = 1;
+            // 
+            // FromDatePicker
+            // 
+            this.FromDatePicker.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FromDatePicker.Location = new System.Drawing.Point(6, 34);
+            this.FromDatePicker.Name = "FromDatePicker";
+            this.FromDatePicker.Size = new System.Drawing.Size(97, 21);
+            this.FromDatePicker.TabIndex = 0;
+            // 
             // emplye_customer_group
             // 
             this.emplye_customer_group.Controls.Add(this.customer_comboBox);
@@ -269,24 +331,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Total";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total Paid:";
-            // 
-            // SaleList_Total_Paid_textBox
-            // 
-            this.SaleList_Total_Paid_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.SaleList_Total_Paid_textBox.Location = new System.Drawing.Point(144, 32);
-            this.SaleList_Total_Paid_textBox.Name = "SaleList_Total_Paid_textBox";
-            this.SaleList_Total_Paid_textBox.ReadOnly = true;
-            this.SaleList_Total_Paid_textBox.Size = new System.Drawing.Size(133, 26);
-            this.SaleList_Total_Paid_textBox.TabIndex = 1;
-            // 
             // Sale_List_Total_Balance_textBox
             // 
             this.Sale_List_Total_Balance_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -305,65 +349,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Total  Balnace:";
             // 
-            // SearchByDate
+            // SaleList_Total_Paid_textBox
             // 
-            this.SearchByDate.Controls.Add(this.button1);
-            this.SearchByDate.Controls.Add(this.label5);
-            this.SearchByDate.Controls.Add(this.label4);
-            this.SearchByDate.Controls.Add(this.ToDatePiker);
-            this.SearchByDate.Controls.Add(this.FromDatePicker);
-            this.SearchByDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchByDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.SearchByDate.Location = new System.Drawing.Point(650, 20);
-            this.SearchByDate.Name = "SearchByDate";
-            this.SearchByDate.Size = new System.Drawing.Size(267, 63);
-            this.SearchByDate.TabIndex = 7;
-            this.SearchByDate.TabStop = false;
-            this.SearchByDate.Text = "Search By Date";
+            this.SaleList_Total_Paid_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.SaleList_Total_Paid_textBox.Location = new System.Drawing.Point(144, 32);
+            this.SaleList_Total_Paid_textBox.Name = "SaleList_Total_Paid_textBox";
+            this.SaleList_Total_Paid_textBox.ReadOnly = true;
+            this.SaleList_Total_Paid_textBox.Size = new System.Drawing.Size(133, 26);
+            this.SaleList_Total_Paid_textBox.TabIndex = 1;
             // 
-            // FromDatePicker
+            // label2
             // 
-            this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FromDatePicker.Location = new System.Drawing.Point(20, 34);
-            this.FromDatePicker.Name = "FromDatePicker";
-            this.FromDatePicker.Size = new System.Drawing.Size(103, 23);
-            this.FromDatePicker.TabIndex = 0;
-            // 
-            // ToDatePiker
-            // 
-            this.ToDatePiker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ToDatePiker.Location = new System.Drawing.Point(143, 34);
-            this.ToDatePiker.Name = "ToDatePiker";
-            this.ToDatePiker.Size = new System.Drawing.Size(114, 23);
-            this.ToDatePiker.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "From";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "To";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(214, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Go";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Total Paid:";
             // 
             // SaleInvoiceList
             // 
@@ -382,12 +384,12 @@
             this.SaleInvoiceList_contextMenu.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.SearchByDate.ResumeLayout(false);
+            this.SearchByDate.PerformLayout();
             this.emplye_customer_group.ResumeLayout(false);
             this.payment.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.SearchByDate.ResumeLayout(false);
-            this.SearchByDate.PerformLayout();
             this.ResumeLayout(false);
 
         }

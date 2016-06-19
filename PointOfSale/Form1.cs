@@ -25,6 +25,7 @@ namespace PointOfSale
 {
     public partial class WorkingForm : Form
     {
+        String barcode = null;
         HandleProducts products;
         HandleEmployee employee;
         String tBalance = null;
@@ -659,7 +660,7 @@ namespace PointOfSale
                 else {
                     customerName = "";
                 }
-
+               
 
                 DateTime date = dateTimePicker1.Value;
                 totalamount = saleInvoice_totalAmn_textbox.Text;
@@ -674,11 +675,21 @@ namespace PointOfSale
                     peyemnt_method = "credit";
                 }
 
-                //saleInvoicePayment_credit
-                if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text))
+
+               
+              
+                if (!String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text) &&
+                    String.IsNullOrEmpty(saleInvoice_afterCalculation_textbox.Text))
                 {
                     disountpersent = saleInvoice_Discount_Textbox.Text;
                     discount = disountpersent;
+                    MessageBox.Show(discount);
+                }
+                else if (!String.IsNullOrEmpty(saleInvoice_afterCalculation_textbox.Text) &&
+                   String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text))
+                {
+                    discuntprise = saleInvoice_afterCalculation_textbox.Text;
+                    discount = discuntprise;
                 }
                 else
                 {
@@ -686,30 +697,26 @@ namespace PointOfSale
                     discount = "0";
                 }
 
-                if (!String.IsNullOrEmpty(saleInvoice_afterCalculation_textbox.Text))
-                {
-                    discuntprise = saleInvoice_afterCalculation_textbox.Text;
-                    discount = discuntprise;
-                }
-                else
-                {
-                    //   discuntprise = "0";
-                    discount = "0";
-                }
                 if (!String.IsNullOrEmpty(salePricE_totalPrice_textBox.Text))
                 {
                     totalbill = salePricE_totalPrice_textBox.Text;
 
                 }
-                if (!String.IsNullOrEmpty(saleInvoice_Payment_textbox.Text))
+                if (String.IsNullOrEmpty(tPayemnt))
                 {
-                    tPayemnt = saleInvoice_Payment_textbox.Text;
-                }
-                else
-                {
-                    tPayemnt = "0";
 
-                    saleInvoice_balacne_textbox.Text = salePricE_totalPrice_textBox.Text;
+
+                    if (!String.IsNullOrEmpty(saleInvoice_Payment_textbox.Text))
+                    {
+                        tPayemnt = saleInvoice_Payment_textbox.Text;
+                    }
+                    else
+                    {
+                        tPayemnt = "0";
+
+                        saleInvoice_balacne_textbox.Text = salePricE_totalPrice_textBox.Text;
+
+                    }
                 }
                 if (!String.IsNullOrEmpty(saleInvoice_balacne_textbox.Text))
                 {
@@ -743,7 +750,7 @@ namespace PointOfSale
                     addInvoiceData();
 
                 }
-
+                tPayemnt = null;
             }
             return getid;
         }
@@ -1262,13 +1269,14 @@ namespace PointOfSale
                         purpose = salePanel_Purpose_comboBox.SelectedItem.ToString();
                     }
 
-
+                    barcode = salePanel_itemCode_comboBox.Text;
 
                     String[] rows = { (++counter).ToString(), PName, location, purpose, expriydate.ToString(), price.ToString(), quantity.ToString(), amount.ToString(), discount.ToString(), netAmount.ToString(), bonace.ToString() };
                     ListViewItem item = new ListViewItem(rows);
 
                     saleInvoice_productList.Items.Add(item);
                     salePricE_totalPrice_textBox.Clear();
+                    sum = 0;
                     for (int i = 0; i < saleInvoice_productList.Items.Count; i++)
                     {
                         sum = sum + Int32.Parse(saleInvoice_productList.Items[i].SubItems[9].Text);
@@ -1354,6 +1362,17 @@ namespace PointOfSale
         private void textBox11_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void textBox11_KeyDown(object sender, KeyEventArgs e)
@@ -1376,7 +1395,11 @@ namespace PointOfSale
                  //   saleInvoice_totalAmn_textbox.Text = (totalprice - dvalue).ToString();
                     saleInvoice_totalnetAmount_textbox.Text = (totalprice - dvalue).ToString();
                 }
-
+                if(String.IsNullOrEmpty(saleInvoice_Discount_Textbox.Text))
+                {
+                    saleInvoice_totalnetAmount_textbox.Text = saleInvoice_totalAmn_textbox.Text;
+                    salePricE_totalPrice_textBox.Text = saleInvoice_totalAmn_textbox.Text;
+                }
 
 
 
@@ -1449,6 +1472,12 @@ namespace PointOfSale
                     saleInvoice_totalnetAmount_textbox.Text = ans.ToString();
                     salePricE_totalPrice_textBox.Text = ans.ToString();
                 }
+                if (String.IsNullOrEmpty(saleInvoice_afterCalculation_textbox.Text))
+                {
+                    saleInvoice_totalnetAmount_textbox.Text = saleInvoice_totalAmn_textbox.Text;
+                    salePricE_totalPrice_textBox.Text = saleInvoice_totalAmn_textbox.Text;
+                }
+
 
             }
         }
@@ -1477,8 +1506,9 @@ namespace PointOfSale
                 int price = Int32.Parse(salePricE_totalPrice_textBox.Text) - Int32.Parse(amount);
                 salePricE_totalPrice_textBox.Text = price.ToString();
                 saleInvoice_productList.SelectedItems[0].Remove();
-                
-              //  MessageBox.Show(name);
+                saleInvoice_productList.Update();
+                saleInvoice_productList.Refresh();
+                //  MessageBox.Show(name);
 
             }
         }
@@ -1503,10 +1533,15 @@ namespace PointOfSale
             {
                 saleInvoice_Discount_Textbox.Clear();
             }
+            else
+            {
+               
+            }
         }
 
         private void saleInvoice_productList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            
             String id = saleInvoice_productList.SelectedItems[0].SubItems[0].Text;
             String proName = saleInvoice_productList.SelectedItems[0].SubItems[1].Text;
             String location = saleInvoice_productList.SelectedItems[0].SubItems[2].Text;
@@ -1528,6 +1563,7 @@ namespace PointOfSale
             SalePanel_Expirydate_dateTimePicker.Value = System.Convert.ToDateTime(expiry);
             salePanel_Location_comboBox.Text = location;
             salePanel_Purpose_comboBox.Text = purpose;
+            salePanel_itemCode_comboBox.Text = barcode;
             int calculationl = Int32.Parse(salePricE_totalPrice_textBox.Text)-  (Int32.Parse(netamount) * Int32.Parse(quantity));
 
             int calculation2 = Int32.Parse(saleInvoice_totalAmn_textbox.Text) - (Int32.Parse(netamount) * Int32.Parse(quantity));
@@ -1540,6 +1576,7 @@ namespace PointOfSale
             saleInvoice_productList.SelectedItems[0].Remove();
 
             saleInvoice_productList.Update();
+            barcode = null;
         }
 
         private void salePricE_totalPrice_textBox_TextChanged(object sender, EventArgs e)
@@ -1618,6 +1655,8 @@ namespace PointOfSale
                 if (saleInvoicePayment_cash.Checked)
                 {
                     tBalance = "0";
+
+                  tPayemnt    =salePricE_totalPrice_textBox.Text;
                 }
                
                 int id = saveInvoiceData();
@@ -1677,7 +1716,7 @@ namespace PointOfSale
         private void button10_Click(object sender, EventArgs e)
         {
             clearInvoiceForm();
-            saleInvoice_productList.Clear();
+            saleInvoice_productList.Items.Clear();
             salePricE_totalPrice_textBox.Clear();
             saleInvoice_productList.Update();
             sum = 0;
@@ -1686,6 +1725,22 @@ namespace PointOfSale
             saleInvoice_afterCalculation_textbox.Clear();
             saleInvoice_Discount_Textbox.Clear();
             workingForm_SaleInvoice_Panel.Visible = false;
+        }
+
+        private void saleInvoice_afterCalculation_textbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
