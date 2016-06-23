@@ -776,12 +776,14 @@
             this.adddNewProducts_ProductName_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.adddNewProducts_ProductName_comboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.adddNewProducts_ProductName_comboBox.FormattingEnabled = true;
-            this.adddNewProducts_ProductName_comboBox.Location = new System.Drawing.Point(144, 32);
+            this.adddNewProducts_ProductName_comboBox.Location = new System.Drawing.Point(157, 32);
             this.adddNewProducts_ProductName_comboBox.Name = "adddNewProducts_ProductName_comboBox";
             this.adddNewProducts_ProductName_comboBox.Size = new System.Drawing.Size(219, 21);
             this.adddNewProducts_ProductName_comboBox.Sorted = true;
             this.adddNewProducts_ProductName_comboBox.TabIndex = 6;
             this.adddNewProducts_ProductName_comboBox.SelectedIndexChanged += new System.EventHandler(this.adddNewProducts_ProductName_comboBox_SelectedIndexChanged);
+            this.adddNewProducts_ProductName_comboBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.adddNewProducts_ProductName_comboBox_KeyDown);
+            this.adddNewProducts_ProductName_comboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.adddNewProducts_ProductName_comboBox_KeyPress);
             this.adddNewProducts_ProductName_comboBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.adddNewProducts_ProductName_comboBox_MouseClick);
             // 
             // label4
@@ -809,11 +811,11 @@
             // addNewProduct_code_textbox
             // 
             this.addNewProduct_code_textbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.addNewProduct_code_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewProduct_code_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewProduct_code_textbox.Location = new System.Drawing.Point(9, 32);
             this.addNewProduct_code_textbox.Multiline = true;
             this.addNewProduct_code_textbox.Name = "addNewProduct_code_textbox";
-            this.addNewProduct_code_textbox.Size = new System.Drawing.Size(124, 21);
+            this.addNewProduct_code_textbox.Size = new System.Drawing.Size(142, 21);
             this.addNewProduct_code_textbox.TabIndex = 1;
             this.addNewProduct_code_textbox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.addNewProduct_code_textbox_MouseClick);
             this.addNewProduct_code_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.addNewProduct_code_textbox_KeyDown);

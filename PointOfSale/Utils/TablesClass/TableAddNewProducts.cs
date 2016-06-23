@@ -8,6 +8,9 @@ namespace PointOfSale.Utils.TablesClass
 {
     class TableAddNewProducts
     {
+
+        private DateTime toDate;
+        private DateTime FromDate;
         private int productId;
         private String barCode;
         private String productName;
@@ -481,6 +484,32 @@ namespace PointOfSale.Utils.TablesClass
             set
             {
                 loginUser = value;
+            }
+        }
+
+        public DateTime ToDate
+        {
+            get
+            {
+                return toDate;
+            }
+
+            set
+            {
+                toDate = value;
+            }
+        }
+
+        public DateTime FromDate1
+        {
+            get
+            {
+                return FromDate;
+            }
+
+            set
+            {
+                FromDate = value;
             }
         }
     }

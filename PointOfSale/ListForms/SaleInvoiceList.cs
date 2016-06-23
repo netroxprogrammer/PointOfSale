@@ -77,7 +77,7 @@ namespace PointOfSale.ListForms
                 {
                     payment.Enabled = false;
                     emplye_customer_group.Enabled = true;
-                    SearchByDate.Enabled = false;
+                    //SearchByDate.Enabled = false;
                     customer_comboBox.Items.Clear();
                     loadEmployee(); ;
                 }
@@ -87,7 +87,7 @@ namespace PointOfSale.ListForms
                 {
                     payment.Enabled = false;
                     emplye_customer_group.Enabled = true;
-                    SearchByDate.Enabled = false;
+                    //SearchByDate.Enabled = false;
                     customer_comboBox.Items.Clear();
                     laodCustomer(); 
                 }
@@ -96,14 +96,14 @@ namespace PointOfSale.ListForms
                     customer_comboBox.Items.Clear();
                     emplye_customer_group.Enabled = false;
                     payment.Enabled = true;
-                    SearchByDate.Enabled = false;
+                    //SearchByDate.Enabled = false;
                 }
                 if (saleList_Search_comboBox.SelectedItem.ToString() == "Date")
                 {
                     customer_comboBox.Items.Clear();
                     emplye_customer_group.Enabled = false;
                     payment.Enabled = false;
-                    SearchByDate.Enabled = true;
+                   /// SearchByDate.Enabled = true;
                 }
             }
         }
@@ -266,8 +266,26 @@ namespace PointOfSale.ListForms
                TableInvoice invoiceTable = new TableInvoice();
             invoiceTable.ToDate1 = ToDatePiker.Value;
             invoiceTable.FromDate1 = FromDatePicker.Value;
-            invoiceTable.CustomerName = "no customer";
-            invoiceTable.PaymentMethod = "no peyment";
+           
+
+            if (customer_comboBox.SelectedIndex != -1)
+            {
+                invoiceTable.CustomerName = customer_comboBox.SelectedItem.ToString();
+                invoiceTable.PaymentMethod = "no peyment";
+
+            }
+
+            if (payement_comboBox1.SelectedIndex != -1)
+            {
+                invoiceTable.PaymentMethod = payement_comboBox1.SelectedItem.ToString();
+                invoiceTable.CustomerName = "no customer";
+            }
+            if (payement_comboBox1.SelectedIndex == -1  &&  (customer_comboBox.SelectedIndex == -1))
+            {
+                invoiceTable.PaymentMethod = "no peyment";
+                invoiceTable.CustomerName = "no customer";
+            }
+
             ArrayList data = invoice.filerByDate(invoiceTable);
             loadArrayList(data);
 

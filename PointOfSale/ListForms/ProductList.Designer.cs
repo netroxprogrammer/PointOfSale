@@ -36,20 +36,25 @@
             this.inactiveProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllProductsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chooseDate = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.To_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.from_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.choice = new System.Windows.Forms.GroupBox();
             this.Select_Search_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Serach_Product_comboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chooseDate = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Product_List_Total_Values_textBox = new System.Windows.Forms.TextBox();
             this.Product_contextStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.choice.SuspendLayout();
             this.chooseDate.SuspendLayout();
+            this.choice.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // WorkingForm_AllProduct_listView
@@ -62,7 +67,7 @@
             this.WorkingForm_AllProduct_listView.GridLines = true;
             this.WorkingForm_AllProduct_listView.Location = new System.Drawing.Point(-1, 98);
             this.WorkingForm_AllProduct_listView.Name = "WorkingForm_AllProduct_listView";
-            this.WorkingForm_AllProduct_listView.Size = new System.Drawing.Size(960, 512);
+            this.WorkingForm_AllProduct_listView.Size = new System.Drawing.Size(1184, 575);
             this.WorkingForm_AllProduct_listView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.WorkingForm_AllProduct_listView.TabIndex = 1;
             this.WorkingForm_AllProduct_listView.UseCompatibleStateImageBehavior = false;
@@ -123,6 +128,67 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search Product";
             // 
+            // chooseDate
+            // 
+            this.chooseDate.Controls.Add(this.button1);
+            this.chooseDate.Controls.Add(this.label4);
+            this.chooseDate.Controls.Add(this.label3);
+            this.chooseDate.Controls.Add(this.To_dateTimePicker);
+            this.chooseDate.Controls.Add(this.from_dateTimePicker);
+            this.chooseDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chooseDate.Location = new System.Drawing.Point(483, 17);
+            this.chooseDate.Name = "chooseDate";
+            this.chooseDate.Size = new System.Drawing.Size(373, 57);
+            this.chooseDate.TabIndex = 5;
+            this.chooseDate.TabStop = false;
+            this.chooseDate.Text = "select Date";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(327, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 24);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Go";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(173, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(19, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "To";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "From";
+            // 
+            // To_dateTimePicker
+            // 
+            this.To_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.To_dateTimePicker.Location = new System.Drawing.Point(198, 23);
+            this.To_dateTimePicker.Name = "To_dateTimePicker";
+            this.To_dateTimePicker.Size = new System.Drawing.Size(107, 23);
+            this.To_dateTimePicker.TabIndex = 1;
+            // 
+            // from_dateTimePicker
+            // 
+            this.from_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.from_dateTimePicker.Location = new System.Drawing.Point(47, 23);
+            this.from_dateTimePicker.Name = "from_dateTimePicker";
+            this.from_dateTimePicker.Size = new System.Drawing.Size(120, 23);
+            this.from_dateTimePicker.TabIndex = 0;
+            // 
             // choice
             // 
             this.choice.Controls.Add(this.Select_Search_comboBox);
@@ -136,6 +202,8 @@
             // 
             // Select_Search_comboBox
             // 
+            this.Select_Search_comboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Select_Search_comboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Select_Search_comboBox.FormattingEnabled = true;
             this.Select_Search_comboBox.Location = new System.Drawing.Point(6, 21);
             this.Select_Search_comboBox.Name = "Select_Search_comboBox";
@@ -182,61 +250,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Choise";
             // 
-            // chooseDate
+            // groupBox2
             // 
-            this.chooseDate.Controls.Add(this.label4);
-            this.chooseDate.Controls.Add(this.label3);
-            this.chooseDate.Controls.Add(this.dateTimePicker2);
-            this.chooseDate.Controls.Add(this.dateTimePicker1);
-            this.chooseDate.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chooseDate.Location = new System.Drawing.Point(483, 17);
-            this.chooseDate.Name = "chooseDate";
-            this.chooseDate.Size = new System.Drawing.Size(373, 57);
-            this.chooseDate.TabIndex = 5;
-            this.chooseDate.TabStop = false;
-            this.chooseDate.Text = "select Date";
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.Product_List_Total_Values_textBox);
+            this.groupBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.groupBox2.Location = new System.Drawing.Point(738, 679);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(307, 59);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
             // 
-            // dateTimePicker1
+            // label5
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(47, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(144, 23);
-            this.dateTimePicker1.TabIndex = 0;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 19);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Total Value:";
             // 
-            // dateTimePicker2
+            // Product_List_Total_Values_textBox
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(223, 23);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(144, 23);
-            this.dateTimePicker2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "From";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(197, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "To";
+            this.Product_List_Total_Values_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Product_List_Total_Values_textBox.Location = new System.Drawing.Point(97, 23);
+            this.Product_List_Total_Values_textBox.Name = "Product_List_Total_Values_textBox";
+            this.Product_List_Total_Values_textBox.ReadOnly = true;
+            this.Product_List_Total_Values_textBox.Size = new System.Drawing.Size(199, 27);
+            this.Product_List_Total_Values_textBox.TabIndex = 0;
             // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(962, 613);
+            this.ClientSize = new System.Drawing.Size(1185, 750);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.WorkingForm_AllProduct_listView);
             this.MaximizeBox = false;
@@ -247,9 +296,11 @@
             this.Product_contextStrip.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.choice.ResumeLayout(false);
             this.chooseDate.ResumeLayout(false);
             this.chooseDate.PerformLayout();
+            this.choice.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,9 +320,13 @@
         private System.Windows.Forms.ComboBox Select_Search_comboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox chooseDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker from_dateTimePicker;
+        private System.Windows.Forms.DateTimePicker To_dateTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox Product_List_Total_Values_textBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

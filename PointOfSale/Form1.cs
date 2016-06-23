@@ -350,11 +350,7 @@ namespace PointOfSale
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-
-
-
-
+       
             TableAddNewProducts getprod = products.productByItemCode(salePanel_itemCode_comboBox.SelectedItem.ToString());
             // Debug.WriteLine("Select Index ---  " + Sale_Panel_ProductName_comboBox.SelectedIndex + 1);
             //  salePanel_Descreption_comboBox.Items.Clear();
@@ -419,7 +415,7 @@ namespace PointOfSale
             salePanel_Price_tetxbox.Text = getprod.ProductSalePrice.ToString();
             salePrice_QntHand_textBox.Clear();
             salePrice_QntHand_textBox.Text = getprod.ProductTotalPacks.ToString();
-
+           
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -666,6 +662,7 @@ namespace PointOfSale
                 totalamount = saleInvoice_totalAmn_textbox.Text;
                 totalnetAmount = saleInvoice_totalnetAmount_textbox.Text;
                 String peyemnt_method = "";
+
                 if (saleInvoicePayment_cash.Checked)
                 {
                     peyemnt_method = "Cash";
@@ -736,11 +733,20 @@ namespace PointOfSale
                 inv.PaymentMethod = peyemnt_method;
                 inv.TotalDiscount = Int32.Parse(discount);
                 inv.Disception1 = writeDescription.Text;
-                inv.TotalPayment = Int32.Parse(tPayemnt);
+               
                 inv.LoginBy = Constants.userlogin;
+                if (saleInvoicePayment_cash.Checked){
+                    tBalance = "0";
+                    inv.Balance = Int32.Parse(tBalance);
+                    tPayemnt = salePricE_totalPrice_textBox.Text;
+                    inv.TotalPayment = Int32.Parse(tPayemnt);
+                }
+                else
+                {
+                    inv.Balance = Int32.Parse(tBalance);
+                }
+                inv.TotalPayment = Int32.Parse(tPayemnt);
 
-
-                inv.Balance = Int32.Parse(tBalance);
                 int id = invoice.AddSaleoInvoice(inv);
                 if (id > 0)
                 {

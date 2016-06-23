@@ -28,12 +28,22 @@ namespace PointOfSale.OthersForms
 
         private void otherthings_saveProduct_btn_Click(object sender, EventArgs e)
         {
-            String productName = otherthings_ProductName_text.Text;
-            String productDiscount = otherthings_ProductDiscount_text.Text;
+            String productName = null;
+            String productDiscount = null;
+            if (!String.IsNullOrEmpty(otherthings_ProductDiscount_text.Text))
+            {
+              productDiscount = otherthings_ProductDiscount_text.Text;
+            }
+            else
+            {
+                productDiscount = "0";
+            }
+          
 
             TableProductName names = new TableProductName();
-            if (productName !="")
+            if (!String.IsNullOrEmpty(otherthings_ProductName_text.Text))
             {
+                productName = otherthings_ProductName_text.Text;
                 names.productName = productName;
                 names.productMaxDiscount = Decimal.ToInt32(System.Convert.ToDecimal(productDiscount));
                 int  id = handleProduct.addProductName(names);

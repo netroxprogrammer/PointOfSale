@@ -1015,7 +1015,7 @@ namespace PointOfSale
             }
             else
             {
-                inactiveProduct = "no";
+                inactiveProduct = "yes";
             }
             if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) && (adddNewProducts_ProductName_comboBox.SelectedIndex != -1) &&
                 adddNewProducts_Category_comboBox.SelectedIndex != -1)
@@ -1476,7 +1476,7 @@ namespace PointOfSale
             }
             else
             {
-                inactiveProduct = "no";
+                inactiveProduct = "yes";
             }
             if (!String.IsNullOrEmpty(addNewProduct_code_textbox.Text) && (adddNewProducts_ProductName_comboBox.SelectedIndex != -1) &&
                 adddNewProducts_Category_comboBox.SelectedIndex != -1)
@@ -1623,6 +1623,49 @@ namespace PointOfSale
                 }
                 }
             }
+        }
+
+        private void adddNewProducts_ProductName_comboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode ==Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(adddNewProducts_ProductName_comboBox.Text)) { 
+                TableProductName names = new TableProductName();
+                names.productName = adddNewProducts_ProductName_comboBox.Text;
+                    names.productMaxDiscount = 0;
+                    ArrayList getname = handleProducts.getProductNames();
+                    foreach (TableProductName name in getname)
+                    {
+
+                        if(names.productName!= name.productName)
+                        {
+
+                   
+                    int id = handleProducts.addProductName(names);
+                if (id >= 0)
+                {
+                    MessageBox.Show("One Product Insert");
+                        adddNewProducts_ProductName_comboBox.Items.Clear();
+                       
+                        loadProductName();
+                    }
+                else
+                {
+                    MessageBox.Show("Due to Any  issue Product Name Not Save");
+                }
+            }
+                        else
+                        {
+                            MessageBox.Show("Product Already Exist");
+                        }
+            }
+                }
+            }
+        }
+
+        private void adddNewProducts_ProductName_comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
         }
     }
 }

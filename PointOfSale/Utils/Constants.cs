@@ -10,7 +10,11 @@ namespace PointOfSale.Utils
     {
           public static bool  checkLogin = false;
         public static String userlogin = "";
-        public const String serverUrl = "Data Source=mac-pc\\sqlexpress;";
+        public  static String f = "Data Source =";
+        public static  String f1 = System.Environment.MachineName.ToLower().ToString();
+        public static String f3 = "\\sqlexpress;";
+        public String serverUrl = f + f1 + f3;
+       
         public const String databaseName = "Initial Catalog=Point_Of_Sale";
         public const String securityCheck = ";Integrated Security=True;Pooling=False;MultipleActiveResultSets=True;";
     }

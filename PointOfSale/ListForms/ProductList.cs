@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace PointOfSale.ListForms
     public partial class ProductList : Form
     {
         HandleProducts products;
-        
+        int sum = 0;
         public ProductList()
         {
             InitializeComponent();
@@ -26,7 +27,8 @@ namespace PointOfSale.ListForms
         private void ProductList_Load(object sender, EventArgs e)
         {
             products = new HandleProducts();
-            getProductsList("no");
+            getProductsList("yes");
+
         }
 
         // list of  Products.
@@ -43,6 +45,8 @@ namespace PointOfSale.ListForms
             WorkingForm_AllProduct_listView.Columns.Add("Purpose", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Description", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Category", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Sale Price", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Quantiy Hand", 110, HorizontalAlignment.Left);
             // WorkingForm_AllProduct_listView.Columns.Add("Location", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Expiry date", 110, HorizontalAlignment.Left);
             /*  WorkingForm_AllProduct_listView.Columns.Add("Batch", 110, HorizontalAlignment.Left);
@@ -77,13 +81,18 @@ namespace PointOfSale.ListForms
             foreach (TableAddNewProducts em in prod)
             {
                 String[] rows = { em.ProductId.ToString(), em.BarCode, em.ProductName, em.ProductCompanyName,
-                    em.ProductPurpose , em.ProductDescription, em.Category, em.ProductExpidate.ToString()
+                    em.ProductPurpose , em.ProductDescription, em.Category, em.ProductSalePrice.ToString() ,em.ProductQntHand.ToString(), em.ProductExpidate.ToString()
                 };
                 ListViewItem items = new ListViewItem(rows);
                 WorkingForm_AllProduct_listView.Items.Add(items);
+
+
+
+                sum = sum + (em.ProductQntHand * em.ProductPurchasePrice);
+              
             }
 
-
+            Product_List_Total_Values_textBox.Text = sum.ToString();
 
 
         }
@@ -99,7 +108,7 @@ namespace PointOfSale.ListForms
             String purpose = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[4].Text;
             String disc = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[5].Text;
             String category = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[6].Text;
-            String expdate = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[7].Text;
+            String expdate = WorkingForm_AllProduct_listView.SelectedItems[0].SubItems[9].Text;
             //  MessageBox.Show(CName);
             AddNewProduct p = new AddNewProduct();
 
@@ -162,13 +171,13 @@ namespace PointOfSale.ListForms
 
         private void showAllProductsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            getProductsList("no");
+            getProductsList("yes");
         }
 
         private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            getProductsList("no");
+            getProductsList("yes");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -182,7 +191,7 @@ namespace PointOfSale.ListForms
                     chooseDate.Enabled = false;
                     Select_Search_comboBox.Items.Clear();
                     Select_Search_comboBox.Text = " << BarCode >>";
-                  ArrayList  data =    products.getProductList("no");
+                  ArrayList  data =    products.getProductList("yes");
                     foreach (TableAddNewProducts p in data)
                     {
                         Select_Search_comboBox.Items.Add(p.BarCode);
@@ -419,6 +428,7 @@ namespace PointOfSale.ListForms
         {
         
 
+
             WorkingForm_AllProduct_listView.Columns.Clear();
             WorkingForm_AllProduct_listView.Items.Clear();
             WorkingForm_AllProduct_listView.Columns.Add("Product Id", 110, HorizontalAlignment.Left);
@@ -428,44 +438,39 @@ namespace PointOfSale.ListForms
             WorkingForm_AllProduct_listView.Columns.Add("Purpose", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Description", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Category", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Sale Price", 110, HorizontalAlignment.Left);
+            WorkingForm_AllProduct_listView.Columns.Add("Quantiy Hand", 110, HorizontalAlignment.Left);
             // WorkingForm_AllProduct_listView.Columns.Add("Location", 110, HorizontalAlignment.Left);
             WorkingForm_AllProduct_listView.Columns.Add("Expiry date", 110, HorizontalAlignment.Left);
-            /*  WorkingForm_AllProduct_listView.Columns.Add("Batch", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Color 1", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Color 2", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Color 3", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Size", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Quantity Pack", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("No. Packs", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Total Packs", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Qty in hands", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Max Stock", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Min Stock", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Sale Price", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Profit %", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Purchase Price", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Max discount", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Item Discount", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Item Fix Discont", 110, HorizontalAlignment.Left);
 
-              WorkingForm_AllProduct_listView.Columns.Add("Distributors", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Update Stock Date", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Inactive Products", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Entry Date", 110, HorizontalAlignment.Left);
-              WorkingForm_AllProduct_listView.Columns.Add("Update Product Date", 110, HorizontalAlignment.Left);*/
-
-          
-
-         
 
             foreach (TableAddNewProducts em in list)
             {
+                Debug.WriteLine("--------------- "+em.ProductName);
+
+
                 String[] rows = { em.ProductId.ToString(), em.BarCode, em.ProductName, em.ProductCompanyName,
-                    em.ProductPurpose , em.ProductDescription, em.Category, em.ProductExpidate.ToString()
+                    em.ProductPurpose , em.ProductDescription, em.Category, em.ProductSalePrice.ToString() ,em.ProductQntHand.ToString(), em.ProductExpidate.ToString()
                 };
                 ListViewItem items = new ListViewItem(rows);
                 WorkingForm_AllProduct_listView.Items.Add(items);
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TableAddNewProducts addp = new TableAddNewProducts();
+            addp.ProductCompanyName = "emptyNAmes";
+            addp.BarCode = "emptyNAmes";
+            addp.ProductName = "emptyNAmes";
+            addp.ProductDescription = "emptyNAmes";
+            addp.ProductPurpose = "emptyNAmes";
+            addp.Category = "emptyNAmes";
+            addp.FromDate1 = from_dateTimePicker.Value;
+            addp.ToDate = To_dateTimePicker.Value;
+            ArrayList list = products.productBYDate(addp);
+            addFilterList(list);
 
         }
     }

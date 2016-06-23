@@ -6,7 +6,6 @@ c:\users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\D
 c:\users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.csproj.GenerateResource.Cache
 c:\users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.exe
 c:\users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.pdb
-C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.csprojResolveAssemblyReference.cache
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.Customer_Information.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.AddNewProduct.resources
 C:\Users\mac\documents\visual studio 2015\Projects\PointOfSale\PointOfSale\obj\Debug\PointOfSale.LoginAthuntication.resources

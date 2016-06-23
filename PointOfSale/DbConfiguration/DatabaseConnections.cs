@@ -15,10 +15,12 @@ namespace PointOfSale.DbConfiguration
         public SqlConnection connection;
         private static DatabaseConnections instance = null;
         private static readonly Object padlock = new object();
-
+       
         DatabaseConnections()
         {
-            connection = new SqlConnection(Constants.serverUrl + Constants.databaseName + Constants.securityCheck);
+            Constants c = new Constants();
+            Debug.WriteLine("-----------------------"+System.Environment.MachineName.ToLower());
+            connection = new SqlConnection(c.serverUrl + Constants.databaseName + Constants.securityCheck);
         }
 
         public static DatabaseConnections Instance

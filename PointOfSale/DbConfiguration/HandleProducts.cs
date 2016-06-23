@@ -491,16 +491,16 @@ namespace PointOfSale.DbConfiguration
             commands.Parameters.AddWithValue("@productTotalProfit", names.ProductTotalPrice);
             commands.Parameters.AddWithValue("@productItemDiscount", names.ProductItemDiscount);
             commands.Parameters.AddWithValue("@productDistributors", names.ProductDistributors);
-           commands.Parameters.AddWithValue("@productUpdateStock", names.ProductUpdateStock);
+            commands.Parameters.AddWithValue("@productUpdateStock", names.ProductUpdateStock);
             commands.Parameters.AddWithValue("@productInactive", names.ProductInactive);
           
            commands.Parameters.AddWithValue("@updateDate", names.UpdateDate);
             commands.Parameters.AddWithValue("@loginBy", Constants.userlogin);
-            int id = (int)commands.ExecuteScalar();
+            commands.ExecuteNonQuery();
 
 
-            Debug.WriteLine("addDistributorsName Database Entry number " + id);
-            return id;
+          //  Debug.WriteLine("addDistributorsName Database Entry number " + id);
+            return 1;
 
         }
         /*
@@ -514,14 +514,18 @@ namespace PointOfSale.DbConfiguration
             ArrayList lists = new ArrayList();
 
 
-            String sql = "select *from addNewProducts where productInactive='"+ actrive + "'";
+            String sql = "select  COALESCE(productId,''), productBarCode,productName,productCompanyName,COALESCE(productPurpose,'')" +
+                " ,COALESCE(productDescription,''),COALESCE(productCategory,''),COALESCE(productLocation,''),productExpridate,COALESCE(productBatch,''),COALESCE(productColor1,''),COALESCE(productColor2,''),COALESCE(productColor3,'')" +
+                " ,COALESCE(productSize,''),COALESCE(productUnits,''),productQuantityPack,productQntHand,COALESCE(productTotalPack,''),COALESCE(productTotalPeice,'')" +
+                " ,COALESCE(productMinStock,''),productMaxStock,COALESCE(productSalePrice,''),COALESCE(ProductPurchasePrice,''),ProductProfit,ProductMaxDiscount,COALESCE(productTotalProfit,''),COALESCE(productItemDiscount,'')" +
+                " ,COALESCE(productDistributors,''),COALESCE(productUpdateStock,''),COALESCE(productInactive,''),COALESCE(productEntryDate,''),COALESCE(updateDate,''), COALESCE(loginBy,'')  from  addNewProducts where productInactive='" + actrive + "'";
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
             {
                 TableAddNewProducts products = new TableAddNewProducts();
 
-               products.ProductId = reader.GetInt32(0);
+                 products.ProductId = reader.GetInt32(0);
                 products.BarCode = reader.GetString(1);
                 products.ProductName = reader.GetString(2);
                 products.ProductCompanyName = reader.GetString(3);
@@ -539,7 +543,7 @@ namespace PointOfSale.DbConfiguration
                 products.ProductColor1 = reader.GetString(10);
                 products.ProductColor2 = reader.GetString(11);
                 products.ProductColor3 = reader.GetString(12);
-                 products.Productsize = reader.GetString(13);
+                products.Productsize = reader.GetString(13);
                 products.ProductUnits = reader.GetString(14);
                 products.ProductQuantityPack = reader.GetInt32(15);
                 products.ProductQntHand = reader.GetInt32(16);
@@ -554,15 +558,15 @@ namespace PointOfSale.DbConfiguration
                 products.ProductProfit = reader.GetInt32(23);
                
                 products.MaxDiscount = reader.GetInt32(24);
-                 products.ProductTotalPrice = reader.GetInt32(25);
+                products.ProductTotalPrice = reader.GetInt32(25);
                 products.ProductItemDiscount = reader.GetInt32(26);
                 products.ProductDistributors = reader.GetString(27);
                
                 products.ProductUpdateStock = reader.GetString(28);
                 products.ProductInactive = reader.GetString(29);
                 products.ProductEntryDate = reader.GetDateTime(30);
-                products.UpdateDate = reader.GetString(31); 
-                
+                products.UpdateDate = reader.GetString(31);
+                products.LoginUser = reader.GetString(32);
                 lists.Add(products);
 
 
@@ -577,6 +581,7 @@ namespace PointOfSale.DbConfiguration
         /*
        Add New Products... 
        */
+
         public ArrayList getProductListNoFilter()
         {
 
@@ -585,7 +590,11 @@ namespace PointOfSale.DbConfiguration
             ArrayList lists = new ArrayList();
 
 
-            String sql = "select *from addNewProducts";
+            String sql = "select  COALESCE(productId,''), productBarCode,productName,productCompanyName,COALESCE(productPurpose,'')" +
+                " ,COALESCE(productDescription,''),COALESCE(productCategory,''),COALESCE(productLocation,''),productExpridate,COALESCE(productBatch,''),COALESCE(productColor1,''),COALESCE(productColor2,''),COALESCE(productColor3,'')" +
+                " ,COALESCE(productSize,''),COALESCE(productUnits,''),productQuantityPack,productQntHand,COALESCE(productTotalPack,''),COALESCE(productTotalPeice,'')" +
+                " ,COALESCE(productMinStock,''),productMaxStock,COALESCE(productSalePrice,''),COALESCE(ProductPurchasePrice,''),ProductProfit,ProductMaxDiscount,COALESCE(productTotalProfit,''),COALESCE(productItemDiscount,'')" +
+                " ,COALESCE(productDistributors,''),COALESCE(productUpdateStock,''),COALESCE(productInactive,''),COALESCE(productEntryDate,''),COALESCE(updateDate,''), COALESCE(loginBy,'')  from addNewProducts";
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             SqlDataReader reader = commands.ExecuteReader();
             while (reader.Read())
@@ -924,8 +933,12 @@ get Product By productSearchAllTypes
 
             ArrayList list = new ArrayList();
 
-            String sql = "Select * from addNewProducts where productBarCode = @productBarCode OR  productName= @productName OR " +
-                 "productCompanyName = @productCompanyName OR productPurpose=@productPurpose OR productCategory = @productCategory OR productDescription = @productDescription AND  productInactive ='no'";
+            String sql = "select  COALESCE(productId,''), productBarCode,productName,productCompanyName,COALESCE(productPurpose,'')" +
+                " ,COALESCE(productDescription,''),COALESCE(productCategory,''),COALESCE(productLocation,''),productExpridate,COALESCE(productBatch,''),COALESCE(productColor1,''),COALESCE(productColor2,''),COALESCE(productColor3,'')" +
+                " ,COALESCE(productSize,''),COALESCE(productUnits,''),productQuantityPack,productQntHand,COALESCE(productTotalPack,''),COALESCE(productTotalPeice,'')" +
+                " ,COALESCE(productMinStock,''),productMaxStock,COALESCE(productSalePrice,''),COALESCE(ProductPurchasePrice,''),ProductProfit,ProductMaxDiscount,COALESCE(productTotalProfit,''),COALESCE(productItemDiscount,'')" +
+                " ,COALESCE(productDistributors,''),COALESCE(productUpdateStock,''),COALESCE(productInactive,''),COALESCE(productEntryDate,''),COALESCE(updateDate,''), COALESCE(loginBy,'')  from addNewProducts where productBarCode = @productBarCode OR  productName= @productName OR " +
+                 "productCompanyName = @productCompanyName OR productPurpose=@productPurpose OR productCategory = @productCategory OR productDescription = @productDescription AND  productInactive ='yes'";
 
             SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
             commands.CommandType = CommandType.Text;
@@ -992,5 +1005,101 @@ get Product By productSearchAllTypes
             reader.Close();
             return list;
         }
+
+        /// <summary>
+        ///    Search By Date
+        /// </summary>
+        /// <param name="names"></param>
+        /// <returns></returns>
+
+        public ArrayList productBYDate(TableAddNewProducts names)
+        {
+
+
+            Debug.WriteLine("------------- get productByItemCode");
+
+            ArrayList list = new ArrayList();
+
+            //String sql = "Select * from addNewProducts where productBarCode = @productBarCode OR  productName= @productName OR " +
+            //     "productCompanyName = @productCompanyName OR productPurpose=@productPurpose OR productCategory = @productCategory OR productDescription = @productDescription "+
+            //     "OR  CONVERT(varchar(10),productExpridate,	105)  > CONVERT(varchar(10),@FromDate,	105) AND CONVERT(varchar(10),productExpridate,	105)  < CONVERT(varchar(10), @ToDate,	105) AND productInactive ='yes'";
+
+            String sql = "Select  COALESCE(productId,''), productBarCode,productName,productCompanyName,COALESCE(productPurpose,'')" +
+                " ,COALESCE(productDescription,''),COALESCE(productCategory,''),COALESCE(productLocation,''),productExpridate,COALESCE(productBatch,''),COALESCE(productColor1,''),COALESCE(productColor2,''),COALESCE(productColor3,'')" +
+                " ,COALESCE(productSize,''),COALESCE(productUnits,''),productQuantityPack,productQntHand,COALESCE(productTotalPack,''),COALESCE(productTotalPeice,'')" +
+                " ,COALESCE(productMinStock,''),productMaxStock,COALESCE(productSalePrice,''),COALESCE(ProductPurchasePrice,''),ProductProfit,ProductMaxDiscount,COALESCE(productTotalProfit,''),COALESCE(productItemDiscount,'')" +
+                " ,COALESCE(productDistributors,''),COALESCE(productUpdateStock,''),COALESCE(productInactive,''),COALESCE(productEntryDate,''),COALESCE(updateDate,''), COALESCE(loginBy,'') from addNewProducts where productExpridate  > @FromDate AND productExpridate < @ToDate AND productInactive ='yes'";
+
+
+            SqlCommand commands = new SqlCommand(sql, DatabaseConnections.Instance.getConnection());
+            commands.CommandType = CommandType.Text;
+
+            //commands.Parameters.AddWithValue("@productBarCode", names.BarCode);
+            //commands.Parameters.AddWithValue("@productName", names.ProductName);
+            //commands.Parameters.AddWithValue("@productCompanyName", names.ProductCompanyName);
+            //commands.Parameters.AddWithValue("@productPurpose", names.ProductPurpose);
+            //commands.Parameters.AddWithValue("@productCategory", names.Category);
+            //commands.Parameters.AddWithValue("@productDescription", names.ProductDescription);
+           commands.Parameters.AddWithValue("@FromDate", names.FromDate1);
+            commands.Parameters.AddWithValue("@ToDate", names.ToDate);
+
+            TableAddNewProducts products = null;
+            SqlDataReader reader = commands.ExecuteReader();
+            while (reader.Read())
+            {
+                products = new TableAddNewProducts();
+                products.ProductId = reader.GetInt32(0);
+                products.BarCode = reader.GetString(1);
+                products.ProductName = reader.GetString(2);
+                products.ProductCompanyName = reader.GetString(3);
+
+                Debug.WriteLine("----------- " + reader.GetString(2));
+
+                products.ProductPurpose = reader.GetString(4);
+
+                products.ProductDescription = reader.GetString(5);
+                products.Category = reader.GetString(6);
+
+
+                products.Location1 = reader.GetString(7);
+                products.ProductExpidate = reader.GetDateTime(8);
+                products.ProductBatch = reader.GetString(9);
+                products.ProductColor1 = reader.GetString(10);
+                products.ProductColor2 = reader.GetString(11);
+                products.ProductColor3 = reader.GetString(12);
+                products.Productsize = reader.GetString(13);
+                products.ProductUnits = reader.GetString(14);
+                products.ProductQuantityPack = reader.GetInt32(15);
+                products.ProductQntHand = reader.GetInt32(16);
+                products.ProductTotalPacks = reader.GetInt32(17);
+
+                products.ProductTotalPeice = reader.GetInt32(18);
+
+                products.ProductMinStock = reader.GetInt32(19);
+                products.ProductMaxStock = reader.GetInt32(20);
+                products.ProductSalePrice = reader.GetInt32(21);
+                products.ProductPurchasePrice = reader.GetInt32(22);
+                products.ProductProfit = reader.GetInt32(23);
+
+                products.MaxDiscount = reader.GetInt32(24);
+                products.ProductTotalPrice = reader.GetInt32(25);
+                products.ProductItemDiscount = reader.GetInt32(26);
+                products.ProductDistributors = reader.GetString(27);
+
+                products.ProductUpdateStock = reader.GetString(28);
+                products.ProductInactive = reader.GetString(29);
+                products.ProductEntryDate = reader.GetDateTime(30);
+                products.UpdateDate = reader.GetString(31);
+
+                list.Add(products);
+                Debug.WriteLine(products);
+
+            }
+            reader.Close();
+            return list;
+        }
+
+
+
     }
 }
